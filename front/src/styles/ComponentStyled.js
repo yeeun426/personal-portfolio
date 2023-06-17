@@ -12,11 +12,12 @@ export const HeaderStyled = styled.div `
         display: flex;
         align-items: center;
         gap: 10px;
+        font-size: 15px;
 
         img {
             width: 30px;
             border: 1px solid #c1bfbf;
-            padding: 10px;
+            padding: 6px;
             border-radius: 50px;
         }
     }
@@ -29,7 +30,6 @@ export const HeaderStyled = styled.div `
     .header-right{
         display: flex;
         gap: 50px;
-        font-size: 17px;
     }
     
 `
