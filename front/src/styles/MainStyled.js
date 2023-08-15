@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MainStyled = styled.div `
 
-    .main-wrapper {
+    .mainIntro-wrapper {
         background-image: url(images/background.png);
         background-repeat: no-repeat;
         background-size: cover;
