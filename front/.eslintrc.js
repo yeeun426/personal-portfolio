@@ -4,11 +4,11 @@ export default {
         "es2021": true,
         "node": true
     },
+    "plugins": ["prettier"],
     "extends": [
         "standard-with-typescript",
-        "plugin:react/recommended",
-		"standard",
-    "prettier"
+        "plugin:prettier/recommended",
+        "eslint:recommended",
     ],
     "overrides": [
         {
@@ -31,5 +31,6 @@ export default {
         "react"
     ],
     "rules": {
+        'react/react-in-jsx-scope': 'off',
     }
 }

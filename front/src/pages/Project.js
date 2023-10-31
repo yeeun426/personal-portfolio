@@ -1,11 +1,9 @@
-import { ProjectStyled } from "../styles/ProjectStyled";
+import { ProjectStyled } from '../styles/ProjectStyled';
 
 export default function MainIntro() {
   return (
-    <ProjectStyled> 
-        <div>
-            
-        </div>
+    <ProjectStyled>
+      <div></div>
     </ProjectStyled>
   );
 }

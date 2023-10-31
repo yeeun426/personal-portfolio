@@ -5,10 +5,10 @@ import Intro from './pages/Introduce';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Routes>
-        <Route exact path='/*' element={<Main/>} />
-        <Route exact path='/intro' element={<Intro/>} />
+        <Route exact path='/*' element={<Main />} />
+        <Route exact path='/intro' element={<Intro />} />
       </Routes>
     </div>
   );
