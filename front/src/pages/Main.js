@@ -8,13 +8,9 @@ export default function Main() {
   return (
     <MainStyled>
       <Header />
-      <div className='main-wrapper'>
-        <div className='mainIntro-wrapper'>
-          <MainIntro />
-        </div>
-        <Introduce />
-        <Project />
-      </div>
+      <MainIntro />
+      <Introduce />
+      <Project />
     </MainStyled>
   );
 }

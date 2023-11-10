@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 
 export const HeaderStyled = styled.div`
+  position: fixed;
+  left: 0px;
+  /* top: -100px; */
+  z-index: 100;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #f3f3f3;
+  top: 0px;
+
   grid-template: auto / repeat(3, 1fr);
   display: grid;
   grid-column: 1 / auto;
   gap: 10px;
-  margin: 0px 100px;
   align-items: center;
 
   .header-left {
@@ -13,6 +21,7 @@ export const HeaderStyled = styled.div`
     align-items: center;
     gap: 10px;
     font-size: 15px;
+    justify-self: center;
 
     img {
       width: 30px;
