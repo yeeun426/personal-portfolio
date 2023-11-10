@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const HeaderStyled = styled.div`
   position: fixed;
   left: 0px;
-  /* top: -100px; */
   z-index: 100;
   width: 100%;
   background: #fff;
