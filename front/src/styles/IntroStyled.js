@@ -2,10 +2,7 @@ import styled from 'styled-components';
 
 export const IntroStyled = styled.div`
   height: 100vh;
-
-  .aboutme-wrapper {
-    margin: 35px 0;
-  }
+  background-color: #f5f5f7;
 
   .aboutme-top {
     display: flex;
@@ -57,7 +54,7 @@ export const IntroStyled = styled.div`
   }
 
   .aboutme-bottom-contents {
-    background: #8080800d;
+    background: white;
     width: fit-content;
     border-radius: 100px;
     padding: 0 60px;
