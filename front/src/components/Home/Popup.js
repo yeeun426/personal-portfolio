@@ -1,16 +1,20 @@
 import { AboutMeStyled } from '../../styles/MainStyled';
 import { Link } from 'react-router-dom';
 
-export default function Popup() {
+export default function Popup({ setOpen }) {
   return (
     <div className='mainIntro-wrapper'>
       <AboutMeStyled>
         <div className='intro-wrapper-top'>
-          <img src='images/minus.png' alt='minimize' />
-          <div className='iwp-img-popup'>
+          <button onClick={() => setOpen(false)}>
+            <img src='images/minus.png' alt='minimize' />
+          </button>
+          <button className='iwp-img-popup'>
             <img src='images/popup.png' alt='popup' />
-          </div>
-          <img src='images/cancel.png' alt='cancle' />
+          </button>
+          <button onClick={() => setOpen(false)}>
+            <img src='images/cancel.png' alt='cancle' />
+          </button>
         </div>
         <div className='intro-wrapper'>
           <div className='intro-wrapper-left'>
