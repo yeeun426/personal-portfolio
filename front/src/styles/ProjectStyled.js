@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const ProjectStyled = styled.div`
   background-color: #f5f5f7;
+  height: 100vh;
+  padding: 12rem 3rem;
+  box-sizing: border-box;
   
   .swiper-slide {
     display: flex;

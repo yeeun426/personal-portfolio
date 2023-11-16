@@ -4,6 +4,11 @@ export const IntroStyled = styled.div`
   height: 100vh;
   background-color: #f5f5f7;
 
+  .aboutme-wrapper {
+    padding: 7rem;
+    box-sizing: border-box;
+  }
+
   .aboutme-top {
     display: flex;
     align-items: center;

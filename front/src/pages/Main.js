@@ -4,13 +4,38 @@ import MainIntro from './MainIntro';
 import Introduce from './Introduce';
 import Project from './Project';
 
+import { Mousewheel, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 export default function Main() {
   return (
     <MainStyled>
       <Header />
-      <MainIntro />
-      <Introduce />
-      <Project />
+      <Swiper
+        // direction={'vertical'}
+        slidesPerView={1}
+        spaceBetween={30}
+        mousewheel={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Mousewheel, Pagination]}
+        className='mySwiper'
+      >
+        <SwiperSlide>
+          <MainIntro />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Introduce />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Project />
+        </SwiperSlide>
+      </Swiper>
     </MainStyled>
   );
 }
