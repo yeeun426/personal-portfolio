@@ -4,6 +4,7 @@ import Popup from '../../components/Home/Popup';
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+
   return (
     <HomeStyled>
       <div className='home-wrapper'>
@@ -19,7 +20,7 @@ export default function Home() {
             <div className='home-folder-name'>이예은</div>
           </div>
         ) : (
-          <Popup />
+          <Popup setOpen={setOpen} />
         )}
       </div>
     </HomeStyled>
