@@ -6,7 +6,7 @@ export const MainStyled = styled.div`
     background-image: url(images/background.png);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 10rem;
+    padding: 13rem;
     background-position: center;
     background-position: center;
     box-sizing: border-box;
