@@ -39,4 +39,8 @@ export const HeaderStyled = styled.div`
     display: flex;
     gap: 50px;
   }
+
+  button {
+    font-size: 16px;
+  }
 `;

@@ -159,4 +159,6 @@ input {
 button {
   border: none;
   background: none;
+  cursor: pointer;
+  font-family: 'AppleSDGothicNeoM00';
 }

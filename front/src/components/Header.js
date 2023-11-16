@@ -11,8 +11,12 @@ export default function Header() {
       <div className='header-right'>
         <div>About</div>
         <div>Portfolio</div>
-        <div>Blog</div>
-        <div>Contact</div>
+        <button onClick={() => window.open('https://yeeeon.tistory.com/')}>
+          <div>Blog</div>
+        </button>
+        <button onClick={() => window.open('https://github.com/yeeun426')}>
+          Github
+        </button>
       </div>
     </HeaderStyled>
   );
