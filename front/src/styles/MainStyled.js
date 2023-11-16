@@ -11,6 +11,10 @@ export const MainStyled = styled.div`
     background-position: center;
     box-sizing: border-box;
   }
+
+  .mySwiper {
+    height: 100vh;
+  }
 `;
 
 export const AboutMeStyled = styled.div`
