@@ -18,19 +18,20 @@ export const MainStyled = styled.div`
 `;
 
 export const AboutMeStyled = styled.div`
-  border-radius: 30px;
+  border-radius: 10px;
   width: 800px;
   margin: auto;
   background: white;
 
   .intro-wrapper-top {
     height: 50px;
-    background: #d483d0;
+    background: #dfe1e7;
     display: flex;
     align-items: center;
     justify-content: right;
     gap: 10px;
     padding: 0 15px;
+    border-radius: 10px 10px 0 0;
 
     img {
       width: 30px;
