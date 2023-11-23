@@ -30,10 +30,12 @@ export default function Popup({ setOpen }) {
             </div>
 
             <div className='iwl-btns'>
-              <Link to='/'>
+              <Link to='/main'>
                 <button className='iwl-btn-learn'>Learn More 〉</button>
               </Link>
-              <button className='iwl-btn-contact'>Contact Me 〉</button>
+              <a href='mailto:thsudkcla7@naver.com'>
+                <button className='iwl-btn-contact'>Contact Me 〉</button>
+              </a>
             </div>
           </div>
 
