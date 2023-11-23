@@ -1,10 +1,10 @@
 import { MainStyled } from '../styles/MainStyled';
 import Header from '../components/Header';
-import MainIntro from './MainIntro';
+import Popup from '../components/Home/Popup';
 import Introduce from './Introduce';
 import Project from './Project';
 
-import { Mousewheel, Pagination, Scrollbar } from 'swiper/modules';
+import { Mousewheel, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -30,7 +30,7 @@ export default function Main() {
         className='mySwiper'
       >
         <SwiperSlide>
-          <MainIntro />
+          <Popup />
         </SwiperSlide>
         <SwiperSlide>
           <Introduce />

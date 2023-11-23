@@ -5,7 +5,7 @@ import 'swiper/css/navigation';
 
 import { Navigation } from 'swiper/modules';
 
-export default function MainIntro() {
+export default function Project() {
   return (
     <ProjectStyled>
       <Swiper
