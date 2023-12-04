@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const PopupStyled = styled.div`
   display: flex;
+  justify-content: center;
 
   .popup-left {
     border-radius: 10px 0 0 10px;
@@ -51,7 +52,7 @@ export const PopupStyled = styled.div`
 
   .popup-right {
     width: 50rem;
-    margin: auto;
+    // margin: auto;
     border-radius: 0px 10px 10px 0;
     background: white;
   }
