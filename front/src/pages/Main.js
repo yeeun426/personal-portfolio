@@ -2,7 +2,7 @@ import { MainStyled } from '../styles/MainStyled';
 import Header from '../components/Header';
 import Popup from '../components/Home/Popup';
 import Introduce from './Introduce';
-import Project from './Project';
+import Project from '../pages/Project/Project';
 
 import { Mousewheel, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -20,9 +20,6 @@ export default function Main() {
         slidesPerView={1}
         spaceBetween={30}
         mousewheel={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
         scrollbar={{
           hide: false,
         }}

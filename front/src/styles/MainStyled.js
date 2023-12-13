@@ -12,7 +12,7 @@ export const MainStyled = styled.div`
     box-sizing: border-box;
   }
 
-  .mySwiper {
+  .swiper-wrapper {
     height: 100vh;
   }
 `;

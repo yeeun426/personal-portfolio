@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "date": "2022.07 ~ 2022.8",
+    "name": "Airbnb",
+    "detail": "기존 웹 서비스 \"에어비앤비\" 클론코딩",
+    "img": "images/airbnb.png"
+  },
+  {
+    "id": 2,
+    "date": "2022.08",
+    "name": "myRecipes",
+    "detail": "식품의약품안전처 api 연동 레시피 검색 웹 프로젝트",
+    "img": "images/airbnb.png"
+  },
+  {
+    "id": 3,
+    "date": "22.8 ~ 22.9",
+    "name": "wanted",
+    "detail": "기존 웹 서비스 \"원티드\" 클론코딩",
+    "img": "images/airbnb.png"
+  },
+  {
+    "id": 4,
+    "date": "22.6 ~ 23.8",
+    "name": "MAPLIX",
+    "detail": "2022 관광데이터활용 공모전 우수상",
+    "img": "images/airbnb.png"
+  },
+  {
+    "id": 5,
+    "date": "22.10 ~ 23.2",
+    "name": "GNUVILAGE",
+    "detail": "코딩 중앙 동아리 \"그누빌\" 웹 프로젝트",
+    "img": "images/airbnb.png"
+  },
+  {
+    "id": 6,
+    "date": "23.3 ~ 23.6",
+    "name": "EatTogether",
+    "detail": "배달비 더치페이 웹 서비스",
+    "img": "images/airbnb.png"
+  },
+  {
+    "id": 7,
+    "date": "23.6",
+    "name": "GIVER",
+    "detail": "학교 생활에 어려움을 겪는 장애인과 비장애인 매칭 서비스",
+    "img": "images/airbnb.png"
+  },
+  {
+    "id": 8,
+    "date": "23.4 ~ 23.7",
+    "name": "NDGD",
+    "detail": "고용노동 공공데이터 활용 공모전",
+    "img": "images/airbnb.png"
+  }
+]
