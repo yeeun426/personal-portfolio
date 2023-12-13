@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 export default function Project() {
   const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
   const URL = `${PROXY}/data/project.json`;
-  const [project, setProject] = useState();
+  const [project, setProject] = useState([]);
 
   useEffect(() => {
     fetch(URL, {
@@ -18,6 +18,7 @@ export default function Project() {
       });
   }, []);
 
+  console.log(project);
   return (
     <ProjectStyled>
       <div className='test'>
