@@ -4,7 +4,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 export default function Project() {
-  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+  const PROXY =
+    window.location.hostname === 'localhost' ? '' : window.location.hostname;
   const URL = `${PROXY}/data/project.json`;
   const [project, setProject] = useState([]);
   console.log(URL);
