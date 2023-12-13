@@ -23,7 +23,7 @@ export default function Project() {
     <ProjectStyled>
       <div className='test'>
         {project.map((project) => (
-          <div className='project-content' key={project}>
+          <div className='project-content' key={project.id}>
             <div className='project-txt'>
               <div className='project-date'>{project.date}</div>
               <div className='project-name'>{project.name}</div>
