@@ -57,7 +57,7 @@ export default function Main() {
                 <br />
                 React
                 <br />
-                Thymeleaf
+                Typescript
               </div>
             </div>
             <div className='aboutme-skills-item'>

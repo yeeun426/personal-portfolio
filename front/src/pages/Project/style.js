@@ -1,41 +1,58 @@
 import styled from 'styled-components';
 
 export const ProjectStyled = styled.div`
+  padding: 8rem 1rem;
   background-color: #f5f5f7;
-  height: 100vh;
-  padding: 12rem 3rem;
   box-sizing: border-box;
-  
-  .swiper-slide {
+
+  .test {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 12px;
+    overflow: auto;
+  }
+
+  .project-content {
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
     background-color: #fff;
-    border-radius: 18px;
-    width: 28.23529rem;
-    height: 29.41176rem;
+    width: calc(50% - 12px);
+    height: 35rem;
     white-space: normal;
     box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
-    text-align: left;
+    align-items: center;
+
+    img {
+      height: 80%
+    }
   }
 
-  .swiper-wrapper  {
+  .swiper-wrapper {
     width: 100%;
     vertical-align: top;
     display: inline-flex;
     padding-top: 10px;
-    padding-bottom: 40px;s
+    padding-bottom: 40px;
   }
 
-  .project-date  {
-    font-size: 12px;
-    line-height: 1.33337;
-    color:#6e6e73;
+
+  .project-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 30px;
+    height: fit-content;
+    heigh
   }
   
-  .project-name { 
+  .project-date {
+    font-size: 12px;
+    line-height: 1.33337;
+    color: #6e6e73;
+  }
+
+  .project-name {
     font-size: 28px;
     line-height: 1.14286;
     font-weight: 600;
@@ -45,13 +62,5 @@ export const ProjectStyled = styled.div`
     font-size: 17px;
     line-height: 1.23536;
     font-weight: 400;
-  }
-
-  .project-txt {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 30px;
-    width: 22rem;
   }
 `;
