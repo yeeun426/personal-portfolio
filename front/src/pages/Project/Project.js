@@ -4,8 +4,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 export default function Project() {
-  const URL = `${window.location.hostname}/data/project.json`;
+  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+  const URL = `${PROXY}/data/project.json`;
   const [project, setProject] = useState([]);
+  console.log(URL);
 
   useEffect(() => {
     fetch(URL, {
@@ -17,12 +19,11 @@ export default function Project() {
       });
   }, []);
 
-  console.log(project);
   return (
     <ProjectStyled>
       <div className='test'>
         {project.map((project) => (
-          <div className='project-content'>
+          <div className='project-content' key={project.id}>
             <div className='project-txt'>
               <div className='project-date'>{project.date}</div>
               <div className='project-name'>{project.name}</div>
