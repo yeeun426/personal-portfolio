@@ -24,7 +24,7 @@ export const ProjectStyled = styled.div`
     align-items: center;
 
     img {
-      height: 80%
+      height: 78%
     }
   }
 
