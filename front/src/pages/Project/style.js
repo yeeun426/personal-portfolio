@@ -5,11 +5,10 @@ export const ProjectStyled = styled.div`
   background-color: #f5f5f7;
   box-sizing: border-box;
 
-  .test {
+  .project {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 12px;
-    overflow: auto;
   }
 
   .project-content {

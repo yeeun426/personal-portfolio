@@ -5,8 +5,7 @@ export const HeaderStyled = styled.div`
   left: 0px;
   z-index: 100;
   width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #f3f3f3;
+  background: #ffffff78;
   top: 0px;
 
   grid-template: auto / repeat(3, 1fr);
