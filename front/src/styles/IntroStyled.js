@@ -3,10 +3,15 @@ import styled from 'styled-components';
 export const IntroStyled = styled.div`
   height: 100vh;
   background-color: #f5f5f7;
+  position: relative;
 
   .aboutme-wrapper {
     padding: 7rem;
     box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .aboutme-top {

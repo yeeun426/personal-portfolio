@@ -4,10 +4,9 @@ export const MainStyled = styled.div`
   .mainIntro-wrapper {
     height: 100vh;
     background-image: url(images/background.png);
+    position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 13rem;
-    background-position: center;
     background-position: center;
     box-sizing: border-box;
   }
