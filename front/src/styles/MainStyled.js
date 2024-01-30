@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const MainStyled = styled.div`
   .mainIntro-wrapper {
     height: 100vh;
-    background-image: url(images/background.png);
+    background: url(images/background.png) fixed;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;

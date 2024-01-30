@@ -30,20 +30,18 @@ export const HomeStyled = styled.div`
     margin-top: -10px;
   }
 
-  .home-txt {
+  .home-txt,
+  button {
     font-family: 'Arial';
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 8rem;
-    text-align: left;
-    position: absolute;
-    left: 0;
-    padding: 5rem;
   }
 
   span {
     display: block;
+    width: 100%;
   }
 
   span:not(.light) {
@@ -51,7 +49,7 @@ export const HomeStyled = styled.div`
     animation: flashText 0.8s ease-out alternate infinite;
   }
 
-  span.light {
+  .light {
     position: relative;
     display: inline-block;
 
@@ -67,6 +65,15 @@ export const HomeStyled = styled.div`
       opacity: 0;
       animation: flash 0.8s ease-out alternate infinite;
     }
+  }
+
+  .name-wrapper {
+    text-align: center; /* 가운데 정렬 */
+  }
+
+  .moved {
+    text-align: left; /* 왼쪽 정렬 */
+    transition: margin-left 5s ease; /* 이동에 1초간의 애니메이션 적용 */
   }
 
   @keyframes flash {
