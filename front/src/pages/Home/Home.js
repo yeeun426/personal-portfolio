@@ -1,14 +1,26 @@
-import { HomeStyled } from '../../styles/HomeStyled';
-import { React, useState } from 'react';
+import { HomeStyled } from './style';
+import React, { useState } from 'react';
 import Popup from '../../components/Home/Popup';
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const [folder, setFolder] = useState(false);
 
   return (
     <HomeStyled>
       <div className='home-wrapper'>
-        {!open ? (
+        <div className='home-txt'>
+          <span className={folder && 'disappear'}>Hello!</span>
+          <span className={folder && 'disappear'}>I'm</span>
+          <div className={folder ? 'name-wrapper moved' : 'name-wrapper'}>
+            <button className='light' onClick={() => setFolder(true)}>
+              Yeeun
+            </button>
+          </div>
+          <span className={folder && 'disappear'}>Web developer.</span>
+          <span className={folder && 'disappear'}>welcome</span>
+        </div>
+        {/* {!open ? (
           <>
             <div className='home-folder'>
               <button onClick={() => setOpen(true)}>
@@ -30,7 +42,7 @@ export default function Home() {
           </>
         ) : (
           <Popup setOpen={setOpen} />
-        )}
+        )} */}
       </div>
     </HomeStyled>
   );
