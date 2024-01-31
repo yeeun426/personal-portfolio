@@ -31,7 +31,7 @@ export const HomeStyled = styled.div`
   }
 
   .home-txt,
-  button {
+  .home-txt button {
     font-family: 'Arial';
     color: #fff;
     text-transform: uppercase;
@@ -42,16 +42,39 @@ export const HomeStyled = styled.div`
   span {
     display: block;
     width: 100%;
-  }
-
-  span:not(.light) {
     opacity: 0;
     animation: flashText 0.8s ease-out alternate infinite;
+  }
+
+  .disappear {
+    animation: fadeOut 4s ease;
+  }
+
+  .home-click {
+    z-index: 1;
+    width: 26px;
+    height: fit-content;
+    position: absolute;
+    left: 70%;
+    bottom: 0;
+    transform: translate(-70%);
+  }
+
+  .home-click.disappear {
+    display: none;
+  }
+
+  .name-wrapper {
+    display: flex;
+    position: relative;
   }
 
   .light {
     position: relative;
     display: inline-block;
+    left: 50%;
+    transform: translate(-50%);
+    transition: left 5s ease;
 
     &:before {
       position: absolute;
@@ -67,13 +90,8 @@ export const HomeStyled = styled.div`
     }
   }
 
-  .name-wrapper {
-    text-align: center; /* 가운데 정렬 */
-  }
-
-  .moved {
-    text-align: left; /* 왼쪽 정렬 */
-    transition: margin-left 5s ease; /* 이동에 1초간의 애니메이션 적용 */
+  .light.moved {
+    left: 20%;
   }
 
   @keyframes flash {
@@ -86,5 +104,38 @@ export const HomeStyled = styled.div`
     to {
       opacity: 0.15;
     }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 0.15;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .home-folder-none {
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .home-folder {
+    animation: fadeIn 3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
   }
 `;
