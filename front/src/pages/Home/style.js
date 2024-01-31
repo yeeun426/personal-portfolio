@@ -27,11 +27,11 @@ export const HomeStyled = styled.div`
     color: white;
     font-size: 25px;
     font-weight: bold;
-    margin-top: -10px;
+    margin-top: -20px;
   }
 
   .home-txt,
-  .home-txt button {
+  .name-wrapper button {
     font-family: 'Arial';
     color: #fff;
     text-transform: uppercase;
@@ -39,14 +39,14 @@ export const HomeStyled = styled.div`
     font-size: 8rem;
   }
 
-  span {
+  .home-txt.opacity {
     display: block;
     width: 100%;
     opacity: 0;
     animation: flashText 0.8s ease-out alternate infinite;
   }
 
-  .disappear {
+  .home-txt.disappear {
     animation: fadeOut 4s ease;
   }
 
@@ -55,7 +55,7 @@ export const HomeStyled = styled.div`
     width: 26px;
     height: fit-content;
     position: absolute;
-    left: 70%;
+    right: -30px;
     bottom: 0;
     transform: translate(-70%);
   }
@@ -66,7 +66,10 @@ export const HomeStyled = styled.div`
 
   .name-wrapper {
     display: flex;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .light {
@@ -91,7 +94,7 @@ export const HomeStyled = styled.div`
   }
 
   .light.moved {
-    left: 20%;
+    left: -30%;
   }
 
   @keyframes flash {
