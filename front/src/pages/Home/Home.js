@@ -12,37 +12,37 @@ export default function Home() {
         <div className='home-txt'>
           <span className={folder && 'disappear'}>Hello!</span>
           <span className={folder && 'disappear'}>I'm</span>
-          <div className={folder ? 'name-wrapper moved' : 'name-wrapper'}>
-            <button className='light' onClick={() => setFolder(true)}>
-              Yeeun
-            </button>
-          </div>
+          {!open && (
+            <div className='name-wrapper'>
+              <button
+                className={folder ? 'light moved' : 'light'}
+                onClick={() => setFolder(!folder)}
+              >
+                Yeeun
+              </button>
+              <img
+                className={folder ? 'home-click disappear' : 'home-click'}
+                src='images/cursor.png'
+                alt='click'
+              />
+            </div>
+          )}
           <span className={folder && 'disappear'}>Web developer.</span>
           <span className={folder && 'disappear'}>welcome</span>
         </div>
-        {/* {!open ? (
-          <>
-            <div className='home-folder'>
-              <button onClick={() => setOpen(true)}>
-                <img
-                  className='home-folder-img'
-                  src='images/folder.png'
-                  alt='folder'
-                />
-              </button>
-              <div className='home-folder-name'>이예은</div>
-            </div>
-            <div className='home-txt'>
-              <span>Hello!</span>
-              <span>I'm</span>
-              <span class='light'>Yeeun</span>
-              <span>Web developer.</span>
-              <span>welcome</span>
-            </div>
-          </>
-        ) : (
-          <Popup setOpen={setOpen} />
-        )} */}
+
+        <div className={folder ? 'home-folder' : 'home-folder-none'}>
+          <button onClick={() => setOpen(true)}>
+            <img
+              className='home-folder-img'
+              src='images/folder.png'
+              alt='folder'
+            />
+          </button>
+          <div className='home-folder-name'>이예은</div>
+        </div>
+
+        {open && <Popup setOpen={setOpen} />}
       </div>
     </HomeStyled>
   );

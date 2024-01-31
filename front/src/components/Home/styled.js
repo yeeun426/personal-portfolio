@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const PopupStyled = styled.div`
+  z-index: 999;
   display: flex;
   justify-content: center;
   position: absolute;
