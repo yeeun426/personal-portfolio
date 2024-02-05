@@ -1,10 +1,11 @@
 import { PopupStyled } from './styled';
 import { Link } from 'react-router-dom';
 
-export default function Popup({ setOpen }) {
+export default function Popup({ open, setOpen }) {
+  console.log(open);
   return (
     <div className='mainIntro-wrapper'>
-      <PopupStyled>
+      <PopupStyled open={open}>
         <div className='popup-left'>
           <div className='pl-btn'>
             <button

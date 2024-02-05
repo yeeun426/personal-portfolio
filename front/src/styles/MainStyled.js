@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const MainStyled = styled.div`
+  overflow-x: hidden;
+
   .mainIntro-wrapper {
     height: 100vh;
     background: url(images/background.png) fixed;

@@ -70,7 +70,7 @@ export default function Home() {
           </button>
           <div className='home-folder-name'>이예은</div>
         </div>
-        {open && <Popup setOpen={setOpen} />}
+        <Popup open={open} setOpen={setOpen} />
       </div>
     </HomeStyled>
   );
