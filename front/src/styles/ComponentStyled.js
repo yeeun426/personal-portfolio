@@ -36,6 +36,7 @@ export const HeaderStyled = styled.div`
 
   .header-right {
     display: flex;
+    align-items: center;
     gap: 50px;
   }
 

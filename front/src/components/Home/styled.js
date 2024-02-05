@@ -8,6 +8,10 @@ export const PopupStyled = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: ${(props) => (props.open ? 1 : 0)};
+  z-index: ${(props) => (props.open ? 100 : -100)};
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
+  transition: ${(props) => props.open && 'all 1s'};
 
   .popup-left {
     border-radius: 10px 0 0 10px;
