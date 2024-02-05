@@ -1,4 +1,4 @@
-import { IntroStyled } from '../styles/IntroStyled';
+import { IntroStyled } from './style';
 
 export default function Main() {
   return (

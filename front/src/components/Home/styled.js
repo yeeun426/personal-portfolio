@@ -11,7 +11,7 @@ export const PopupStyled = styled.div`
   opacity: ${(props) => (props.open ? 1 : 0)};
   z-index: ${(props) => (props.open ? 100 : -100)};
   visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
-  transition: ${(props) => props.open && 'all 1s'};
+  transition: all 0.5s;
 
   .popup-left {
     border-radius: 10px 0 0 10px;

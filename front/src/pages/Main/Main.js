@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { MainStyled } from '../styles/MainStyled';
-import Header from '../components/Header';
-import Popup from '../components/Home/Popup';
+import { MainStyled } from './style';
+import Header from '../../components/Main/Header';
+import Popup from '../../components/Home/Popup';
 import Introduce from './Introduce';
-import Project from '../pages/Project/Project';
+import Project from '../Project/Project';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
