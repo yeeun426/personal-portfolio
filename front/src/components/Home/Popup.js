@@ -1,8 +1,10 @@
 import { PopupStyled } from './styled';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Popup({ open, setOpen }) {
-  console.log(open);
+  const navigate = useNavigate();
+
   return (
     <div className='mainIntro-wrapper'>
       <PopupStyled open={open}>
@@ -11,11 +13,17 @@ export default function Popup({ open, setOpen }) {
             <button
               onClick={() => setOpen(false)}
               className='popup-close'
+              title='Close'
             ></button>
-            <button className='popup-down'></button>
+            <button
+              className='popup-down'
+              onClick={() => navigate(`/main`)}
+              title='Learn more'
+            ></button>
             <button
               className='popup-enlarge'
-              onClick={() => setOpen(false)}
+              onClick={() => window.location.reload()}
+              title='Back to the beginning'
             ></button>
           </div>
           <div className='popup-favorite'>
