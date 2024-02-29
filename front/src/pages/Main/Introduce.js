@@ -1,8 +1,8 @@
-import { IntroStyled } from './style';
+import { IntroduceStyled } from './style';
 
 export default function Main() {
   return (
-    <IntroStyled>
+    <IntroduceStyled>
       <div className='aboutme-wrapper'>
         <div className='aboutme-top'>
           <img className='aboutme-img' src='images/myimg.JPG' alt='이예은' />
@@ -109,28 +109,7 @@ export default function Main() {
             </div>
           </div>
         </div>
-        {/* <div className = "info-items">
-            <div>👩‍🏫 Education 학력</div>
-            <div>한국외국어대학교 정보통신공학과</div>
-            <div>2019.03 ~ 2024.02</div>
-          </div> */}
-        {/* <div className = "info-items">
-            <div>📧 Email</div>
-            <div>thsudkcla7@naver.com</div>
-          </div>
-          <div className = "info-items">
-            <div>🐱 Github</div>
-            <div>https://github.com/yeeun426</div>
-          </div>
-          <div className = "info-items">
-            <div>📚 Tistory Blog</div>
-            <div>https://yeeeon.tistory.com/</div>
-          </div>
-          <div className = "info-items">
-            <div>📷 Instagram</div>
-            <div>https://www.instagram.com/thsudkcla7/</div>
-          </div> */}
       </div>
-    </IntroStyled>
+    </IntroduceStyled>
   );
 }
