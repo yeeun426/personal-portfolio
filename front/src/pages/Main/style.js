@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+export const IntroStyled = styled.div``;
 export const MainStyled = styled.div`
   overflow-x: hidden;
 
@@ -18,7 +19,7 @@ export const MainStyled = styled.div`
   }
 `;
 
-export const IntroStyled = styled.div`
+export const IntroduceStyled = styled.div`
   height: 100vh;
   background-color: #f5f5f7;
   position: relative;

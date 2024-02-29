@@ -4,55 +4,155 @@
     "date": "2022.07 ~ 2022.8",
     "name": "Airbnb",
     "detail": "기존 웹 서비스 \"에어비앤비\" 클론코딩",
-    "img": "images/airbnb.png"
+    "img": "images/airbnb.png",
+    "skills": {
+      "skill": "REACT, JAVASCRIPT, HTML/CSS",
+      "organization": "라이징캠프",
+      "detail": "웹 프론트엔드에 관심을 가지게 되면서 방학기간동안 실력을 늘리고자 라이징캠프(웹)을 들으며 클론 코딩을 진행하였다.",
+      "github": "https://github.com/yeeun426/airbnb_web",
+      "video": "https://drive.google.com/drive/folders/113-xXCJ0R3WV6a9f4WHf79QP1Io8UKCT"
+    },
+    "images": {
+      "image1": "image1",
+      "image2": "image2",
+      "image3": "image3"
+    }
   },
   {
     "id": 2,
     "date": "2022.08",
     "name": "myRecipes",
     "detail": "식품의약품안전처 api 연동 레시피 검색 웹 프로젝트",
-    "img": "images/myrecipes.png"
+    "img": "images/myrecipes.png",
+    "skills": {
+      "skill": "REACT, JAVASCRIPT, HTML/CSS",
+      "organization": "라이징캠프",
+      "detail": "본 프로젝트는 open API를 활용하여 해당 데이터를 가지고 웹 서비스를 제작하였다.원하는 음식을 검색할 수 있고 그 음식의 레시피를 확인할 수 있는 프로젝트이다.",
+      "github": "https://github.com/yeeun426/myRecipes-web-project",
+      "video": "https://drive.google.com/drive/folders/1kATYaHrN2w6lUqXJmRHM9gPEAcTMpnVN"
+    },
+    "learn": "기존 에어비앤비 클론코딩은 api를 연결하지 않고 제작했다면 본 프로젝트에서는 open API를 이용해 API 연동하는 연습을 할 수 있었다. 평소 다이어트를 자주 하는 편인데 그럴 때 항상 칼로리를 확인하곤 했다. 이러한 경험을 바탕으로 상세페이지에 들어가지 않아도 칼로리를 먼저 확인하고 칼로리가 적합하다고 느끼면 상세페이지에서 레시피를 확인할 수 있게 만들고자 하였다. api 연동 후 검색 기능을 구현하고 소셜 로그인(카카오)을 구현했다.",
+    "images": {
+      "image1": "image1",
+      "image2": "image2",
+      "image3": "image3"
+    }
   },
   {
     "id": 3,
     "date": "22.6 ~ 23.8",
     "name": "MAPLIX",
     "detail": "2022 관광데이터활용 공모전 우수상",
-    "img": "images/maplix.jpeg"
+    "img": "images/maplix.jpeg",
+    "skills": {
+      "skill": "REACT, JAVASCRIPT, HTML/CSS",
+      "organization": "한국관광공사, 카카오",
+      "detail": "웹 프론트엔드에 관심을 가지게 되면서 방학기간동안 실력을 늘리고자 라이징캠프(웹)을 들으며 클론 코딩을 진행하였다.",
+      "data": "카카오맵API, 한국관광공사 두루누비 정보 서비스 API",
+      "github": "https://github.com/yeeun426/MAPLIX",
+      "video": "http://ec2-3-37-76-88.ap-northeast-2.compute.amazonaws.com/"
+    },
+    "images": {
+      "image1": "image1",
+      "image2": "image2",
+      "image3": "image3"
+    }
   },
   {
     "id": 4,
     "date": "22.8 ~ 22.9",
     "name": "wanted",
     "detail": "기존 웹 서비스 \"원티드\" 클론코딩",
-    "img": "images/wanted.png"
+    "img": "images/wanted.png",
+    "skills": {
+      "skill": "REACT, JAVASCRIPT, HTML/CSS",
+      "organization": "한국관광공사, 카카오",
+      "detail": "본 프로젝트는 라이징캠프 서버 개발자분들과 협업하여 원티드를 클론코딩하였다.",
+      "data": "카카오맵API, 한국관광공사 두루누비 정보 서비스 API",
+      "github": "https://github.com/yeeun426/wanted_web_ony",
+      "video": "https://drive.google.com/drive/folders/1kqTYssxoAYglwE3fiOZ2iuflulpIJ2lV"
+    },
+    "images": {
+      "image1": "image1",
+      "image2": "image2",
+      "image3": "image3"
+    }
   },
   {
     "id": 5,
     "date": "22.10 ~ 23.2",
     "name": "GNUVILAGE",
     "detail": "코딩 중앙 동아리 \"그누빌\" 웹 프로젝트",
-    "img": "images/gnuvilage.png"
+    "img": "images/gnuvilage.png",
+    "skills": {
+      "skill": "REACT, JAVASCRIPT, HTML/CSS",
+      "organization": "한국관광공사, 카카오",
+      "detail": "본 제시안은 동아리 홍보 및 동아리 부원 내 소통, 기록용 웹 개발을 목적으로 하고있다. 주 소비자층인 대학생에 맞춰 정서에 맞게 심플하지만 한눈에 들어오는 분위기를 이끌어냈다.",
+      "github": "https://github.com/yeeun426/gnuvillage-frontend",
+      "video": "https://gnuvil.swygbro.com/"
+    },
+    "images": {
+      "image1": "image1",
+      "image2": "image2",
+      "image3": "image3"
+    }
   },
   {
     "id": 6,
     "date": "23.3 ~ 23.6",
     "name": "EatTogether",
     "detail": "배달비 더치페이 웹 서비스",
-    "img": "images/eatTogether.png"
+    "img": "images/eatTogether.png",
+    "skills": {
+      "skill": "REACT, JAVASCRIPT, HTML/CSS",
+      "organization": "gnuvil",
+      "detail": "배달비 폭등으로 인해 배달을 고민하는 사람들을 위한 배달비 더치페이 웹 서비스.",
+      "github": "https://github.com/yeeun426/ET_front",
+      "video": ""
+    },
+    "images": {
+      "image1": "image1",
+      "image2": "image2",
+      "image3": "image3"
+    }
   },
   {
     "id": 7,
     "date": "23.6",
     "name": "GIVER",
     "detail": "학교 생활에 어려움을 겪는 장애인과 비장애인 매칭 서비스",
-    "img": "images/giver.png"
+    "img": "images/giver.png",
+    "skills": {
+      "skill": "REACT, JAVASCRIPT, HTML/CSS",
+      "organization": "GDSC",
+      "detail": "본 제시안은 장애인의 학교생활을 돕기 위한 앱 개발을 목적으로 하고 있다. 주 소비자층인 기존의 앱과 드리게 장애인에 맞춰 정서에 맞게 그들이 쉽게 도움을 요청할 수 있도록 웹으로 제작할 예정이다. 또한 Donation을 통해 합리적인 소비를 도울 예정이다.",
+      "github": "https://github.com/yeeun426/Giver_front-end",
+      "video": ""
+    },
+    "images": {
+      "image1": "image1",
+      "image2": "image2",
+      "image3": "image3"
+    }
   },
   {
     "id": 8,
     "date": "23.4 ~ 23.7",
     "name": "NDGD",
     "detail": "고용노동 공공데이터 활용 공모전",
-    "img": "images/ndgd.png"
+    "img": "images/ndgd.png",
+    "skills": {
+      "skill": "REACT, JAVASCRIPT, HTML/CSS",
+      "organization": "고용노동부",
+      "detail": "상해를 입었을 시 받을 수 있는 보험금의 액수 등을 예측해주는 AI 모델 제작 + 보험금의 승인 확률 예측 모델 제공 웹 서비스",
+      "data": "고용노동 공공데이터",
+      "github": "https://github.com/yeeun426/NDGD_front",
+      "video": ""
+    },
+    "images": {
+      "image1": "image1",
+      "image2": "image2",
+      "image3": "image3"
+    }
   }
 ]
