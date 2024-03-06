@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import { ProjectStyled } from './style';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 export default function Project() {
   const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
@@ -34,8 +35,9 @@ export default function Project() {
         {project.map((project) => (
           <div className='project-content' key={project.id}>
             <Swiper
+              navigation={true}
               pagination={pagination}
-              modules={[Pagination]}
+              modules={[Pagination, Navigation]}
               className='mySwiper project-content'
             >
               <SwiperSlide>
@@ -75,7 +77,17 @@ export default function Project() {
                   </div>
                 </div>
               </SwiperSlide>
+              <SwiperSlide className='project-img'>
+                <img src={project.images.image1} alt={project.name} />
+              </SwiperSlide>
+              <SwiperSlide className='project-img'>
+                <img src={project.images.image2} alt={project.name} />
+              </SwiperSlide>
+              <SwiperSlide className='project-img'>
+                <img src={project.images.image3} alt={project.name} />
+              </SwiperSlide>
             </Swiper>
+            <button className='portfolio_btn'> 프로젝트 자세히 살펴보기</button>
           </div>
         ))}
       </div>
