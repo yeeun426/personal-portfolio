@@ -105,4 +105,61 @@ export const ProjectStyled = styled.div`
   .swiper-pagination-bullet-active {
     color: white;
   }
+
+  .project-img {
+    justify-content: center;
+    img {
+      height: 70% !important;
+    }
+  }
+
+  button {
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+    transform: translate(-50%);
+    background: white;
+    top: 53%;
+    left: 88%;
+    width: max-content;
+    background: #e8e8ed;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 7px #0000005c;
+  }
+
+  .portfolio_btn {
+    opacity:0;
+    transition:0.5s all;
+  } 
+
+  .project-content:hover .portfolio_btn {
+    opacity:1
+  }
+
+  .swiper-button-next{
+    background-image: url("images/arrownext.JPG");
+    background-color: white;
+    background-size: 17px 17px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 0.5px solid rgb(0 0 0 / 0.3);
+    color: #fff0;
+  }
+  
+  .swiper-button-prev{
+    background-image: url("images/arrowprev.JPG");
+    background-color: white;
+    background-size: 17px 17px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 0.5px solid rgb(0 0 0 / 0.3);
+    color: #fff0;
+  }
 `;
