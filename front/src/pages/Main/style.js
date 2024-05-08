@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-export const IntroStyled = styled.div``;
 export const MainStyled = styled.div`
   overflow-x: hidden;
 

@@ -2,7 +2,7 @@ import { HomeStyled } from './style';
 import React, { useState, useEffect } from 'react';
 import Popup from '../../components/Home/Popup';
 
-export default function Home() {
+export default function Intro() {
   const [open, setOpen] = useState(false);
   const [folder, setFolder] = useState(false);
   const [name, setName] = useState(false);
