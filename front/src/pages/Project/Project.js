@@ -79,20 +79,20 @@ export default function Project() {
                 </div>
               </SwiperSlide>
               <SwiperSlide className='project-img'>
-                <img src={project.images.image1} alt={project.name} />
+                <img src={project.images.image1} alt="준비중" />
               </SwiperSlide>
               <SwiperSlide className='project-img'>
-                <img src={project.images.image2} alt={project.name} />
+                <img src={project.images.image2} alt="준비중"  />
               </SwiperSlide>
               <SwiperSlide className='project-img'>
-                <img src={project.images.image3} alt={project.name} />
+                <img src={project.images.image3} alt="준비중"  />
               </SwiperSlide>
             </Swiper>
-            <Link to={`/project/${project.id}`}>
+            {/* <Link to={`/project/${project.id}`}>
               <button className='portfolio_btn'>
                 프로젝트 자세히 살펴보기
               </button>
-            </Link>
+            </Link> */}
           </div>
         ))}
       </div>

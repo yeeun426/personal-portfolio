@@ -108,7 +108,7 @@
       "organization": "gnuvil",
       "detail": "배달비 폭등으로 인해 배달을 고민하는 사람들을 위한 배달비 더치페이 웹 서비스.",
       "github": "https://github.com/yeeun426/ET_front",
-      "video": ""
+      "video": "준비중"
     },
     "images": {
       "image1": "images/eatTogether(1).png",
@@ -127,7 +127,7 @@
       "organization": "GDSC",
       "detail": "본 제시안은 장애인의 학교생활을 돕기 위한 앱 개발을 목적으로 하고 있다. 주 소비자층인 기존의 앱과 드리게 장애인에 맞춰 정서에 맞게 그들이 쉽게 도움을 요청할 수 있도록 웹으로 제작할 예정이다. 또한 Donation을 통해 합리적인 소비를 도울 예정이다.",
       "github": "https://github.com/yeeun426/Giver_front-end",
-      "video": ""
+      "video": "준비중"
     },
     "images": {
       "image1": "images/giver(1).png",
@@ -147,12 +147,12 @@
       "detail": "상해를 입었을 시 받을 수 있는 보험금의 액수 등을 예측해주는 AI 모델 제작 + 보험금의 승인 확률 예측 모델 제공 웹 서비스",
       "data": "고용노동 공공데이터",
       "github": "https://github.com/yeeun426/NDGD_front",
-      "video": ""
+      "video": "준비중"
     },
     "images": {
-      "image1": "images/NDGD(1).png",
-      "image2": "images/NDGD(2).png",
-      "image3": "images/NDGD(3).png"
+      "image1": "images/ndgd(1).png",
+      "image2": "images/ndgd(2).png",
+      "image3": "images/ndgd(3).png"
     }
   }
 ]
