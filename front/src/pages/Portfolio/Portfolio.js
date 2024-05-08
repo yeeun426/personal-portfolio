@@ -1,9 +1,28 @@
+import { useEffect } from 'react';
 import './styled.css';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import HostSlider from '../../components/Portfolio/HostSlider';
+import { useParams } from 'react-router-dom';
 
 function Portfolio() {
+  const params = useParams();
+  console.log(params);
+  // https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%9D%B4%EB%8F%99useParams
+  // useEffect(() => {
+  //   fetch('/data/behost.json', {
+  //     method: 'GET',
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data.details);
+  //     });
+
+  //   data.map((item) => {
+  //     if (id === item.id) setDetail(item);
+  //   });
+  // }, []);
+
   return (
     <div className='behost'>
       <div className='video_container' style={{ height: '480px' }}>

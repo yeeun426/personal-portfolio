@@ -3,6 +3,7 @@ import { ProjectStyled } from './style';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -87,7 +88,11 @@ export default function Project() {
                 <img src={project.images.image3} alt={project.name} />
               </SwiperSlide>
             </Swiper>
-            <button className='portfolio_btn'> 프로젝트 자세히 살펴보기</button>
+            <Link to={`/project/${project.id}`}>
+              <button className='portfolio_btn'>
+                프로젝트 자세히 살펴보기
+              </button>
+            </Link>
           </div>
         ))}
       </div>
