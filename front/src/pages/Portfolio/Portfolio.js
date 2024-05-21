@@ -1,46 +1,38 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './styled.css';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import HostSlider from '../../components/Portfolio/HostSlider';
 import { useParams } from 'react-router-dom';
+import axios from "axios";
+import Header from '../../components/Main/Header';
 
 function Portfolio() {
   const params = useParams();
-  console.log(params);
+  const [data, setData] = useState([]);
   // https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%9D%B4%EB%8F%99useParams
-  // useEffect(() => {
-  //   fetch('/data/behost.json', {
-  //     method: 'GET',
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setData(data.details);
-  //     });
-
-  //   data.map((item) => {
-  //     if (id === item.id) setDetail(item);
-  //   });
-  // }, []);
+  useEffect(() => {
+    axios.
+      get('/data/project.json')
+      .then((res) => {
+        let axis_data = res.data
+        axis_data.map((item) => {
+          if (Number(params.projectId) === item.id) setData(item);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      }, []);
 
   return (
     <div className='behost'>
       <div className='video_container' style={{ height: '480px' }}>
-        <Link to='/'>
-          <img src='images/logo.png' alt='header' />
-          <button
-            id='logo_button'
-            onClick="location.href='index.html'"
-          ></button>
-        </Link>
         <div className='video_left'>
           <div className='first_item' id='hosting_txt'>
-            호스팅을
-            <br />
-            시작해보세요
+              {data.name}
           </div>
-
-          <button className='start_btn'>호스팅 시작하기</button>
+          <button className='start_btn'>github</button>
         </div>
 
         <div className='video_right'>
@@ -56,54 +48,44 @@ function Portfolio() {
 
       <div id='second_container'>
         <div className='second_item title_host'>
-          호스팅으로 올릴 수 있는
-          <br />
-          수입을 확인하세요
+          {data.detail}
         </div>
 
         <div class='second_item' id='host_income'>
           <div className='income_info'>
             <div className='income_box'>
-              동일 지역 내 호스트의 평균 수입은 다음과 같습니다.*
+              period
               <div className='income_price'>
                 <span className='info_host' style={{ color: '#ff385c' }}>
-                  ₩3,048,591
+                  {data.date}
                 </span>
-                <span style={{ color: '#ff385c' }}>/월</span>
               </div>
             </div>
             <div className='income_box'>
-              호스팅 수입
+              skill
               <div className='income_price'>
-                <span className='info_host'>₩127,025</span>
-                <span>/박</span>
+                {data.skills?.skill}
               </div>
             </div>
             <div className='income_box'>
-              예약 일수:
+              organization
               <div className='income_price'>
-                <span className='info_host'>24</span>
-                <span>박/월</span>
+                <span className='info_host'>{data.skills?.organization}</span>
               </div>
             </div>
           </div>
 
-          <p>숙소를 소개해주세요</p>
-
-          {/* <div id='map_income'>
-            <MapContainer />
-          </div> */}
-
-          <div id='income_method'>*에어비앤비가 예상 수입을 산정하는 방법</div>
+          <p>프로젝트를 소개해주세요</p>
+          <div id='income_method'>{data.skills?.detail}</div>
         </div>
 
         <div
           class='second_item title_host'
           style={{ padding: '120px 0 0 48px' }}
         >
-          언제 어디서든
+          상세 페이지를
           <br />
-          호스팅하실 수 있습니다
+          확인 하실 수 있습니다
           <div class='swiper mySwiper'>
             <Swiper
               className='small_img'
@@ -204,9 +186,9 @@ function Portfolio() {
 
       <div id='third_container'>
         <div className='third_item'>
-          10만 명에 달하는 우크라이나 피란민에게 임시
+          프로젝트 시현 영상을 통해
           <br />
-          숙소를 제공해주세요
+          직접 경험해보세요
         </div>
 
         <button className='detail_btn'>자세히 알아보기</button>
@@ -221,22 +203,16 @@ function Portfolio() {
 
         <div id='fourth_superhost'>
           <div className='fourth_item'>
-            호스팅에 관해 궁금하신 점이 있나요?
+            프로젝트에 관해 궁금하신 점이 있나요?
             <br />
-            슈퍼호스트에게 물어보세요.
+            저에게 물어보세요.
           </div>
-
-          <button className='detail_btn'>자세히 알아보기</button>
+          <button className='detail_btn'>email</button>
         </div>
       </div>
 
       <div id='fifth_container'>
         <div className='left_item'>
-          <img
-            alt='left_img'
-            src='https://a0.muscache.com/im/pictures/d3537125-14e0-48e1-b760-97490570d937.jpg'
-          />
-
           <div className='fifth_item'>
             호스팅 전반에 대한 보호.
             <br />
@@ -244,7 +220,7 @@ function Portfolio() {
             <br />
             오직 에어비앤비에서만.
           </div>
-          <button className='start_btn'>자세히 알아보기</button>
+          <button className='start_btn'>다른 프로젝트 살펴보기</button>
         </div>
 
         <div className='right_item'>
@@ -254,36 +230,6 @@ function Portfolio() {
             alt='fifth_img'
             src='https://a0.muscache.com/im/pictures/11e10d64-867e-4dba-b0b4-896026a4f0e0.jpg?im_w=2560&amp;im_q=highq'
           />
-        </div>
-      </div>
-
-      <div
-        className='video_container'
-        id='six_container'
-        style={{ height: '721px' }}
-      >
-        <div className='video_right'>
-          <video
-            src='https://a0.muscache.com/v/9a/7a/9a7ad4a1-cfab-5f7d-96e6-fda8abceabe7/9a7ad4a1cfab5f7d96e6fda8abceabe7_4000k_1.mp4'
-            controls
-            autoplay
-          ></video>
-        </div>
-
-        <div className='video_left'>
-          <div className='six_item'>
-            에어비앤비에서
-            <br />
-            호스팅을 시작해보세요
-          </div>
-
-          <div className='six_item' id='subtxt_six'>
-            에어비앤비 호스트가 되어보세요. 에어비앤비가
-            <br />
-            모든 단계에서 도와드립니다.
-          </div>
-
-          <button className='start_btn'>시작하기</button>
         </div>
       </div>
     </div>
