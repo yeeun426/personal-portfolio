@@ -4,7 +4,6 @@ export const ProjectStyled = styled.div`
   padding: 8rem 1rem;
   background-color: #f5f5f7;
   box-sizing: border-box;
-
   --swiper-theme-color: #d483d0;
 
   .project {
@@ -113,26 +112,23 @@ export const ProjectStyled = styled.div`
     }
   }
 
-  button {
+  .portfolio_btn {
     position: absolute;
     z-index: 1;
-    opacity: 1;
-    transform: translate(-50%);
-    background: white;
-    top: 53%;
-    left: 88%;
-    width: max-content;
-    background: #e8e8ed;
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 3px 3px 7px #0000005c;
-  }
-
-  .portfolio_btn {
     opacity:0;
+    width: max-content;
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: 3px 3px 7px #0000005c;
+    background: #1d1d1f;
+    left: 50%;
+    top: 50%;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    transform: translate(-50%, -50%);
     transition:0.5s all;
-  } 
-
+  }
   .project-content:hover .portfolio_btn {
     opacity:1
   }
