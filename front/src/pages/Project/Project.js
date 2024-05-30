@@ -35,7 +35,18 @@ export default function Project() {
       <div className='project'>
         {project.map((project) => (
           <div className='project-content' key={project.id}>
-            <Swiper
+                            <div className='project-txt'>
+                  <div className='project-date'>{project.date}</div>
+                  <div className='project-name'>{project.name}</div>
+                  <div className='project-detail'>{project.detail}</div>
+                </div>
+                <img src={project.img} alt={project.name} />
+            <Link to={`/project/${project.id}`}>
+              <button className='portfolio_btn'>
+                프로젝트 자세히 살펴보기
+              </button>
+            </Link>
+            {/* <Swiper
               navigation={true}
               pagination={pagination}
               modules={[Pagination, Navigation]}
@@ -84,15 +95,10 @@ export default function Project() {
               <SwiperSlide className='project-img'>
                 <img src={project.images.image2} alt="준비중"  />
               </SwiperSlide>
-              <SwiperSlide className='project-img'>
+              <SwiperSlide className='project-img more-page'>
                 <img src={project.images.image3} alt="준비중"  />
               </SwiperSlide>
-            </Swiper>
-            {/* <Link to={`/project/${project.id}`}>
-              <button className='portfolio_btn'>
-                프로젝트 자세히 살펴보기
-              </button>
-            </Link> */}
+            </Swiper> */}
           </div>
         ))}
       </div>
