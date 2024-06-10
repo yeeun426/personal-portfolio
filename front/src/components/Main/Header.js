@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <HeaderStyled>
+    <HeaderStyled className='header'>
       <div className='header-left'>
         <img src={mail} alt='mail' />
         <div>thsudkcla7@naver.com</div>
