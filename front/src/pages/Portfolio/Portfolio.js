@@ -32,27 +32,40 @@ function Portfolio() {
       <Header />
       <PofolHeader />
       <div className='behost'>
-        <div className='video_container' style={{ height: '480px' }}>
-          <div className='video_left'>
-            <div className='first_item' id='hosting_txt'>
-              {data.name}
-            </div>
-            <button className='start_btn'>github</button>
+        <div class='portfolio-begin'>
+          <div className='portfolio-title'>
+            <div className='title-name'>{data.name}</div>
+            <div className='title-detail'>{data.detail}</div>
           </div>
+          <div>
+            <embed
+              type='video/webm'
+              src='/media/cc0-videos/flower.mp4'
+              width='250'
+              height='200'
+            />
+          </div>
+          <div className='video_container' style={{ height: '480px' }}>
+            <div className='video_left'>
+              <div className='first_item' id='hosting_txt'>
+                {data.name}
+              </div>
+              <button className='start_btn'>github</button>
+            </div>
 
-          <div className='video_right'>
-            <video
-              src='https://a0.muscache.com/v/a9/a7/a9a7873c-95de-5e37-8995-a5abb5b6b02f/a9a7873c95de5e378995a5abb5b6b02f_4000k_1.mp4'
-              controls
-              autoplay
-            >
-              대체텍스트
-            </video>
+            <div className='video_right'>
+              <video
+                src='https://a0.muscache.com/v/a9/a7/a9a7873c-95de-5e37-8995-a5abb5b6b02f/a9a7873c95de5e378995a5abb5b6b02f_4000k_1.mp4'
+                controls
+                autoplay
+              >
+                대체텍스트
+              </video>
+            </div>
           </div>
         </div>
-
         <div id='second_container'>
-          <div className='second_item title_host'>{data.detail}</div>
+          <div className='second_item title_host'>{data.detailß}</div>
 
           <div class='second_item' id='host_income'>
             <div className='income_info'>
