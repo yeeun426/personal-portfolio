@@ -13,10 +13,22 @@
       "github": "https://github.com/yeeun426/airbnb_web",
       "video": "https://drive.google.com/drive/folders/113-xXCJ0R3WV6a9f4WHf79QP1Io8UKCT"
     },
-    "images": {
-      "image1": "images/airbnb(1).png",
-      "image2": "images/airbnb(2).png",
-      "image3": "images/airbnb(3).png"
+    "pages": {
+      "page1": {
+        "id" : "1",
+        "img" : "images/airbnb(1).png",
+        "desc" : "main"
+      },
+      "page2": {
+        "id" : "2",
+        "img" : "images/airbnb(2).png", 
+        "desc" : "map"
+      },
+      "page3": {
+        "id" : "3",
+        "img" : "images/airbnb(3).png", 
+        "desc" : "좋아요"
+      }
     }
   },
   {
@@ -34,10 +46,22 @@
       "video": "https://drive.google.com/drive/folders/1kATYaHrN2w6lUqXJmRHM9gPEAcTMpnVN"
     },
     "learn": "기존 에어비앤비 클론코딩은 api를 연결하지 않고 제작했다면 본 프로젝트에서는 open API를 이용해 API 연동하는 연습을 할 수 있었다. 평소 다이어트를 자주 하는 편인데 그럴 때 항상 칼로리를 확인하곤 했다. 이러한 경험을 바탕으로 상세페이지에 들어가지 않아도 칼로리를 먼저 확인하고 칼로리가 적합하다고 느끼면 상세페이지에서 레시피를 확인할 수 있게 만들고자 하였다. api 연동 후 검색 기능을 구현하고 소셜 로그인(카카오)을 구현했다.",
-    "images": {
-      "image1": "images/myrecipes(1).png",
-      "image2": "images/myrecipes(2).png",
-      "image3": "images/myrecipes(3).png"
+    "pages": {
+      "page1": {
+        "id" : "1",
+        "img" : "images/myrecipes(1).png",
+        "desc" : "main"
+      },
+      "page2": {
+        "id" : "2",
+        "img" : "images/myrecipes(2).png", 
+        "desc" : "map"
+      },
+      "page3": {
+        "id" : "3",
+        "img" : "images/myrecipes(3).png", 
+        "desc" : "좋아요"
+      }
     }
   },
   {
@@ -55,10 +79,22 @@
       "github": "https://github.com/yeeun426/MAPLIX",
       "video": "http://ec2-3-37-76-88.ap-northeast-2.compute.amazonaws.com/"
     },
-    "images": {
-      "image1": "images/maplix(1).png",
-      "image2": "images/maplix(2).png",
-      "image3": "images/maplix(3).png"
+    "pages": {
+      "page1": {
+        "id" : "1",
+        "img" : "images/maplix(1).png",
+        "desc" : "main"
+      },
+      "page2": {
+        "id" : "2",
+        "img" : "images/maplix(2).png", 
+        "desc" : "map"
+      },
+      "page3": {
+        "id" : "3",
+        "img" : "images/maplix(3).png", 
+        "desc" : "좋아요"
+      }
     }
   },
   {
@@ -76,10 +112,22 @@
       "github": "https://github.com/yeeun426/wanted_web_ony",
       "video": "https://drive.google.com/drive/folders/1kqTYssxoAYglwE3fiOZ2iuflulpIJ2lV"
     },
-    "images": {
-      "image1": "images/wanted(1).png",
-      "image2": "images/wanted(2).png",
-      "image3": "images/wanted(3).png"
+    "pages": {
+      "page1": {
+        "id" : "1",
+        "img" : "images/wanted(1).png",
+        "desc" : "main"
+      },
+      "page2": {
+        "id" : "2",
+        "img" : "images/wanted(2).png", 
+        "desc" : "map"
+      },
+      "page3": {
+        "id" : "3",
+        "img" : "images/wanted(3).png", 
+        "desc" : "좋아요"
+      }
     }
   },
   {
@@ -96,10 +144,22 @@
       "github": "https://github.com/yeeun426/gnuvillage-frontend",
       "video": "https://gnuvil.swygbro.com/"
     },
-    "images": {
-      "image1": "images/gnuvilage(1).png",
-      "image2": "images/gnuvilage(2).png",
-      "image3": "images/gnuvilage(3).png"
+    "pages": {
+      "page1": {
+        "id" : "1",
+        "img" : "images/gnuvilage(1).png",
+        "desc" : "main"
+      },
+      "page2": {
+        "id" : "2",
+        "img" : "images/gnuvilage(2).png", 
+        "desc" : "map"
+      },
+      "page3": {
+        "id" : "3",
+        "img" : "images/gnuvilage(3).png", 
+        "desc" : "좋아요"
+      }
     }
   },
   {
@@ -116,10 +176,22 @@
       "github": "https://github.com/yeeun426/ET_front",
       "video": "준비중"
     },
-    "images": {
-      "image1": "images/eatTogether(1).png",
-      "image2": "images/eatTogether(2).png",
-      "image3": "images/eatTogether(3).png"
+    "pages": {
+      "page1": {
+        "id" : "1",
+        "img" : "images/eatTogether(1).png",
+        "desc" : "main"
+      },
+      "page2": {
+        "id" : "2",
+        "img" : "images/eatTogether(2).png", 
+        "desc" : "map"
+      },
+      "page3": {
+        "id" : "3",
+        "img" : "images/eatTogether(3).png", 
+        "desc" : "좋아요"
+      }
     }
   },
   {
@@ -136,10 +208,22 @@
       "github": "https://github.com/yeeun426/Giver_front-end",
       "video": "준비중"
     },
-    "images": {
-      "image1": "images/giver(1).png",
-      "image2": "images/giver(2).png",
-      "image3": "images/giver(3).png"
+    "pages": {
+      "page1": {
+        "id" : "1",
+        "img" : "images/giver(1).png",
+        "desc" : "main"
+      },
+      "page2": {
+        "id" : "2",
+        "img" : "images/giver(2).png", 
+        "desc" : "map"
+      },
+      "page3": {
+        "id" : "3",
+        "img" : "images/giver(3).png", 
+        "desc" : "좋아요"
+      }
     }
   },
   {
@@ -157,10 +241,22 @@
       "github": "https://github.com/yeeun426/NDGD_front",
       "video": "준비중"
     },
-    "images": {
-      "image1": "images/ndgd(1).png",
-      "image2": "images/ndgd(2).png",
-      "image3": "images/ndgd(3).png"
+    "pages": {
+      "page1": {
+        "id" : "1",
+        "img" : "images/ndgd(1).png",
+        "desc" : "main"
+      },
+      "page2": {
+        "id" : "2",
+        "img" : "images/ndgd(2).png", 
+        "desc" : "map"
+      },
+      "page3": {
+        "id" : "3",
+        "img" : "images/ndgd(3).png", 
+        "desc" : "좋아요"
+      }
     }
   }
 ]

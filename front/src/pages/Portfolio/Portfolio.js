@@ -2,16 +2,19 @@ import { useState, useEffect } from 'react';
 import './styled.css';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import HostSlider from '../../components/Portfolio/HostSlider';
+import { Navigation } from 'swiper/modules';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../../components/Main/Header';
 import PofolHeader from '../../components/Portfolio/PofolHeader';
 import { PortfolioStyled } from './styled.js';
+import '../Portfolio/styled.css';
 
 function Portfolio() {
   const params = useParams();
   const [data, setData] = useState([]);
+  const [pages, setPages] = useState([]);
+
   // https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%9D%B4%EB%8F%99useParams
   useEffect(() => {
     axios
@@ -19,13 +22,17 @@ function Portfolio() {
       .then((res) => {
         let axis_data = res.data;
         axis_data.map((item) => {
-          if (Number(params.projectId) === item.id) setData(item);
+          if (Number(params.projectId) === item.id) {
+            setData(item);
+            setPages(item.pages);
+          }
         });
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+  const imageData = Object.values(pages);
 
   return (
     <PortfolioStyled>
@@ -97,99 +104,40 @@ function Portfolio() {
             class='second_item title_host'
             style={{ padding: '120px 0 0 48px' }}
           >
-            상세 페이지를
-            <br />
-            확인 하실 수 있습니다
+            알면 알수록, {data.name}.
             <div class='swiper mySwiper'>
               <Swiper
                 className='small_img'
                 spaceBetween={50}
                 slidesPerView={3}
-                navigation
                 freeMode={true}
+                modules={[Navigation]}
+                navigation={true}
               >
                 <SwiperSlide>
                   <></>
                 </SwiperSlide>
-
-                <SwiperSlide
-                  style={{ display: 'flex', 'flex-direction': 'column' }}
-                >
-                  <img
-                    className='detail_filter'
-                    alt='detail_fileter'
-                    src='https://a0.muscache.com/im/pictures/4f3047b2-58ea-4335-8430-dfc6f436634d.jpg'
-                  />
-                  <div className='detail_txt'>
-                    <HostSlider id={0} />
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide
-                  style={{ display: 'flex', 'flex-direction': 'column' }}
-                >
-                  <img
-                    className='detail_filter'
-                    alt='detail_fileter'
-                    src='https://a0.muscache.com/im/pictures/31fb3cb1-c2a1-4e14-a9e9-6f279991790b.jpg'
-                  />
-                  <div className='detail_txt'>
-                    <HostSlider id={1} />
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide
-                  style={{ display: 'flex', 'flex-direction': 'column' }}
-                >
-                  <img
-                    className='detail_filter'
-                    alt='detail_fileter'
-                    src='https://a0.muscache.com/im/pictures/a464d642-695e-4d2c-aa51-2302de067f45.jpg'
-                  />
-                  <div className='detail_txt'>
-                    <HostSlider id={2} />
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide
-                  style={{ display: 'flex', 'flex-direction': 'column' }}
-                >
-                  <img
-                    className='detail_filter'
-                    alt='detail_fileter'
-                    src='https://a0.muscache.com/im/pictures/d8627b07-b42c-40a1-807f-1eac9de39311.jpg?im_w=720'
-                  />
-                  <div className='detail_txt'>
-                    <HostSlider id={3} />
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide
-                  style={{ display: 'flex', 'flex-direction': 'column' }}
-                >
-                  <img
-                    className='detail_filter'
-                    alt='detail_fileter'
-                    src='https://a0.muscache.com/im/pictures/b56f3d7c-5006-4ed2-967a-c421e3275b1f.jpg?im_w=720'
-                  />
-                  <div className='detail_txt'>
-                    <HostSlider id={4} />
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide
-                  style={{ display: 'flex', 'flex-direction': 'column' }}
-                >
-                  <img
-                    className='detail_filter'
-                    alt='detail_fileter'
-                    src='https://a0.muscache.com/im/pictures/334530d8-2ad6-40e8-8fd2-4ac0835e693a.jpg?im_w=720'
-                  />
-                  <div className='detail_txt'>
-                    <HostSlider id={5} />
-                  </div>
-                </SwiperSlide>
-
+                {imageData.map((page) => (
+                  <SwiperSlide
+                    key={page.id}
+                    style={{ display: 'flex', flexDirection: 'column' }}
+                  >
+                    <img
+                      className='detail_filter'
+                      alt={page.desc}
+                      src={process.env.PUBLIC_URL + '/' + page.img}
+                    />
+                    <div className='detail_txt'>
+                      <div className='img-detail'>{page.desc}</div>
+                      <img
+                        className='img-detail-sign'
+                        src={page.image}
+                        alt=''
+                      />
+                      <div className='img-detail-country'>{page.country}</div>
+                    </div>
+                  </SwiperSlide>
+                ))}
                 <SwiperSlide>
                   <></>
                 </SwiperSlide>
