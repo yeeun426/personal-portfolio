@@ -16,7 +16,6 @@ export default function PofolHeader() {
         let data = res.data;
         const info = data.map((item) => {
           const iconPath = process.env.PUBLIC_URL + '/' + item.icon;
-          console.log('Icon Path:', iconPath);
           return {
             id: item.id,
             name: item.name,

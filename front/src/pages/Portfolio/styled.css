@@ -123,33 +123,6 @@ table {
   border-spacing: 0;
 }
 
-.behost {
-  overflow: hidden;
-  font-weight: 600;
-  text-align: center;
-  white-space: pre-wrap;
-}
-.video_container {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-}
-.video_left {
-  width: 50%;
-  /* height: 480px; */
-  color: white;
-  background-color: black;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.first_item {
-  font-size: 64px;
-}
-
 .start_btn {
   background-color: rgb(255, 56, 92);
   border-radius: 8px;
@@ -161,32 +134,6 @@ table {
 
 #hosting_txt {
   margin-bottom: 52px;
-}
-
-/* #first_container #logo{
-    top : 48px;
-    left: 48px;
-    position: absolute;
-
-    border: none;
-	background-color: rgba(0,0,0,0);
-	padding: 0px;
-} */
-
-.video_container img {
-  top: 48px;
-  left: 48px;
-  position: absolute;
-}
-
-.video_container #logo_button {
-  top: 33px;
-  left: 31px;
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background-color: transparent;
 }
 
 #second_container {
@@ -228,10 +175,6 @@ table {
   margin-top: 8px;
   font-size: 22px;
   color: black;
-
-  /* flex-grow: 1 !important;
-    display: flex !important;
-    align-items: flex-end !important; */
 }
 
 .swiper-slide .detail_txt {
@@ -257,12 +200,8 @@ table {
   font-size: 14px;
   text-decoration-line: underline;
 }
-/* button {
-    background-color: #f7f7f700;
-    border: none;
-} */
+
 .small_img {
-  margin-top: 64px;
   display: flex;
 }
 
@@ -347,14 +286,6 @@ table {
 
 .right_item {
   width: 50%;
-}
-
-.video_right video {
-  width: 50vw;
-  height: 100%;
-
-  object-position: center top;
-  object-fit: cover;
 }
 
 .six_item {

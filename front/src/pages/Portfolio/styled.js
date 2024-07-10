@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 
 export const PortfolioStyled = styled.div`
+  .portfolio {
+    overflow: hidden;
+    font-weight: 600;
+    text-align: center;
+    white-space: pre-wrap;
+  }
+
   .header {
     position: relative;
     background: rgb(250, 250, 252);
@@ -32,5 +39,32 @@ export const PortfolioStyled = styled.div`
     text-align: left;
     line-height: 1.3;
     word-break: keep-all;
+  }
+
+  .scroll-video {
+    transition: 2s;
+    margin: 0 auto;
+    width: 87.5%;
+  }
+
+  .scrolled-video {
+    transition: 2s;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .portfolio-video > div {
+    height: 80vh;
+    min-height: 680px;
+    max-width: 1920px;
+    max-height: 1260px;
+  }
+
+  .portfolio-video video {
+    height: 100%;
+    width: 100%;
+    object-position: center top;
+    object-fit: cover;
+    border-radius: 18px;
   }
 `;
