@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styled.css';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -34,40 +34,44 @@ function Portfolio() {
   }, []);
   const imageData = Object.values(pages);
 
+  const [scrollPosition, setScrollPosition] = useState(0); // 스크롤 위치 저장
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+  // 수직 스크롤 위치 - scrollY
+  // 일부 브라우저(IE, 구형 Edge, 구형 Firefox, 구형 chrome)
+
+  useEffect(() => {
+    // 스크롤 수치를 업데이트
+    window.addEventListener('scroll', updateScroll); // 스크롤할 때 updateScroll 호출
+    return () => {
+      window.removeEventListener('scroll', updateScroll); // 언마운트 시 제거 (메모리 누수 방지)
+    };
+  }, []);
+
+  const scale = Math.max(1 - scrollPosition / 997, 0.875); // 최소 87.5%
+  const divStyle = {
+    minHeight: '680px',
+    transform: `scale(${scale})`,
+    transition: 'transform 3s',
+  };
+
   return (
     <PortfolioStyled>
       <Header />
       <PofolHeader />
-      <div className='behost'>
-        <div class='portfolio-begin'>
+      <div className='portfolio'>
+        <div className='portfolio-begin'>
           <div className='portfolio-title'>
             <div className='title-name'>{data.name}</div>
             <div className='title-detail'>{data.detail}</div>
           </div>
-          <div>
-            <embed
-              type='video/webm'
-              src='/media/cc0-videos/flower.mp4'
-              width='250'
-              height='200'
-            />
-          </div>
-          <div className='video_container' style={{ height: '480px' }}>
-            <div className='video_left'>
-              <div className='first_item' id='hosting_txt'>
-                {data.name}
-              </div>
-              <button className='start_btn'>github</button>
-            </div>
-
-            <div className='video_right'>
+          <div className='portfolio-video'>
+            <div style={divStyle}>
               <video
                 src='https://a0.muscache.com/v/a9/a7/a9a7873c-95de-5e37-8995-a5abb5b6b02f/a9a7873c95de5e378995a5abb5b6b02f_4000k_1.mp4'
                 controls
-                autoplay
-              >
-                대체텍스트
-              </video>
+              />
             </div>
           </div>
         </div>
