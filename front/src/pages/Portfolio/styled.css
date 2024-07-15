@@ -205,15 +205,6 @@ table {
   display: flex;
 }
 
-.small_img img {
-  object-fit: contain;
-  vertical-align: bottom;
-  width: 465px;
-  height: 465px;
-  border-radius: 4px;
-  margin-right: 18px;
-}
-
 #third_container {
   margin: 96px 48px 0 48px;
   background-color: #ff385c;

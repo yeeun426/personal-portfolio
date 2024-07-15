@@ -67,4 +67,28 @@ export const PortfolioStyled = styled.div`
     object-fit: cover;
     border-radius: 18px;
   }
+
+  // portfolio-description
+  .portfolio-description {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  .portfolio-sub-title {
+    width: 87.5vw;
+    max-width: 1680px;
+    margin: auto;
+    padding-bottom: 70px;
+    font-size: 56px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .small_img img {
+    object-fit: contain;
+    vertical-align: bottom;
+    width: 100%;
+    border-radius: 4px;
+    margin-right: 18px;
+  }
 `;
