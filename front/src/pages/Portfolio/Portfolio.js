@@ -49,11 +49,14 @@ function Portfolio() {
     };
   }, []);
 
-  const scale = Math.max(1 - scrollPosition / 997, 0.875); // 최소 87.5%
+  const scale =
+    scrollPosition > 150 ? Math.max(1 - scrollPosition / 5000, 0.875) : 1;
+
+  console.log();
   const divStyle = {
     minHeight: '680px',
     transform: `scale(${scale})`,
-    transition: 'transform 3s',
+    transition: 'transform',
   };
 
   return (
@@ -78,7 +81,7 @@ function Portfolio() {
         <div id='second_container'>
           <div className='second_item title_host'>{data.detailß}</div>
 
-          <div class='second_item' id='host_income'>
+          <div className='second_item' id='host_income'>
             <div className='income_info'>
               <div className='income_box'>
                 period
@@ -105,11 +108,11 @@ function Portfolio() {
           </div>
 
           <div
-            class='second_item title_host'
+            className='second_item title_host'
             style={{ padding: '120px 0 0 48px' }}
           >
             알면 알수록, {data.name}.
-            <div class='swiper mySwiper'>
+            <div className='swiper mySwiper'>
               <Swiper
                 className='small_img'
                 spaceBetween={50}
