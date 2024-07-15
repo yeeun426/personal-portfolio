@@ -78,9 +78,91 @@ function Portfolio() {
             </div>
           </div>
         </div>
+        <div className='portfolio-description'>
+          <div className='portfolio-sub-title'>알면 알수록, {data.name}.</div>
+          <div className='swiper mySwiper'>
+            <Swiper
+              className='small_img'
+              spaceBetween={50}
+              slidesPerView='auto' // 해상도에 맞게 슬라이드 개수를 자동 조정
+              freeMode={true}
+              navigation={true}
+              modules={[Navigation]}
+            >
+              <SwiperSlide>
+                <></>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className='detail_filter'
+                  alt={data.period}
+                  src={process.env.PUBLIC_URL + '/' + data.img}
+                />
+                <div className='detail_txt'>
+                  <div className='img-detail'>{data.date}</div>
+                  <div className='img-detail-country'>{data.country}</div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className='detail_filter'
+                  alt={data.period}
+                  src={process.env.PUBLIC_URL + '/' + data.img}
+                />
+                <div className='detail_txt'>
+                  <div className='img-detail'>{data.date}</div>
+                  <div className='img-detail-country'>{data.country}</div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className='detail_filter'
+                  alt={data.period}
+                  src={process.env.PUBLIC_URL + '/' + data.img}
+                />
+                <div className='detail_txt'>
+                  <div className='img-detail'>{data.date}</div>
+                  <div className='img-detail-country'>{data.country}</div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className='detail_filter'
+                  alt={data.period}
+                  src={process.env.PUBLIC_URL + '/' + data.img}
+                />
+                <div className='detail_txt'>
+                  <div className='img-detail'>{data.date}</div>
+                  <div className='img-detail-country'>{data.country}</div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className='detail_filter'
+                  alt={data.period}
+                  src={process.env.PUBLIC_URL + '/' + data.img}
+                />
+                <div className='detail_txt'>
+                  <div className='img-detail'>{data.date}</div>
+                  <div className='img-detail-country'>{data.country}</div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className='detail_filter'
+                  alt={data.period}
+                  src={process.env.PUBLIC_URL + '/' + data.img}
+                />
+                <div className='detail_txt'>
+                  <div className='img-detail'>{data.date}</div>
+                  <div className='img-detail-country'>{data.country}</div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
         <div id='second_container'>
-          <div className='second_item title_host'>{data.detailß}</div>
-
+          <div className='second_item title_host'>{data.detail}</div>
           <div className='second_item' id='host_income'>
             <div className='income_info'>
               <div className='income_box'>
@@ -106,51 +188,6 @@ function Portfolio() {
             <p>프로젝트를 소개해주세요</p>
             <div id='income_method'>{data.skills?.detail}</div>
           </div>
-
-          <div
-            className='second_item title_host'
-            style={{ padding: '120px 0 0 48px' }}
-          >
-            알면 알수록, {data.name}.
-            <div className='swiper mySwiper'>
-              <Swiper
-                className='small_img'
-                spaceBetween={50}
-                slidesPerView={3}
-                freeMode={true}
-                modules={[Navigation]}
-                navigation={true}
-              >
-                <SwiperSlide>
-                  <></>
-                </SwiperSlide>
-                {imageData.map((page) => (
-                  <SwiperSlide
-                    key={page.id}
-                    style={{ display: 'flex', flexDirection: 'column' }}
-                  >
-                    <img
-                      className='detail_filter'
-                      alt={page.desc}
-                      src={process.env.PUBLIC_URL + '/' + page.img}
-                    />
-                    <div className='detail_txt'>
-                      <div className='img-detail'>{page.desc}</div>
-                      <img
-                        className='img-detail-sign'
-                        src={page.image}
-                        alt=''
-                      />
-                      <div className='img-detail-country'>{page.country}</div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-                <SwiperSlide>
-                  <></>
-                </SwiperSlide>
-              </Swiper>
-            </div>
-          </div>
         </div>
 
         <div id='third_container'>
@@ -164,7 +201,6 @@ function Portfolio() {
         </div>
 
         <div id='fourth_container'>
-          {/* <img src="https://a0.muscache.com/im/pictures/93ef1829-62d1-4349-8b4a-b02ebc650a25.jpg?im_w=2560&amp;im_q=highq" style={{vertical-align: "bottom", border-radius: "12px"}}/> */}
           <img
             alt='fourth_img'
             src='https://a0.muscache.com/im/pictures/93ef1829-62d1-4349-8b4a-b02ebc650a25.jpg?im_w=2560&amp;im_q=highq'
