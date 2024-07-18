@@ -80,162 +80,158 @@ function Portfolio() {
         </div>
         <div className='portfolio-description'>
           <div className='portfolio-sub-title'>알면 알수록, {data.name}.</div>
-          <div className='swiper mySwiper'>
-            <Swiper
-              className='small_img'
-              spaceBetween={50}
-              slidesPerView='auto' // 해상도에 맞게 슬라이드 개수를 자동 조정
-              freeMode={true}
-              navigation={true}
-              modules={[Navigation]}
-            >
-              <SwiperSlide>
-                <></>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className='detail_filter'
-                  alt={data.period}
-                  src={process.env.PUBLIC_URL + '/' + data.img}
-                />
-                <div className='detail_txt'>
-                  <div className='img-detail'>{data.date}</div>
-                  <div className='img-detail-country'>{data.country}</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className='detail_filter'
-                  alt={data.period}
-                  src={process.env.PUBLIC_URL + '/' + data.img}
-                />
-                <div className='detail_txt'>
-                  <div className='img-detail'>{data.date}</div>
-                  <div className='img-detail-country'>{data.country}</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className='detail_filter'
-                  alt={data.period}
-                  src={process.env.PUBLIC_URL + '/' + data.img}
-                />
-                <div className='detail_txt'>
-                  <div className='img-detail'>{data.date}</div>
-                  <div className='img-detail-country'>{data.country}</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className='detail_filter'
-                  alt={data.period}
-                  src={process.env.PUBLIC_URL + '/' + data.img}
-                />
-                <div className='detail_txt'>
-                  <div className='img-detail'>{data.date}</div>
-                  <div className='img-detail-country'>{data.country}</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className='detail_filter'
-                  alt={data.period}
-                  src={process.env.PUBLIC_URL + '/' + data.img}
-                />
-                <div className='detail_txt'>
-                  <div className='img-detail'>{data.date}</div>
-                  <div className='img-detail-country'>{data.country}</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className='detail_filter'
-                  alt={data.period}
-                  src={process.env.PUBLIC_URL + '/' + data.img}
-                />
-                <div className='detail_txt'>
-                  <div className='img-detail'>{data.date}</div>
-                  <div className='img-detail-country'>{data.country}</div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
+
+          <Swiper
+            className='small_img'
+            spaceBetween={20}
+            slidesPerView='auto'
+            freeMode={true}
+            navigation={true}
+            modules={[Navigation]}
+          >
+            <SwiperSlide>
+              <img
+                className='detail_filter'
+                alt={data.period}
+                src={process.env.PUBLIC_URL + '/' + data.img}
+              />
+              <div className='detail_txt'>
+                <div className='img-detail'>{data.date}</div>
+                <div className='img-detail-country'>{data.country}</div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                className='detail_filter'
+                alt={data.period}
+                src={process.env.PUBLIC_URL + '/' + data.img}
+              />
+              <div className='detail_txt'>
+                <div className='img-detail'>{data.date}</div>
+                <div className='img-detail-country'>{data.country}</div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                className='detail_filter'
+                alt={data.period}
+                src={process.env.PUBLIC_URL + '/' + data.img}
+              />
+              <div className='detail_txt'>
+                <div className='img-detail'>{data.date}</div>
+                <div className='img-detail-country'>{data.country}</div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                className='detail_filter'
+                alt={data.period}
+                src={process.env.PUBLIC_URL + '/' + data.img}
+              />
+              <div className='detail_txt'>
+                <div className='img-detail'>{data.date}</div>
+                <div className='img-detail-country'>{data.country}</div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                className='detail_filter'
+                alt={data.period}
+                src={process.env.PUBLIC_URL + '/' + data.img}
+              />
+              <div className='detail_txt'>
+                <div className='img-detail'>{data.date}</div>
+                <div className='img-detail-country'>{data.country}</div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                className='detail_filter'
+                alt={data.period}
+                src={process.env.PUBLIC_URL + '/' + data.img}
+              />
+              <div className='detail_txt'>
+                <div className='img-detail'>{data.date}</div>
+                <div className='img-detail-country'>{data.country}</div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
-        <div id='second_container'>
-          <div className='second_item title_host'>{data.detail}</div>
-          <div className='second_item' id='host_income'>
-            <div className='income_info'>
-              <div className='income_box'>
-                period
-                <div className='income_price'>
-                  <span className='info_host' style={{ color: '#ff385c' }}>
-                    {data.date}
-                  </span>
-                </div>
-              </div>
-              <div className='income_box'>
-                skill
-                <div className='income_price'>{data.skills?.skill}</div>
-              </div>
-              <div className='income_box'>
-                organization
-                <div className='income_price'>
-                  <span className='info_host'>{data.skills?.organization}</span>
-                </div>
+      </div>
+      <div id='second_container'>
+        <div className='second_item title_host'>{data.detail}</div>
+        <div className='second_item' id='host_income'>
+          <div className='income_info'>
+            <div className='income_box'>
+              period
+              <div className='income_price'>
+                <span className='info_host' style={{ color: '#ff385c' }}>
+                  {data.date}
+                </span>
               </div>
             </div>
-
-            <p>프로젝트를 소개해주세요</p>
-            <div id='income_method'>{data.skills?.detail}</div>
+            <div className='income_box'>
+              skill
+              <div className='income_price'>{data.skills?.skill}</div>
+            </div>
+            <div className='income_box'>
+              organization
+              <div className='income_price'>
+                <span className='info_host'>{data.skills?.organization}</span>
+              </div>
+            </div>
           </div>
+
+          <p>프로젝트를 소개해주세요</p>
+          <div id='income_method'>{data.skills?.detail}</div>
+        </div>
+      </div>
+
+      <div id='third_container'>
+        <div className='third_item'>
+          프로젝트 시현 영상을 통해
+          <br />
+          직접 경험해보세요
         </div>
 
-        <div id='third_container'>
-          <div className='third_item'>
-            프로젝트 시현 영상을 통해
+        <button className='detail_btn'>자세히 알아보기</button>
+      </div>
+
+      <div id='fourth_container'>
+        <img
+          alt='fourth_img'
+          src='https://a0.muscache.com/im/pictures/93ef1829-62d1-4349-8b4a-b02ebc650a25.jpg?im_w=2560&amp;im_q=highq'
+        />
+
+        <div id='fourth_superhost'>
+          <div className='fourth_item'>
+            프로젝트에 관해 궁금하신 점이 있나요?
             <br />
-            직접 경험해보세요
+            저에게 물어보세요.
           </div>
+          <button className='detail_btn'>email</button>
+        </div>
+      </div>
 
-          <button className='detail_btn'>자세히 알아보기</button>
+      <div id='fifth_container'>
+        <div className='left_item'>
+          <div className='fifth_item'>
+            호스팅 전반에 대한 보호.
+            <br />
+            모든 예약에 항상 무⁠료⁠로 제⁠공.
+            <br />
+            오직 에어비앤비에서만.
+          </div>
+          <button className='start_btn'>다른 프로젝트 살펴보기</button>
         </div>
 
-        <div id='fourth_container'>
+        <div className='right_item'>
+          {/* <img className="fifth_img" src="https://a0.muscache.com/im/pictures/11e10d64-867e-4dba-b0b4-896026a4f0e0.jpg?im_w=2560&amp;im_q=highq" style={{object-fit: contain; vertical-align: bottom; width: 630px; height: 750px;"/> */}
           <img
-            alt='fourth_img'
-            src='https://a0.muscache.com/im/pictures/93ef1829-62d1-4349-8b4a-b02ebc650a25.jpg?im_w=2560&amp;im_q=highq'
+            className='fifth_img'
+            alt='fifth_img'
+            src='https://a0.muscache.com/im/pictures/11e10d64-867e-4dba-b0b4-896026a4f0e0.jpg?im_w=2560&amp;im_q=highq'
           />
-
-          <div id='fourth_superhost'>
-            <div className='fourth_item'>
-              프로젝트에 관해 궁금하신 점이 있나요?
-              <br />
-              저에게 물어보세요.
-            </div>
-            <button className='detail_btn'>email</button>
-          </div>
-        </div>
-
-        <div id='fifth_container'>
-          <div className='left_item'>
-            <div className='fifth_item'>
-              호스팅 전반에 대한 보호.
-              <br />
-              모든 예약에 항상 무⁠료⁠로 제⁠공.
-              <br />
-              오직 에어비앤비에서만.
-            </div>
-            <button className='start_btn'>다른 프로젝트 살펴보기</button>
-          </div>
-
-          <div className='right_item'>
-            {/* <img className="fifth_img" src="https://a0.muscache.com/im/pictures/11e10d64-867e-4dba-b0b4-896026a4f0e0.jpg?im_w=2560&amp;im_q=highq" style={{object-fit: contain; vertical-align: bottom; width: 630px; height: 750px;"/> */}
-            <img
-              className='fifth_img'
-              alt='fifth_img'
-              src='https://a0.muscache.com/im/pictures/11e10d64-867e-4dba-b0b4-896026a4f0e0.jpg?im_w=2560&amp;im_q=highq'
-            />
-          </div>
         </div>
       </div>
     </PortfolioStyled>

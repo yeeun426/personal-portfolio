@@ -91,4 +91,24 @@ export const PortfolioStyled = styled.div`
     border-radius: 4px;
     margin-right: 18px;
   }
+
+  .small_img .swiper-slide {
+    min-width: 260px;
+    max-width: 420px;
+    aspect-ratio: 0.54;
+  }
+
+  .portfolio-description .swiper-slide {
+    background: green;
+    border-radius: 28px;
+  }
+
+  .portfolio-description .swiper {
+    padding: 0 calc(50vw - min(1680px, 87.5vw) / 2);
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    bottom: 0px;
+  }
 `;
