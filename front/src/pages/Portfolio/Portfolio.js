@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './styled.css';
-import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { useParams } from 'react-router-dom';
@@ -80,7 +78,6 @@ function Portfolio() {
         </div>
         <div className='portfolio-description'>
           <div className='portfolio-sub-title'>알면 알수록, {data.name}.</div>
-
           <Swiper
             className='small_img'
             spaceBetween={20}
@@ -158,7 +155,40 @@ function Portfolio() {
           </Swiper>
         </div>
       </div>
-      <div id='second_container'>
+      <div className='portfolio-detail'>
+        <div className='portfolio-sub-title'>
+          <div>
+            {data.name}, 각각의 페이지
+            <br /> 자세히 살펴보기.
+          </div>
+          <button onClick={() => window.open(data.skills.github)}>
+            Github 바로가기 ❯
+          </button>
+        </div>
+        <Swiper
+          className='detail-page'
+          slidesPerView={2}
+          spaceBetween={20}
+          freeMode={true}
+          navigation={true}
+          modules={[Navigation]}
+        >
+          {imageData.map((page) => (
+            <SwiperSlide
+              key={page.id}
+              style={{ display: 'flex', flexDirection: 'column' }}
+            >
+              <img
+                className='detail_filter'
+                alt={page.desc}
+                src={process.env.PUBLIC_URL + '/' + page.img}
+              />
+              <div className='detail_txt'>
+                <div className='img-detail'>{page.desc}</div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
         <div className='second_item title_host'>{data.detail}</div>
         <div className='second_item' id='host_income'>
           <div className='income_info'>
@@ -186,17 +216,6 @@ function Portfolio() {
           <div id='income_method'>{data.skills?.detail}</div>
         </div>
       </div>
-
-      <div id='third_container'>
-        <div className='third_item'>
-          프로젝트 시현 영상을 통해
-          <br />
-          직접 경험해보세요
-        </div>
-
-        <button className='detail_btn'>자세히 알아보기</button>
-      </div>
-
       <div id='fourth_container'>
         <img
           alt='fourth_img'
@@ -212,7 +231,6 @@ function Portfolio() {
           <button className='detail_btn'>email</button>
         </div>
       </div>
-
       <div id='fifth_container'>
         <div className='left_item'>
           <div className='fifth_item'>

@@ -314,14 +314,6 @@ table {
   height: 750px;
 }
 
-.img-detail {
-  font-size: 25px;
-  font-weight: 500;
-  text-align: left;
-  margin: 48px 0px 34px 0px;
-  line-height: 1.15;
-}
-
 .img-detail-sign {
   object-fit: contain !important;
   object-position: left center !important;
