@@ -28,6 +28,21 @@
         "id" : "3",
         "img" : "images/airbnb(3).png", 
         "desc" : "좋아요"
+      },
+      "page4": {
+        "id" : "4",
+        "img" : "images/airbnb(1).png",
+        "desc" : "test"
+      },
+      "page5": {
+        "id" : "5",
+        "img" : "images/airbnb(2).png", 
+        "desc" : "test"
+      },
+      "page6": {
+        "id" : "6",
+        "img" : "images/airbnb(3).png", 
+        "desc" : "test"
       }
     }
   },
