@@ -128,7 +128,8 @@ export const PortfolioStyled = styled.div`
     right: 90px;
   }
 
-  .portfolio-detail {
+  .portfolio-detail,
+  .portfolio-other {
     background: #fafafa;
     padding-top: 150px;
   }
