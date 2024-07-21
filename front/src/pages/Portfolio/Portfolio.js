@@ -7,11 +7,13 @@ import Header from '../../components/Main/Header';
 import PofolHeader from '../../components/Portfolio/PofolHeader';
 import { PortfolioStyled } from './styled.js';
 import '../Portfolio/styled.css';
+import { Link } from 'react-router-dom';
 
 function Portfolio() {
   const params = useParams();
   const [data, setData] = useState([]);
   const [pages, setPages] = useState([]);
+  const [otherProject, setOtherProject] = useState([]);
 
   // https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%9D%B4%EB%8F%99useParams
   useEffect(() => {
@@ -19,10 +21,17 @@ function Portfolio() {
       .get('/data/project.json')
       .then((res) => {
         let axis_data = res.data;
+        let random_id = Math.floor(Math.random() * (axis_data.length - 1)) + 1;
+        while (random_id === Number(params.projectId)) {
+          random_id = Math.floor(Math.random() * (axis_data.length - 1)) + 1;
+        }
         axis_data.map((item) => {
           if (Number(params.projectId) === item.id) {
             setData(item);
             setPages(item.pages);
+          }
+          if (random_id === item.id) {
+            setOtherProject(item);
           }
         });
       })
@@ -189,31 +198,26 @@ function Portfolio() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className='second_item title_host'>{data.detail}</div>
-        <div className='second_item' id='host_income'>
-          <div className='income_info'>
-            <div className='income_box'>
-              period
-              <div className='income_price'>
-                <span className='info_host' style={{ color: '#ff385c' }}>
-                  {data.date}
-                </span>
-              </div>
-            </div>
-            <div className='income_box'>
-              skill
-              <div className='income_price'>{data.skills?.skill}</div>
-            </div>
-            <div className='income_box'>
-              organization
-              <div className='income_price'>
-                <span className='info_host'>{data.skills?.organization}</span>
-              </div>
-            </div>
+      </div>
+      <div className='portfolio-other'>
+        <div className='portfolio-sub-title'>또 다른,</div>
+        <div class='other-project'>
+          <div className='other-desc'>
+            <div>{otherProject.name}</div>
+            <div>{otherProject.detail}</div>
+            <Link to={`/project/${otherProject.id}`}>
+              <button className='portfolio_btn'>
+                프로젝트 자세히 살펴보기
+              </button>
+            </Link>
           </div>
-
-          <p>프로젝트를 소개해주세요</p>
-          <div id='income_method'>{data.skills?.detail}</div>
+          <div className='other-img'>
+            <img
+              className='other-project-img'
+              alt={otherProject.name}
+              src={process.env.PUBLIC_URL + '/' + otherProject.img}
+            />
+          </div>
         </div>
       </div>
       <div id='fourth_container'>
@@ -231,29 +235,12 @@ function Portfolio() {
           <button className='detail_btn'>email</button>
         </div>
       </div>
-      <div id='fifth_container'>
-        <div className='left_item'>
-          <div className='fifth_item'>
-            호스팅 전반에 대한 보호.
-            <br />
-            모든 예약에 항상 무⁠료⁠로 제⁠공.
-            <br />
-            오직 에어비앤비에서만.
-          </div>
-          <button className='start_btn'>다른 프로젝트 살펴보기</button>
-        </div>
-
-        <div className='right_item'>
-          {/* <img className="fifth_img" src="https://a0.muscache.com/im/pictures/11e10d64-867e-4dba-b0b4-896026a4f0e0.jpg?im_w=2560&amp;im_q=highq" style={{object-fit: contain; vertical-align: bottom; width: 630px; height: 750px;"/> */}
-          <img
-            className='fifth_img'
-            alt='fifth_img'
-            src='https://a0.muscache.com/im/pictures/11e10d64-867e-4dba-b0b4-896026a4f0e0.jpg?im_w=2560&amp;im_q=highq'
-          />
-        </div>
-      </div>
     </PortfolioStyled>
   );
 }
 
 export default Portfolio;
+
+// portfolio : (1. 주제 / 2. 의도/목적  3.프로젝트 설명  4.깃허브  5.관련 기술)
+// portfolio-learn : 배운점 + 아쉬운점
+// fourth_container : 피드백 + 궁금한 부분 -> 메일
