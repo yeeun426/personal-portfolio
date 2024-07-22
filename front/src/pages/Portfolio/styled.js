@@ -155,4 +155,28 @@ export const PortfolioStyled = styled.div`
     line-height: 1.15;
     margin-top: 15px;
   }
+
+  .portfolio-other {
+    padding-bottom: 100px;
+  }
+
+  .other-project {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    width: 87.5vw;
+    max-width: 1680px;
+    background: white;
+    border-radius: 28px;
+
+    display: grid;
+    grid-template-columns: calc(350px + 120px * 2) 1fr;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    min-height: 784px;
+  }
+
+  .other-project img {
+    width: 100%;
+  }
 `;
