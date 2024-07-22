@@ -201,15 +201,15 @@ function Portfolio() {
       </div>
       <div className='portfolio-other'>
         <div className='portfolio-sub-title'>또 다른,</div>
-        <div class='other-project'>
+        <div className='other-project'>
           <div className='other-desc'>
             <div>{otherProject.name}</div>
             <div>{otherProject.detail}</div>
-            <Link to={`/project/${otherProject.id}`}>
+            <a href={`/project/${otherProject.id}`}>
               <button className='portfolio_btn'>
                 프로젝트 자세히 살펴보기
               </button>
-            </Link>
+            </a>
           </div>
           <div className='other-img'>
             <img
