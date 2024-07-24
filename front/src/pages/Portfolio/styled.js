@@ -179,4 +179,47 @@ export const PortfolioStyled = styled.div`
   .other-project img {
     width: 100%;
   }
+
+  .portfolio-email {
+    position: relative;
+    margin-bottom: 150px;
+  }
+
+  .portfolio-email img {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    width: 87.5vw;
+    max-width: 1680px;
+    background: white;
+    border-radius: 28px;
+    display: grid;
+    min-height: 784px;
+    max-height: 800px;
+    object-fit: cover;
+  }
+
+  .portfolio-email button {
+    margin-top: 70px;
+    border: none;
+    background-color: white;
+  }
+
+  .portfolio-email-txt {
+    position: absolute;
+    top: 50%;
+    left: 36%;
+    transform: translate(-30%, -15%);
+  }
+
+  .fourth_item {
+    font-size: 56px;
+    color: white;
+  }
+  .detail_btn {
+    padding: 13px 23px;
+    font-size: 16px;
+    margin-top: 30px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
 `;

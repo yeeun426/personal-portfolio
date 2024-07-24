@@ -6,8 +6,6 @@ import axios from 'axios';
 import Header from '../../components/Main/Header';
 import PofolHeader from '../../components/Portfolio/PofolHeader';
 import { PortfolioStyled } from './styled.js';
-import '../Portfolio/styled.css';
-import { Link } from 'react-router-dom';
 
 function Portfolio() {
   const params = useParams();
@@ -220,19 +218,19 @@ function Portfolio() {
           </div>
         </div>
       </div>
-      <div id='fourth_container'>
-        <img
-          alt='fourth_img'
-          src='https://a0.muscache.com/im/pictures/93ef1829-62d1-4349-8b4a-b02ebc650a25.jpg?im_w=2560&amp;im_q=highq'
-        />
-
-        <div id='fourth_superhost'>
-          <div className='fourth_item'>
+      <div class='portfolio-email'>
+        <img src={process.env.PUBLIC_URL + '/images/me_more.JPG'} alt='more' />
+        <div class='portfolio-email-txt'>
+          <div className='email-curios'>
             프로젝트에 관해 궁금하신 점이 있나요?
-            <br />
-            저에게 물어보세요.
           </div>
-          <button className='detail_btn'>email</button>
+          <div>
+            <div>언제든지요.</div>
+            <button>email</button>
+          </div>
+          <div className='fourth_item'>
+            프로젝트에서 피드백해주시고 싶으신가요?
+          </div>
         </div>
       </div>
     </PortfolioStyled>
