@@ -198,28 +198,42 @@ export const PortfolioStyled = styled.div`
     object-fit: cover;
   }
 
-  .portfolio-email button {
-    margin-top: 70px;
-    border: none;
-    background-color: white;
-  }
-
   .portfolio-email-txt {
     position: absolute;
     top: 50%;
-    left: 36%;
-    transform: translate(-30%, -15%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    button {
+      margin-top: 40px;
+
+      border: 1px solid rgb(29, 29, 31);
+      padding: 8px 15px;
+      border-radius: 980px;
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 14px;
+    }
   }
 
-  .fourth_item {
-    font-size: 56px;
-    color: white;
-  }
   .detail_btn {
     padding: 13px 23px;
     font-size: 16px;
     margin-top: 30px;
     border-radius: 8px;
     font-weight: 600;
+  }
+
+  .email-curios {
+    font-size: 56px;
+    color: white;
+  }
+
+  .email-btn {
+    margin-top: 40px;
+  }
+
+  .email-btn::first-child {
+    font-size: 30px;
+    color: white;
   }
 `;
