@@ -222,14 +222,11 @@ function Portfolio() {
         <img src={process.env.PUBLIC_URL + '/images/me_more.JPG'} alt='more' />
         <div class='portfolio-email-txt'>
           <div className='email-curios'>
-            프로젝트에 관해 궁금하신 점이 있나요?
+            프로젝트에 관해 궁금하신 점/피드백이 있나요?
           </div>
-          <div>
-            <div>언제든지요.</div>
+          <div className='email-btn'>
+            <div>언제든지요.📧📩📨📝 </div>
             <button>email</button>
-          </div>
-          <div className='fourth_item'>
-            프로젝트에서 피드백해주시고 싶으신가요?
           </div>
         </div>
       </div>
