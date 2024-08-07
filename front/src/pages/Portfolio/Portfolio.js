@@ -218,15 +218,15 @@ function Portfolio() {
           </div>
         </div>
       </div>
-      <div class='portfolio-email'>
+      <div className='portfolio-email'>
         <img src={process.env.PUBLIC_URL + '/images/me_more.JPG'} alt='more' />
-        <div class='portfolio-email-txt'>
+        <div className='portfolio-email-txt'>
           <div className='email-curios'>
             프로젝트에 관해 궁금하신 점/피드백이 있나요?
           </div>
           <div className='email-btn'>
-            <div>언제든지요.📧📩📨📝 </div>
-            <button>email</button>
+            <div>언제든지요. 📝 ➠ 📨</div>
+            <a href='mailto:thsudkcla7@naver.com'>email</a>
           </div>
         </div>
       </div>

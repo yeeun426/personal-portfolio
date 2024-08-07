@@ -204,14 +204,15 @@ export const PortfolioStyled = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    button {
+    a {
       margin-top: 40px;
-
-      border: 1px solid rgb(29, 29, 31);
-      padding: 8px 15px;
+      border: 1px solid rgb(255 255 255);
+      padding: 8px 35px;
       border-radius: 980px;
       background-color: rgba(0, 0, 0, 0);
-      font-size: 14px;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
     }
   }
 
@@ -225,11 +226,17 @@ export const PortfolioStyled = styled.div`
 
   .email-curios {
     font-size: 56px;
+    word-break: keep-all;
     color: white;
   }
 
   .email-btn {
     margin-top: 40px;
+  }
+
+  .email-btn > div {
+    font-size: 30px;
+    color: white;
   }
 
   .email-btn::first-child {
