@@ -204,7 +204,7 @@ export const PortfolioStyled = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    a {
+    button {
       margin-top: 40px;
       border: 1px solid rgb(255 255 255);
       padding: 8px 35px;
