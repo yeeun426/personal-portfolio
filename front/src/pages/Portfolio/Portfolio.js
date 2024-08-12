@@ -6,14 +6,15 @@ import axios from 'axios';
 import Header from '../../components/Main/Header';
 import PofolHeader from '../../components/Portfolio/PofolHeader';
 import { PortfolioStyled } from './styled.js';
+import Email from '../../components/Email/Email';
 
 function Portfolio() {
   const params = useParams();
   const [data, setData] = useState([]);
   const [pages, setPages] = useState([]);
   const [otherProject, setOtherProject] = useState([]);
+  const [modal, setModal] = useState(false);
 
-  // https://qzom1425.tistory.com/entry/%EA%B2%8C%EC%8B%9C%EA%B8%80-%ED%81%B4%EB%A6%AD%EC%8B%9C-%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%9D%B4%EB%8F%99useParams
   useEffect(() => {
     axios
       .get('/data/project.json')
@@ -226,10 +227,11 @@ function Portfolio() {
           </div>
           <div className='email-btn'>
             <div>언제든지요. 📝 ➠ 📨</div>
-            <a href='mailto:thsudkcla7@naver.com'>email</a>
+            <button onClick={() => setModal(!modal)}>email</button>
           </div>
         </div>
       </div>
+      {modal && <Email isOpen={modal} onClose={() => setModal(false)} />}
     </PortfolioStyled>
   );
 }
@@ -238,4 +240,3 @@ export default Portfolio;
 
 // portfolio : (1. 주제 / 2. 의도/목적  3.프로젝트 설명  4.깃허브  5.관련 기술)
 // portfolio-learn : 배운점 + 아쉬운점
-// fourth_container : 피드백 + 궁금한 부분 -> 메일

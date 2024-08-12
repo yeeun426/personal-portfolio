@@ -4,6 +4,7 @@ import Main from './pages/Main/Main';
 import Intro from './pages/Intro/Intro';
 import Project from './pages/Project/Project';
 import Portfolio from './pages/Portfolio/Portfolio';
+import Email from './components/Email/Email';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/main' element={<Main />} />
         <Route path='/project' element={<Project />} />
         <Route path='/project/:projectId' element={<Portfolio />} />
+        <Route path='/email' element={<Email />} />
       </Routes>
     </div>
   );
