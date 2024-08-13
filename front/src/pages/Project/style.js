@@ -25,8 +25,9 @@ export const ProjectStyled = styled.div`
 
     img {
       height: 75%;
-      width: fit-content;
-      align-self: center;  
+      align-self: center;
+      width: 92%;
+      object-fit: contain;
     }
   }
 

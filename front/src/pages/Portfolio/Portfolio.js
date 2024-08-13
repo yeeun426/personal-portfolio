@@ -202,8 +202,10 @@ function Portfolio() {
         <div className='portfolio-sub-title'>또 다른,</div>
         <div className='other-project'>
           <div className='other-desc'>
-            <div>{otherProject.name}</div>
-            <div>{otherProject.detail}</div>
+            <div className='other-desc-title'>{otherProject.name}</div>
+            <div className='other-desc-txt'>
+              "{otherProject.detail}"을 지금 바로 만나보세요.
+            </div>
             <a href={`/project/${otherProject.id}`}>
               <button className='portfolio_btn'>
                 프로젝트 자세히 살펴보기
