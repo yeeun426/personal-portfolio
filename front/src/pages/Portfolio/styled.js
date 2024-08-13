@@ -169,15 +169,46 @@ export const PortfolioStyled = styled.div`
     border-radius: 28px;
 
     display: grid;
-    grid-template-columns: calc(350px + 120px * 2) 1fr;
+    grid-template-columns: calc(350px + 90px * 2) 1fr;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    min-height: 784px;
+    min-height: 600px;
+  }
+
+  .other-img {
+    height: 100%;
+    align-content: center;
   }
 
   .other-project img {
-    width: 100%;
+    height: 65%;
+  }
+
+  .other-desc {
+    padding: 120px 90px;
+
+    .portfolio_btn {
+      font-size: 17px;
+      background: #fafafa;
+      padding: 10px 40px;
+      border-radius: 20px;
+      box-shadow: 5px 5px 5px #80808024;
+    }
+  }
+
+  .other-desc-title {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 24px 0;
+  }
+
+  .other-desc-txt {
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 1.5em;
+    word-break: keep-all;
+    line-height: 1.5882352941;
   }
 
   .portfolio-email {

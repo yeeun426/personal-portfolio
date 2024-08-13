@@ -1,9 +1,12 @@
 import { PopupStyled } from './styled';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import Email from '../../components/Email/Email';
 
 export default function Popup({ open, setOpen }) {
   const navigate = useNavigate();
+  const [modal, setModal] = useState(false);
 
   return (
     <div className='mainIntro-wrapper'>
@@ -68,10 +71,16 @@ export default function Popup({ open, setOpen }) {
                 <Link to='/main'>
                   <button className='pcl-btn-learn'>Learn More 〉</button>
                 </Link>
-                <a href='mailto:thsudkcla7@naver.com'>
-                  <button className='pcl-btn-contact'>Contact Me 〉</button>
-                </a>
+                <button
+                  className='pcl-btn-contact'
+                  onClick={() => setModal(!modal)}
+                >
+                  Contact Me 〉
+                </button>
               </div>
+              {modal && (
+                <Email isOpen={modal} onClose={() => setModal(false)} />
+              )}
             </div>
             <div className='pc-right'>
               <img src='images/myimg.png' alt='yeeun' />
