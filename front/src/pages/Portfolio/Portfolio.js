@@ -198,6 +198,31 @@ function Portfolio() {
           ))}
         </Swiper>
       </div>
+      <div className='portfolio-learn'>
+        <div className='portfolio-learn-container'>
+          <div className='portfolio-learn-title'>자주 묻는 질문과 답변</div>
+          <div class Name='portfolio-learn-contents'>
+            <div className='portfolio-learn-item'>
+              <div className='pli-question'>
+                이 프로젝트를 통해 배운점은 뭐가 있나요?
+              </div>
+              <div className='pli-answer'></div>
+            </div>
+            <div className='portfolio-learn-item'>
+              <div className='pli-question'>
+                이 프로젝트에서 아쉬운점은 무엇인가요?
+              </div>
+              <div className='pli-answer'></div>
+            </div>
+            <div className='portfolio-learn-item'>
+              <div className='pli-question'>
+                이 프로젝트에서 보완하고 싶은 점을 말해주세요
+              </div>
+              <div className='pli-answer'></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className='portfolio-other'>
         <div className='portfolio-sub-title'>또 다른,</div>
         <div className='other-project'>

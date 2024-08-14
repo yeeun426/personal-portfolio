@@ -129,7 +129,7 @@ export const PortfolioStyled = styled.div`
   }
 
   .portfolio-detail,
-  .portfolio-other {
+  .portfolio-learn {
     background: #fafafa;
     padding-top: 150px;
   }
@@ -156,8 +156,27 @@ export const PortfolioStyled = styled.div`
     margin-top: 15px;
   }
 
+  .portfolio-learn-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+    width: 87.5vw;
+    max-width: 1680px;
+    margin: auto;
+
+    .portfolio-learn-title {
+      font-size: 40px;
+      font-weight: 600;
+    }
+  }
+
+  .portfolio-learn-container > div {
+    flex: 1;
+    text-align: left;
+  }
+
   .portfolio-other {
-    padding-bottom: 100px;
+    padding: 100px 0;
   }
 
   .other-project {
@@ -165,15 +184,22 @@ export const PortfolioStyled = styled.div`
     margin-inline-end: auto;
     width: 87.5vw;
     max-width: 1680px;
-    background: white;
+    background: #fafafa;
     border-radius: 28px;
-
-    display: grid;
-    grid-template-columns: calc(350px + 90px * 2) 1fr;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    min-height: 600px;
+    height: 600px;
+  }
+
+  .other-project > *:first-child {
+    width: calc(350px + 90px * 2); /* 첫 번째 요소의 고정 너비 설정 */
+    flex-shrink: 0; /* 너비가 줄어들지 않도록 설정 */
+  }
+  .other-project > *:last-child {
+    flex-grow: 1; /* 두 번째 요소가 남은 공간을 차지하도록 설정 */
+    flex-basis: 0; /* 기본 너비를 0으로 설정하여 flex-grow에 따른 크기 변경 */
   }
 
   .other-img {
@@ -182,7 +208,7 @@ export const PortfolioStyled = styled.div`
   }
 
   .other-project img {
-    height: 65%;
+    height: 80%;
   }
 
   .other-desc {
@@ -190,7 +216,7 @@ export const PortfolioStyled = styled.div`
 
     .portfolio_btn {
       font-size: 17px;
-      background: #fafafa;
+      background: white;
       padding: 10px 40px;
       border-radius: 20px;
       box-shadow: 5px 5px 5px #80808024;
