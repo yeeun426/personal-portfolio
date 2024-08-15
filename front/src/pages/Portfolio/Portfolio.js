@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../../components/Main/Header';
 import PofolHeader from '../../components/Portfolio/PofolHeader';
-import { PortfolioStyled } from './styled.js';
+import { PortfolioStyled, DropIcon } from './styled.js';
 import Email from '../../components/Email/Email';
 
 function Portfolio() {
@@ -14,6 +14,7 @@ function Portfolio() {
   const [pages, setPages] = useState([]);
   const [otherProject, setOtherProject] = useState([]);
   const [modal, setModal] = useState(false);
+  const [QnAItems, setQnAItems] = useState([]);
 
   useEffect(() => {
     axios
@@ -28,6 +29,7 @@ function Portfolio() {
           if (Number(params.projectId) === item.id) {
             setData(item);
             setPages(item.pages);
+            setQnAItems(item.QnA);
           }
           if (random_id === item.id) {
             setOtherProject(item);
@@ -63,22 +65,6 @@ function Portfolio() {
     transform: `scale(${scale})`,
     transition: 'transform',
   };
-
-  const [height, setHeight] = useState(0);
-  const answerRef = useRef(null);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  useEffect(() => {
-    if (isOpen) {
-      setHeight(answerRef.current.scrollHeight); // 드롭다운의 실제 높이를 설정
-    } else {
-      setHeight(0); // 닫히면 높이를 0으로 설정
-    }
-  }, [isOpen]);
 
   return (
     <PortfolioStyled>
@@ -178,147 +164,8 @@ function Portfolio() {
           </Swiper>
         </div>
       </div>
-      <div className='portfolio-detail'>
-        <div className='portfolio-sub-title'>
-          <div>
-            {data.name}, 각각의 페이지
-            <br /> 자세히 살펴보기.
-          </div>
-          <button onClick={() => window.open(data.skills.github)}>
-            Github 바로가기 ❯
-          </button>
-        </div>
-        <Swiper
-          className='detail-page'
-          slidesPerView={2}
-          spaceBetween={20}
-          freeMode={true}
-          navigation={true}
-          modules={[Navigation]}
-        >
-          {imageData.map((page) => (
-            <SwiperSlide
-              key={page.id}
-              style={{ display: 'flex', flexDirection: 'column' }}
-            >
-              <img
-                className='detail_filter'
-                alt={page.desc}
-                src={process.env.PUBLIC_URL + '/' + page.img}
-              />
-              <div className='detail_txt'>
-                <div className='img-detail'>{page.desc}</div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-      <div className='portfolio-learn'>
-        <div className='portfolio-learn-container'>
-          <div className='portfolio-learn-title'>
-            자주 묻는 질문과 <br />
-            답변
-          </div>
-          <div className='portfolio-learn-contents'>
-            <div className='portfolio-learn-item'>
-              <button className='pli-question' onClick={toggleDropdown}>
-                <div>이 프로젝트를 통해 배운점은 뭐가 있나요?</div>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 32 32'
-                  isOpen={isOpen}
-                  aria-hidden='true'
-                  role='presentation'
-                  focusable='false'
-                >
-                  <path
-                    fill='none'
-                    d='M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12'
-                  ></path>
-                </svg>
-              </button>
-              <div
-                className='pli-answer'
-                ref={answerRef}
-                style={{
-                  height: `${height}px`,
-                  overflow: 'hidden',
-                  transition: 'height 0.3s ease', // 높이가 부드럽게 변경
-                }}
-              >
-                에어비앤비 게스트가 찾는 숙소는 매우 다양하며, 에어비앤비에서는
-                초소형 주택, 통나무집, 트리하우스 등 다양한 유형의 숙소가
-                등록되어 있습니다. 집에 남는 방 한 칸이라도 훌륭한 숙소가 될 수
-                있습니다.
-              </div>
-            </div>
-            <div className='portfolio-learn-item'>
-              <div className='pli-question'>
-                <div>이 프로젝트에서 아쉬운점은 무엇인가요?</div>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 32 32'
-                  aria-hidden='true'
-                  role='presentation'
-                  focusable='false'
-                  style={{
-                    display: 'block',
-                    fill: 'none',
-                    height: '16px',
-                    width: '16px',
-                    stroke: 'currentcolor',
-                    strokeWidth: '4',
-                    overflow: 'visible',
-                  }}
-                >
-                  <path
-                    fill='none'
-                    d='M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12'
-                  ></path>
-                </svg>
-              </div>
-              <div className='pli-answer'>
-                에어비앤비 게스트가 찾는 숙소는 매우 다양하며, 에어비앤비에서는
-                초소형 주택, 통나무집, 트리하우스 등 다양한 유형의 숙소가
-                등록되어 있습니다. 집에 남는 방 한 칸이라도 훌륭한 숙소가 될 수
-                있습니다.
-              </div>
-            </div>
-            <div className='portfolio-learn-item'>
-              <div className='pli-question'>
-                <div>이 프로젝트에서 보완하고 싶은 점을 말해주세요</div>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 32 32'
-                  aria-hidden='true'
-                  role='presentation'
-                  focusable='false'
-                  style={{
-                    display: 'block',
-                    fill: 'none',
-                    height: '16px',
-                    width: '16px',
-                    stroke: 'currentcolor',
-                    strokeWidth: '4',
-                    overflow: 'visible',
-                  }}
-                >
-                  <path
-                    fill='none'
-                    d='M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12'
-                  ></path>
-                </svg>
-              </div>
-              <div className='pli-answer'>
-                에어비앤비 게스트가 찾는 숙소는 매우 다양하며, 에어비앤비에서는
-                초소형 주택, 통나무집, 트리하우스 등 다양한 유형의 숙소가
-                등록되어 있습니다. 집에 남는 방 한 칸이라도 훌륭한 숙소가 될 수
-                있습니다.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PortfolioDetail data={data} imageData={imageData} />
+      <PortfolioQnA QnAItems={QnAItems} />
       <div className='portfolio-other'>
         <div className='portfolio-sub-title'>또 다른,</div>
         <div className='other-project'>
@@ -358,6 +205,102 @@ function Portfolio() {
     </PortfolioStyled>
   );
 }
+
+const PortfolioDetail = ({ data, imageData }) => {
+  return (
+    <div className='portfolio-detail'>
+      <div className='portfolio-sub-title'>
+        <div>
+          {data.name}, 각각의 페이지
+          <br /> 자세히 살펴보기.
+        </div>
+        <button onClick={() => window.open(data.skills.github)}>
+          Github 바로가기 ❯
+        </button>
+      </div>
+      <Swiper
+        className='detail-page'
+        slidesPerView={2}
+        spaceBetween={20}
+        freeMode={true}
+        navigation={true}
+        modules={[Navigation]}
+      >
+        {imageData.map((page) => (
+          <SwiperSlide
+            key={page.id}
+            style={{ display: 'flex', flexDirection: 'column' }}
+          >
+            <img
+              className='detail_filter'
+              alt={page.desc}
+              src={process.env.PUBLIC_URL + '/' + page.img}
+            />
+            <div className='detail_txt'>
+              <div className='img-detail'>{page.desc}</div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+};
+
+const PortfolioQnA = ({ QnAItems }) => {
+  const answerRef = useRef(null);
+  const [openItem, setOpenItem] = useState(null);
+
+  const toggleDropdown = (id) => {
+    setOpenItem(openItem === id ? null : id);
+    console.log(openItem, id);
+  };
+
+  return (
+    <div className='portfolio-learn'>
+      <div className='portfolio-learn-container'>
+        <div className='portfolio-learn-title'>
+          자주 묻는 질문과 <br />
+          답변
+        </div>
+        <div className='portfolio-learn-contents'>
+          {QnAItems.map(({ id, question, answer }) => (
+            <div className='portfolio-learn-item' key={id}>
+              <button
+                className='pli-question'
+                onClick={() => toggleDropdown(id)}
+              >
+                <div>{question}</div>
+                <DropIcon
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 32 32'
+                  aria-hidden='true'
+                  role='presentation'
+                  isOpen={openItem === id}
+                >
+                  <path
+                    fill='none'
+                    d='M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12'
+                  ></path>
+                </DropIcon>
+              </button>
+              <div
+                className='pli-answer'
+                ref={answerRef}
+                style={{
+                  maxHeight: openItem === id ? '500px' : '0px',
+                  overflow: 'hidden',
+                  transition: 'max-height 1s ease',
+                }}
+              >
+                {answer}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Portfolio;
 
