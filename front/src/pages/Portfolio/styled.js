@@ -159,15 +159,64 @@ export const PortfolioStyled = styled.div`
   .portfolio-learn-container {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 50px;
-    width: 87.5vw;
+    padding-bottom: 100px;
+    width: 70vw;
     max-width: 1680px;
     margin: auto;
 
     .portfolio-learn-title {
       font-size: 40px;
       font-weight: 600;
+      margin: 32px 0 48px;
     }
+  }
+
+  .portfolio-learn-item {
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 16px;
+  }
+
+  .pli-question {
+    height: 88px;
+    align-items: center;
+    font-size: 23px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    svg {
+      display: block;
+      fill: none;
+      height: 16px;
+      width: 16px;
+      stroke: currentcolor;
+      stroke-width: 4;
+      overflow: visible;
+      transform: ${({ isOpen }) =>
+        isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
+      transition: transform 0.3s ease;
+    }
+  }
+  .portfolio-learn-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+
+  .pli-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pli-answer {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    transition: height 0.3s ease; /* 높이 애니메이션 */
+  }
+
+  .pli-answer {
+    font-size: 18px;
+    line-height: 24px;
   }
 
   .portfolio-learn-container > div {

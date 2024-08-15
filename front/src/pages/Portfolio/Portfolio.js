@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { useParams } from 'react-router-dom';
@@ -58,12 +58,27 @@ function Portfolio() {
   const scale =
     scrollPosition > 150 ? Math.max(1 - scrollPosition / 5000, 0.875) : 1;
 
-  console.log();
   const divStyle = {
     minHeight: '680px',
     transform: `scale(${scale})`,
     transition: 'transform',
   };
+
+  const [height, setHeight] = useState(0);
+  const answerRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      setHeight(answerRef.current.scrollHeight); // 드롭다운의 실제 높이를 설정
+    } else {
+      setHeight(0); // 닫히면 높이를 0으로 설정
+    }
+  }, [isOpen]);
 
   return (
     <PortfolioStyled>
@@ -200,25 +215,106 @@ function Portfolio() {
       </div>
       <div className='portfolio-learn'>
         <div className='portfolio-learn-container'>
-          <div className='portfolio-learn-title'>자주 묻는 질문과 답변</div>
-          <div class Name='portfolio-learn-contents'>
+          <div className='portfolio-learn-title'>
+            자주 묻는 질문과 <br />
+            답변
+          </div>
+          <div className='portfolio-learn-contents'>
             <div className='portfolio-learn-item'>
-              <div className='pli-question'>
-                이 프로젝트를 통해 배운점은 뭐가 있나요?
+              <button className='pli-question' onClick={toggleDropdown}>
+                <div>이 프로젝트를 통해 배운점은 뭐가 있나요?</div>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 32 32'
+                  isOpen={isOpen}
+                  aria-hidden='true'
+                  role='presentation'
+                  focusable='false'
+                >
+                  <path
+                    fill='none'
+                    d='M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12'
+                  ></path>
+                </svg>
+              </button>
+              <div
+                className='pli-answer'
+                ref={answerRef}
+                style={{
+                  height: `${height}px`,
+                  overflow: 'hidden',
+                  transition: 'height 0.3s ease', // 높이가 부드럽게 변경
+                }}
+              >
+                에어비앤비 게스트가 찾는 숙소는 매우 다양하며, 에어비앤비에서는
+                초소형 주택, 통나무집, 트리하우스 등 다양한 유형의 숙소가
+                등록되어 있습니다. 집에 남는 방 한 칸이라도 훌륭한 숙소가 될 수
+                있습니다.
               </div>
-              <div className='pli-answer'></div>
             </div>
             <div className='portfolio-learn-item'>
               <div className='pli-question'>
-                이 프로젝트에서 아쉬운점은 무엇인가요?
+                <div>이 프로젝트에서 아쉬운점은 무엇인가요?</div>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 32 32'
+                  aria-hidden='true'
+                  role='presentation'
+                  focusable='false'
+                  style={{
+                    display: 'block',
+                    fill: 'none',
+                    height: '16px',
+                    width: '16px',
+                    stroke: 'currentcolor',
+                    strokeWidth: '4',
+                    overflow: 'visible',
+                  }}
+                >
+                  <path
+                    fill='none'
+                    d='M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12'
+                  ></path>
+                </svg>
               </div>
-              <div className='pli-answer'></div>
+              <div className='pli-answer'>
+                에어비앤비 게스트가 찾는 숙소는 매우 다양하며, 에어비앤비에서는
+                초소형 주택, 통나무집, 트리하우스 등 다양한 유형의 숙소가
+                등록되어 있습니다. 집에 남는 방 한 칸이라도 훌륭한 숙소가 될 수
+                있습니다.
+              </div>
             </div>
             <div className='portfolio-learn-item'>
               <div className='pli-question'>
-                이 프로젝트에서 보완하고 싶은 점을 말해주세요
+                <div>이 프로젝트에서 보완하고 싶은 점을 말해주세요</div>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 32 32'
+                  aria-hidden='true'
+                  role='presentation'
+                  focusable='false'
+                  style={{
+                    display: 'block',
+                    fill: 'none',
+                    height: '16px',
+                    width: '16px',
+                    stroke: 'currentcolor',
+                    strokeWidth: '4',
+                    overflow: 'visible',
+                  }}
+                >
+                  <path
+                    fill='none'
+                    d='M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12'
+                  ></path>
+                </svg>
               </div>
-              <div className='pli-answer'></div>
+              <div className='pli-answer'>
+                에어비앤비 게스트가 찾는 숙소는 매우 다양하며, 에어비앤비에서는
+                초소형 주택, 통나무집, 트리하우스 등 다양한 유형의 숙소가
+                등록되어 있습니다. 집에 남는 방 한 칸이라도 훌륭한 숙소가 될 수
+                있습니다.
+              </div>
             </div>
           </div>
         </div>
@@ -266,4 +362,3 @@ function Portfolio() {
 export default Portfolio;
 
 // portfolio : (1. 주제 / 2. 의도/목적  3.프로젝트 설명  4.깃허브  5.관련 기술)
-// portfolio-learn : 배운점 + 아쉬운점
