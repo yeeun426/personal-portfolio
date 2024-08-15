@@ -183,19 +183,6 @@ export const PortfolioStyled = styled.div`
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-
-    svg {
-      display: block;
-      fill: none;
-      height: 16px;
-      width: 16px;
-      stroke: currentcolor;
-      stroke-width: 4;
-      overflow: visible;
-      transform: ${({ isOpen }) =>
-        isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
-      transition: transform 0.3s ease;
-    }
   }
   .portfolio-learn-item {
     border-bottom: 1px solid #ccc;
@@ -349,4 +336,16 @@ export const PortfolioStyled = styled.div`
     font-size: 30px;
     color: white;
   }
+`;
+
+export const DropIcon = styled.svg`
+  display: block;
+  fill: none;
+  height: 16px;
+  width: 16px;
+  stroke: currentcolor;
+  stroke-width: 4;
+  overflow: visible;
+  transform: ${({ isOpen }) => (isOpen ? 'rotate(180deg)' : 'rotate(0deg)')};
+  transition: transform 0.3s ease;
 `;
