@@ -70,100 +70,24 @@ function Portfolio() {
     <PortfolioStyled>
       <Header />
       <PofolHeader />
-      <div className='portfolio'>
-        <div className='portfolio-begin'>
-          <div className='portfolio-title'>
-            <div className='title-name'>{data.name}</div>
-            <div className='title-detail'>{data.detail}</div>
-          </div>
-          <div className='portfolio-video'>
-            <div style={divStyle}>
-              <video
-                src='https://a0.muscache.com/v/a9/a7/a9a7873c-95de-5e37-8995-a5abb5b6b02f/a9a7873c95de5e378995a5abb5b6b02f_4000k_1.mp4'
-                controls
-              />
-            </div>
-          </div>
+      <div className='portfolio-begin'>
+        <div className='portfolio-title'>
+          <div className='title-name'>{data.name}</div>
+          <div className='title-detail'>{data.detail}</div>
         </div>
-        <div className='portfolio-description'>
-          <div className='portfolio-sub-title'>알면 알수록, {data.name}.</div>
-          <Swiper
-            className='small_img'
-            spaceBetween={20}
-            slidesPerView='auto'
-            freeMode={true}
-            navigation={true}
-            modules={[Navigation]}
-          >
-            <SwiperSlide>
-              <img
-                className='detail_filter'
-                alt={data.period}
-                src={process.env.PUBLIC_URL + '/' + data.img}
-              />
-              <div className='detail_txt'>
-                <div className='img-detail'>{data.date}</div>
-                <div className='img-detail-country'>{data.country}</div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className='detail_filter'
-                alt={data.period}
-                src={process.env.PUBLIC_URL + '/' + data.img}
-              />
-              <div className='detail_txt'>
-                <div className='img-detail'>{data.date}</div>
-                <div className='img-detail-country'>{data.country}</div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className='detail_filter'
-                alt={data.period}
-                src={process.env.PUBLIC_URL + '/' + data.img}
-              />
-              <div className='detail_txt'>
-                <div className='img-detail'>{data.date}</div>
-                <div className='img-detail-country'>{data.country}</div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className='detail_filter'
-                alt={data.period}
-                src={process.env.PUBLIC_URL + '/' + data.img}
-              />
-              <div className='detail_txt'>
-                <div className='img-detail'>{data.date}</div>
-                <div className='img-detail-country'>{data.country}</div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className='detail_filter'
-                alt={data.period}
-                src={process.env.PUBLIC_URL + '/' + data.img}
-              />
-              <div className='detail_txt'>
-                <div className='img-detail'>{data.date}</div>
-                <div className='img-detail-country'>{data.country}</div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className='detail_filter'
-                alt={data.period}
-                src={process.env.PUBLIC_URL + '/' + data.img}
-              />
-              <div className='detail_txt'>
-                <div className='img-detail'>{data.date}</div>
-                <div className='img-detail-country'>{data.country}</div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+        <div className='portfolio-video'>
+          <div style={divStyle}>
+            <video
+              src={process.env.PUBLIC_URL + '/' + data.video}
+              controls
+              muted
+              playsInline
+              autoPlay
+            />
+          </div>
         </div>
       </div>
+      <PortFolioDesc data={data} />
       <PortfolioDetail data={data} imageData={imageData} />
       <PortfolioQnA QnAItems={QnAItems} />
       <div className='portfolio-other'>
@@ -201,10 +125,92 @@ function Portfolio() {
           </div>
         </div>
       </div>
-      {modal && <Email isOpen={modal} onClose={() => setModal(false)} />}
+      {modal && <Email $isOpen={modal} onClose={() => setModal(false)} />}
     </PortfolioStyled>
   );
 }
+
+const PortFolioDesc = ({ data }) => {
+  return (
+    <div className='portfolio-description'>
+      <div className='portfolio-sub-title'>알면 알수록, {data.name}.</div>
+      <Swiper
+        className='small_img'
+        slidesPerView={3.5}
+        spaceBetween={20}
+        freeMode={true}
+        navigation={true}
+        modules={[Navigation]}
+      >
+        <SwiperSlide>
+          <img
+            className='detail_filter'
+            alt={data.period}
+            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper1.png'}
+          />
+          <div className='detail_txt'>
+            <div className='img-detail'>{data.detail}</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className='detail_filter'
+            alt={data.period}
+            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper2.png'}
+          />
+          <div className='detail_txt'>
+            <div className='img-detail'>{data.skills?.detail}</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className='detail_filter'
+            alt={data.period}
+            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper5.png'}
+          />
+          <div className='detail_txt'>
+            <div className='img-detail'>{data.date}</div>
+            <div className='img-detail'>{data.skills?.skill}</div>
+            <div className='img-detail'>{data.skills?.organization}</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className='detail_filter'
+            alt={data.period}
+            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper4.png'}
+          />
+          <div className='detail_txt'>
+            <div className='img-detail'>{data.date}</div>
+            <div className='img-detail-country'>{data.country}</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className='detail_filter'
+            alt={data.period}
+            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper3.png'}
+          />
+          <div className='detail_txt'>
+            <div className='img-detail'>{data.date}</div>
+            <div className='img-detail-country'>{data.country}</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className='detail_filter'
+            alt={data.period}
+            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper6.png'}
+          />
+          <div className='detail_txt'>
+            <div className='img-detail-country'>{data.skills?.github}</div>
+            <div className='img-detail-country'>{data.skills?.video}</div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  );
+};
 
 const PortfolioDetail = ({ data, imageData }) => {
   return (
@@ -275,7 +281,7 @@ const PortfolioQnA = ({ QnAItems }) => {
                   viewBox='0 0 32 32'
                   aria-hidden='true'
                   role='presentation'
-                  isOpen={openItem === id}
+                  $isOpen={openItem === id}
                 >
                   <path
                     fill='none'
@@ -289,7 +295,7 @@ const PortfolioQnA = ({ QnAItems }) => {
                 style={{
                   maxHeight: openItem === id ? '500px' : '0px',
                   overflow: 'hidden',
-                  transition: 'max-height 1s ease',
+                  transition: 'max-height 0.5s ease',
                 }}
               >
                 {answer}

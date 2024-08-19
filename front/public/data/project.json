@@ -6,6 +6,7 @@
     "detail": "기존 웹 서비스 \"에어비앤비\" 클론코딩",
     "img": "images/airbnb.png",
     "icon" : "images/airbnb_icon.png",
+    "video":"videos/airbnb.mp4",
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS",
       "organization": "라이징캠프",
