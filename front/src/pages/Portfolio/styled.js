@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
 export const PortfolioStyled = styled.div`
-  .portfolio {
-    overflow: hidden;
-    font-weight: 600;
-    text-align: center;
-    white-space: pre-wrap;
-  }
+  overflow: hidden;
+  font-weight: 600;
+  text-align: center;
+  white-space: pre-wrap;
 
   .header {
     position: relative;
@@ -54,7 +52,6 @@ export const PortfolioStyled = styled.div`
   }
 
   .portfolio-video > div {
-    height: 80vh;
     min-height: 680px;
     max-width: 1920px;
     max-height: 1260px;
@@ -69,9 +66,8 @@ export const PortfolioStyled = styled.div`
   }
 
   .portfolio-description {
-    padding-top: 150px;
+    padding-top: 100px;
     padding-bottom: 150px;
-    padding-inline-bottom: 50px;
   }
 
   .portfolio-sub-title {
@@ -89,11 +85,11 @@ export const PortfolioStyled = styled.div`
   }
 
   .small_img img {
-    object-fit: contain;
-    vertical-align: bottom;
     width: 100%;
-    border-radius: 4px;
+    border-radius: 28px;
     margin-right: 18px;
+    height: 100%;
+    object-fit: cover;
   }
 
   .small_img .swiper-slide {
@@ -102,9 +98,18 @@ export const PortfolioStyled = styled.div`
     aspect-ratio: 0.54;
   }
 
-  .portfolio .swiper-slide {
-    background: green;
+  .portfolio-description .swiper-slide {
+    position: relative;
     border-radius: 28px;
+  }
+
+  .portfolio-description .swiper-slide .detail_txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    color: white;
   }
 
   .swiper {
@@ -347,5 +352,5 @@ export const DropIcon = styled.svg`
   stroke-width: 4;
   overflow: visible;
   transform: ${({ isOpen }) => (isOpen ? 'rotate(180deg)' : 'rotate(0deg)')};
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 `;
