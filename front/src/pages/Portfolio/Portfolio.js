@@ -148,7 +148,7 @@ const PortFolioDesc = ({ data }) => {
             alt={data.period}
             src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper1.png'}
           />
-          <div className='detail_txt'>
+          <div className='detail-txt'>
             <div className='img-detail'>{data.detail}</div>
           </div>
         </SwiperSlide>
@@ -157,8 +157,9 @@ const PortFolioDesc = ({ data }) => {
             className='detail_filter'
             alt={data.period}
             src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper2.png'}
+            style={{ filter: 'brightness(80%)' }}
           />
-          <div className='detail_txt'>
+          <div className='detail-txt'>
             <div className='img-detail'>{data.skills?.detail}</div>
           </div>
         </SwiperSlide>
@@ -167,11 +168,21 @@ const PortFolioDesc = ({ data }) => {
             className='detail_filter'
             alt={data.period}
             src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper5.png'}
+            style={{ filter: 'brightness(65%)' }}
           />
-          <div className='detail_txt'>
-            <div className='img-detail'>{data.date}</div>
-            <div className='img-detail'>{data.skills?.skill}</div>
-            <div className='img-detail'>{data.skills?.organization}</div>
+          <div className='detail-txt'>
+            <div className='detail-txt-item'>
+              <div className='detail-title'>기간</div>
+              <div className='img-detail'>{data.date}</div>
+            </div>
+            <div className='detail-txt-item'>
+              <div className='detail-title'>기술</div>
+              <div className='img-detail'>{data.skills?.skill}</div>
+            </div>
+            <div className='detail-txt-item'>
+              <div className='detail-title'>기관</div>
+              <div className='img-detail'>{data.skills?.organization}</div>
+            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -180,7 +191,7 @@ const PortFolioDesc = ({ data }) => {
             alt={data.period}
             src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper4.png'}
           />
-          <div className='detail_txt'>
+          <div className='detail-txt'>
             <div className='img-detail'>{data.date}</div>
             <div className='img-detail-country'>{data.country}</div>
           </div>
@@ -191,7 +202,7 @@ const PortFolioDesc = ({ data }) => {
             alt={data.period}
             src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper3.png'}
           />
-          <div className='detail_txt'>
+          <div className='detail-txt'>
             <div className='img-detail'>{data.date}</div>
             <div className='img-detail-country'>{data.country}</div>
           </div>
@@ -202,9 +213,19 @@ const PortFolioDesc = ({ data }) => {
             alt={data.period}
             src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper6.png'}
           />
-          <div className='detail_txt'>
-            <div className='img-detail-country'>{data.skills?.github}</div>
-            <div className='img-detail-country'>{data.skills?.video}</div>
+          <div className='detail-txt'>
+            <button
+              className='detail-txt-item'
+              onClick={() => window.open(data.skills.github)}
+            >
+              Github 바로가기 ❯
+            </button>
+            <button
+              className='detail-txt-item'
+              onClick={() => window.open(data.skills.video)}
+            >
+              시현영상 바로가기 ❯
+            </button>
           </div>
         </SwiperSlide>
       </Swiper>
@@ -226,8 +247,8 @@ const PortfolioDetail = ({ data, imageData }) => {
       </div>
       <Swiper
         className='detail-page'
-        slidesPerView={2}
-        spaceBetween={20}
+        slidesPerView={2.7}
+        spaceBetween={30}
         freeMode={true}
         navigation={true}
         modules={[Navigation]}
@@ -242,9 +263,6 @@ const PortfolioDetail = ({ data, imageData }) => {
               alt={page.desc}
               src={process.env.PUBLIC_URL + '/' + page.img}
             />
-            <div className='detail_txt'>
-              <div className='img-detail'>{page.desc}</div>
-            </div>
           </SwiperSlide>
         ))}
       </Swiper>

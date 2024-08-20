@@ -103,13 +103,62 @@ export const PortfolioStyled = styled.div`
     border-radius: 28px;
   }
 
-  .portfolio-description .swiper-slide .detail_txt {
+  .portfolio-description .swiper-slide .detail-txt {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 35px;
     color: white;
+    width: 95%;
+    word-break: keep-all;
+    text-align: left;
+
+    .detail-title {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .portfolio-description .small_img .swiper-slide:nth-child(1) .detail-txt {
+    top: 15%;
+    width: 85%;
+    font-size: 25px;
+    color: black;
+    line-height: 1.3;
+    word-break: keep-all;
+    left: 46%;
+  }
+
+  .portfolio-description .small_img .swiper-slide:nth-child(2) .detail-txt {
+    top: 80%;
+    font-size: 25px;
+    line-height: 1.3;
+    width: 90%;
+  }
+
+  .portfolio-description .small_img .swiper-slide:nth-child(3) .detail-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .img-detail {
+      -webkit-text-stroke: 1px black;
+      font-weight: bold;
+    }
+  }
+
+  .portfolio-description .small_img .swiper-slide:nth-child(6) .detail-txt {
+    top: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: black;
+    gap: 10px;
+
+    button {
+      font-size: 25px;
+    }
   }
 
   .swiper {
@@ -148,9 +197,15 @@ export const PortfolioStyled = styled.div`
   .detail-page .swiper-slide {
     aspect-ratio: 372/280;
     background: white;
-    border-radius: 28px;
-    padding: 32px;
     box-sizing: border-box;
+    border-radius: 15px;
+  }
+
+  .detail-page .detail_filter {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
   }
 
   .detail-page .img-detail {
