@@ -247,7 +247,7 @@ const PortfolioDetail = ({ data, imageData }) => {
       </div>
       <Swiper
         className='detail-page'
-        slidesPerView={2.7}
+        slidesPerView={2}
         spaceBetween={30}
         freeMode={true}
         navigation={true}
