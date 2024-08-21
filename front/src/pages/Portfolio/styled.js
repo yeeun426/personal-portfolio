@@ -195,7 +195,7 @@ export const PortfolioStyled = styled.div`
   }
 
   .detail-page .swiper-slide {
-    aspect-ratio: 372/280;
+    aspect-ratio: 1709/944;
     background: white;
     box-sizing: border-box;
     border-radius: 15px;
