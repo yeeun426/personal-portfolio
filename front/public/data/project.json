@@ -66,6 +66,7 @@
     "detail": "식품의약품안전처 api 연동 레시피 검색 웹 프로젝트",
     "img": "images/myrecipes.png",
     "icon" : "images/myRecipes_icon.png",
+    "video":"videos/myrecipes.mp4",
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS",
       "organization": "라이징캠프",
@@ -156,6 +157,7 @@
     "detail": "기존 웹 서비스 \"원티드\" 클론코딩",
     "img": "images/wanted.png",
     "icon" : "images/wanted_icon.png",
+    "video":"videos/wanted.mp4",
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS",
       "organization": "한국관광공사, 카카오",
