@@ -11,7 +11,6 @@ import Email from '../../components/Email/Email';
 function Portfolio() {
   const params = useParams();
   const [data, setData] = useState([]);
-  const [pages, setPages] = useState([]);
   const [otherProject, setOtherProject] = useState([]);
   const [modal, setModal] = useState(false);
   const [QnAItems, setQnAItems] = useState([]);
@@ -28,7 +27,6 @@ function Portfolio() {
         axis_data.map((item) => {
           if (Number(params.projectId) === item.id) {
             setData(item);
-            setPages(item.pages);
             setQnAItems(item.QnA);
           }
           if (random_id === item.id) {
@@ -40,7 +38,6 @@ function Portfolio() {
         console.log(err);
       });
   }, []);
-  const imageData = Object.values(pages);
 
   const [scrollPosition, setScrollPosition] = useState(0); // 스크롤 위치 저장
   const updateScroll = () => {
@@ -88,7 +85,7 @@ function Portfolio() {
         </div>
       </div>
       <PortFolioDesc data={data} />
-      <PortfolioDetail data={data} imageData={imageData} />
+      <PortfolioDetail data={data} />
       <PortfolioQnA QnAItems={QnAItems} />
       <div className='portfolio-other'>
         <div className='portfolio-sub-title'>또 다른,</div>
@@ -146,7 +143,7 @@ const PortFolioDesc = ({ data }) => {
           <img
             className='detail_filter'
             alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper1.png'}
+            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper1.png'}
           />
           <div className='detail-txt'>
             <div className='img-detail'>{data.detail}</div>
@@ -156,7 +153,7 @@ const PortFolioDesc = ({ data }) => {
           <img
             className='detail_filter'
             alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper2.png'}
+            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper2.png'}
             style={{ filter: 'brightness(80%)' }}
           />
           <div className='detail-txt'>
@@ -167,7 +164,7 @@ const PortFolioDesc = ({ data }) => {
           <img
             className='detail_filter'
             alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper5.png'}
+            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper5.png'}
             style={{ filter: 'brightness(65%)' }}
           />
           <div className='detail-txt'>
@@ -189,7 +186,7 @@ const PortFolioDesc = ({ data }) => {
           <img
             className='detail_filter'
             alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper4.png'}
+            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper4.png'}
           />
           <div className='detail-txt'>
             <div className='img-detail'>{data.date}</div>
@@ -200,7 +197,7 @@ const PortFolioDesc = ({ data }) => {
           <img
             className='detail_filter'
             alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper3.png'}
+            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper3.png'}
           />
           <div className='detail-txt'>
             <div className='img-detail'>{data.date}</div>
@@ -211,7 +208,7 @@ const PortFolioDesc = ({ data }) => {
           <img
             className='detail_filter'
             alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/portfolio/more_swiper6.png'}
+            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper6.png'}
           />
           <div className='detail-txt'>
             <button
@@ -233,7 +230,28 @@ const PortFolioDesc = ({ data }) => {
   );
 };
 
-const PortfolioDetail = ({ data, imageData }) => {
+const PortfolioDetail = ({ data }) => {
+  const [pages, setPages] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('/data/page.json')
+      .then((res) => {
+        const foundPage = res.data.find((page) => data.id === page.id);
+        if (foundPage) {
+          setPages(foundPage);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [data]);
+
+  const imageData = Object.values(pages).filter(
+    (page) => typeof page === 'object'
+  );
+
+  console.log(imageData);
   return (
     <div className='portfolio-detail'>
       <div className='portfolio-sub-title'>
@@ -255,7 +273,7 @@ const PortfolioDetail = ({ data, imageData }) => {
       >
         {imageData.map((page) => (
           <SwiperSlide
-            key={page.id}
+            key={page.num}
             style={{ display: 'flex', flexDirection: 'column' }}
           >
             <img
