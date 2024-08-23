@@ -14,38 +14,6 @@
       "github": "https://github.com/yeeun426/airbnb_web",
       "video": "https://drive.google.com/drive/folders/113-xXCJ0R3WV6a9f4WHf79QP1Io8UKCT"
     },
-    "pages": {
-      "page1": {
-        "id" : "1",
-        "img" : "images/portfolio/airbnb/airbnb(1).png",
-        "desc" : "main"
-      },
-      "page2": {
-        "id" : "2",
-        "img" : "images/portfolio/airbnb/airbnb(2).png",
-        "desc" : "map"
-      },
-      "page3": {
-        "id" : "3",
-        "img" : "images/portfolio/airbnb/airbnb(3).png",
-        "desc" : "좋아요"
-      },
-      "page4": {
-        "id" : "4",
-        "img" : "images/portfolio/airbnb/airbnb(4).png",
-        "desc" : "test"
-      },
-      "page5": {
-        "id" : "5",
-        "img" : "images/portfolio/airbnb/airbnb(5).png",
-        "desc" : "test"
-      },
-      "page6": {
-        "id" : "6",
-        "img" : "images/portfolio/airbnb/airbnb(6).png",
-        "desc" : "test"
-      }
-    },
     "QnA": [
       {
         "id": "learn",
@@ -75,23 +43,6 @@
       "video": "https://drive.google.com/drive/folders/1kATYaHrN2w6lUqXJmRHM9gPEAcTMpnVN"
     },
     "learn": "기존 에어비앤비 클론코딩은 api를 연결하지 않고 제작했다면 본 프로젝트에서는 open API를 이용해 API 연동하는 연습을 할 수 있었다. 평소 다이어트를 자주 하는 편인데 그럴 때 항상 칼로리를 확인하곤 했다. 이러한 경험을 바탕으로 상세페이지에 들어가지 않아도 칼로리를 먼저 확인하고 칼로리가 적합하다고 느끼면 상세페이지에서 레시피를 확인할 수 있게 만들고자 하였다. api 연동 후 검색 기능을 구현하고 소셜 로그인(카카오)을 구현했다.",
-    "pages": {
-      "page1": {
-        "id" : "1",
-        "img" : "images/myrecipes(1).png",
-        "desc" : "main"
-      },
-      "page2": {
-        "id" : "2",
-        "img" : "images/myrecipes(2).png", 
-        "desc" : "map"
-      },
-      "page3": {
-        "id" : "3",
-        "img" : "images/myrecipes(3).png", 
-        "desc" : "좋아요"
-      }
-    },
     "QnA": [
       {
         "id": "learn",
@@ -119,23 +70,6 @@
       "data": "카카오맵API, 한국관광공사 두루누비 정보 서비스 API",
       "github": "https://github.com/yeeun426/MAPLIX",
       "video": "http://ec2-3-37-76-88.ap-northeast-2.compute.amazonaws.com/"
-    },
-    "pages": {
-      "page1": {
-        "id" : "1",
-        "img" : "images/maplix(1).png",
-        "desc" : "main"
-      },
-      "page2": {
-        "id" : "2",
-        "img" : "images/maplix(2).png", 
-        "desc" : "map"
-      },
-      "page3": {
-        "id" : "3",
-        "img" : "images/maplix(3).png", 
-        "desc" : "좋아요"
-      }
     },
     "QnA": [
       {
@@ -166,23 +100,6 @@
       "github": "https://github.com/yeeun426/wanted_web_ony",
       "video": "https://drive.google.com/drive/folders/1kqTYssxoAYglwE3fiOZ2iuflulpIJ2lV"
     },
-    "pages": {
-      "page1": {
-        "id" : "1",
-        "img" : "images/wanted(1).png",
-        "desc" : "main"
-      },
-      "page2": {
-        "id" : "2",
-        "img" : "images/wanted(2).png", 
-        "desc" : "map"
-      },
-      "page3": {
-        "id" : "3",
-        "img" : "images/wanted(3).png", 
-        "desc" : "좋아요"
-      }
-    },
     "QnA": [
       {
         "id": "learn",
@@ -209,23 +126,6 @@
       "detail": "본 제시안은 동아리 홍보 및 동아리 부원 내 소통, 기록용 웹 개발을 목적으로 하고있다. 주 소비자층인 대학생에 맞춰 정서에 맞게 심플하지만 한눈에 들어오는 분위기를 이끌어냈다.",
       "github": "https://github.com/yeeun426/gnuvillage-frontend",
       "video": "https://gnuvil.swygbro.com/"
-    },
-    "pages": {
-      "page1": {
-        "id" : "1",
-        "img" : "images/gnuvilage(1).png",
-        "desc" : "main"
-      },
-      "page2": {
-        "id" : "2",
-        "img" : "images/gnuvilage(2).png", 
-        "desc" : "map"
-      },
-      "page3": {
-        "id" : "3",
-        "img" : "images/gnuvilage(3).png", 
-        "desc" : "좋아요"
-      }
     },
     "QnA": [
       {
@@ -254,23 +154,6 @@
       "github": "https://github.com/yeeun426/ET_front",
       "video": "준비중"
     },
-    "pages": {
-      "page1": {
-        "id" : "1",
-        "img" : "images/eatTogether(1).png",
-        "desc" : "main"
-      },
-      "page2": {
-        "id" : "2",
-        "img" : "images/eatTogether(2).png", 
-        "desc" : "map"
-      },
-      "page3": {
-        "id" : "3",
-        "img" : "images/eatTogether(3).png", 
-        "desc" : "좋아요"
-      }
-    },
     "QnA": [
       {
         "id": "learn",
@@ -297,23 +180,6 @@
       "detail": "본 제시안은 장애인의 학교생활을 돕기 위한 앱 개발을 목적으로 하고 있다. 주 소비자층인 기존의 앱과 드리게 장애인에 맞춰 정서에 맞게 그들이 쉽게 도움을 요청할 수 있도록 웹으로 제작할 예정이다. 또한 Donation을 통해 합리적인 소비를 도울 예정이다.",
       "github": "https://github.com/yeeun426/Giver_front-end",
       "video": "준비중"
-    },
-    "pages": {
-      "page1": {
-        "id" : "1",
-        "img" : "images/giver(1).png",
-        "desc" : "main"
-      },
-      "page2": {
-        "id" : "2",
-        "img" : "images/giver(2).png", 
-        "desc" : "map"
-      },
-      "page3": {
-        "id" : "3",
-        "img" : "images/giver(3).png", 
-        "desc" : "좋아요"
-      }
     },
     "QnA": [
       {
@@ -342,23 +208,6 @@
       "data": "고용노동 공공데이터",
       "github": "https://github.com/yeeun426/NDGD_front",
       "video": "준비중"
-    },
-    "pages": {
-      "page1": {
-        "id" : "1",
-        "img" : "images/ndgd(1).png",
-        "desc" : "main"
-      },
-      "page2": {
-        "id" : "2",
-        "img" : "images/ndgd(2).png", 
-        "desc" : "map"
-      },
-      "page3": {
-        "id" : "3",
-        "img" : "images/ndgd(3).png", 
-        "desc" : "좋아요"
-      }
     },
     "QnA": [
       {
