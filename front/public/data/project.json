@@ -174,12 +174,13 @@
     "detail": "학교 생활에 어려움을 겪는 장애인과 비장애인 매칭 서비스",
     "img": "images/giver.png",
     "icon" : "images/giver_icon.png",
+    "video":"videos/giver.mp4",
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS",
       "organization": "GDSC",
       "detail": "본 제시안은 장애인의 학교생활을 돕기 위한 앱 개발을 목적으로 하고 있다. 주 소비자층인 기존의 앱과 드리게 장애인에 맞춰 정서에 맞게 그들이 쉽게 도움을 요청할 수 있도록 웹으로 제작할 예정이다. 또한 Donation을 통해 합리적인 소비를 도울 예정이다.",
       "github": "https://github.com/yeeun426/Giver_front-end",
-      "video": "준비중"
+      "video": "videos/giver.mp4"
     },
     "QnA": [
       {
