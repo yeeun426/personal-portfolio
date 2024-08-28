@@ -202,6 +202,7 @@
     "detail": "고용노동 공공데이터 활용 공모전",
     "img": "images/ndgd.png",
     "icon" : "images/ndgd_icon.png",
+    "video":"videos/ndgd.mp4",
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS",
       "organization": "고용노동부",
