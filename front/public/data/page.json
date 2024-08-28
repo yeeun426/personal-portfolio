@@ -195,18 +195,58 @@
         "id": 8,
         "page1": {
             "num" : "1",
-            "img" : "images/ndgd(1).png",
+            "img" : "images/portfolio/ndgd/ndgd(1).png",
             "desc" : "main"
         },
         "page2": {
             "num" : "2",
-            "img" : "images/ndgd(2).png", 
+            "img" : "images/portfolio/ndgd/ndgd(2).png",
             "desc" : "map"
         },
         "page3": {
-            "num" : "3",
-            "img" : "images/ndgd(3).png", 
-            "desc" : "좋아요"
+          "num" : "3",
+          "img" : "images/portfolio/ndgd/ndgd(3).png",
+          "desc" : "좋아요"
+        },
+        "page4": {
+          "num" : "4",
+          "img" : "images/portfolio/ndgd/ndgd(4).png",
+          "desc" : "좋아요"
+        },
+        "page5": {
+          "num" : "5",
+          "img" : "images/portfolio/ndgd/ndgd(5).png",
+          "desc" : "좋아요"
+        },
+        "page6": {
+          "num" : "6",
+          "img" : "images/portfolio/ndgd/ndgd(6).png",
+          "desc" : "좋아요"
+        },
+        "page7": {
+          "num" : "7",
+          "img" : "images/portfolio/ndgd/ndgd(7).png",
+          "desc" : "좋아요"
+        },
+        "page8": {
+          "num" : "8",
+          "img" : "images/portfolio/ndgd/ndgd(8).png",
+          "desc" : "좋아요"
+        },
+        "page9": {
+          "num" : "9",
+          "img" : "images/portfolio/ndgd/ndgd(9).png",
+          "desc" : "좋아요"
+        },
+        "page10": {
+          "num" : "10",
+          "img" : "images/portfolio/ndgd/ndgd(10).jpg",
+          "desc" : "좋아요"
+        },
+        "page11": {
+          "num" : "11",
+          "img" : "images/portfolio/ndgd/ndgd(11).jpg",
+          "desc" : "좋아요"
         }
     }
 ]
