@@ -142,33 +142,6 @@
   },
   {
     "id": 6,
-    "date": "23.3 ~ 23.6",
-    "name": "EatTogether",
-    "detail": "배달비 더치페이 웹 서비스",
-    "img": "images/eatTogether.png",
-    "icon" : "images/together_icon.png",
-    "skills": {
-      "skill": "REACT, JAVASCRIPT, HTML/CSS",
-      "organization": "gnuvil",
-      "detail": "배달비 폭등으로 인해 배달을 고민하는 사람들을 위한 배달비 더치페이 웹 서비스.",
-      "github": "https://github.com/yeeun426/ET_front",
-      "video": "준비중"
-    },
-    "QnA": [
-      {
-        "id": "learn",
-        "question": "이 프로젝트를 통해 배운점은 뭐가 있나요?",
-        "answer": "에어비앤비 게스트가 찾는 숙소는 매우 다양하며, 에어비앤비에서는 초소형 주택, 통나무집, 트리하우스 등 다양한 유형의 숙소가 등록되어 있습니다. 집에 남는 방 한 칸이라도 훌륭한 숙소가 될 수 있습니다."
-      },
-      {
-        "id": "disappointing",
-        "question": "이 프로젝트에서 아쉬운/보완하고 싶은 점은 무엇인가요?",
-        "answer": "에어비앤비 게스트가 찾는 숙소는 매우 다양하며, 에어비앤비에서는 초소형 주택, 통나무집, 트리하우스 등 다양한 유형의 숙소가 등록되어 있습니다. 집에 남는 방 한 칸이라도 훌륭한 숙소가 될 수 있습니다."
-      }
-    ]
-  },
-  {
-    "id": 7,
     "date": "23.6",
     "name": "GIVER",
     "detail": "학교 생활에 어려움을 겪는 장애인과 비장애인 매칭 서비스",
@@ -196,7 +169,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 7,
     "date": "23.4 ~ 23.7",
     "name": "NDGD",
     "detail": "고용노동 공공데이터 활용 공모전",
