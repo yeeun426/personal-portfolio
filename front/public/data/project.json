@@ -120,11 +120,12 @@
     "detail": "코딩 중앙 동아리 \"그누빌\" 웹 프로젝트",
     "img": "images/gnuvilage.png",
     "icon" : "images/gnuvilage_icon.png",
+    "video":"videos/gnuvilage.mp4",
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS",
       "organization": "한국관광공사, 카카오",
       "detail": "본 제시안은 동아리 홍보 및 동아리 부원 내 소통, 기록용 웹 개발을 목적으로 하고있다. 주 소비자층인 대학생에 맞춰 정서에 맞게 심플하지만 한눈에 들어오는 분위기를 이끌어냈다.",
-      "github": "https://github.com/yeeun426/gnuvillage-frontend",
+      "github": "https://github.com/yeeun426/gnuvillage-froㄴntend",
       "video": "https://gnuvil.swygbro.com/"
     },
     "QnA": [

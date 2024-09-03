@@ -120,17 +120,42 @@
         "id": 5,
         "page1": {
           "num" : "1",
-          "img" : "images/gnuvilage(1).png",
+          "img" : "images/portfolio/gnuvilage/gnuvilage(1).png",
           "desc" : "main"
         },
         "page2": {
           "num" : "2",
-          "img" : "images/gnuvilage(2).png", 
+          "img" : "images/portfolio/gnuvilage/gnuvilage(2).png",
           "desc" : "map"
         },
         "page3": {
           "num" : "3",
-          "img" : "images/gnuvilage(3).png", 
+          "img" : "images/portfolio/gnuvilage/gnuvilage(3).png",
+          "desc" : "좋아요"
+        },
+        "page4": {
+          "num" : "4",
+          "img" : "images/portfolio/gnuvilage/gnuvilage(4).png",
+          "desc" : "좋아요"
+        },
+        "page5": {
+          "num" : "5",
+          "img" : "images/portfolio/gnuvilage/gnuvilage(5).png",
+          "desc" : "main"
+        },
+        "page6": {
+          "num" : "6",
+          "img" : "images/portfolio/gnuvilage/gnuvilage(6).png",
+          "desc" : "map"
+        },
+        "page7": {
+          "num" : "7",
+          "img" : "images/portfolio/gnuvilage/gnuvilage(7).png",
+          "desc" : "좋아요"
+        },
+        "page8": {
+          "num" : "8",
+          "img" : "images/portfolio/gnuvilage/gnuvilage(8).png",
           "desc" : "좋아요"
         }
     },
