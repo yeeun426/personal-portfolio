@@ -5,12 +5,12 @@
     "name": "Airbnb",
     "detail": "기존 웹 서비스 \"에어비앤비\" 클론코딩",
     "img": "images/airbnb.png",
-    "icon" : "images/airbnb_icon.png",
+    "icon" : "images/icon/airbnb_icon.png",
     "video":"videos/airbnb.mp4",
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS",
       "organization": "라이징캠프",
-      "detail": "프론트엔드에 관심을 가지게 되며 웹 지식을 적용하기 위해 라이징캠프(웹 교육)를 들으며 클론 코딩을 진행하였습니다.",
+      "detail": "프론트엔드에 관심을 가지기 시작하며, 웹을 공부하기 위해 라이징캠프(웹 교육)를 들으며 \"에어비앤비\" 클론 코딩을 진행했습니다.",
       "github": "https://github.com/yeeun426/airbnb_web",
       "video": "https://drive.google.com/drive/folders/113-xXCJ0R3WV6a9f4WHf79QP1Io8UKCT"
     },
@@ -63,10 +63,11 @@
     "detail": "2022 관광데이터활용 공모전 우수상",
     "img": "images/maplix.jpeg",
     "icon" : "images/maplix_icon.png",
+    "video":"videos/maplix.mp4",
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS",
       "organization": "한국관광공사, 카카오",
-      "detail": "웹 프론트엔드에 관심을 가지게 되면서 방학기간동안 실력을 늘리고자 라이징캠프(웹)을 들으며 클론 코딩을 진행하였다.",
+      "detail": "프론트와 서버간의 통신을 공부하기 위해 라이징캠프(웹 교육)를 들으며 원티드 클론 코딩을 진행했습니다.",
       "data": "카카오맵API, 한국관광공사 두루누비 정보 서비스 API",
       "github": "https://github.com/yeeun426/MAPLIX",
       "video": "http://ec2-3-37-76-88.ap-northeast-2.compute.amazonaws.com/"
@@ -95,7 +96,7 @@
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS",
       "organization": "한국관광공사, 카카오",
-      "detail": "본 프로젝트는 라이징캠프 서버 개발자분들과 협업하여 원티드를 클론코딩하였다.",
+      "detail": "본 프로젝트는 라이징캠프 서버 개발자분들과 협업하여 \"원티드\"를 클론코딩하였다.",
       "data": "카카오맵API, 한국관광공사 두루누비 정보 서비스 API",
       "github": "https://github.com/yeeun426/wanted_web_ony",
       "video": "https://drive.google.com/drive/folders/1kqTYssxoAYglwE3fiOZ2iuflulpIJ2lV"
