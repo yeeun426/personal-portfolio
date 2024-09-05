@@ -201,11 +201,16 @@ export const PortfolioStyled = styled.div`
     border-radius: 15px;
   }
 
+  .detail-page.maplix .swiper-slide {
+    aspect-ratio: 1709/1750;
+  }
+
   .detail-page .detail_filter {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
+    object-position: top;
   }
 
   .detail-page .img-detail {

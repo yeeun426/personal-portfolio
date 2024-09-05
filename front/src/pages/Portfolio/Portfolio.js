@@ -85,7 +85,7 @@ function Portfolio() {
         </div>
       </div>
       <PortFolioDesc data={data} />
-      <PortfolioDetail data={data} />
+      <PortfolioDetail data={data} params={params.projectId} />
       <PortfolioQnA QnAItems={QnAItems} />
       <div className='portfolio-other'>
         <div className='portfolio-sub-title'>또 다른,</div>
@@ -230,7 +230,7 @@ const PortFolioDesc = ({ data }) => {
   );
 };
 
-const PortfolioDetail = ({ data }) => {
+const PortfolioDetail = ({ data, params }) => {
   const [pages, setPages] = useState([]);
 
   useEffect(() => {
@@ -250,8 +250,7 @@ const PortfolioDetail = ({ data }) => {
   const imageData = Object.values(pages).filter(
     (page) => typeof page === 'object'
   );
-
-  console.log(imageData);
+  console.log(params);
   return (
     <div className='portfolio-detail'>
       <div className='portfolio-sub-title'>
@@ -264,7 +263,7 @@ const PortfolioDetail = ({ data }) => {
         </button>
       </div>
       <Swiper
-        className='detail-page'
+        className={params === '3' ? 'detail-page maplix' : 'detail-page'}
         slidesPerView={2}
         spaceBetween={30}
         freeMode={true}

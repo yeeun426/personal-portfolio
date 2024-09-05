@@ -35,20 +35,20 @@
     {
         "id": 2,
         "page1": {
-            "num" : "1",
-            "img" : "images/portfolio/myrecipes/myrecipes(1).png",
-            "desc" : "main"
-          },
-          "page2": {
-            "num" : "2",
-            "img" : "images/portfolio/myrecipes/myrecipes(2).png",
-            "desc" : "map"
-          },
-          "page3": {
-            "num" : "3",
-            "img" : "images/portfolio/myrecipes/myrecipes(3).png",
-            "desc" : "좋아요"
-          }
+          "num" : "1",
+          "img" : "images/portfolio/myrecipes/myrecipes(1).png",
+          "desc" : "main"
+        },
+        "page2": {
+          "num" : "2",
+          "img" : "images/portfolio/myrecipes/myrecipes(2).png",
+          "desc" : "map"
+        },
+        "page3": {
+          "num" : "3",
+          "img" : "images/portfolio/myrecipes/myrecipes(3).png",
+          "desc" : "좋아요"
+        }
     },
     {
         "id": 3,
@@ -66,6 +66,31 @@
             "num" : "3",
             "img" : "images/portfolio/maplix/maplix(3).png",
             "desc" : "좋아요"
+        },
+        "page4": {
+          "num" : "4",
+          "img" : "images/portfolio/maplix/maplix(4).png",
+          "desc" : "main"
+        },
+        "page5": {
+          "num" : "5",
+          "img" : "images/portfolio/maplix/maplix(5).png",
+          "desc" : "map"
+        },
+        "page6": {
+          "num" : "6",
+          "img" : "images/portfolio/maplix/maplix(6).png",
+          "desc" : "좋아요"
+        },
+        "page7": {
+          "num" : "7",
+          "img" : "images/portfolio/maplix/maplix(7).png",
+          "desc" : "map"
+        },
+        "page8": {
+          "num" : "8",
+          "img" : "images/portfolio/maplix/maplix(8).png",
+          "desc" : "좋아요"
         }
     },
     {
