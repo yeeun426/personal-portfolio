@@ -37,6 +37,7 @@ export const HomeStyled = styled.div`
     text-transform: uppercase;
     font-weight: bold;
     font-size: 8rem;
+    line-height: 1.3;
   }
 
   .home-txt.opacity {
@@ -46,6 +47,11 @@ export const HomeStyled = styled.div`
     animation: flashText 0.8s ease-out alternate infinite;
   }
 
+  @media (max-width: 1160px) {
+    .home-txt.opacity {
+      display: none;
+    }
+  }
   .home-txt.disappear {
     animation: fadeOut 4s ease;
   }
