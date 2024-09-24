@@ -189,8 +189,7 @@ const PortFolioDesc = ({ data }) => {
             src={process.env.PUBLIC_URL + '/images/swiper/more_swiper4.png'}
           />
           <div className='detail-txt'>
-            <div className='img-detail'>{data.date}</div>
-            <div className='img-detail-country'>{data.country}</div>
+            <div className='img-detail'>{data.skills?.role1}</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -200,8 +199,7 @@ const PortFolioDesc = ({ data }) => {
             src={process.env.PUBLIC_URL + '/images/swiper/more_swiper3.png'}
           />
           <div className='detail-txt'>
-            <div className='img-detail'>{data.date}</div>
-            <div className='img-detail-country'>{data.country}</div>
+            <div className='img-detail'>{data.skills?.role2}</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
