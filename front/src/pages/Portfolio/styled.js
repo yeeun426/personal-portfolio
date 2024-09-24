@@ -147,7 +147,6 @@ export const PortfolioStyled = styled.div`
     gap: 40px;
 
     .img-detail {
-      -webkit-text-stroke: 1px black;
       font-weight: bold;
     }
   }
@@ -261,6 +260,7 @@ export const PortfolioStyled = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
 
   .pli-answer {
