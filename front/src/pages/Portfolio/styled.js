@@ -35,7 +35,6 @@ export const PortfolioStyled = styled.div`
     font-size: 28px;
     max-width: 290px;
     text-align: left;
-    line-height: 1.3;
     word-break: keep-all;
   }
 
@@ -78,7 +77,6 @@ export const PortfolioStyled = styled.div`
     font-size: 56px;
     font-weight: 600;
     text-align: left;
-    line-height: 1.27;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -120,12 +118,19 @@ export const PortfolioStyled = styled.div`
     }
   }
 
+  .portfolio-description .swiper-slide .detail-txt.role {
+    font-size: 21px;
+    line-height: 1.58;
+    font-weight: 400;
+    background: #0000003d;
+    padding: 30px 0;
+  }
+
   .portfolio-description .small_img .swiper-slide:nth-child(1) .detail-txt {
     top: 15%;
     width: 85%;
     font-size: 25px;
     color: black;
-    line-height: 1.3;
     word-break: keep-all;
     left: 46%;
   }
@@ -133,7 +138,6 @@ export const PortfolioStyled = styled.div`
   .portfolio-description .small_img .swiper-slide:nth-child(2) .detail-txt {
     top: 80%;
     font-size: 25px;
-    line-height: 1.3;
     width: 90%;
   }
 
@@ -217,7 +221,6 @@ export const PortfolioStyled = styled.div`
     font-size: 25px;
     font-weight: 500;
     text-align: left;
-    line-height: 1.15;
     margin-top: 15px;
   }
 
@@ -268,7 +271,7 @@ export const PortfolioStyled = styled.div`
 
   .pli-answer {
     font-size: 18px;
-    line-height: 24px;
+    line-height: 1.45;
   }
 
   .portfolio-learn-container > div {

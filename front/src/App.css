@@ -82,8 +82,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -133,22 +131,16 @@ table {
 }
 
 @font-face {
-  font-family: 'Hahmlet-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Regular.woff2')
-    format('woff2');
-  font-weight: normal;
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 500;
   font-style: normal;
-}
-
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-.notosanskr * {
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .App {
   text-align: center;
-  font-family: 'AppleSDGothicNeoM00';
+  font-family: 'Pretendard-Regular';
+  line-height: 1.4;
 }
 
 input {
