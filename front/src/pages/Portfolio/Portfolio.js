@@ -188,7 +188,7 @@ const PortFolioDesc = ({ data }) => {
             alt={data.period}
             src={process.env.PUBLIC_URL + '/images/swiper/more_swiper4.png'}
           />
-          <div className='detail-txt'>
+          <div className='detail-txt role'>
             <div className='img-detail'>{data.skills?.role1}</div>
           </div>
         </SwiperSlide>
@@ -198,7 +198,7 @@ const PortFolioDesc = ({ data }) => {
             alt={data.period}
             src={process.env.PUBLIC_URL + '/images/swiper/more_swiper3.png'}
           />
-          <div className='detail-txt'>
+          <div className='detail-txt role'>
             <div className='img-detail'>{data.skills?.role2}</div>
           </div>
         </SwiperSlide>
