@@ -327,7 +327,8 @@ const PortfolioQnA = ({ QnAItems }) => {
                 ref={answerRef}
                 style={{
                   maxHeight: openItem === id ? '500px' : '0px',
-                  overflow: 'hidden',
+                  // overflow: 'hidden',
+                  overflow: 'auto',
                   transition: 'max-height 0.5s ease',
                 }}
               >
