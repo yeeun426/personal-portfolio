@@ -18,7 +18,7 @@ export const PopupStyled = styled.div`
     background: #e9e9e9cf;
     padding: 20px;
     box-sizing: border-box;
-    width: 9rem;
+    width: 12rem;
     text-align: left;
     line-height: 1.7;
   }
@@ -53,6 +53,13 @@ export const PopupStyled = styled.div`
     line-height: 2;
   }
 
+  .popup-favorite div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    text-align-last: left;
+    margin-top: 10px;
+  }
+
   .pf-title {
     font-size: 12px;
     color: #8b8c8e;
@@ -60,10 +67,10 @@ export const PopupStyled = styled.div`
   }
 
   .popup-right {
-    width: 50rem;
-    // margin: auto;
+    width: 55vw;
     border-radius: 0px 10px 10px 0;
     background: white;
+    height: 60vh;
   }
 
   .pr-top {
@@ -93,16 +100,19 @@ export const PopupStyled = styled.div`
   }
 
   .popup-content {
-    padding: 25px 30px;
+    // padding: 25px 30px;
     display: flex;
     place-content: center;
     align-items: center;
     gap: 10%;
     text-align: right;
+    height: calc(100% - 50px);
   }
 
   .pcl-title {
-    font-size: 60px;
+    // font-size: 60px;
+    font-size: 5em;
+    line-height: 1.1;
   }
 
   .pcl-title-name {
@@ -111,12 +121,13 @@ export const PopupStyled = styled.div`
 
   .pc-right {
     img {
-      height: 350px;
+      // height: 350px;
     }
   }
 
   .pcl-txt {
     text-align: left;
+    font-size: 19px;
   }
 
   .pcl-btns {
@@ -127,12 +138,12 @@ export const PopupStyled = styled.div`
 
   .pc-left {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     flex-direction: column;
 
     button {
       font-size: 15px;
-      padding: 10px;
+      padding: 15px 30px;
       border-radius: 15px;
       box-shadow: 2px 2px 4px #00000029;
     }
