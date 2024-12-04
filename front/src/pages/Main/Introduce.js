@@ -5,7 +5,7 @@ export default function Main() {
     <IntroduceStyled>
       <div className='aboutme-wrapper'>
         <div className='aboutme-top'>
-          <img className='aboutme-img' src='images/myimg.JPG' alt='이예은' />
+          <img className='aboutme-img' src='images/myimg1.png' alt='이예은' />
           <div className='aboutme-list'>
             <div className='portfolio-title'>About Me</div>
             <div className='aboutme-txt'>

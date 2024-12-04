@@ -24,7 +24,6 @@ export const IntroduceStyled = styled.div`
   position: relative;
 
   .aboutme-wrapper {
-    padding: 7rem;
     box-sizing: border-box;
     position: absolute;
     top: 50%;
@@ -36,12 +35,12 @@ export const IntroduceStyled = styled.div`
     display: flex;
     align-items: center;
     place-content: center;
-    gap: 45px;
-    height: 400px;
+    gap: 70px;
+    // height: 400px;
   }
 
   .aboutme-img {
-    height: 300px;
+    height: 40vh;
   }
 
   .aboutme-txt {

@@ -64,7 +64,8 @@ export default function Popup({ open, setOpen }) {
               <div className='pcl-txt'>
                 안녕하세요.
                 <br />
-                꾸준하게 빈틈을 채워가며 성장하는 개발자 이예은입니다.
+                꾸준하게 빈틈을 채워가고 있습니다.
+                <br /> 성장하는 개발자 이예은입니다.
               </div>
 
               <div className='pcl-btns'>
