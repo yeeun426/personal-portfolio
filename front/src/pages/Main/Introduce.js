@@ -1,12 +1,31 @@
 import { IntroduceStyled } from './style';
+import React, { useEffect, useState } from 'react';
 
 export default function Main() {
+  const [shouldDisappear, setShouldDisappear] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 1300 || window.scrollY < 300) {
+        setShouldDisappear(true);
+      } else {
+        setShouldDisappear(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <IntroduceStyled>
       <div className='aboutme-wrapper'>
         <div className='aboutme-top'>
           <img className='aboutme-img' src='images/myimg1.png' alt='이예은' />
-          <div className='aboutme-list'>
+          {/* <div className='aboutme-list'> */}
+          <div className={`aboutme-list ${shouldDisappear ? 'disappear' : ''}`}>
             <div className='portfolio-title'>About Me</div>
             <div className='aboutme-txt'>
               프론트엔드 개발자를 꿈꾸는 이예은입니다. <br />
@@ -51,7 +70,6 @@ export default function Main() {
               <div className='aboutme-skill-title'>FRONTEND</div>
               <div>
                 Javascript
-                {/* <br/>Typescript */}
                 <br />
                 Html
                 <br />
