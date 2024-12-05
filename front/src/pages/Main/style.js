@@ -30,13 +30,12 @@ export const IntroduceStyled = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
   .aboutme-top {
     display: flex;
     align-items: center;
     place-content: center;
     gap: 70px;
-    // height: 400px;
+    width: max-content;
   }
 
   .aboutme-img {
@@ -49,10 +48,10 @@ export const IntroduceStyled = styled.div`
   }
 
   .portfolio-title {
-    font-size: 40px;
+    font-size: 3.4em;
     font-weight: bold;
-    margin-bottom: 15px;
     text-align: left;
+    font-family: sans-serif;
   }
 
   .aboutme-myinfo {
@@ -78,13 +77,14 @@ export const IntroduceStyled = styled.div`
 
   .aboutme-bottom {
     text-align: -webkit-center;
+    margin-top: 35px;
   }
 
   .aboutme-bottom-contents {
     background: white;
     width: fit-content;
     border-radius: 100px;
-    padding: 0 60px;
+    padding: 5px 90px;
     box-shadow: #80808036 13px 15px 30px;
 
     display: flex;
@@ -112,5 +112,38 @@ export const IntroduceStyled = styled.div`
 
   .aboutme-skills-item :nth-child(3) {
     line-height: 1.3;
+  }
+
+  .aboutme-list {
+    position: absolute;
+    right: 0px;
+    animation: slide 2s;
+    opacity: 1;
+  }
+
+  .aboutme-list.disappear {
+    animation: disappear 1s ease-out forwards;
+  }
+
+  @keyframes slide {
+    from {
+      right: -500px;
+      opacity: 0;
+    }
+    to {
+      right: 0px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes disappear {
+    from {
+      right: 0px;
+      opactity: 1;
+    }
+    to {
+      right: -500px;
+      opacity: 0;
+    }
   }
 `;
