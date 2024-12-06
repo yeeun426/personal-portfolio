@@ -14,6 +14,9 @@ export const TestStyled = styled.div`
 
 export const TypeItStyled = styled.div`
   height: 100vh;
+  background-image: url('images/macos.jpg');
+  background-size: cover;
+  position: relative;
 
   .home-click {
     z-index: 1;
@@ -40,6 +43,10 @@ export const TypeItStyled = styled.div`
     width: max-content;
   }
 
+  .type-it.color-change {
+    color: #ffffff5e;
+  }
+
   .my-name strong {
     font-family: 'Arial';
     color: #fff;
@@ -64,10 +71,6 @@ export const TypeItStyled = styled.div`
     }
   }
 
-  .my-name strong:hover {
-    color: red;
-  }
-
   @keyframes flash {
     to {
       opacity: 1;
@@ -75,14 +78,12 @@ export const TypeItStyled = styled.div`
   }
 
   .type-it-container {
-    transition:
-      transform 2s ease-out,
-      opacity 1s;
+    transition: opacity 1.5s ease-out;
   }
 
   .type-it-container.disappear {
-    transform: translate(-100%, -50%);
     opacity: 0 !important;
+    // z-index: -1;
   }
 
   // 폴더
@@ -92,7 +93,17 @@ export const TypeItStyled = styled.div`
     left: 50%;
     transform: translate(-50%, -150%);
     animation: dropBounce 3s ease-out forwards;
-    opacity: 1;
+    animation-delay: 2s;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .open-folder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 17em;
   }
 
   .home-folder-none,
@@ -126,6 +137,73 @@ export const TypeItStyled = styled.div`
     }
     100% {
       transform: translate(-50%, -50%);
+      opacity: 1;
     }
+  }
+
+  .folder-item {
+    display: flex;
+    color: white;
+    align-items: center;
+    font-size: 2em;
+  }
+
+  .folder-img {
+    width: 6em;
+  }
+
+  .folder-img-name {
+    font-size: 0.9em;
+    padding: 5px 28px;
+    border-radius: 5px;
+    border: 1px solid #523c73;
+    font-family: monospace;
+    background: #381c62;
+    box-shadow: black 1px 1px 1px;
+  }
+
+  // test
+  .folders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+  }
+
+  .folders.closed .folder-item {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .folder-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    transition:
+      transform 1s ease-in-out,
+      opacity 1s ease-in-out;
+    opacity: 1;
+  }
+
+  .folders.open .folder-item:nth-child(1) {
+    transform: translateX(-150%) translateY(-200%);
+  }
+
+  .folders.open .folder-item:nth-child(2) {
+    transform: translateX(-165%) translateY(-100%);
+  }
+
+  .folders.open .folder-item:nth-child(3) {
+    transform: translateX(-170%) translateY(0);
+  }
+
+  .folders.open .folder-item:nth-child(4) {
+    transform: translateX(-150%) translateY(100%);
   }
 `;

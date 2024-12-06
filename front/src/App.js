@@ -1,11 +1,10 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
-import Intro from './pages/Intro/Intro';
+import Intro from './pages/Intro/NewIntro.js';
 import Project from './pages/Project/Project';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Email from './components/Email/Email';
-import Test from './pages/Intro/Test';
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <Route path='/project' element={<Project />} />
         <Route path='/project/:projectId' element={<Portfolio />} />
         <Route path='/email' element={<Email />} />
-        <Route path='/test' element={<Test />} />
       </Routes>
     </div>
   );
