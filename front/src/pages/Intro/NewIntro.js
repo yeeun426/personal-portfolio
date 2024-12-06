@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import TypeItIntro from '../../components/Start/TypeItIntro';
 import { TestStyled } from '../../components/Start/style';
 
-function Test() {
+function NewIntro() {
   return (
     <TestStyled>
       <TypeItIntro />
@@ -10,4 +10,4 @@ function Test() {
   );
 }
 
-export default Test;
+export default NewIntro;
