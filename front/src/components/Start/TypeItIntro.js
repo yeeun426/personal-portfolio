@@ -1,103 +1,88 @@
 import TypeIt from 'typeit-react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TypeItStyled } from './style';
 import Popup from '../Home/Popup';
+import styled from 'styled-components';
 
 export default function TypeItIntro() {
   const [open, setOpen] = useState(false); // Popup 상태
-  const [folder, setFolder] = useState(false); // 폴더 상태
-  const [showIntro, setShowIntro] = useState(true); // 1과 2 사이 전환 상태
+  const [folder, setFolder] = useState(false);
+  const [opacity, setOpacity] = useState(false);
 
-  const onTest = () => {
-    console.log('헤이');
-  };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpacity(true);
+    }, 14000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <TypeItStyled>
-      {showIntro ? (
-        <TypeIt
-          options={{
-            speed: 100,
-            startDelay: 900,
-            lifeLike: true,
-          }}
-          className='type-it'
-          getBeforeInit={(instance) => {
-            instance
-              .pause(1000)
-              .type('HELLO')
-              .pause(204)
-              .break()
-              .pause(264)
-              .type('I')
-              .pause(181)
-              .type("'")
-              .pause(224)
-              .type('M')
-              .pause(344)
-              .break()
-              .pause(237)
-              .type('A')
-              .pause(156)
-              .type(' ')
-              .pause(123)
-              .type('WEB DEVELOPER')
-              .pause(676)
-              .break()
-              .pause(363)
-              .type('WELCOME!')
-              .move(-25, { speed: 52 })
-              .type(' ')
-              .pause(576)
-              .type('<button class="my-name"><strong>YEEUN</strong></button>')
-              .exec(() => {
-                const button = document.querySelector('.my-name');
-                if (button) {
-                  button.addEventListener('click', () => {
-                    console.log('Button clicked!');
-                  });
-                }
-              });
+      <TypeIt
+        options={{
+          speed: 100,
+          startDelay: 900,
+          lifeLike: true,
+        }}
+        className={`type-it type-it-container ${folder ? 'disappear' : ''}`}
+        getBeforeInit={(instance) => {
+          instance
+            .pause(1000)
+            .type('HELLO')
+            .pause(204)
+            .break()
+            .pause(264)
+            .type('I')
+            .pause(181)
+            .type("'")
+            .pause(224)
+            .type('M')
+            .pause(344)
+            .break()
+            .pause(237)
+            .type('A')
+            .pause(156)
+            .type(' ')
+            .pause(123)
+            .type('WEB DEVELOPER')
+            .pause(676)
+            .break()
+            .pause(363)
+            .type('WELCOME!')
+            .move(-25, { speed: 52 })
+            .type(' ')
+            .pause(576)
+            .type('<button class="my-name"><strong>YEEUN</strong></button>')
+            .exec(() => {
+              const button = document.querySelector('.my-name');
+              if (button) {
+                button.addEventListener('click', () => {
+                  setFolder(!folder);
+                });
+              }
+            });
 
-            return instance;
-          }}
+          return instance;
+        }}
+      />
+      <button onClick={() => setFolder(!folder)} style={{ color: 'white' }}>
+        button
+      </button>
+      {opacity && (
+        <img
+          className={folder ? 'home-click disappear' : 'home-click'}
+          src='images/cursor.png'
+          alt='click'
         />
-      ) : (
-        <div className={folder ? 'home-folder' : 'home-folder-none'}>
-          <button onClick={() => setOpen(true)}>
-            <img
-              className='home-folder-img'
-              src='images/folder.png'
-              alt='folder'
-            />
-          </button>
-          <div className='home-folder-name'>이예은</div>
-          <Popup open={open} setOpen={setOpen} />
-        </div>
       )}
-
-      {/* <div className='name-wrapper'>
-        <button
-          className={folder ? 'light moved' : 'light'}
-          onClick={() => setFolder(!folder)}
-        >
-          {showIntro ? 'Go to 2' : 'Back to 1'}
-        </button>
-        {!showIntro && (
-          <img
-            className={folder ? 'home-click disappear' : 'home-click'}
-            src='images/cursor.png'
-            alt='click'
-          />
-        )}
-      </div>
-
       <button
-        onClick={() => setShowIntro(!showIntro)}
-        className='toggle-button'
+        className={folder ? 'home-folder' : 'home-folder-none'}
+        onClick={() => setOpen(true)}
       >
-        {showIntro ? 'Switch to 2' : 'Switch to 1'}
-      </button> */}
+        <img class='home-folder-img' src='images/folder.png' alt='folder' />
+        <div className='home-folder-name'>이예은</div>
+      </button>
     </TypeItStyled>
   );
 }
