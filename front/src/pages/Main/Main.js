@@ -7,6 +7,7 @@ import Project from '../Project/Project';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
+import Footer from '../../components/Main/Footer';
 
 export default function Main() {
   const [open, setOpen] = useState(true);
@@ -19,6 +20,7 @@ export default function Main() {
         <Introduce />
         <Project />
       </div>
+      <Footer />
     </MainStyled>
   );
 }

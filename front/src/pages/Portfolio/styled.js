@@ -343,7 +343,7 @@ export const PortfolioStyled = styled.div`
 
   .portfolio-email {
     position: relative;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
   }
 
   .portfolio-email img {

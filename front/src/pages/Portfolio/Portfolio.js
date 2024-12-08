@@ -7,6 +7,7 @@ import Header from '../../components/Main/Header';
 import PofolHeader from '../../components/Portfolio/PofolHeader';
 import { PortfolioStyled, DropIcon } from './styled.js';
 import Email from '../../components/Email/Email';
+import Footer from '../../components/Main/Footer.js';
 
 function Portfolio() {
   const params = useParams();
@@ -123,6 +124,7 @@ function Portfolio() {
         </div>
       </div>
       {modal && <Email $isOpen={modal} onClose={() => setModal(false)} />}
+      <Footer />
     </PortfolioStyled>
   );
 }
@@ -248,7 +250,7 @@ const PortfolioDetail = ({ data, params }) => {
   const imageData = Object.values(pages).filter(
     (page) => typeof page === 'object'
   );
-  console.log(params);
+
   return (
     <div className='portfolio-detail'>
       <div className='portfolio-sub-title'>
