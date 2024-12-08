@@ -44,3 +44,8 @@ export const HeaderStyled = styled.div`
     font-size: 16px;
   }
 `;
+
+export const FooterStyled = styled.div`
+  background: #fafafa;
+  padding: 3em 0;
+`;
