@@ -1,7 +1,10 @@
 import React from 'react';
 import { FooterStyled } from './styled';
+import { useNavigate } from 'react-router-dom';
 
 function Footer() {
+  const navigate = useNavigate();
+
   return (
     <FooterStyled>
       <div className='footer-my'>
@@ -29,10 +32,14 @@ function Footer() {
       </div>
 
       <div className='footer-links'>
-        <div>Home</div>
-        <div>Project</div>
-        <div>Github</div>
-        <div>Blog</div>
+        <button onClick={() => navigate(`/main`)}>Home</button>
+        <button onClick={() => navigate(`/project`)}>Project</button>
+        <button onClick={() => window.open('https://yeeeon.tistory.com/')}>
+          Blog
+        </button>
+        <button onClick={() => window.open('https://github.com/yeeun426')}>
+          Github
+        </button>
       </div>
 
       <div>Copyright ⓒ2024: Designed by Yeeun</div>

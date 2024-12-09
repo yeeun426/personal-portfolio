@@ -2,8 +2,11 @@ import { HeaderStyled } from './styled';
 import mail from '../../assets/mail.png';
 import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
+  const navigate = useNavigate();
+
   return (
     <HeaderStyled className='header'>
       <div className='header-left'>
@@ -14,8 +17,8 @@ export default function Header() {
         <img className='header-logo' src={logo} alt='yeeun' />
       </Link>
       <div className='header-right'>
-        <div>About</div>
-        <div>Portfolio</div>
+        <button onClick={() => navigate(`/main`)}>About</button>
+        <button onClick={() => navigate(`/project`)}>Portfolio</button>
         <button onClick={() => window.open('https://yeeeon.tistory.com/')}>
           <div>Blog</div>
         </button>

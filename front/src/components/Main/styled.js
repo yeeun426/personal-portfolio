@@ -48,4 +48,33 @@ export const HeaderStyled = styled.div`
 export const FooterStyled = styled.div`
   background: #fafafa;
   padding: 3em 0;
+
+  .footer-my {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+  }
+
+  .my-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 210px;
+    text-align: left;
+  }
+
+  .my-info img {
+    padding: 10px;
+    box-sizing: border-box;
+    width: 60px;
+    background: #45444414;
+    border-radius: 100%;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 9em;
+    margin: 4em;
+  }
 `;
