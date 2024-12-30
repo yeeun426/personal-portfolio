@@ -30,19 +30,7 @@ function Footer() {
           <div>thsudkcla7@naver.com</div>
         </div>
       </div>
-
-      <div className='footer-links'>
-        <button onClick={() => navigate(`/main`)}>Home</button>
-        <button onClick={() => navigate(`/project`)}>Project</button>
-        <button onClick={() => window.open('https://yeeeon.tistory.com/')}>
-          Blog
-        </button>
-        <button onClick={() => window.open('https://github.com/yeeun426')}>
-          Github
-        </button>
-      </div>
-
-      <div>Copyright ⓒ2024: Designed by Yeeun</div>
+      {/* <div>Copyright ⓒ2024: Designed by Yeeun</div> */}
     </FooterStyled>
   );
 }
