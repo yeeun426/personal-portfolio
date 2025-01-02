@@ -61,12 +61,7 @@ export default function Popup({ open, setOpen }) {
                 <div className='pcl-title-name'>Ye-eun</div>
               </div>
 
-              <div className='pcl-txt'>
-                안녕하세요.
-                <br />
-                꾸준하게 빈틈을 채워가고 있습니다.
-                <br /> 성장하는 개발자 이예은입니다.
-              </div>
+              <div className='pcl-txt'></div>
 
               <div className='pcl-btns'>
                 <Link to='/main'>
@@ -74,14 +69,11 @@ export default function Popup({ open, setOpen }) {
                 </Link>
                 <button
                   className='pcl-btn-contact'
-                  onClick={() => setModal(!modal)}
+                  onClick={() => window.open('https://mail.google.com/')}
                 >
                   Contact Me 〉
                 </button>
               </div>
-              {modal && (
-                <Email isOpen={modal} onClose={() => setModal(false)} />
-              )}
             </div>
             <div className='pc-right'>
               <img src='images/myimg.png' alt='yeeun' />

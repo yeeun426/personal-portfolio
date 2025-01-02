@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+export const SearchStyled = styled.div``;
+
 export const PopupStyled = styled.div`
   z-index: 999;
   display: flex;

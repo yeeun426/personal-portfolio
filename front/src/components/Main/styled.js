@@ -47,7 +47,7 @@ export const HeaderStyled = styled.div`
 
 export const FooterStyled = styled.div`
   background: #f5f5f7;
-  padding: 3em 0;
+  padding: 5em 0;
 
   .footer-my {
     display: flex;

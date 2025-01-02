@@ -4,20 +4,20 @@ import React, { useEffect, useState } from 'react';
 export default function Main() {
   const [shouldDisappear, setShouldDisappear] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 1300 || window.scrollY < 300) {
-        setShouldDisappear(true);
-      } else {
-        setShouldDisappear(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 1300 || window.scrollY < 300) {
+  //       setShouldDisappear(true);
+  //     } else {
+  //       setShouldDisappear(false);
+  //     }
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
   return (
     <IntroduceStyled>
@@ -49,11 +49,6 @@ export default function Main() {
                 <div>🐉 age</div>
                 <div>:</div>
                 <div>2000. 4. 26</div>
-              </div>
-              <div className='aboutme-myinfo-items'>
-                <div>📞 Phone</div>
-                <div>:</div>
-                <div>010-0000-0000</div>
               </div>
             </div>
           </div>
