@@ -1,10 +1,7 @@
 import React from 'react';
 import { FooterStyled } from './styled';
-import { useNavigate } from 'react-router-dom';
 
 function Footer() {
-  const navigate = useNavigate();
-
   return (
     <FooterStyled>
       <div className='footer-my'>
@@ -30,7 +27,6 @@ function Footer() {
           <div>thsudkcla7@naver.com</div>
         </div>
       </div>
-      {/* <div>Copyright ⓒ2024: Designed by Yeeun</div> */}
     </FooterStyled>
   );
 }

@@ -17,7 +17,7 @@ export default function Header() {
         <img className='header-logo' src={logo} alt='yeeun' />
       </Link>
       <div className='header-right'>
-        <button onClick={() => navigate(`/main`)}>About</button>
+        <button onClick={() => navigate(`/about`)}>About</button>
         <button onClick={() => navigate(`/project`)}>Portfolio</button>
         <button onClick={() => window.open('https://yeeeon.tistory.com/')}>
           <div>Blog</div>
