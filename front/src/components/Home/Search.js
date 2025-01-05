@@ -8,9 +8,13 @@ export default function Search() {
   return (
     <div className='mainIntro-wrapper'>
       <SearchStyled>
-        <div>
-          <div></div>
-          <img />
+        <div>Lee</div>
+        <div className='search-container'>
+          <input value='이예은' />
+          <img
+            src={process.env.PUBLIC_URL + '/images/icon/search.png'}
+            alt='주소'
+          />
         </div>
       </SearchStyled>
     </div>

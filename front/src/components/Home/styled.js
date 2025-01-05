@@ -1,6 +1,31 @@
 import styled from 'styled-components';
 
-export const SearchStyled = styled.div``;
+export const SearchStyled = styled.div`
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    border-radius: 30%;
+    background: white;
+
+    input {
+      border: 1px solid;
+      min-height: 50px;
+      padding: 10px;
+      width: 45vw;
+    }
+
+    img {
+      width: 50px;
+      position: absolute;
+      right: 0px;
+    }
+  }
+`;
 
 export const PopupStyled = styled.div`
   z-index: 999;
@@ -10,9 +35,9 @@ export const PopupStyled = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: ${(props) => (props.open ? 1 : 0)};
-  z-index: ${(props) => (props.open ? 100 : -100)};
-  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
+  //opacity: ${(props) => (props.open ? 1 : 0)};
+  // z-index: ${(props) => (props.open ? 100 : -100)};
+  // visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
   transition: all 0.5s;
 
   .popup-left {
