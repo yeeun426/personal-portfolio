@@ -16,6 +16,7 @@ export default function Main() {
     <MainStyled>
       <Header />
       <div>
+        {/* <Popup /> */}
         <Search />
         <AboutMe />
         <Introduce />
