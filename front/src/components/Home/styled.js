@@ -40,6 +40,10 @@ export const PopupStyled = styled.div`
   // visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
   transition: all 0.5s;
 
+  .container {
+    display: flex;
+  }
+
   .popup-left {
     border-radius: 10px 0 0 10px;
     background: #e9e9e9cf;
@@ -76,15 +80,8 @@ export const PopupStyled = styled.div`
 
   .popup-favorite button {
     padding: 0;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 2;
-  }
-
-  .popup-favorite div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    text-align-last: left;
-    margin-top: 10px;
   }
 
   .pf-title {
@@ -98,6 +95,20 @@ export const PopupStyled = styled.div`
     border-radius: 0px 10px 10px 0;
     background: white;
     height: 60vh;
+
+    .col {
+      height: calc(100% - 50px);
+      align-content: center;
+    }
+  }
+
+  .popup-link {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    text-align-last: left;
+    padding: 0 15px;
+    margin-top: 10px;
   }
 
   .pr-top {
@@ -134,16 +145,34 @@ export const PopupStyled = styled.div`
     gap: 10%;
     text-align: right;
     height: calc(100% - 50px);
+
+    video {
+      height: 60%;
+    }
+  }
+
+  .popup-content.share {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    place-self: center;
+    gap: 20px;
+    text-align: center;
+    font-size: 19px;
+  }
+
+  .tab-content,
+  .tab-pane {
+    height: 100%;
+    align-content: center;
   }
 
   .pcl-title {
-    // font-size: 60px;
-    font-size: 5em;
-    line-height: 1.1;
-  }
-
-  .pcl-title-name {
-    font-weight: bold;
+    font-size: 3em;
+    line-height: 1.3;
   }
 
   .pc-right {
@@ -158,6 +187,7 @@ export const PopupStyled = styled.div`
   }
 
   .pcl-btns {
+    margin-top: 30px;
     display: flex;
     align-self: center;
     gap: 35px;
@@ -167,7 +197,8 @@ export const PopupStyled = styled.div`
     display: flex;
     gap: 24px;
     flex-direction: column;
-
+    text-align-last: left;
+    font-size: 19px;
     button {
       font-size: 15px;
       padding: 15px 30px;
@@ -183,6 +214,12 @@ export const PopupStyled = styled.div`
     .pcl-btn-learn {
       background: #d483d0;
       color: white;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .pr-top {
+      display: none;
     }
   }
 `;

@@ -1,19 +1,19 @@
 import './App.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import Intro from './pages/Intro/NewIntro.js';
 import Project from './pages/Project/Project';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Email from './components/Email/Email';
 import About from './pages/AboutMe/AboutMe.js';
-import Header from './components/Main/Header.js';
-import Footer from './components/Main/Footer.js';
+import Ureca from './pages/Ureca/Ureca.js';
 
 function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route exact path='/*' element={<Intro />} />
+        <Route path='/me' element={<Intro />} />
+        <Route exact path='/*' element={<Ureca />} />
         <Route path='/main' element={<Main />} />
         <Route path='/project' element={<Project />} />
         <Route path='/project/:projectId' element={<Portfolio />} />
