@@ -147,7 +147,7 @@ export const PopupStyled = styled.div`
     height: calc(100% - 50px);
 
     video {
-      height: 60%;
+      width: 100%;
     }
   }
 
@@ -173,12 +173,6 @@ export const PopupStyled = styled.div`
   .pcl-title {
     font-size: 3em;
     line-height: 1.3;
-  }
-
-  .pc-right {
-    img {
-      // height: 350px;
-    }
   }
 
   .pcl-txt {
@@ -217,9 +211,25 @@ export const PopupStyled = styled.div`
     }
   }
 
+  .pc-right {
+    max-width: 20rem;
+    max-height: 100%;
+  }
+
+  @media (max-width: 1300px) {
+    .pcl-title {
+      font-size: 2em;
+    }
+    .popup-content {
+      gap: 0px;
+    }
+  }
   @media (max-width: 850px) {
     .pr-top {
       display: none;
+    }
+    .pc-right {
+      max-width: 10rem;
     }
   }
 `;
