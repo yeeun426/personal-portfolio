@@ -3,11 +3,17 @@ import React, { useState } from 'react';
 import { Image, Tab, Row, Col, Nav, Container } from 'react-bootstrap';
 
 export default function Popup() {
+  const [activeTab, setActiveTab] = useState('1');
+
   return (
     <div className='mainIntro-wrapper'>
       <PopupStyled>
         <Container>
-          <Tab.Container id='left-tabs-example' defaultActiveKey='1'>
+          <Tab.Container
+            id='left-tabs-example'
+            activeKey={activeTab}
+            onSelect={(k) => setActiveTab(k)}
+          >
             <div className='popup-left'>
               <div className='pl-btn'>
                 <button className='popup-close' title='Close'></button>
@@ -62,7 +68,7 @@ export default function Popup() {
               <Col>
                 <Tab.Content>
                   <Tab.Pane eventKey='1'>
-                    <Hello />
+                    <Hello setActiveTab={setActiveTab} />
                   </Tab.Pane>
                   <Tab.Pane eventKey='2'>
                     <AboutMe />
@@ -80,7 +86,7 @@ export default function Popup() {
   );
 }
 
-function Hello() {
+function Hello({ setActiveTab }) {
   return (
     <div className='popup-content'>
       <div className='pc-left'>
@@ -88,12 +94,14 @@ function Hello() {
           <div>안녕하세요,</div>
           <strong>이예은</strong>입니다 !
         </div>
-        {/* <div className='pcl-btns'>
-          <button className='pcl-btn-learn'>About Me〉</button>
-          <button className='pcl-btn-contact' onClick={handleTabChange(2)}>
+        <div className='pcl-btns'>
+          <button className='pcl-btn-learn' onClick={() => setActiveTab('2')}>
+            About Me 〉
+          </button>
+          <button className='pcl-btn-contact' onClick={() => setActiveTab('3')}>
             Share 〉
           </button>
-        </div> */}
+        </div>
       </div>
       <div className='pc-right'>
         <Image src='images/myimg1.png' alt='yeeun' fluid />
@@ -110,12 +118,13 @@ function AboutMe() {
         전공 | 정보통신공학과
         <div>나이 | 26살 (2000년생)</div>
         <div>MBTI | ISTP</div>
-        <div>요즘 취미와 관심사 | 동물의 숲에서 낚시하기</div>
+        <div>요즘 취미와 관심사 | 동물의 숲</div>
         <div>
           앞으로 계획 <br />
-          1. 유레카에서 제대로된 프로젝트 경험 쌓기
+          1. 프로젝트를 함에 있어 왜 해당 기술이 필요하고
+          <br /> 어떻게 적용되는지 제대로 이해하기.
           <br />
-          2. 취업하기
+          2. " 취업 "
         </div>
       </div>
       <div className='pc-right'>
@@ -131,8 +140,6 @@ function Share() {
       <div>[좋았던 경험]</div>
       <div>
         모알보알에서 스쿠버다이빙하며 정어리떼를 봤을 때가 기억에 남아요.
-        <br />
-        영상으로 봐도, 실제로 봐도 좀 징그러웠지만
         <br />
         바닷속 세상이 신기하고 경이로워서 잊지 못할 경험이었습니다 🤗
       </div>
