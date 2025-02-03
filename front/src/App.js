@@ -12,8 +12,8 @@ function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route path='/me' element={<Intro />} />
-        <Route exact path='/*' element={<Ureca />} />
+        <Route path='/me' element={<Ureca />} />
+        <Route exact path='/*' element={<Intro />} />
         <Route path='/main' element={<Main />} />
         <Route path='/project' element={<Project />} />
         <Route path='/project/:projectId' element={<Portfolio />} />
