@@ -35,7 +35,10 @@ export default function Popup() {
                         <Nav.Link eventKey='2'>🙋🏼‍♀️ about me</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey='3'>🖥️ share</Nav.Link>
+                        <Nav.Link eventKey='3'>⏰ plan</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey='4'>🖥️ share</Nav.Link>
                       </Nav.Item>
                     </Nav>
                   </Col>
@@ -74,6 +77,9 @@ export default function Popup() {
                     <AboutMe />
                   </Tab.Pane>
                   <Tab.Pane eventKey='3'>
+                    <Plan />
+                  </Tab.Pane>
+                  <Tab.Pane eventKey='4'>
                     <Share />
                   </Tab.Pane>
                 </Tab.Content>
@@ -119,13 +125,6 @@ function AboutMe() {
         <div>나이 | 26살 (2000년생)</div>
         <div>MBTI | ISTP</div>
         <div>요즘 취미와 관심사 | 동물의 숲</div>
-        <div>
-          앞으로 계획 <br />
-          1. 프로젝트를 함에 있어 왜 해당 기술이 필요하고
-          <br /> 어떻게 적용되는지 제대로 이해하기.
-          <br />
-          2. " 취업 "
-        </div>
       </div>
       <div className='pc-right'>
         <Image src='images/hobby.JPG' alt='yeeun' fluid />
@@ -134,6 +133,23 @@ function AboutMe() {
   );
 }
 
+function Plan() {
+  return (
+    <div className='plan'>
+      <Image src='images/fighting.jpg' alt='yeeun' fluid />
+
+      <div className='plan-text'>
+        <div>앞으로의 계획</div>
+        <div>
+          1. 프로젝트를 함에 있어 왜 해당 기술이 필요하고
+          <br /> 어떻게 적용되는지 제대로 이해하기.
+          <br />
+          2. " 취업 "
+        </div>
+      </div>
+    </div>
+  );
+}
 function Share() {
   return (
     <div className='popup-content share'>

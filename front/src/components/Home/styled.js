@@ -217,6 +217,28 @@ export const PopupStyled = styled.div`
     max-height: 100%;
   }
 
+  .plan img {
+    width: 45%;
+  }
+
+  .plan {
+    display: flex;
+    align-items: anchor-center;
+    gap: 15px;
+    text-align: left;
+    justify-content: center;
+    font-size: 17px;
+  }
+
+  .plan-text {
+    line-height: 1.75;
+  }
+
+  .plan-text div:nth-child(1) {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
   @media (max-width: 1300px) {
     .pcl-title {
       font-size: 2em;
