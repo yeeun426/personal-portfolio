@@ -50,9 +50,9 @@ export default function Popup() {
                     ✅ github
                   </button>
                   <button
-                    onClick={() => window.open('https://yeeeon.tistory.com/')}
+                    onClick={() => window.open('https://yeeun426.github.io/')}
                   >
-                    📂 tistory
+                    📂 blog
                   </button>
                   <button
                     onClick={() =>
