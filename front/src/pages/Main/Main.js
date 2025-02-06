@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import { MainStyled } from './style';
 import Header from '../../components/Main/Header';
-import Popup from '../../components/Home/Popup';
 import Introduce from './Introduce';
 import Project from '../Project/Project';
 
@@ -14,9 +12,8 @@ import Search from '../../components/Home/Search';
 export default function Main() {
   return (
     <MainStyled>
-      <Header />
+      {/* <Header /> */}
       <div>
-        {/* <Popup /> */}
         <Search />
         <AboutMe />
         <Introduce />
