@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const ProjectStyled = styled.div`
-  padding: 8rem 1rem;
+  padding: 8rem 12rem;
   background-color: #f5f5f7;
   box-sizing: border-box;
   --swiper-theme-color: #d483d0;
 
   .project {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 12px;
   }
 
@@ -17,16 +17,17 @@ export const ProjectStyled = styled.div`
     flex-direction: column;
     position: relative;
     background-color: #fff;
-    width: calc(50% - 12px);
-    height: 35rem;
+    height: 32rem;
     white-space: normal;
     box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
     align-items: center;
+    justify-content: space-between;
+    opacity: 0;
 
     img {
-      height: 75%;
+      height: 70%;
       align-self: center;
-      width: 92%;
+      width: 90%;
       object-fit: contain;
     }
   }
@@ -134,29 +135,29 @@ export const ProjectStyled = styled.div`
     opacity:1
   }
 
-  .swiper-button-next{
-    background-image: url("images/arrownext.JPG");
-    background-color: white;
-    background-size: 17px 17px;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 0.5px solid rgb(0 0 0 / 0.3);
-    color: #fff0;
-  }
+  // .swiper-button-next{
+  //   background-image: url("images/arrownext.JPG");
+  //   background-color: white;
+  //   background-size: 17px 17px;
+  //   background-repeat: no-repeat;
+  //   background-position: center;
+  //   width: 28px;
+  //   height: 28px;
+  //   border-radius: 50%;
+  //   border: 0.5px solid rgb(0 0 0 / 0.3);
+  //   color: #fff0;
+  // }
   
-  .swiper-button-prev{
-    background-image: url("images/arrowprev.JPG");
-    background-color: white;
-    background-size: 17px 17px;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 0.5px solid rgb(0 0 0 / 0.3);
-    color: #fff0;
-  }
+  // .swiper-button-prev{
+  //   background-image: url("images/arrowprev.JPG");
+  //   background-color: white;
+  //   background-size: 17px 17px;
+  //   background-repeat: no-repeat;
+  //   background-position: center;
+  //   width: 28px;
+  //   height: 28px;
+  //   border-radius: 50%;
+  //   border: 0.5px solid rgb(0 0 0 / 0.3);
+  //   color: #fff0;
+  // }
 `;
