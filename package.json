@@ -12,6 +12,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "gsap": "^3.12.7",
     "typeit-react": "^2.7.7"
   }
 }

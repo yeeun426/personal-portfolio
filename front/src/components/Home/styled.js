@@ -4,25 +4,36 @@ export const SearchStyled = styled.div`
   left: 50%;
   top: 50%;
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -65%);
+
+  .search-logo {
+    max-height: 150px;
+  }
 
   .search-container {
     display: flex;
     align-items: center;
-    border-radius: 30%;
-    background: white;
 
     input {
-      border: 1px solid;
-      min-height: 50px;
-      padding: 10px;
+      padding: 10px 30px;
+      display: flex;
+      z-index: 3;
+      position: relative;
+      min-height: 90px;
+      border: 2px solid #876fc4;
+      background: #4d51561c;
+      box-shadow: none;
+      border-radius: 40px;
+      margin: 0 auto;
+      max-width: 670px;
       width: 45vw;
+      font-size: 35px;
     }
 
     img {
-      width: 50px;
+      width: 40px;
       position: absolute;
-      right: 0px;
+      right: 25px;
     }
   }
 `;
