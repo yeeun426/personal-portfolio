@@ -59,7 +59,7 @@ export const SearchStyled = styled.div`
     gap: 15px;
 
     img {
-      width: 62%;
+      height: 70%;
     }
 
     h2 {
@@ -89,6 +89,7 @@ export const SearchStyled = styled.div`
     .main-container {
       width: 100%;
       padding: 3rem 2rem 0;
+      height: 100vh;
     }
   }
 `;
