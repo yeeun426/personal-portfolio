@@ -137,9 +137,11 @@ table {
   font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+
 .App {
   text-align: center;
-  font-family: 'Pretendard-Regular';
+  font-family: 'Pretendard-Regular', 'Noto Sans KR';
   line-height: 1.4;
 }
 

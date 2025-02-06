@@ -1,39 +1,67 @@
 import styled from 'styled-components';
 
 export const SearchStyled = styled.div`
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  transform: translate(-50%, -65%);
+  display: flex;
 
-  .search-logo {
-    max-height: 150px;
+  strong {
+    font-weight: 900;
   }
 
-  .search-container {
+  .main-aside {
+    background: #f1f1f191;
+    width: 20vw;
+    z-index: 100;
+    padding: 4rem 3rem;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-    input {
-      padding: 10px 30px;
-      display: flex;
-      z-index: 3;
-      position: relative;
-      min-height: 90px;
-      border: 2px solid #876fc4;
-      background: #4d51561c;
-      box-shadow: none;
-      border-radius: 40px;
-      margin: 0 auto;
-      max-width: 670px;
-      width: 45vw;
-      font-size: 35px;
-    }
+  .aside-tab {
+    display: flex;
+    flex-direction: column;
+    text-align-last: left;
+    gap: 30px;
+    font-size: 30px;
+  }
+
+  .aside-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    font-size: 18px;
 
     img {
-      width: 40px;
-      position: absolute;
-      right: 25px;
+      width: 100px;
+    }
+  }
+
+  .main-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    width: 80vw;
+    height: 100%;
+    gap: 15px;
+
+    img {
+      width: 62%;
+    }
+
+    h2 {
+      color: black;
+    }
+
+    p {
+      font-size: 1.25rem;
+      font-family: 'Noto Sans KR';
+      strong {
+        font-size: 20px;
+        font-weight: bold;
+      }
     }
   }
 `;

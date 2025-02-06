@@ -14,7 +14,11 @@ export default function Header() {
         <div>thsudkcla7@naver.com</div>
       </div>
       <Link to='/main'>
-        <img className='header-logo' src={logo} alt='yeeun' />
+        <img
+          className='header-logo'
+          src={process.env.PUBLIC_URL + '/images/icon/logo.png'}
+          alt='leeyeeun'
+        />
       </Link>
       <div className='header-right'>
         <button onClick={() => navigate(`/about`)}>About</button>
