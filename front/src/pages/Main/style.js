@@ -3,24 +3,24 @@ import styled from 'styled-components';
 export const MainStyled = styled.div`
   overflow-x: hidden;
 
-  .mainIntro-wrapper {
-    height: 100vh;
-    background: url(images/background.png) fixed;
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.1)
-      ),
-      url(images/background.png);
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    box-sizing: border-box;
-  }
+  // .mainIntro-wrapper {
+  //   height: 100vh;
+  //   background: url(images/background.png) fixed;
+  //   background-image: linear-gradient(
+  //       rgba(255, 255, 255, 0.1),
+  //       rgba(255, 255, 255, 0.1)
+  //     ),
+  //     url(images/background.png);
+  //   position: relative;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   background-position: center;
+  //   box-sizing: border-box;
+  // }
 
-  .swiper-wrapper {
-    height: 100vh;
-  }
+  // .swiper-wrapper {
+  //   height: 100vh;
+  // }
 `;
 
 export const IntroduceStyled = styled.div`

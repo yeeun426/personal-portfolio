@@ -2,6 +2,17 @@ import styled from 'styled-components';
 
 export const SearchStyled = styled.div`
   display: flex;
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url(images/background.png);
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
 
   strong {
     font-weight: 900;
@@ -62,6 +73,22 @@ export const SearchStyled = styled.div`
         font-size: 20px;
         font-weight: bold;
       }
+    }
+  }
+
+  @media (max-width: 1080px) {
+    height: auto;
+    display: block;
+
+    .main-aside {
+      width: 100%;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .main-container {
+      width: 100%;
+      padding: 3rem 2rem 0;
     }
   }
 `;

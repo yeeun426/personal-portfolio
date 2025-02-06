@@ -1,5 +1,4 @@
 import { MainStyled } from './style';
-import Header from '../../components/Main/Header';
 import Introduce from './Introduce';
 import Project from '../Project/Project';
 
