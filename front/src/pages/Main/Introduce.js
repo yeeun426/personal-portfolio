@@ -2,67 +2,46 @@ import { IntroduceStyled } from './style';
 import React, { useEffect, useState } from 'react';
 
 export default function Main() {
-  const [shouldDisappear, setShouldDisappear] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 1300 || window.scrollY < 300) {
-  //       setShouldDisappear(true);
-  //     } else {
-  //       setShouldDisappear(false);
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-
   return (
     <IntroduceStyled>
       <div className='aboutme-wrapper'>
-        <div className='aboutme-top'>
-          <img className='aboutme-img' src='images/myimg1.png' alt='이예은' />
-          {/* <div className='aboutme-list'> */}
-          <div className={`aboutme-list ${shouldDisappear ? 'disappear' : ''}`}>
-            <div className='portfolio-title'>About Me</div>
-            <div className='aboutme-txt'>
-              프론트엔드 개발자를 꿈꾸는 이예은입니다. <br />
-              꾸준하게 빈 틈을 채워나가는 것에 관심이 많습니다. <br />
-              사람들이 필요로 하는 것이 무엇인지 고민하는 개발자가 되겠습니다 :)
-              <br />
-              <br />
-              • 웹 서비스의 프론트엔드 설계, 개발, 디자인, 운영 경험을 보유하고
-              있습니다. <br />
-              • 다수의 UI 구현 경험으로 사용자 인터렉션에 대한 높은 이해도를
-              가지고 있습니다. <br />• 참여한 모든 프로젝트는 기획 단계부터 함께
-              하였습니다.
+        <div className='aboutme-list education'>
+          <div className='aboutme-title'>#Education</div>
+          <div className='aboutme-item p-5'>
+            <div className='edu-date'>2025.01 ~</div>
+            <h4 className='edu-name'>[LG유플러스]유레카 SW 교육</h4>
+            <div className='edu-sub'>2기 프론트엔드 수강</div>
+            <ul className='edu-desc'>
+              <li>
+                JavaScript, React, Next.js, Spring 기반 웹 애플리케이션 개발
+                역량 습득
+              </li>
+              <li>알고리즘 문제 해결 및 데이터 구조 학습 (Java 활용)</li>
+            </ul>
+          </div>
+          <div className='aboutme-item p-5 bg-color'>
+            <div className='edu-date'>2019.03 ~ 2024.02</div>
+            <h4 className='edu-name'>한국외국어대학교</h4>
+            <div className='edu-sub'>
+              정보통신공학과 학사 졸업 (이중전공: 통계학)
             </div>
-            <div className='aboutme-myinfo'>
-              <div className='aboutme-myinfo-items'>
-                <div>👩🏻 Name</div>
-                <div>:</div>
-                <div>이예은</div>
-              </div>
-              <div className='aboutme-myinfo-items'>
-                <div>🐉 age</div>
-                <div>:</div>
-                <div>2000. 4. 26</div>
-              </div>
-            </div>
+            <ul className='edu-desc'>
+              <li>학점 3.7 / 4.5</li>
+              <li>운영체제 조교 활동 (과제 평가 및 학생 지도)</li>
+              <li>확률과 통계 조교 활동 (과제 평가 및 학생 지도)</li>
+            </ul>
           </div>
         </div>
-
-        <div className='aboutme-bottom'>
-          <div className='aboutme-bottom-contents'>
-            <div className='aboutme-skills-item'>
+        <div className='aboutme-list skill'>
+          <div className='aboutme-title'>#Skill</div>
+          <div className='aboutme-item p-5 bg-color'>
+            <div className='skills-item'>
               <img
-                className='aboutme-skill-img'
+                className='skill-img'
                 src='images/front-end.png'
                 alt='FRONTED'
               />
-              <div className='aboutme-skill-title'>FRONTEND</div>
+              <div className='skill-title'>strong</div>
               <div>
                 Javascript
                 <br />
@@ -73,13 +52,9 @@ export default function Main() {
                 Typescript
               </div>
             </div>
-            <div className='aboutme-skills-item'>
-              <img
-                className='aboutme-skill-img'
-                src='images/etc.png'
-                alt='etc'
-              />
-              <div className='aboutme-skill-title'>ETC</div>
+            <div className='skills-item'>
+              <img className='skill-img' src='images/etc.png' alt='etc' />
+              <div className='skill-title'>knowledgeable</div>
               <div>
                 Python
                 <br />
@@ -88,13 +63,11 @@ export default function Main() {
                 Unity
               </div>
             </div>
-            <div className='aboutme-skills-item'>
-              <img
-                className='aboutme-skill-img'
-                src='images/skill.png'
-                alt='tool'
-              />
-              <div className='aboutme-skill-title'>TOOL</div>
+          </div>
+          <div className='aboutme-item p-5'>
+            <div className='skills-item'>
+              <img className='skill-img' src='images/skill.png' alt='tool' />
+              <div className='skill-title'>experienced</div>
               <div>
                 Figma
                 <br />
@@ -103,21 +76,6 @@ export default function Main() {
                 Notion
                 <br />
                 Slack
-              </div>
-            </div>
-            <div className='aboutme-skills-item'>
-              <img
-                className='aboutme-skill-img'
-                src='images/portfolio.png'
-                alt='portfolio'
-              />
-              <div className='aboutme-skill-title'>PORTFOLIO</div>
-              <div>
-                Notion
-                <br />
-                Github
-                <br />
-                Tistory
               </div>
             </div>
           </div>

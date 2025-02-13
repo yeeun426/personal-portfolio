@@ -34,6 +34,10 @@ export const SearchStyled = styled.div`
     text-align-last: left;
     gap: 30px;
     font-size: 30px;
+
+    button {
+      padding: 0;
+    }
   }
 
   .aside-info {
