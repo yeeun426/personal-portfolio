@@ -2,25 +2,6 @@ import styled from 'styled-components';
 
 export const MainStyled = styled.div`
   overflow-x: hidden;
-
-  // .mainIntro-wrapper {
-  //   height: 100vh;
-  //   background: url(images/background.png) fixed;
-  //   background-image: linear-gradient(
-  //       rgba(255, 255, 255, 0.1),
-  //       rgba(255, 255, 255, 0.1)
-  //     ),
-  //     url(images/background.png);
-  //   position: relative;
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   background-position: center;
-  //   box-sizing: border-box;
-  // }
-
-  // .swiper-wrapper {
-  //   height: 100vh;
-  // }
 `;
 
 export const IntroduceStyled = styled.div`
@@ -34,22 +15,82 @@ export const IntroduceStyled = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1104px;
+    margin: 0 auto;
+    padding: 0 24px;
+    min-height: calc(100vh - 366px);
   }
-  .aboutme-top {
+
+  .aboutme-list {
     display: flex;
     align-items: center;
     place-content: center;
-    gap: 70px;
-    width: max-content;
+    background: white;
+    width: 100%;
+    height: clamp(250px, 50vw, 375px);
+    position: relative;
+    border-radius: 20px;
   }
 
-  .aboutme-img {
-    height: 40vh;
+  .aboutme-title {
+    font-size: 15px;
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    background: #c8acfa;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
   }
 
-  .aboutme-txt {
+  .aboutme-item {
+    width: 50%;
+    height: 100%;
     text-align: left;
-    line-height: 1.35;
+  }
+
+  .education .bg-color {
+    border-radius: 0px 20px 20px 0px;
+  }
+
+  .skill .bg-color {
+    border-radius: 20px 0px 0px 20px;
+  }
+
+  .bg-color {
+    background-color: #3737371a;
+  }
+
+  .edu-name {
+    font-weight: bold;
+    line-height: 140%;
+  }
+
+  h4 {
+    font-size: 30px;
+  }
+
+  .edu-sub {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .edu-desc {
+    padding-left: 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .edu-desc li {
+    font-size: 18px;
+    list-style: disc;
   }
 
   .portfolio-title {
@@ -95,39 +136,23 @@ export const IntroduceStyled = styled.div`
     display: flex;
   }
 
-  .aboutme-skill-img {
+  .skill-img {
     width: 45px;
   }
 
-  .aboutme-skill-title {
+  .skill-title {
     font-size: 21px;
     font-weight: bold;
   }
 
-  .aboutme-skills-item {
+  .skills-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 150px;
-    border-radius: 50%;
-    height: 170px;
-    padding: 15px;
   }
 
-  .aboutme-skills-item :nth-child(3) {
+  .skills-item :nth-child(3) {
     line-height: 1.3;
-  }
-
-  .aboutme-list {
-    position: absolute;
-    right: 0px;
-    animation: slide 2s;
-    opacity: 1;
-  }
-
-  .aboutme-list.disappear {
-    animation: disappear 1s ease-out forwards;
   }
 
   @keyframes slide {

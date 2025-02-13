@@ -9,6 +9,9 @@ import { PortfolioStyled, DropIcon } from './styled.js';
 import Email from '../../components/Email/Email';
 import Footer from '../../components/Main/Footer.js';
 
+import 'swiper/css';
+import 'swiper/css/scrollbar';
+
 function Portfolio() {
   const params = useParams();
   const [data, setData] = useState([]);

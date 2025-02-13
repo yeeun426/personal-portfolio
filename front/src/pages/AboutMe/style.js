@@ -6,13 +6,26 @@ export const AboutStyled = styled.div`
   ul {
     display: flex;
     flex-direction: column;
-    padding: 10% 20%;
-    gap: 36px;
+    padding: 5% 20%;
+    gap: 20px;
   }
 
   .otherChat {
     display: flex;
     gap: 30px;
+
+    div {
+      max-width: 550px;
+      border-radius: 40px;
+      background: #353535;
+      word-break: normal;
+      white-space: pre-line;
+      font-size: 18px;
+      color: #ced4da;
+      padding: 24px 32px;
+      line-height: 1.5;
+      text-align: left;
+    }
 
     img {
       width: 77px;
@@ -23,7 +36,6 @@ export const AboutStyled = styled.div`
   .chat {
     max-width: 550px;
     border-radius: 40px;
-    background: #353535;
     word-break: normal;
     white-space: pre-line;
     font-size: 18px;
@@ -36,12 +48,11 @@ export const AboutStyled = styled.div`
   .chat.me {
     background: #0078ff;
     align-self: flex-end;
-
-    img {
-      width: 300px;
-      height: 350px;
-      object-fit: contain;
-    }
+  }
+  img.chat.me {
+    width: 250px;
+    height: fit-content;
+    object-fit: contain;
   }
 `;
 

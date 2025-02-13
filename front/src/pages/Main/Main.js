@@ -11,13 +11,10 @@ import Search from '../../components/Home/Search';
 export default function Main() {
   return (
     <MainStyled>
-      {/* <Header /> */}
-      <div>
-        <Search />
-        <AboutMe />
-        <Introduce />
-        <Project />
-      </div>
+      <Search />
+      <AboutMe />
+      <Introduce />
+      <Project />
       <Footer />
     </MainStyled>
   );

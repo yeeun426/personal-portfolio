@@ -12,33 +12,33 @@ export default function Project() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    fetch('/data/project.json', {
-      method: 'GET',
-    })
+    fetch('/data/project.json')
       .then((res) => res.json())
-      .then((data) => {
-        setProject(data);
-      });
+      .then((data) => setProject(data));
   }, []);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || project.length === 0) return;
 
-    ScrollTrigger.batch('.project-content', {
-      // interval: 0.1,
-      batchMax: 2, // maximum batch size (targets)
+    gsap.set('.project-content', { opacity: 0, y: 20 });
+
+    const trigger = ScrollTrigger.batch('.project-content', {
+      id: 'projectTrigger', // ID 부여
+      batchMax: 2,
       onEnter: (batch) => {
-        console.log('✅ 요소가 뷰포트 80% 지점에 도달:', batch);
-        gsap.to(batch, { autoAlpha: 1, stagger: 0.1 });
+        gsap.to(batch, { opacity: 1, y: 0, stagger: 0.2 });
       },
-      start: 'top 80%', // 뷰포트 80% 지점에서 트리거
-      makers: true,
+      onLeaveBack: (batch) => {
+        gsap.to(batch, { opacity: 0, y: 20, stagger: 0.1 });
+      },
+      start: 'top 80%',
+      markers: false,
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // 클린업
+      ScrollTrigger.getById('projectTrigger')?.kill(); // 특정 트리거만 제거
     };
-  }, [project]); // 프로젝트 데이터가 변경될 때마다 실행
+  }, [project]);
 
   return (
     <ProjectStyled>
