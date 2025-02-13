@@ -100,80 +100,41 @@ export const IntroduceStyled = styled.div`
     font-family: sans-serif;
   }
 
-  .aboutme-myinfo {
+  .skill .aboutme-item {
     display: flex;
-    gap: 10px;
     flex-direction: column;
-    margin-top: 35px;
+    gap: 3rem;
+    position: relative;
   }
 
-  .aboutme-myinfo-items {
+  .skill-title {
     display: flex;
+    align-items: anchor-center;
+    gap: 1rem;
+    font-size: 21px;
+    font-weight: bold;
   }
 
-  .aboutme-myinfo-items :nth-child(1) {
-    width: 130px;
-    text-align: left;
-  }
-
-  .aboutme-myinfo-items :nth-child(2) {
-    width: 70px;
-    text-align: left;
-  }
-
-  .aboutme-bottom {
-    text-align: -webkit-center;
-    margin-top: 35px;
-  }
-
-  .aboutme-bottom-contents {
-    background: white;
-    width: fit-content;
-    border-radius: 100px;
-    padding: 5px 90px;
-    box-shadow: #80808036 13px 15px 30px;
-
-    display: flex;
+  .skill-desc {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
   }
 
   .skill-img {
     width: 45px;
   }
 
-  .skill-title {
-    font-size: 21px;
-    font-weight: bold;
-  }
-
   .skills-item {
     display: flex;
-    align-items: center;
     gap: 10px;
-  }
+    flex-direction: column;
 
-  .skills-item :nth-child(3) {
-    line-height: 1.3;
-  }
-
-  @keyframes slide {
-    from {
-      right: -500px;
-      opacity: 0;
-    }
-    to {
-      right: 0px;
-      opacity: 1;
-    }
-  }
-
-  @keyframes disappear {
-    from {
-      right: 0px;
-      opactity: 1;
-    }
-    to {
-      right: -500px;
-      opacity: 0;
+    ul {
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+      flex-wrap: wrap;
     }
   }
 `;
