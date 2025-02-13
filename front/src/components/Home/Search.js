@@ -1,16 +1,8 @@
 import { SearchStyled } from './styled';
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap 스타일 불러오기
 
-export default function Search() {
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, []);
-
+export default function Search({ onContentClick }) {
   return (
     <SearchStyled className='mainIntro-wrapper'>
       <aside className='main-aside'>
@@ -21,9 +13,9 @@ export default function Search() {
           <button onClick={() => window.open('https://yeeun426.github.io/')}>
             Blog
           </button>
-          <div>About</div>
-          <div>Project</div>
-          <div>Education</div>
+          <button onClick={() => onContentClick(0)}>About</button>
+          <button onClick={() => onContentClick(1)}>Education</button>
+          <button onClick={() => onContentClick(2)}>Project</button>
         </div>
         <div className='aside-info'>
           <img
