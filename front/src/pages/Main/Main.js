@@ -14,7 +14,6 @@ export default function Main() {
 
   const onContentClick = (idx) => {
     contentRefs.current[idx]?.scrollIntoView({ behavior: 'smooth' });
-    console.log(idx);
   };
 
   return (

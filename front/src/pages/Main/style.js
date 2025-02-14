@@ -30,11 +30,19 @@ export const IntroduceStyled = styled.div`
     display: flex;
     align-items: center;
     place-content: center;
-    background: white;
     width: 100%;
     height: clamp(250px, 50vw, 375px);
     position: relative;
     border-radius: 20px;
+    transition: transform 0.3s ease;
+    background: rgb(108 108 108 / 21%);
+    filter: blur(3px);
+  }
+
+  .aboutme-list.active {
+    transform: scale(1.1);
+    background: white;
+    filter: none;
   }
 
   .aboutme-title {
