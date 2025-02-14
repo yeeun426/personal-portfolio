@@ -1,22 +1,48 @@
 import { IntroduceStyled } from './style';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
-export default function Main() {
-  const [position, setPosition] = useState(0);
-  function onScroll() {
-    setPosition(window.scrollY);
-  }
+export default function Introduce() {
+  const componentsRef = useRef([]); // 여러 요소를 감지하기 위한 ref 배열
+  const [centerIdx, setCenterIdx] = useState(null); // 현재 중앙에 있는 요소의 인덱스
+
   useEffect(() => {
-    window.addEventListener('scroll', onScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCenterIdx(Number(entry.target.dataset.index)); // 중앙에 있는 요소의 인덱스를 저장
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px', // 뷰포트 중앙 감지
+        threshold: 0, // 걸쳐지기만 해도 감지
+      }
+    );
+
+    componentsRef.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      componentsRef.current.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
     };
   }, []);
 
   return (
     <IntroduceStyled>
       <div className='aboutme-wrapper'>
-        <div className='aboutme-list education'>
+        <div
+          key={0}
+          ref={(el) => (componentsRef.current[0] = el)}
+          data-index={0}
+          className={`aboutme-list education ${
+            centerIdx === 0 ? 'active' : ''
+          }`}
+        >
           <div className='aboutme-title'>#Education</div>
           <div className='aboutme-item p-5'>
             <div className='edu-date'>2025.01 ~</div>
@@ -43,7 +69,12 @@ export default function Main() {
             </ul>
           </div>
         </div>
-        <div className='aboutme-list skill'>
+        <div
+          key={1}
+          ref={(el) => (componentsRef.current[1] = el)}
+          data-index={1}
+          className={`aboutme-list skill ${centerIdx === 1 ? 'active' : ''}`}
+        >
           <div className='aboutme-title'>#Skill</div>
           <div className='aboutme-item p-5 bg-color'>
             <div className='skills-item'>
