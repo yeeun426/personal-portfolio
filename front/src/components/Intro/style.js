@@ -1,17 +1,5 @@
 import styled from 'styled-components';
 
-export const TestStyled = styled.div`
-  background: black;
-
-  .hi {
-    height: 100vh;
-  }
-
-  .rellax {
-    color: white;
-  }
-`;
-
 export const TypeItStyled = styled.div`
   height: 100vh;
   background-image: url('images/macos.jpg');
@@ -33,7 +21,6 @@ export const TypeItStyled = styled.div`
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 8rem;
     line-height: 1.3;
 
     position: absolute;
@@ -47,12 +34,11 @@ export const TypeItStyled = styled.div`
     color: #ffffff5e;
   }
 
-  .my-name strong {
+  .my-name {
     font-family: 'Arial';
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 8rem;
     line-height: 1.3;
     position: relative;
     font-style: italic;
@@ -109,10 +95,6 @@ export const TypeItStyled = styled.div`
   .home-folder-none,
   .home-click.disappear {
     display: none;
-  }
-
-  .home-folder-img {
-    width: 17em;
   }
 
   .home-folder-name {
@@ -205,5 +187,11 @@ export const TypeItStyled = styled.div`
 
   .folders.open .folder-item:nth-child(4) {
     transform: translateX(-150%) translateY(100%);
+  }
+
+  @media (min-width: 1080px) {
+    .display-1 {
+      font-size: 7rem;
+    }
   }
 `;

@@ -1,3 +1,6 @@
+// 수정되기 전 버전
+// 현재는 사용안하고 있음.
+
 import { HomeStyled } from './style';
 import React, { useState, useEffect } from 'react';
 import Popup from '../../components/Home/Popup';
