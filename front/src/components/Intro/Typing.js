@@ -3,7 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { TypeItStyled } from './style';
 import { useNavigate } from 'react-router-dom';
 
-export default function TypeItIntro() {
+// 수정 사항
+// 1. 빨리 감기 아이콘 클릭 시 -> 폴더로 이동
+// 2. 반응형 (O)
+// 3. 폴더 클릭 (hover시 확대)
+export default function Typing() {
   const [open, setOpen] = useState(false);
   const [folder, setFolder] = useState(false);
   const navigate = useNavigate();
@@ -26,43 +30,40 @@ export default function TypeItIntro() {
       <TypeIt
         options={{
           speed: 100,
-          startDelay: 900,
+          startDelay: 500,
           lifeLike: true,
         }}
-        className={`type-it type-it-container ${folder ? 'disappear' : ''}`}
+        className={`display-1 type-it type-it-container ${
+          folder ? 'disappear' : ''
+        }`}
         getBeforeInit={(instance) => {
           instance
             .pause(1000)
             .type('HELLO')
-            .pause(204)
+            .pause(100)
             .break()
-            .pause(264)
+            .pause(100)
             .type('I')
-            .pause(181)
+            .pause(100)
             .type("'")
-            .pause(224)
+            .pause(100)
             .type('M')
-            .pause(344)
+            .pause(100)
             .break()
-            .pause(237)
+            .pause(100)
             .type('A')
-            .pause(156)
+            .pause(100)
             .type(' ')
-            .pause(123)
+            .pause(100)
             .type('WEB DEVELOPER')
-            .pause(676)
+            .pause(100)
             .break()
-            .pause(363)
+            .pause(100)
             .type('WELCOME!')
-            .move(-25, { speed: 52 })
+            .move(-25, { speed: 30 })
             .type(' ')
-            .pause(576)
-            .type('<button class="my-name"><strong>YEEUN</strong></button>')
-            .pause(1000)
-            .exec(() => {
-              const folders = document.querySelector('.type-it');
-              folders.classList.add('color-change');
-            })
+            .pause(100)
+            .type('<strong class="my-name">YEEUN</strong>')
             .pause(1000)
             .exec(() => {
               setFolder(!folder);
@@ -71,12 +72,15 @@ export default function TypeItIntro() {
           return instance;
         }}
       />
-
       <button
         className={folder ? 'home-folder' : 'home-folder-none'}
         onClick={() => setOpen(!open)}
       >
-        <img className='home-folder-img' src='images/folder.png' alt='folder' />
+        <img
+          className='home-folder-img w-50'
+          src='images/folder.png'
+          alt='folder'
+        />
         <div className='home-folder-name'>이예은</div>
       </button>
 

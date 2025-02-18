@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const TypeItStyled = styled.div`
+  background: black;
+  .hi {
+    height: 100vh;
+  }
+  .rellax {
+    color: white;
+  }
+`;
+
 export const HomeStyled = styled.div`
   height: 100vh;
   background-image: url('images/mac.jpeg');

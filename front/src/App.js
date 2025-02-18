@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
-import Intro from './pages/Intro/NewIntro.js';
+import Intro from './pages/Intro/TypeItIntro.js';
 import Project from './pages/Project/Project';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Email from './components/Email/Email';
