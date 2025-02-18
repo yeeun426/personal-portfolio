@@ -194,4 +194,27 @@ export const TypeItStyled = styled.div`
       font-size: 7rem;
     }
   }
+
+  @media (max-width: 1080px) {
+    // 폴더
+    .home-folder.open {
+      display: none;
+    }
+
+    .folders.open {
+      justify-content: center;
+    }
+
+    .folders.open .folder-item {
+      transform: none !important;
+      position: static;
+      min-width: 400px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .home-folder-name {
+      font-size: 20px;
+    }
+  }
 `;

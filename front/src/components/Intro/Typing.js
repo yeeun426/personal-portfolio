@@ -73,7 +73,9 @@ export default function Typing() {
         }}
       />
       <button
-        className={folder ? 'home-folder' : 'home-folder-none'}
+        className={
+          folder ? `home-folder ${open ? 'open' : ''}` : 'home-folder-none'
+        }
         onClick={() => setOpen(!open)}
       >
         <img
