@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ProjectStyled } from './style';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,13 +8,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Project() {
-  const [project, setProject] = useState([]);
+  const location = useLocation();
+  const [project, setProject] = useState(location.state?.project || []); // 이전 상태 유지
   const containerRef = useRef(null);
 
   useEffect(() => {
-    fetch('/data/project.json')
-      .then((res) => res.json())
-      .then((data) => setProject(data));
+    if (!location.state?.project) {
+      fetch('/data/project.json')
+        .then((res) => res.json())
+        .then((data) => setProject(data));
+    }
   }, []);
 
   useEffect(() => {
