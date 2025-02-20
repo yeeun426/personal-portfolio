@@ -3,7 +3,7 @@ import { FooterStyled } from './styled';
 
 function Footer() {
   return (
-    <FooterStyled>
+    <FooterStyled className='Footer'>
       <div className='footer-my'>
         <div className='my-info'>
           <img

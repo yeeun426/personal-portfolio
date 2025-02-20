@@ -350,12 +350,12 @@ export const PortfolioStyled = styled.div`
     margin-inline-start: auto;
     margin-inline-end: auto;
     width: 87.5vw;
-    max-width: 1680px;
+    max-width: 1200px;
     background: white;
     border-radius: 28px;
     display: grid;
-    min-height: 784px;
-    max-height: 800px;
+    min-height: 500px;
+    max-height: 600px;
     object-fit: cover;
   }
 
@@ -403,6 +403,10 @@ export const PortfolioStyled = styled.div`
   .email-btn::first-child {
     font-size: 30px;
     color: white;
+  }
+
+  .Footer {
+    background: white;
   }
 `;
 
