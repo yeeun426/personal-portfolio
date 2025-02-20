@@ -69,7 +69,18 @@ export const TypeItStyled = styled.div`
 
   .type-it-container.disappear {
     opacity: 0 !important;
-    // z-index: -1;
+  }
+
+  .next-btn {
+    position: absolute;
+    bottom: 10%;
+    z-index: 10;
+
+    svg {
+      z-index: 100;
+      width: 45px;
+      color: white;
+    }
   }
 
   // 폴더

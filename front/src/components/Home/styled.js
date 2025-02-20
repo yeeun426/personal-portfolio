@@ -80,6 +80,40 @@ export const SearchStyled = styled.div`
     }
   }
 
+  .down-btn svg {
+    width: 50px;
+    color: white;
+    position: absolute;
+    bottom: 5%;
+    z-index: 100;
+    left: 50%;
+    animation: shake-vertical 5s ease-in-out 3s infinite both;
+  }
+
+  @keyframes shake-vertical {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      transform: translateY(-8px);
+    }
+    20%,
+    40%,
+    60% {
+      transform: translateY(8px);
+    }
+    80% {
+      transform: translateY(6.4px);
+    }
+    90% {
+      transform: translateY(-6.4px);
+    }
+  }
+
   @media (max-width: 1080px) {
     height: auto;
     display: block;
