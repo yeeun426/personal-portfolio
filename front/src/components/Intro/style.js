@@ -75,6 +75,7 @@ export const TypeItStyled = styled.div`
     position: absolute;
     bottom: 10%;
     z-index: 10;
+    transform: translateX(-50%);
 
     svg {
       z-index: 100;
@@ -214,12 +215,19 @@ export const TypeItStyled = styled.div`
 
     .folders.open {
       justify-content: center;
+      padding-left: 50px;
     }
 
     .folders.open .folder-item {
       transform: none !important;
       position: static;
       min-width: 400px;
+      height: 15%;
+    }
+
+    .folder-item .folder-img {
+      max-height: 80%;
+      width: auto;
     }
   }
 
