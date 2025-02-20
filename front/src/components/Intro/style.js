@@ -227,7 +227,7 @@ export const TypeItStyled = styled.div`
 
     .folder-item .folder-img {
       max-height: 80%;
-      width: auto;
+      width: fit-content;
     }
   }
 
