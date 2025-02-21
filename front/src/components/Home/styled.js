@@ -61,6 +61,7 @@ export const SearchStyled = styled.div`
     width: 80vw;
     height: 100%;
     gap: 15px;
+    word-break: keep-all;
 
     img {
       height: 70%;
@@ -114,6 +115,7 @@ export const SearchStyled = styled.div`
     }
   }
 
+  // 반응형
   @media (max-width: 1080px) {
     height: auto;
     display: block;
@@ -127,6 +129,12 @@ export const SearchStyled = styled.div`
     .main-container {
       width: 100%;
       padding: 3rem 2rem 0;
+      height: 100vh;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .main-aside {
       height: 100vh;
     }
   }
