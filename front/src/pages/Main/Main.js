@@ -25,7 +25,10 @@ export default function Main() {
       <div ref={(el) => el && (contentRefs.current[1] = el)}>
         <Introduce />
       </div>
-      <div ref={(el) => el && (contentRefs.current[2] = el)}>
+      <div
+        style={{ backgroundColor: '#f5f5f7' }}
+        ref={(el) => el && (contentRefs.current[2] = el)}
+      >
         <Project />
       </div>
       <Footer />

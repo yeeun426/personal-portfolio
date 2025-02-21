@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
 export const ProjectStyled = styled.div`
-  padding: 8rem 12rem;
   background-color: #f5f5f7;
   box-sizing: border-box;
   --swiper-theme-color: #d483d0;
+  width: 80%;
+  margin: auto;
+  padding: 8rem 0;
+  max-width: 1320px;
 
   .project {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 12px;
   }
 
@@ -17,12 +20,14 @@ export const ProjectStyled = styled.div`
     flex-direction: column;
     position: relative;
     background-color: #fff;
-    height: 32rem;
+    // height: 32rem;
     white-space: normal;
     box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
     align-items: center;
     justify-content: space-between;
     opacity: 0;
+    aspect-ratio: 657 / 512;
+    width: 100%;
 
     img {
       height: 70%;
@@ -32,14 +37,13 @@ export const ProjectStyled = styled.div`
     }
   }
 
-  .swiper-wrapper {
-    width: 100%;
-    vertical-align: top;
-    display: inline-flex;
-    padding-top: 10px;
-    padding-bottom: 40px;
-  }
-
+  // .swiper-wrapper {
+  //   width: 100%;
+  //   vertical-align: top;
+  //   display: inline-flex;
+  //   padding-top: 10px;
+  //   padding-bottom: 40px;
+  // }
 
   .project-txt {
     display: flex;
@@ -47,9 +51,9 @@ export const ProjectStyled = styled.div`
     gap: 10px;
     padding-top: 30px;
     height: fit-content;
-    heigh
+    width: 100%;
   }
-  
+
   .project-date {
     font-size: 12px;
     line-height: 1.33337;
@@ -66,6 +70,10 @@ export const ProjectStyled = styled.div`
     font-size: 17px;
     line-height: 1.23536;
     font-weight: 400;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .project-sub {
@@ -99,8 +107,14 @@ export const ProjectStyled = styled.div`
   }
 
   .swiper-pagination-bullet {
-    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 15px));
-    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 15px));
+    width: var(
+      --swiper-pagination-bullet-width,
+      var(--swiper-pagination-bullet-size, 15px)
+    );
+    height: var(
+      --swiper-pagination-bullet-height,
+      var(--swiper-pagination-bullet-size, 15px)
+    );
   }
 
   .swiper-pagination-bullet-active {
@@ -117,7 +131,7 @@ export const ProjectStyled = styled.div`
   .portfolio_btn {
     position: absolute;
     z-index: 1;
-    opacity:0;
+    opacity: 0;
     width: max-content;
     padding: 15px;
     border-radius: 30px;
@@ -129,35 +143,30 @@ export const ProjectStyled = styled.div`
     font-size: 17px;
     font-weight: 400;
     transform: translate(-50%, -50%);
-    transition:0.5s all;
-  }
-  .project-content:hover .portfolio_btn {
-    opacity:1
+    transition: 0.5s all;
   }
 
-  // .swiper-button-next{
-  //   background-image: url("images/arrownext.JPG");
-  //   background-color: white;
-  //   background-size: 17px 17px;
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  //   width: 28px;
-  //   height: 28px;
-  //   border-radius: 50%;
-  //   border: 0.5px solid rgb(0 0 0 / 0.3);
-  //   color: #fff0;
-  // }
-  
-  // .swiper-button-prev{
-  //   background-image: url("images/arrowprev.JPG");
-  //   background-color: white;
-  //   background-size: 17px 17px;
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  //   width: 28px;
-  //   height: 28px;
-  //   border-radius: 50%;
-  //   border: 0.5px solid rgb(0 0 0 / 0.3);
-  //   color: #fff0;
-  // }
+  .project-content:hover .portfolio_btn {
+    opacity: 1;
+  }
+
+  @media (max-width: 800px) {
+    .project {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 550px) {
+    .project-name {
+      font-size: 22px;
+    }
+    .project-txt {
+      padding-top: 20px;
+      gap: 5px;
+    }
+
+    .project-detail {
+      font-size: 15px;
+    }
+  }
 `;
