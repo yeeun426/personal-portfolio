@@ -25,6 +25,7 @@ export const AboutStyled = styled.div`
       padding: 24px 32px;
       line-height: 1.5;
       text-align: left;
+      word-break: keep-all;
     }
 
     img {
@@ -49,10 +50,22 @@ export const AboutStyled = styled.div`
     background: #0078ff;
     align-self: flex-end;
   }
+
   img.chat.me {
     width: 250px;
     height: fit-content;
     object-fit: contain;
+  }
+
+  // 반응형
+  @media (max-width: 1080px) {
+    ul {
+      padding: 5% 10%;
+    }
+
+    .otherChat {
+      padding: 0;
+    }
   }
 `;
 
