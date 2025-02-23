@@ -5,25 +5,25 @@ export const MainStyled = styled.div`
 `;
 
 export const IntroduceStyled = styled.div`
-  height: 100vh;
   background-color: #f5f5f7;
   position: relative;
 
   .aboutme-wrapper {
     box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     gap: 50px;
     align-items: flex-start;
     width: 100%;
-    max-width: 1104px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 8rem 24px;
     min-height: calc(100vh - 366px);
+    word-break: keep-all;
   }
 
   .aboutme-list {
@@ -80,7 +80,7 @@ export const IntroduceStyled = styled.div`
   }
 
   h4 {
-    font-size: 30px;
+    font-size: calc(1rem + 1vw);
   }
 
   .edu-sub {
@@ -143,6 +143,42 @@ export const IntroduceStyled = styled.div`
       gap: 20px;
       font-size: 18px;
       flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .aboutme-wrapper {
+      transform: none;
+      position: static;
+      gap: 100px;
+    }
+    .aboutme-list {
+      flex-direction: column;
+      height: auto;
+      width: 70%;
+      margin: auto;
+    }
+    .aboutme-item {
+      width: 100%;
+    }
+    .education .bg-color {
+      border-radius: 0px 0px 20px 20px;
+    }
+    .skill .bg-color {
+      border-radius: 20px 20px 0px 0px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .aboutme-list {
+      width: 90%;
+    }
+    .skills-item ul {
+      padding: 0;
+      justify-content: center;
+    }
+    .skills-item svg {
+      width: 90px;
     }
   }
 `;
