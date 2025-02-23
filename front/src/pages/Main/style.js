@@ -80,7 +80,7 @@ export const IntroduceStyled = styled.div`
   }
 
   h4 {
-    font-size: calc(1rem + 1vw);
+    font-size: max(calc(1rem + 1vw), 30px);
   }
 
   .edu-sub {
@@ -178,7 +178,7 @@ export const IntroduceStyled = styled.div`
       justify-content: center;
     }
     .skills-item svg {
-      width: 90px;
+      width: 85px;
     }
   }
 `;

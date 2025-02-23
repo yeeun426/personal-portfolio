@@ -47,7 +47,7 @@ export const HeaderStyled = styled.div`
 
 export const FooterStyled = styled.div`
   background: #f5f5f7;
-  padding: 5em 0;
+  padding: 4em 0;
 
   .footer-my {
     display: flex;
@@ -76,5 +76,14 @@ export const FooterStyled = styled.div`
     justify-content: center;
     gap: 9em;
     margin: 4em;
+  }
+
+  @media (max-width: 800px) {
+    padding: 2rem;
+
+    .footer-my {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 `;
