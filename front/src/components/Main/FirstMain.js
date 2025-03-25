@@ -1,11 +1,29 @@
 import { SideBarStyled } from './styled';
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap 스타일 불러오기
+import { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function SideBar({ onContentClick }) {
+export default function FristMain({ onContentClick, activeIndex }) {
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const triggerPosition = window.innerHeight - 100; // window.innerHeight : 화면 높이 (100vh)
+
+    if (scrollPosition > triggerPosition) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <SideBarStyled className='mainIntro-wrapper'>
-      <aside className='main-aside'>
+      <aside className={`main-aside ${scrolled ? 'scrolled' : ''}`}>
         <div className='aside-tab'>
           <button onClick={() => window.open('https://github.com/yeeun426')}>
             Github
@@ -13,17 +31,26 @@ export default function SideBar({ onContentClick }) {
           <button onClick={() => window.open('https://yeeun426.github.io/')}>
             Blog
           </button>
-          <button onClick={() => onContentClick(0)}>About</button>
-          <button onClick={() => onContentClick(1)}>Education</button>
-          <button onClick={() => onContentClick(2)}>Project</button>
-        </div>
-        <div className='aside-info'>
-          <img
-            src={process.env.PUBLIC_URL + '/images/icon/logo.png'}
-            alt='LYE'
-          />
-          <div>thsudkcla7@naver.com</div>
-          <p>Last update:2025/02</p>
+          <div className='fixed-tab'>
+            <button
+              className={activeIndex === 0 ? 'active' : ''}
+              onClick={() => onContentClick(0)}
+            >
+              About
+            </button>
+            <button
+              className={activeIndex === 1 ? 'active' : ''}
+              onClick={() => onContentClick(1)}
+            >
+              Education
+            </button>
+            <button
+              className={activeIndex === 2 ? 'active' : ''}
+              onClick={() => onContentClick(2)}
+            >
+              Project
+            </button>
+          </div>
         </div>
       </aside>
       <div className='main-container'>
