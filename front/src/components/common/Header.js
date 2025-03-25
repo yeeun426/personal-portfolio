@@ -1,6 +1,5 @@
 import { HeaderStyled } from './styled';
 import mail from '../../assets/mail.png';
-import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
