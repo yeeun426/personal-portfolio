@@ -1,10 +1,10 @@
-import { SearchStyled } from './styled';
+import { SideBarStyled } from './styled';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap 스타일 불러오기
 
-export default function Search({ onContentClick }) {
+export default function SideBar({ onContentClick }) {
   return (
-    <SearchStyled className='mainIntro-wrapper'>
+    <SideBarStyled className='mainIntro-wrapper'>
       <aside className='main-aside'>
         <div className='aside-tab'>
           <button onClick={() => window.open('https://github.com/yeeun426')}>
@@ -56,6 +56,6 @@ export default function Search({ onContentClick }) {
           />
         </svg>
       </button>
-    </SearchStyled>
+    </SideBarStyled>
   );
 }

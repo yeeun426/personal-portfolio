@@ -63,7 +63,7 @@ export default function Typing() {
             .move(-25, { speed: 30 })
             .type(' ')
             .pause(100)
-            .type('<strong class="my-name">YEEUN</strong>')
+            .type('<strong className="my-name">YEEUN</strong>')
             .pause(1000)
             .exec(() => {
               setFolder(true);

@@ -5,9 +5,9 @@ import Project from '../Project/Project';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import Footer from '../../components/Main/Footer';
+import Footer from '../../components/common/Footer';
 import AboutMe from '../AboutMe/AboutMe';
-import Search from '../../components/Home/Search';
+import FirstMain from '../../components/Main/FirstMain';
 
 export default function Main() {
   const contentRefs = useRef([]);
@@ -18,7 +18,7 @@ export default function Main() {
 
   return (
     <MainStyled>
-      <Search onContentClick={onContentClick} />
+      <FirstMain onContentClick={onContentClick} />
       <div ref={(el) => el && (contentRefs.current[0] = el)}>
         <AboutMe />
       </div>

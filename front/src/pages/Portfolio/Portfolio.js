@@ -3,12 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import Header from '../../components/Main/Header';
-import PofolHeader from '../../components/Portfolio/PofolHeader';
-import { PortfolioStyled, DropIcon } from './styled.js';
-import Email from '../../components/Email/Email';
-import Footer from '../../components/Main/Footer.js';
 
+import Header from '../../components/common/Header';
+import PjHeader from '../../components/Portfolio/PofolHeader';
+import Email from '../../components/Email/Email';
+import Footer from '../../components/common/Footer.js';
+
+import { PortfolioStyled, DropIcon } from './styled.js';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
@@ -70,7 +71,7 @@ function Portfolio() {
   return (
     <PortfolioStyled>
       <Header />
-      <PofolHeader />
+      <PjHeader />
       <div className='portfolio-begin'>
         <div className='portfolio-title'>
           <div className='title-name'>{data.name}</div>
