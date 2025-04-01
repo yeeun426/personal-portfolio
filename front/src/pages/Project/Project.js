@@ -11,27 +11,30 @@ export default function Project() {
   const location = useLocation();
   const containerRef = useRef(null);
 
-  // 1️⃣ 세션 스토리지에서 프로젝트 데이터를 가져옴
   const storedProject = sessionStorage.getItem('projectData');
   const [project, setProject] = useState(
     storedProject ? JSON.parse(storedProject) : []
   );
 
+  const [filteredProject, setFilteredProject] = useState(project);
+
   useEffect(() => {
-    // 2️⃣ location.state에 데이터가 있으면 세션 스토리지에 저장
+    // location.state에 데이터가 있으면 세션 스토리지에 저장
     if (location.state?.project) {
       sessionStorage.setItem(
         'projectData',
         JSON.stringify(location.state.project)
       );
       setProject(location.state.project);
+      setFilteredProject(location.state.project);
     }
-    // 3️⃣ 데이터가 없으면 JSON 파일에서 불러오기
+    // 3. 데이터가 없으면 JSON 파일에서 불러오기
     else if (!storedProject) {
       fetch('/data/project.json')
         .then((res) => res.json())
         .then((data) => {
           setProject(data);
+          setFilteredProject(data);
           sessionStorage.setItem('projectData', JSON.stringify(data));
         });
     }
@@ -43,7 +46,7 @@ export default function Project() {
     gsap.set('.project-content', { opacity: 0, y: 20 });
 
     const trigger = ScrollTrigger.batch('.project-content', {
-      id: 'projectTrigger', // ID 부여
+      id: 'projectTrigger',
       batchMax: 2,
       onEnter: (batch) => {
         gsap.to(batch, { opacity: 1, y: 0, stagger: 0.2 });
@@ -58,26 +61,42 @@ export default function Project() {
     return () => {
       ScrollTrigger.getById('projectTrigger')?.kill(); // 특정 트리거만 제거
     };
-  }, [project]);
+  }, [filteredProject]);
+
+  const handleTeam = (isTeam) => {
+    if (isTeam === null) {
+      setFilteredProject(project);
+    } else {
+      setFilteredProject(project.filter((p) => p.team === isTeam));
+    }
+  };
 
   return (
     <ProjectStyled>
+      <div>
+        <button onClick={() => handleTeam(null)}>All</button>
+        <button onClick={() => handleTeam(true)}>Team</button>
+        <button onClick={() => handleTeam(false)}>Single</button>
+      </div>
       <div className='project' ref={containerRef}>
-        {project.map((project) => (
-          <div ref={containerRef} className='project-content' key={project.id}>
-            <div className='project-txt'>
-              <div className='project-date'>{project.date}</div>
-              <div className='project-name'>{project.name}</div>
-              <div className='project-detail'>{project.detail}</div>
+        {filteredProject
+          .slice()
+          .reverse()
+          .map((project) => (
+            <div className='project-content' key={project.id}>
+              <div className='project-txt'>
+                <div className='project-date'>{project.date}</div>
+                <div className='project-name'>{project.name}</div>
+                <div className='project-detail'>{project.detail}</div>
+              </div>
+              <img src={project.img} alt={project.name} />
+              <Link to={`/project/${project.id}`}>
+                <button className='portfolio_btn'>
+                  프로젝트 자세히 살펴보기
+                </button>
+              </Link>
             </div>
-            <img src={project.img} alt={project.name} />
-            <Link to={`/project/${project.id}`}>
-              <button className='portfolio_btn'>
-                프로젝트 자세히 살펴보기
-              </button>
-            </Link>
-          </div>
-        ))}
+          ))}
       </div>
     </ProjectStyled>
   );

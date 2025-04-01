@@ -52,6 +52,14 @@ export default function FristMain({ onContentClick, activeIndex }) {
             </button>
           </div>
         </div>
+        <div className='aside-info'>
+          <img
+            src={process.env.PUBLIC_URL + '/images/icon/logo.png'}
+            alt='LYE'
+          />
+          <div>thsudkcla7@naver.com</div>
+          <p>Last update:2025/03</p>
+        </div>
       </aside>
       <div className='main-container'>
         <h2 className='h1'>

@@ -4,10 +4,10 @@ export const ProjectStyled = styled.div`
   background-color: #f5f5f7;
   box-sizing: border-box;
   --swiper-theme-color: #d483d0;
-  width: 80%;
+  width: 70%;
   margin: auto;
   padding: 8rem 0;
-  max-width: 1320px;
+  max-width: 1200px;
 
   .project {
     display: grid;
