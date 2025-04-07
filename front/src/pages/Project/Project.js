@@ -17,6 +17,7 @@ export default function Project() {
   );
 
   const [filteredProject, setFilteredProject] = useState(project);
+  const [selectedFilter, setSelectedFilter] = useState(null);
 
   useEffect(() => {
     // location.state에 데이터가 있으면 세션 스토리지에 저장
@@ -64,6 +65,7 @@ export default function Project() {
   }, [filteredProject]);
 
   const handleTeam = (isTeam) => {
+    setSelectedFilter(isTeam);
     if (isTeam === null) {
       setFilteredProject(project);
     } else {
@@ -73,10 +75,25 @@ export default function Project() {
 
   return (
     <ProjectStyled>
-      <div>
-        <button onClick={() => handleTeam(null)}>All</button>
-        <button onClick={() => handleTeam(true)}>Team</button>
-        <button onClick={() => handleTeam(false)}>Single</button>
+      <div className='team-category'>
+        <button
+          className={selectedFilter === null ? 'active' : ''}
+          onClick={() => handleTeam(null)}
+        >
+          All
+        </button>
+        <button
+          className={selectedFilter === true ? 'active' : ''}
+          onClick={() => handleTeam(true)}
+        >
+          Team
+        </button>
+        <button
+          className={selectedFilter === false ? 'active' : ''}
+          onClick={() => handleTeam(false)}
+        >
+          Single
+        </button>
       </div>
       <div className='project' ref={containerRef}>
         {filteredProject
