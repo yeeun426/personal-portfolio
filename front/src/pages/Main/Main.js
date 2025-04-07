@@ -8,6 +8,7 @@ import 'swiper/css/scrollbar';
 import Footer from '../../components/common/Footer';
 import AboutMe from '../AboutMe/AboutMe';
 import FirstMain from '../../components/Main/FirstMain';
+import Feedback from '../../components/common/Feedback';
 
 export default function Main() {
   const contentRefs = useRef([]);
@@ -36,6 +37,7 @@ export default function Main() {
 
   return (
     <MainStyled>
+      <Feedback />
       <FirstMain onContentClick={onContentClick} activeIndex={activeIndex} />
       <div ref={(el) => el && (contentRefs.current[0] = el)}>
         <AboutMe />
