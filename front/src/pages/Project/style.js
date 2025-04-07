@@ -150,6 +150,28 @@ export const ProjectStyled = styled.div`
     opacity: 1;
   }
 
+  .team-category {
+    background: white;
+    width: fit-content;
+    padding: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+
+    button {
+      padding: 0.5rem 1.25rem;
+      font-size: 17px;
+      border-radius: 999px;
+    }
+
+    button.active {
+      background: #b8b8b9;
+      color: white;
+      font-weight: bold;
+    }
+  }
+
   @media (max-width: 800px) {
     .project {
       grid-template-columns: repeat(1, minmax(0, 1fr));
