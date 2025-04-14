@@ -46,7 +46,7 @@ function AboutMe() {
         <li className='chat me'>
           타입스크립트와 썸(😘)타는 프론트엔드 개발자 이예은입니다.
         </li>
-        <img className='chat me' src='images/myimg1.png' alt='yeeun' />
+        <img className='chat me' src='images/main/profile.webp' alt='yeeun' />
         <li className='chat me'>
           꾸준하게 빈 틈을 채워나가는 "성실함"을 가지고 있습니다.
         </li>

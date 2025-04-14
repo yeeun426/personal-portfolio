@@ -54,7 +54,7 @@ export default function FristMain({ onContentClick, activeIndex }) {
         </div>
         <div className='aside-info'>
           <img
-            src={process.env.PUBLIC_URL + '/images/icon/logo.png'}
+            src={process.env.PUBLIC_URL + '/images/main/logo.webp'}
             alt='LYE'
           />
           <div>thsudkcla7@naver.com</div>
@@ -72,7 +72,7 @@ export default function FristMain({ onContentClick, activeIndex }) {
           사용자가 필요로 하는 것을 <strong>한발 먼저</strong> 고민하겠습니다.
         </p>
         <img
-          src={process.env.PUBLIC_URL + '/images/leeyeeun.png'}
+          src={process.env.PUBLIC_URL + '/images/main/leeyeeun.webp'}
           alt='leeyeeun'
         />
       </div>

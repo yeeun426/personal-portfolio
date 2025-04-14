@@ -110,7 +110,7 @@ function Hello({ setActiveTab }) {
         </div>
       </div>
       <div className='pc-right'>
-        <Image src='images/myimg1.png' alt='yeeun' fluid />
+        <Image src='images/main/profile.webp' alt='yeeun' fluid />
       </div>
     </div>
   );

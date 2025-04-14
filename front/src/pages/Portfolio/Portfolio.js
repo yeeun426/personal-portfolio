@@ -283,6 +283,7 @@ const PortfolioDetail = ({ data, params }) => {
               className='detail_filter'
               alt={page.desc}
               src={process.env.PUBLIC_URL + '/' + page.img}
+              loading='lazy'
             />
           </SwiperSlide>
         ))}

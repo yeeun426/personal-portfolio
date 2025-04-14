@@ -15,7 +15,7 @@ export default function Header() {
       <Link to='/main'>
         <img
           className='header-logo'
-          src={process.env.PUBLIC_URL + '/images/icon/logo.png'}
+          src={process.env.PUBLIC_URL + '/images/main/logo.webp'}
           alt='leeyeeun'
         />
       </Link>
