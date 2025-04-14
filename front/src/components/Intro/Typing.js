@@ -73,7 +73,11 @@ export default function Typing() {
         }}
       />
       {!folder && (
-        <button className='next-btn' onClick={() => setFolder(true)}>
+        <button
+          className='next-btn'
+          aria-label='main으로 이동'
+          onClick={() => setFolder(true)}
+        >
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -125,7 +129,7 @@ export default function Typing() {
           <img
             className='folder-img project-folder'
             src='images/folder.png'
-            alt='project'
+            alt='폴더'
           />
           <div className='folder-img-name'>PROJECT</div>
         </button>

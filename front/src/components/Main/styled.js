@@ -7,7 +7,7 @@ export const SideBarStyled = styled.div`
       rgba(255, 255, 255, 0.1),
       rgba(255, 255, 255, 0.1)
     ),
-    url(images/background.png);
+    url(images/main/background.webp);
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
