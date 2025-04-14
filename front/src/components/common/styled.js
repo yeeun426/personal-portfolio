@@ -104,6 +104,7 @@ export const FeedbackStyle = styled.div`
     box-shadow: 2px 2px 6px #bcbcbcd1;
     padding: 5px;
     box-sizing: border-box;
+    background: white;
 
     button {
       width: 100%;

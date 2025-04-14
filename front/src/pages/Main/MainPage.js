@@ -22,7 +22,11 @@ export default function Main() {
     contentRefs.current.forEach((section, idx) => {
       if (section) {
         const rect = section.getBoundingClientRect(); // 섹션의 위치 정보 가져오기
-        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+        if (
+          rect.top >= 0 &&
+          rect.top < window.innerHeight / 2 &&
+          window.innerWidth > 1100
+        ) {
           // 화면의 절반 높이보다 위에 있으면
           setActiveIndex(idx); // 현재 보이는 섹션의 인덱스를 저장
         }

@@ -1,16 +1,20 @@
 import { SideBarStyled } from './styled';
 import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Tooltip } from 'react-tooltip';
+import { MdFeedback } from 'react-icons/md';
 
 export default function FristMain({ onContentClick, activeIndex }) {
   const [scrolled, setScrolled] = useState(false);
+  const [isOn, setIsOn] = useState(false);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     const triggerPosition = window.innerHeight - 100; // window.innerHeight : 화면 높이 (100vh)
 
-    if (scrollPosition > triggerPosition) {
+    if (scrollPosition > triggerPosition && window.innerWidth > 1080) {
       setScrolled(true);
+      setIsOn(false);
     } else {
       setScrolled(false);
     }
@@ -23,7 +27,11 @@ export default function FristMain({ onContentClick, activeIndex }) {
 
   return (
     <SideBarStyled className='mainIntro-wrapper'>
-      <aside className={`main-aside ${scrolled ? 'scrolled' : ''}`}>
+      <aside
+        className={`main-aside ${scrolled ? 'scrolled' : ''} ${
+          isOn ? 'on' : ''
+        }`}
+      >
         <div className='aside-tab'>
           <button onClick={() => window.open('https://github.com/yeeun426')}>
             Github
@@ -61,6 +69,13 @@ export default function FristMain({ onContentClick, activeIndex }) {
           <p>Last update:2025/03</p>
         </div>
       </aside>
+      <div className={`feedback-item ${isOn ? 'on' : ''}`}>
+        <button className='my-menu' onClick={() => setIsOn(!isOn)}>
+          <MdFeedback />
+        </button>
+        <Tooltip anchorSelect='.my-feedback' place='left' content='menu' />
+      </div>
+
       <div className='main-container'>
         <h2 className='h1'>
           프론트엔드 개발자 <strong>이예은</strong>입니다.

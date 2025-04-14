@@ -155,12 +155,24 @@ export const SideBarStyled = styled.div`
       width: 100%;
       align-items: center;
       gap: 2rem;
+      left: -100%;
+      transition: 0.3s;
+      position: fixed;
+      top: 0;
+    }
+
+    .main-aside.on {
+      left: 0;
+      min-width: 210px;
+      padding: 2rem 1rem;
+      width: 30vw;
     }
 
     .main-container {
       width: 100%;
       padding: 3rem 2rem 0;
       height: 100vh;
+      margin: auto;
     }
   }
 

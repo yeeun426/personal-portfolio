@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Main from './pages/Main/Main';
+import Main from './pages/Main/MainPage.js';
 import Intro from './pages/Intro/TypeItIntro.js';
 import Project from './pages/Project/Project';
 import Portfolio from './pages/Portfolio/Portfolio';
