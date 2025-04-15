@@ -165,18 +165,11 @@ export const SideBarStyled = styled.div`
     }
   }
 
-  // 반응형
+  // 반응형 중
   @media (max-width: 1080px) {
     height: auto;
     display: block;
 
-    .menu-item {
-      position: fixed;
-      right: 3.25rem;
-      bottom: 11.5rem;
-      display: block;
-      z-index: 100;
-    }
     .main-aside {
       width: 100%;
       align-items: center;
@@ -192,18 +185,29 @@ export const SideBarStyled = styled.div`
       padding: 2rem 1rem;
       width: 30vw;
     }
-
     .main-container {
       width: 100%;
       padding: 3rem 2rem 0;
       height: 100vh;
       margin: auto;
+      max-width: none;
+    }
+    .menu-item {
+      position: fixed;
+      right: 3.25rem;
+      bottom: 11.5rem;
+      display: block;
+      z-index: 100;
     }
   }
 
+  // 반응형 소
   @media (max-width: 500px) {
-    .main-aside {
-      height: 100vh;
+    .main-container {
+      justify-content: center;
+    }
+    .main-container > img {
+      height: 50%;
     }
   }
 `;
@@ -214,10 +218,6 @@ export const EduStyled = styled.div`
 
   .aboutme-wrapper {
     box-sizing: border-box;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     gap: 50px;
