@@ -37,10 +37,24 @@ export const SideBarStyled = styled.div`
     text-align-last: left;
     gap: 30px;
     font-size: 30px;
-
-    button {
-      padding: 0;
-    }
+  }
+  .aside-tab button {
+    padding: 0;
+    position: relative;
+  }
+  .aside-tab button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    transform: translateX(0%);
+    width: 0%;
+    height: 3px;
+    background-color: #cccccc;
+    transition: 0.3s;
+  }
+  .aside-tab button.active::before,
+  .aside-tab button:hover::before {
+    width: 90%;
   }
 
   .fixed-tab {
