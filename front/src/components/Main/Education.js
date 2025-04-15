@@ -1,7 +1,7 @@
-import { IntroduceStyled } from './style';
+import { EduStyled } from './styled';
 import React, { useEffect, useState, useRef } from 'react';
 
-export default function Introduce() {
+export default function Education() {
   const componentsRef = useRef([]); // 여러 요소를 감지하기 위한 ref 배열
   const [centerIdx, setCenterIdx] = useState(null); // 현재 중앙에 있는 요소의 인덱스
 
@@ -33,7 +33,7 @@ export default function Introduce() {
   }, []);
 
   return (
-    <IntroduceStyled>
+    <EduStyled>
       <div className='aboutme-wrapper'>
         <div
           key={0}
@@ -300,6 +300,6 @@ export default function Introduce() {
           </div>
         </div>
       </div>
-    </IntroduceStyled>
+    </EduStyled>
   );
 }

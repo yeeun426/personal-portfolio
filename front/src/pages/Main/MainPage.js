@@ -1,13 +1,11 @@
 import { useRef, useState, useEffect } from 'react';
 import { MainStyled } from './style';
-import Introduce from './Introduce';
+import Education from '../../components/Main/Education';
 import Project from '../Project/Project';
 
-import 'swiper/css';
-import 'swiper/css/scrollbar';
 import Footer from '../../components/common/Footer';
 import AboutMe from '../AboutMe/AboutMe';
-import FirstMain from '../../components/Main/FirstMain';
+import FirstMain from '../../components/Main/MainIntro';
 import Feedback from '../../components/common/Feedback';
 
 export default function Main() {
@@ -47,7 +45,7 @@ export default function Main() {
         <AboutMe />
       </div>
       <div ref={(el) => el && (contentRefs.current[1] = el)}>
-        <Introduce />
+        <Education />
       </div>
       <div
         style={{ backgroundColor: '#f5f5f7' }}
