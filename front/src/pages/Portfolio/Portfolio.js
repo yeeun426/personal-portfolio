@@ -12,6 +12,7 @@ import Footer from '../../components/common/Footer.js';
 import { PortfolioStyled, DropIcon } from './styled.js';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
 
 function Portfolio() {
   const params = useParams();
@@ -42,7 +43,7 @@ function Portfolio() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [params.projectId]);
 
   const [scrollPosition, setScrollPosition] = useState(0); // 스크롤 위치 저장
   const updateScroll = () => {

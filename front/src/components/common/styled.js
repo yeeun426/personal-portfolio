@@ -38,6 +38,7 @@ export const HeaderStyled = styled.div`
     display: flex;
     align-items: center;
     gap: 50px;
+    justify-content: center;
   }
 
   button {

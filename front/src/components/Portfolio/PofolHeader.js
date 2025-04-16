@@ -37,12 +37,31 @@ export default function PofolHeader() {
   return (
     <PofolHeaderStyled>
       <Swiper
-        slidesPerView={9}
+        // spaceBetween={20}
         className='pofol-list'
         modules={[Navigation]}
         navigation={true}
-        slidesOffsetAfter={20}
-        slidesOffsetBefore={20}
+        breakpoints={{
+          // 1080px 이상
+          1080: {
+            slidesPerView: 8,
+            spaceBetween: 20,
+          },
+          // 850px 이상
+          750: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+          // 450px 이상
+          450: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        }}
       >
         {list &&
           list.map((project) => (

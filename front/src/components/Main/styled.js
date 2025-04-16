@@ -52,7 +52,6 @@ export const SideBarStyled = styled.div`
     background-color: #cccccc;
     transition: 0.3s;
   }
-  .aside-tab button.active::before,
   .aside-tab button:hover::before {
     width: 90%;
   }

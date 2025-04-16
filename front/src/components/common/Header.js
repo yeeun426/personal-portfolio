@@ -20,8 +20,7 @@ export default function Header() {
         />
       </Link>
       <div className='header-right'>
-        <button onClick={() => navigate(`/about`)}>About</button>
-        <button onClick={() => navigate(`/project`)}>Portfolio</button>
+        <button onClick={() => navigate(`/main`)}>About</button>
         <button onClick={() => window.open('https://yeeeon.tistory.com/')}>
           <div>Blog</div>
         </button>

@@ -2,7 +2,7 @@ import { SideBarStyled } from './styled';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Tooltip } from 'react-tooltip';
-import { MdFeedback } from 'react-icons/md';
+import { IoMdMenu } from 'react-icons/io';
 import Sidebar from './Sidebar';
 import MainYeEun from './MainYeEun';
 
@@ -28,9 +28,9 @@ const MenuBtn = ({ isOn, setIsOn }) => {
   return (
     <div className='menu-item'>
       <button className='my-menu' onClick={() => setIsOn(!isOn)}>
-        <MdFeedback />
+        <IoMdMenu />
       </button>
-      <Tooltip anchorSelect='.my-feedback' place='left' content='menu' />
+      <Tooltip anchorSelect='.my-menu' place='left' content='menu' />
     </div>
   );
 };
