@@ -78,12 +78,16 @@ export const PortfolioStyled = styled.div`
     max-width: 1680px;
     margin: auto;
     padding-bottom: 70px;
-    font-size: 56px;
+    font-size: 3.5rem;
     font-weight: 600;
     text-align: left;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+  }
+  .portfolio-detail .portfolio-sub-title > div {
+    font-size: 3.5rem;
+    font-weight: 600;
   }
 
   .desc-swiper img {
@@ -130,7 +134,7 @@ export const PortfolioStyled = styled.div`
     padding: 30px 0;
   }
 
-  .portfolio-description .desc-swiper .swiper-slide:nth-child(1) .detail-txt {
+  .desc-swiper .swiper-slide:nth-child(1) .detail-txt {
     top: 15%;
     width: 85%;
     font-size: 25px;
@@ -138,14 +142,14 @@ export const PortfolioStyled = styled.div`
     word-break: keep-all;
     left: 46%;
   }
-
-  .portfolio-description .desc-swiper .swiper-slide:nth-child(2) .detail-txt {
-    top: 80%;
-    font-size: 25px;
+  .desc-swiper .swiper-slide:nth-child(2) .detail-txt {
     width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: flex-end;
+    font-size: 24px;
   }
-
-  .portfolio-description .desc-swiper .swiper-slide:nth-child(3) .detail-txt {
+  .desc-swiper .swiper-slide:nth-child(3) .detail-txt {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -154,8 +158,7 @@ export const PortfolioStyled = styled.div`
       font-weight: bold;
     }
   }
-
-  .portfolio-description .desc-swiper .swiper-slide:nth-child(6) .detail-txt {
+  .desc-swiper .swiper-slide:nth-child(6) .detail-txt {
     top: 18%;
     display: flex;
     flex-direction: column;
@@ -168,24 +171,29 @@ export const PortfolioStyled = styled.div`
     }
   }
 
-  .desc-swiper {
+  .desc-swiper,
+  .detail-page {
     padding: 0 calc(50vw - min(1680px, 87.5vw) / 2) 70px;
   }
 
   .desc-swiper .swiper-button-next,
-  .desc-swiper .swiper-button-prev {
+  .desc-swiper .swiper-button-prev,
+  .detail-page .swiper-button-next,
+  .detail-page .swiper-button-prev {
     bottom: 0px;
     top: auto;
     scale: 0.8;
     color: deeppink;
   }
 
-  .desc-swiper .swiper-button-prev {
+  .desc-swiper .swiper-button-prev,
+  .detail-page .swiper-button-prev {
     right: 150px;
     left: auto;
   }
 
-  .desc-swiper .swiper-button-next {
+  .desc-swiper .swiper-button-next,
+  .detail-page .swiper-button-next {
     right: 90px;
   }
 
@@ -236,7 +244,7 @@ export const PortfolioStyled = styled.div`
     margin: auto;
 
     .portfolio-learn-title {
-      font-size: 40px;
+      font-size: 3rem;
       font-weight: 600;
       margin: 32px 0 48px;
     }
@@ -246,36 +254,25 @@ export const PortfolioStyled = styled.div`
     border-bottom: 1px solid #dddddd;
     padding-bottom: 16px;
   }
-
-  .pli-question {
-    height: 88px;
-    align-items: center;
-    font-size: 23px;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-  }
   .portfolio-learn-item {
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
   }
 
   .pli-question {
+    height: 88px;
+    font-size: 23px;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
   }
-
   .pli-answer {
     background-color: #f9f9f9;
     border-radius: 4px;
     transition: height 0.3s ease; /* 높이 애니메이션 */
-  }
-
-  .pli-answer {
     font-size: 18px;
-    line-height: 1.45;
   }
 
   .portfolio-learn-container > div {
@@ -288,8 +285,6 @@ export const PortfolioStyled = styled.div`
   }
 
   .other-project {
-    margin-inline-start: auto;
-    margin-inline-end: auto;
     width: 87.5vw;
     max-width: 1680px;
     background: #fafafa;
@@ -298,41 +293,39 @@ export const PortfolioStyled = styled.div`
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    height: 600px;
+    min-height: 600px;
+    margin: auto;
+    flex-wrap: wrap;
   }
-
   .other-project > *:first-child {
-    width: calc(350px + 90px * 2); /* 첫 번째 요소의 고정 너비 설정 */
-    flex-shrink: 0; /* 너비가 줄어들지 않도록 설정 */
+    flex: 1;
+    align-content: center;
   }
   .other-project > *:last-child {
-    flex-grow: 1; /* 두 번째 요소가 남은 공간을 차지하도록 설정 */
-    flex-basis: 0; /* 기본 너비를 0으로 설정하여 flex-grow에 따른 크기 변경 */
+    flex: 1.5;
   }
 
   .other-img {
     height: 100%;
     align-content: center;
   }
-
   .other-project img {
-    height: 80%;
+    width: 80%;
   }
 
   .other-desc {
-    padding: 120px 90px;
-
-    .portfolio_btn {
-      font-size: 17px;
-      background: white;
-      padding: 10px 40px;
-      border-radius: 20px;
-      box-shadow: 5px 5px 5px #80808024;
-    }
+    padding: 0 4rem;
+  }
+  .other-desc .portfolio_btn {
+    font-size: 17px;
+    background: white;
+    padding: 10px 40px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #80808024;
   }
 
   .other-desc-title {
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: 600;
     padding: 24px 0;
   }
@@ -414,6 +407,26 @@ export const PortfolioStyled = styled.div`
 
   .Footer {
     background: white;
+  }
+
+  @media (max-width: 1080px) {
+    .portfolio-sub-title {
+      padding-bottom: 30px;
+    }
+    .pli-answer {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 700px) {
+    .other-project {
+      flex-direction: column;
+    }
+    .portfolio-learn-container {
+      flex-direction: column;
+    }
+    .portfolio-video > div {
+      min-height: auto !important;
+    }
   }
 `;
 

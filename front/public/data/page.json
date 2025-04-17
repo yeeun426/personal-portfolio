@@ -281,5 +281,12 @@
       "desc": "좋아요"
     }
   },
-  {}
+  {
+    "id": 8,
+    "page1": {
+      "num": "1",
+      "img": "images/portfolio/ndgd/ndgd(1).png",
+      "desc": "main"
+    }
+  }
 ]

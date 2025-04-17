@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import Header from '../../components/common/Header';
@@ -122,11 +122,11 @@ function Portfolio() {
             <div className='other-desc-txt'>
               "{otherProject.detail}"을 지금 바로 만나보세요.
             </div>
-            <a href={`/project/${otherProject.id}`}>
+            <Link to={`/project/${otherProject.id}`}>
               <button className='portfolio_btn'>
                 프로젝트 자세히 살펴보기
               </button>
-            </a>
+            </Link>
           </div>
           <div className='other-img'>
             <img
@@ -165,11 +165,18 @@ const PortFolioDesc = ({ data }) => {
       <div className='portfolio-sub-title'>알면 알수록, {data.name}.</div>
       <Swiper
         className='desc-swiper'
-        slidesPerView={3.5}
+        slidesPerView='auto'
         spaceBetween={20}
         freeMode={true}
         navigation={true}
         modules={[Navigation]}
+        breakpoints={{
+          // 1080px 이상
+          1080: {
+            slidesPerView: 3.5,
+            spaceBetween: 20,
+          },
+        }}
       >
         <SwiperSlide>
           <img
@@ -177,9 +184,7 @@ const PortFolioDesc = ({ data }) => {
             alt={data.period}
             src={process.env.PUBLIC_URL + '/images/swiper/more_swiper1.png'}
           />
-          <div className='detail-txt'>
-            <div className='img-detail'>{data.detail}</div>
-          </div>
+          <div className='detail-txt'>{data.detail}</div>
         </SwiperSlide>
         <SwiperSlide>
           <img
@@ -188,9 +193,7 @@ const PortFolioDesc = ({ data }) => {
             src={process.env.PUBLIC_URL + '/images/swiper/more_swiper2.png'}
             style={{ filter: 'brightness(80%)' }}
           />
-          <div className='detail-txt'>
-            <div className='img-detail'>{data.skills?.detail}</div>
-          </div>
+          <div className='detail-txt'>{data.skills?.detail}</div>
         </SwiperSlide>
         <SwiperSlide>
           <img
@@ -286,21 +289,24 @@ const PortfolioDetail = ({ data, params }) => {
   return (
     <div className='portfolio-detail'>
       <div className='portfolio-sub-title'>
-        <div>
-          {data.name}, 각각의 페이지
-          <br /> 자세히 살펴보기.
-        </div>
+        <div>{data.name}, 자세히 살펴보기.</div>
         <button onClick={() => window.open(data.skills.github)}>
           Github 바로가기 ❯
         </button>
       </div>
       <Swiper
         className={params === '3' ? 'detail-page maplix' : 'detail-page'}
-        slidesPerView={2}
+        slidesPerView={1}
         spaceBetween={30}
         freeMode={true}
         navigation={true}
         modules={[Navigation]}
+        breakpoints={{
+          900: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        }}
       >
         {imageData.map((page) => (
           <SwiperSlide

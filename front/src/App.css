@@ -141,12 +141,14 @@ table {
 @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
+* {
+  line-height: 1.6;
+  font-family: 'Pretendard-Regular', 'Noto Sans KR';
+  word-break: keep-all;
+}
 .App {
   text-align: center;
-  font-family: 'Pretendard-Regular', 'Noto Sans KR';
-  line-height: 1.4;
 }
-
 input {
   outline: none;
   font-family: 'Noto Sans KR';

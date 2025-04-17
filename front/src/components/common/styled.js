@@ -63,6 +63,9 @@ export const FooterStyled = styled.div`
     width: 210px;
     text-align: left;
   }
+  .my-info > div {
+    font-size: 16px;
+  }
 
   .my-info img {
     padding: 10px;
