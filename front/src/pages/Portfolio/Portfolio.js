@@ -79,15 +79,17 @@ function Portfolio() {
           <div className='title-detail'>{data.detail}</div>
         </div>
         <div className='portfolio-video'>
-          <div style={divStyle}>
-            <video
-              src={process.env.PUBLIC_URL + '/' + data.video}
-              controls
-              muted
-              playsInline
-              autoPlay
-            />
-          </div>
+          {data.video && (
+            <div style={divStyle}>
+              <video
+                src={process.env.PUBLIC_URL + '/' + data.video}
+                controls
+                muted
+                playsInline
+                autoPlay
+              />
+            </div>
+          )}
         </div>
       </div>
       <PortFolioDesc data={data} />
@@ -123,8 +125,12 @@ function Portfolio() {
             프로젝트에 관해 궁금하신 점/피드백이 있나요?
           </div>
           <div className='email-btn'>
-            <div>언제든지요. 📝 ➠ 📨</div>
-            <button onClick={() => setModal(!modal)}>email</button>
+            <div>언제든지요!</div>
+            <button
+              onClick={() => window.open('https://forms.gle/iPCqwKgThEsvLpRc9')}
+            >
+              📝<span> ➠ </span>📨
+            </button>
           </div>
         </div>
       </div>
@@ -139,7 +145,7 @@ const PortFolioDesc = ({ data }) => {
     <div className='portfolio-description'>
       <div className='portfolio-sub-title'>알면 알수록, {data.name}.</div>
       <Swiper
-        className='small_img'
+        className='desc-swiper'
         slidesPerView={3.5}
         spaceBetween={20}
         freeMode={true}
@@ -183,10 +189,12 @@ const PortFolioDesc = ({ data }) => {
               <div className='detail-title'>기술</div>
               <div className='img-detail'>{data.skills?.skill}</div>
             </div>
-            <div className='detail-txt-item'>
-              <div className='detail-title'>기관</div>
-              <div className='img-detail'>{data.skills?.organization}</div>
-            </div>
+            {data.skills?.organization && (
+              <div className='detail-txt-item'>
+                <div className='detail-title'>기관</div>
+                <div className='img-detail'>{data.skills?.organization}</div>
+              </div>
+            )}
           </div>
         </SwiperSlide>
         <SwiperSlide>

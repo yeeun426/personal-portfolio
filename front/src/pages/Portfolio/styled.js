@@ -82,7 +82,7 @@ export const PortfolioStyled = styled.div`
     align-items: flex-end;
   }
 
-  .small_img img {
+  .desc-swiper img {
     width: 100%;
     border-radius: 28px;
     margin-right: 18px;
@@ -90,7 +90,7 @@ export const PortfolioStyled = styled.div`
     object-fit: cover;
   }
 
-  .small_img .swiper-slide {
+  .desc-swiper .swiper-slide {
     min-width: 260px;
     max-width: 420px;
     aspect-ratio: 0.54;
@@ -126,7 +126,7 @@ export const PortfolioStyled = styled.div`
     padding: 30px 0;
   }
 
-  .portfolio-description .small_img .swiper-slide:nth-child(1) .detail-txt {
+  .portfolio-description .desc-swiper .swiper-slide:nth-child(1) .detail-txt {
     top: 15%;
     width: 85%;
     font-size: 25px;
@@ -135,13 +135,13 @@ export const PortfolioStyled = styled.div`
     left: 46%;
   }
 
-  .portfolio-description .small_img .swiper-slide:nth-child(2) .detail-txt {
+  .portfolio-description .desc-swiper .swiper-slide:nth-child(2) .detail-txt {
     top: 80%;
     font-size: 25px;
     width: 90%;
   }
 
-  .portfolio-description .small_img .swiper-slide:nth-child(3) .detail-txt {
+  .portfolio-description .desc-swiper .swiper-slide:nth-child(3) .detail-txt {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -151,7 +151,7 @@ export const PortfolioStyled = styled.div`
     }
   }
 
-  .portfolio-description .small_img .swiper-slide:nth-child(6) .detail-txt {
+  .portfolio-description .desc-swiper .swiper-slide:nth-child(6) .detail-txt {
     top: 18%;
     display: flex;
     flex-direction: column;
@@ -164,24 +164,24 @@ export const PortfolioStyled = styled.div`
     }
   }
 
-  .swiper {
+  .desc-swiper {
     padding: 0 calc(50vw - min(1680px, 87.5vw) / 2) 70px;
   }
 
-  .swiper-button-next,
-  .swiper-button-prev {
+  .desc-swiper .swiper-button-next,
+  .desc-swiper .swiper-button-prev {
     bottom: 0px;
     top: auto;
     scale: 0.8;
     color: deeppink;
   }
 
-  .swiper-button-prev {
+  .desc-swiper .swiper-button-prev {
     right: 150px;
     left: auto;
   }
 
-  .swiper-button-next {
+  .desc-swiper .swiper-button-next {
     right: 90px;
   }
 
@@ -376,7 +376,10 @@ export const PortfolioStyled = styled.div`
       text-decoration: none;
     }
   }
-
+  .email-btn button:hover span {
+    color: red;
+    font-size: 22px;
+  }
   .detail_btn {
     padding: 13px 23px;
     font-size: 16px;

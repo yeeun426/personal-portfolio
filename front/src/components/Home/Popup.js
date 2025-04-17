@@ -79,9 +79,6 @@ export default function Popup() {
                   <Tab.Pane eventKey='3'>
                     <Plan />
                   </Tab.Pane>
-                  <Tab.Pane eventKey='4'>
-                    <Share />
-                  </Tab.Pane>
                 </Tab.Content>
               </Col>
             </div>
@@ -103,9 +100,6 @@ function Hello({ setActiveTab }) {
         <div className='pcl-btns'>
           <button className='pcl-btn-learn' onClick={() => setActiveTab('2')}>
             About Me 〉
-          </button>
-          <button className='pcl-btn-contact' onClick={() => setActiveTab('3')}>
-            Share 〉
           </button>
         </div>
       </div>
@@ -147,25 +141,6 @@ function Plan() {
           2. " 취업 "
         </div>
       </div>
-    </div>
-  );
-}
-function Share() {
-  return (
-    <div className='popup-content share'>
-      <div>[좋았던 경험]</div>
-      <div>
-        모알보알에서 스쿠버다이빙하며 정어리떼를 봤을 때가 기억에 남아요.
-        <br />
-        바닷속 세상이 신기하고 경이로워서 잊지 못할 경험이었습니다 🤗
-      </div>
-      <video
-        src={process.env.PUBLIC_URL + '/' + 'videos/cebu.mp4'}
-        controls
-        muted
-        playsInline
-        autoPlay
-      />
     </div>
   );
 }

@@ -18,7 +18,7 @@ export const HeaderStyled = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 15px;
+    font-size: 14px;
     justify-self: center;
 
     img {
@@ -30,7 +30,7 @@ export const HeaderStyled = styled.div`
   }
 
   .header-logo {
-    width: 95px;
+    width: 60px;
     justify-self: center;
   }
 
@@ -42,7 +42,7 @@ export const HeaderStyled = styled.div`
   }
 
   button {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 

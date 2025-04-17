@@ -70,7 +70,7 @@ export const SideBarStyled = styled.div`
     top: 30px;
     left: 3rem;
     font-family: 'Noto Sans KR';
-    font-size: 43px;
+    font-size: 40px;
     gap: 10px;
 
     button {

@@ -37,7 +37,6 @@ export default function PofolHeader() {
   return (
     <PofolHeaderStyled>
       <Swiper
-        // spaceBetween={20}
         className='pofol-list'
         modules={[Navigation]}
         navigation={true}
@@ -45,7 +44,7 @@ export default function PofolHeader() {
           // 1080px 이상
           1080: {
             slidesPerView: 8,
-            spaceBetween: 20,
+            spaceBetween: 10,
           },
           // 850px 이상
           750: {
@@ -73,13 +72,8 @@ export default function PofolHeader() {
                   className='icon-img'
                   src={project.icon}
                   alt={project.name}
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src =
-                      process.env.PUBLIC_URL + '/images/default_icon.png'; // 기본 아이콘 경로
-                  }}
                 />
-                <div>{project.name}</div>
+                <div className='project-name'>{project.name}</div>
               </button>
             </SwiperSlide>
           ))}
