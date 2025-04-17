@@ -33,7 +33,7 @@ export const PortfolioStyled = styled.div`
 
   .title-detail {
     font-size: 28px;
-    max-width: 290px;
+    max-width: 350px;
     text-align: left;
     word-break: keep-all;
   }
@@ -56,7 +56,8 @@ export const PortfolioStyled = styled.div`
     max-height: 1260px;
   }
 
-  .portfolio-video video {
+  .portfolio-video video,
+  .portfolio-video iframe {
     height: 100%;
     width: 100%;
     object-position: center top;
@@ -64,6 +65,9 @@ export const PortfolioStyled = styled.div`
     border-radius: 18px;
   }
 
+  .portfolio-video iframe {
+    min-height: 800px;
+  }
   .portfolio-description {
     padding-top: 100px;
     padding-bottom: 150px;
@@ -389,7 +393,7 @@ export const PortfolioStyled = styled.div`
   }
 
   .email-curios {
-    font-size: 56px;
+    font-size: 3.5rem;
     word-break: keep-all;
     color: white;
   }

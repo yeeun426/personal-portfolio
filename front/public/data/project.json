@@ -307,7 +307,7 @@
     "detail": "중고차 거래 플랫폼 구현을 통한 성능 향상 방안 연구",
     "img": "images/portfolio/ycar/ycar.webp",
     "icon": "images/icon/car_icon.png",
-    "video": "videos/y-car.mp4",
+    "youtube": "https://www.youtube.com/watch?v=TaUhpPcvbeM",
     "team": true,
     "skills": {
       "skill": "REACT, JAVASCRIPT, Tailwind, Spring",

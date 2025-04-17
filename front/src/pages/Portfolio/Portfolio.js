@@ -69,6 +69,11 @@ function Portfolio() {
     transition: 'transform',
   };
 
+  function getYouTubeEmbedUrl(url) {
+    const videoId = new URL(url).searchParams.get('v');
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+  }
+
   return (
     <PortfolioStyled>
       <Header />
@@ -79,14 +84,28 @@ function Portfolio() {
           <div className='title-detail'>{data.detail}</div>
         </div>
         <div className='portfolio-video'>
+          {data.youtube && (
+            <div style={divStyle}>
+              <iframe
+                src={getYouTubeEmbedUrl(data.youtube)}
+                title='YouTube video'
+                loading='lazy'
+                frameborder='0'
+                allow='autoplay; encrypted-media'
+                allowfullscreen
+              />
+            </div>
+          )}
           {data.video && (
             <div style={divStyle}>
               <video
                 src={process.env.PUBLIC_URL + '/' + data.video}
+                preload='none'
                 controls
                 muted
                 playsInline
                 autoPlay
+                poster={data.img}
               />
             </div>
           )}
