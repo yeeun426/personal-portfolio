@@ -90,9 +90,9 @@ function Portfolio() {
                 src={getYouTubeEmbedUrl(data.youtube)}
                 title='YouTube video'
                 loading='lazy'
-                frameborder='0'
+                frameBorder='0'
                 allow='autoplay; encrypted-media'
-                allowfullscreen
+                allowFullScreen
               />
             </div>
           )}
@@ -252,12 +252,14 @@ const PortFolioDesc = ({ data }) => {
             >
               Github 바로가기 ❯
             </button>
-            <button
-              className='detail-txt-item'
-              onClick={() => window.open(data.skills.video)}
-            >
-              시현영상 바로가기 ❯
-            </button>
+            {data?.skills?.video && (
+              <button
+                className='detail-txt-item'
+                onClick={() => window.open(data?.skills?.video)}
+              >
+                시연영상 바로가기 ❯
+              </button>
+            )}
           </div>
         </SwiperSlide>
       </Swiper>

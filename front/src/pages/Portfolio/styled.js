@@ -219,7 +219,6 @@ export const PortfolioStyled = styled.div`
   .detail-page.maplix .swiper-slide {
     aspect-ratio: 1709/1750;
   }
-
   .detail-page .detail_filter {
     width: 100%;
     height: 100%;

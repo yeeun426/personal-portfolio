@@ -147,7 +147,7 @@ export const TypeItStyled = styled.div`
   }
 
   .folder-img-name {
-    font-size: 0.9em;
+    font-size: 1rem;
     padding: 5px 28px;
     border-radius: 5px;
     border: 1px solid #523c73;
@@ -232,7 +232,7 @@ export const TypeItStyled = styled.div`
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 1080px) {
     .home-folder-name {
       font-size: 20px;
     }

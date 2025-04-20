@@ -167,11 +167,11 @@ a {
 
 @media (min-width: 600px) and (max-width: 1080px) {
   * {
-    font-size: 80%;
+    font-size: 90%;
   }
 }
 @media all and (max-width: 600px) {
   * {
-    font-size: 60%;
+    font-size: 80%;
   }
 }

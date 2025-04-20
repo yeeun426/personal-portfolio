@@ -4,32 +4,32 @@
     "page1": {
       "num": "1",
       "img": "images/portfolio/airbnb/airbnb(1).png",
-      "desc": "main"
+      "desc": "airbnb"
     },
     "page2": {
       "num": "2",
       "img": "images/portfolio/airbnb/airbnb(2).png",
-      "desc": "map"
+      "desc": "airbnb"
     },
     "page3": {
       "num": "3",
       "img": "images/portfolio/airbnb/airbnb(3).png",
-      "desc": "좋아요"
+      "desc": "airbnb"
     },
     "page4": {
       "num": "4",
       "img": "images/portfolio/airbnb/airbnb(4).png",
-      "desc": "test"
+      "desc": "airbnb"
     },
     "page5": {
       "num": "5",
       "img": "images/portfolio/airbnb/airbnb(5).png",
-      "desc": "test"
+      "desc": "airbnb"
     },
     "page6": {
       "num": "6",
       "img": "images/portfolio/airbnb/airbnb(6).png",
-      "desc": "test"
+      "desc": "airbnb"
     }
   },
   {
@@ -37,17 +37,17 @@
     "page1": {
       "num": "1",
       "img": "images/portfolio/myrecipes/myrecipes(1).png",
-      "desc": "main"
+      "desc": "myRecipes"
     },
     "page2": {
       "num": "2",
       "img": "images/portfolio/myrecipes/myrecipes(2).png",
-      "desc": "map"
+      "desc": "myRecipes"
     },
     "page3": {
       "num": "3",
       "img": "images/portfolio/myrecipes/myrecipes(3).png",
-      "desc": "좋아요"
+      "desc": "myRecipes"
     }
   },
   {
@@ -55,42 +55,42 @@
     "page1": {
       "num": "1",
       "img": "images/portfolio/maplix/maplix(1).png",
-      "desc": "main"
+      "desc": "MAPLIX"
     },
     "page2": {
       "num": "2",
       "img": "images/portfolio/maplix/maplix(2).png",
-      "desc": "map"
+      "desc": "MAPLIX"
     },
     "page3": {
       "num": "3",
       "img": "images/portfolio/maplix/maplix(3).png",
-      "desc": "좋아요"
+      "desc": "MAPLIX"
     },
     "page4": {
       "num": "4",
       "img": "images/portfolio/maplix/maplix(4).png",
-      "desc": "main"
+      "desc": "MAPLIX"
     },
     "page5": {
       "num": "5",
       "img": "images/portfolio/maplix/maplix(5).png",
-      "desc": "map"
+      "desc": "MAPLIX"
     },
     "page6": {
       "num": "6",
       "img": "images/portfolio/maplix/maplix(6).png",
-      "desc": "좋아요"
+      "desc": "MAPLIX"
     },
     "page7": {
       "num": "7",
       "img": "images/portfolio/maplix/maplix(7).png",
-      "desc": "map"
+      "desc": "MAPLIX"
     },
     "page8": {
       "num": "8",
       "img": "images/portfolio/maplix/maplix(8).png",
-      "desc": "좋아요"
+      "desc": "MAPLIX"
     }
   },
   {
@@ -98,47 +98,47 @@
     "page1": {
       "num": "1",
       "img": "images/portfolio/wanted/wanted(1).jpg",
-      "desc": "main"
+      "desc": "WANTED"
     },
     "page2": {
       "num": "2",
       "img": "images/portfolio/wanted/wanted(2).jpg",
-      "desc": "map"
+      "desc": "WANTED"
     },
     "page3": {
       "num": "3",
       "img": "images/portfolio/wanted/wanted(3).jpg",
-      "desc": "좋아요"
+      "desc": "WANTED"
     },
     "page4": {
       "num": "4",
       "img": "images/portfolio/wanted/wanted(4).jpg",
-      "desc": "좋아요"
+      "desc": "WANTED"
     },
     "page5": {
       "num": "5",
       "img": "images/portfolio/wanted/wanted(5).jpg",
-      "desc": "main"
+      "desc": "WANTED"
     },
     "page6": {
       "num": "6",
       "img": "images/portfolio/wanted/wanted(6).jpg",
-      "desc": "map"
+      "desc": "WANTED"
     },
     "page7": {
       "num": "7",
       "img": "images/portfolio/wanted/wanted(7).jpg",
-      "desc": "좋아요"
+      "desc": "WANTED"
     },
     "page8": {
       "num": "8",
       "img": "images/portfolio/wanted/wanted(8).jpg",
-      "desc": "좋아요"
+      "desc": "WANTED"
     },
     "page9": {
       "num": "9",
       "img": "images/portfolio/wanted/wanted(9).jpg",
-      "desc": "좋아요"
+      "desc": "WANTED"
     }
   },
   {
@@ -146,42 +146,42 @@
     "page1": {
       "num": "1",
       "img": "images/portfolio/gnuvilage/gnuvilage(1).png",
-      "desc": "main"
+      "desc": "GNUVILAGE"
     },
     "page2": {
       "num": "2",
       "img": "images/portfolio/gnuvilage/gnuvilage(2).png",
-      "desc": "map"
+      "desc": "GNUVILAGE"
     },
     "page3": {
       "num": "3",
       "img": "images/portfolio/gnuvilage/gnuvilage(3).png",
-      "desc": "좋아요"
+      "desc": "GNUVILAGE"
     },
     "page4": {
       "num": "4",
       "img": "images/portfolio/gnuvilage/gnuvilage(4).png",
-      "desc": "좋아요"
+      "desc": "GNUVILAGE"
     },
     "page5": {
       "num": "5",
       "img": "images/portfolio/gnuvilage/gnuvilage(5).png",
-      "desc": "main"
+      "desc": "GNUVILAGE"
     },
     "page6": {
       "num": "6",
       "img": "images/portfolio/gnuvilage/gnuvilage(6).png",
-      "desc": "map"
+      "desc": "GNUVILAGE"
     },
     "page7": {
       "num": "7",
       "img": "images/portfolio/gnuvilage/gnuvilage(7).png",
-      "desc": "좋아요"
+      "desc": "GNUVILAGE"
     },
     "page8": {
       "num": "8",
       "img": "images/portfolio/gnuvilage/gnuvilage(8).png",
-      "desc": "좋아요"
+      "desc": "GNUVILAGE"
     }
   },
   {
@@ -189,38 +189,37 @@
     "page1": {
       "num": "1",
       "img": "images/portfolio/giver/giver(1).jpg",
-      "desc": "main"
+      "desc": "GIVER"
     },
     "page2": {
       "num": "2",
       "img": "images/portfolio/giver/giver(2).jpg",
-      "desc": "map"
+      "desc": "GIVER"
     },
     "page3": {
       "num": "3",
       "img": "images/portfolio/giver/giver(3).jpg",
-      "desc": "좋아요"
+      "desc": "GIVER"
     },
     "page4": {
       "num": "4",
       "img": "images/portfolio/giver/giver(4).jpg",
-      "desc": "좋아요"
+      "desc": "GIVER"
     },
     "page5": {
       "num": "5",
       "img": "images/portfolio/giver/giver(5).jpg",
-
-      "desc": "main"
+      "desc": "GIVER"
     },
     "page6": {
       "num": "6",
       "img": "images/portfolio/giver/giver(6).jpg",
-      "desc": "map"
+      "desc": "GIVER"
     },
     "page7": {
       "num": "7",
       "img": "images/portfolio/giver/giver(7).jpg",
-      "desc": "좋아요"
+      "desc": "GIVER"
     }
   },
   {
@@ -228,65 +227,103 @@
     "page1": {
       "num": "1",
       "img": "images/portfolio/ndgd/ndgd(1).png",
-      "desc": "main"
+      "desc": "NDGD"
     },
     "page2": {
       "num": "2",
       "img": "images/portfolio/ndgd/ndgd(2).png",
-      "desc": "map"
+      "desc": "NDGD"
     },
     "page3": {
       "num": "3",
       "img": "images/portfolio/ndgd/ndgd(3).png",
-      "desc": "좋아요"
+      "desc": "NDGD"
     },
     "page4": {
       "num": "4",
       "img": "images/portfolio/ndgd/ndgd(4).png",
-      "desc": "좋아요"
+      "desc": "NDGD"
     },
     "page5": {
       "num": "5",
       "img": "images/portfolio/ndgd/ndgd(5).png",
-      "desc": "좋아요"
+      "desc": "NDGD"
     },
     "page6": {
       "num": "6",
       "img": "images/portfolio/ndgd/ndgd(6).png",
-      "desc": "좋아요"
+      "desc": "NDGD"
     },
     "page7": {
       "num": "7",
       "img": "images/portfolio/ndgd/ndgd(7).png",
-      "desc": "좋아요"
+      "desc": "NDGD"
     },
     "page8": {
       "num": "8",
       "img": "images/portfolio/ndgd/ndgd(8).png",
-      "desc": "좋아요"
+      "desc": "NDGD"
     },
     "page9": {
       "num": "9",
       "img": "images/portfolio/ndgd/ndgd(9).png",
-      "desc": "좋아요"
+      "desc": "NDGD"
     },
     "page10": {
       "num": "10",
       "img": "images/portfolio/ndgd/ndgd(10).jpg",
-      "desc": "좋아요"
+      "desc": "NDGD"
     },
     "page11": {
       "num": "11",
       "img": "images/portfolio/ndgd/ndgd(11).jpg",
-      "desc": "좋아요"
+      "desc": "NDGD"
     }
   },
   {
     "id": 8,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/ndgd/ndgd(1).png",
-      "desc": "main"
+      "img": "images/portfolio/portfolio/portfolio(1).webp",
+      "desc": "yCar"
+    },
+    "page2": {
+      "num": "1",
+      "img": "images/portfolio/portfolio/portfolio(1).webp",
+      "desc": "yCar"
+    }
+  },
+  {
+    "id": 9,
+    "page1": {
+      "num": "1",
+      "img": "images/portfolio/portfolio/portfolio(1).webp",
+      "desc": "portfolio"
+    },
+    "page2": {
+      "num": "2",
+      "img": "images/portfolio/portfolio/portfolio(2).webp",
+      "desc": "portfolio"
+    },
+    "page3": {
+      "num": "3",
+      "img": "images/portfolio/portfolio/portfolio(3).webp",
+      "desc": "portfolio"
+    },
+    "page4": {
+      "num": "4",
+      "img": "images/portfolio/portfolio/portfolio(4).webp",
+      "desc": "portfolio"
+    },
+    "page5": {
+      "num": "5",
+      "img": "images/portfolio/portfolio/portfolio(5).webp",
+      "desc": "portfolio"
+    },
+    "page6": {
+      "num": "6",
+      "img": "images/portfolio/portfolio/portfolio(6).webp",
+      "desc": "portfolio"
     }
   }
 ]
