@@ -284,12 +284,32 @@
     "id": 8,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/portfolio/portfolio(1).webp",
+      "img": "images/portfolio/ycar/ycar(1).webp",
       "desc": "yCar"
     },
     "page2": {
-      "num": "1",
-      "img": "images/portfolio/portfolio/portfolio(1).webp",
+      "num": "2",
+      "img": "images/portfolio/ycar/ycar(2).webp",
+      "desc": "yCar"
+    },
+    "page3": {
+      "num": "3",
+      "img": "images/portfolio/ycar/ycar(3).webp",
+      "desc": "yCar"
+    },
+    "page4": {
+      "num": "4",
+      "img": "images/portfolio/ycar/ycar(4).webp",
+      "desc": "yCar"
+    },
+    "page5": {
+      "num": "5",
+      "img": "images/portfolio/ycar/ycar(5).webp",
+      "desc": "yCar"
+    },
+    "page6": {
+      "num": "6",
+      "img": "images/portfolio/ycar/ycar(6).webp",
       "desc": "yCar"
     }
   },
