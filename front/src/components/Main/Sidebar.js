@@ -8,7 +8,7 @@ const Sidebar = ({ onContentClick, activeIndex, isOn, setIsOn }) => {
     const scrollPosition = window.scrollY;
     const triggerPosition = window.innerHeight - 100; // window.innerHeight : 화면 높이 (100vh)
 
-    if (scrollPosition > triggerPosition && window.innerWidth > 1080) {
+    if (scrollPosition > triggerPosition && window.innerWidth > 1024) {
       setScrolled(true);
       setIsOn(false);
     } else {

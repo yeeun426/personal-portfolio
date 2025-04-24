@@ -139,7 +139,7 @@ export const SideBarStyled = styled.div`
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    box-shadow: 2px 2px 6px #bcbcbcd1;
+    box-shadow: 2px 2px 8px #32323275;
     padding: 5px;
     box-sizing: border-box;
     background: white;
@@ -178,8 +178,8 @@ export const SideBarStyled = styled.div`
     }
   }
 
-  // 반응형 중
-  @media (max-width: 1080px) {
+  /* 태블릿용 (1023px 이하일 때) */
+  @media (max-width: 1023px) {
     height: auto;
     display: block;
 
@@ -208,14 +208,14 @@ export const SideBarStyled = styled.div`
     .menu-item {
       position: fixed;
       right: 3.25rem;
-      bottom: 11.5rem;
+      top: 2.25rem;
       display: block;
       z-index: 100;
     }
   }
 
-  // 반응형 소
-  @media (max-width: 500px) {
+  /* 모바일용 (767px 이하일 때) */
+  @media (max-width: 767px) {
     .main-container {
       justify-content: center;
     }

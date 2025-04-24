@@ -41,13 +41,13 @@ export default function PofolHeader() {
         modules={[Navigation]}
         navigation={true}
         breakpoints={{
-          // 1080px 이상
-          1080: {
+          // 1024px 이상
+          1024: {
             slidesPerView: 8,
             spaceBetween: 10,
           },
-          // 850px 이상
-          750: {
+          // 767px 이상
+          767: {
             slidesPerView: 5,
             spaceBetween: 20,
           },

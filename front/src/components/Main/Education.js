@@ -50,8 +50,7 @@ export default function Education() {
             <div className='edu-sub'>2기 프론트엔드 수강</div>
             <ul className='edu-desc'>
               <li>
-                JavaScript, React, Next.js, Spring 기반 웹 애플리케이션 개발
-                역량 습득
+                JavaScript, React, Spring 기반 웹 애플리케이션 개발 역량 습득
               </li>
               <li>알고리즘 문제 해결 및 데이터 구조 학습 (Java 활용)</li>
             </ul>

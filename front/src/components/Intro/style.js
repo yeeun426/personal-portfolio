@@ -201,13 +201,10 @@ export const TypeItStyled = styled.div`
     transform: translateX(-150%) translateY(100%);
   }
 
-  @media (min-width: 1080px) {
+  @media (min-width: 1024px) {
     .display-1 {
       font-size: 7rem;
     }
-  }
-
-  @media (max-width: 1080px) {
     // 폴더
     .home-folder.open {
       display: none;
@@ -230,9 +227,7 @@ export const TypeItStyled = styled.div`
       width: auto;
       object-fit: contain;
     }
-  }
 
-  @media (max-width: 1080px) {
     .home-folder-name {
       font-size: 20px;
     }

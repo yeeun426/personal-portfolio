@@ -171,8 +171,8 @@ const PortFolioDesc = ({ data }) => {
         navigation={true}
         modules={[Navigation]}
         breakpoints={{
-          // 1080px 이상
-          1080: {
+          // 1024px 이상
+          1024: {
             slidesPerView: 3.5,
             spaceBetween: 20,
           },

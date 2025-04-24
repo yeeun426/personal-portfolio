@@ -408,7 +408,8 @@ export const PortfolioStyled = styled.div`
     background: white;
   }
 
-  @media (max-width: 1080px) {
+  /* 태블릿용 (1023px 이하일 때) */
+  @media (max-width: 1023px) {
     .portfolio-sub-title {
       padding-bottom: 30px;
     }
@@ -416,7 +417,8 @@ export const PortfolioStyled = styled.div`
       font-size: 16px;
     }
   }
-  @media (max-width: 700px) {
+  /* 모바일용 (767px 이하일 때) */
+  @media (max-width: 767px) {
     .other-project {
       flex-direction: column;
     }

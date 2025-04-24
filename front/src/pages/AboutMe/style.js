@@ -57,8 +57,8 @@ export const AboutStyled = styled.div`
     object-fit: contain;
   }
 
-  // 반응형
-  @media (max-width: 1080px) {
+  /* 태블릿용 (1023px 이하일 때) */
+  @media (max-width: 1023px) {
     ul {
       padding: 5% 10%;
     }
