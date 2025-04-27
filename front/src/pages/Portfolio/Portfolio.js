@@ -179,29 +179,12 @@ const PortFolioDesc = ({ data }) => {
         }}
       >
         <SwiperSlide>
-          <img
-            className='detail_filter'
-            alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper1.png'}
-          />
           <div className='detail-txt'>{data.detail}</div>
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            className='detail_filter'
-            alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper2.png'}
-            style={{ filter: 'brightness(80%)' }}
-          />
           <div className='detail-txt'>{data.skills?.detail}</div>
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            className='detail_filter'
-            alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper5.png'}
-            style={{ filter: 'brightness(65%)' }}
-          />
           <div className='detail-txt'>
             <div className='detail-txt-item'>
               <div className='detail-title'>기간</div>
@@ -220,31 +203,16 @@ const PortFolioDesc = ({ data }) => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            className='detail_filter'
-            alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper4.png'}
-          />
           <div className='detail-txt role'>
             <div className='img-detail'>{data.skills?.role1}</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            className='detail_filter'
-            alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper3.png'}
-          />
           <div className='detail-txt role'>
             <div className='img-detail'>{data.skills?.role2}</div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            className='detail_filter'
-            alt={data.period}
-            src={process.env.PUBLIC_URL + '/images/swiper/more_swiper6.png'}
-          />
           <div className='detail-txt'>
             <button
               className='detail-txt-item'

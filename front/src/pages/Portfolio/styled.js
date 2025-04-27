@@ -102,11 +102,14 @@ export const PortfolioStyled = styled.div`
     min-width: 260px;
     max-width: 420px;
     aspect-ratio: 0.54;
+    max-height: 400px;
   }
 
   .portfolio-description .swiper-slide {
     position: relative;
     border-radius: 28px;
+    background: #fafafa;
+    color: black;
   }
 
   .portfolio-description .swiper-slide .detail-txt {
@@ -115,7 +118,6 @@ export const PortfolioStyled = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 35px;
-    color: white;
     width: 95%;
     word-break: keep-all;
     text-align: left;
