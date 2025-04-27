@@ -13,6 +13,7 @@ import { PortfolioStyled, DropIcon } from './styled.js';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function Portfolio() {
   const params = useParams();
@@ -179,56 +180,52 @@ const PortFolioDesc = ({ data }) => {
         }}
       >
         <SwiperSlide>
-          <div className='detail-txt'>{data.detail}</div>
+          <i className='bi bi-file-earmark-text-fill h4'></i>
+          <div className='detail-title h4'>{data.detail}</div>
+          <div className='detail-txt-item'>
+            <div className='detail-inTitle'>기간</div>
+            <div className='img-detail'>{data.date}</div>
+          </div>
+          {data.skills?.organization && (
+            <div className='detail-txt-item'>
+              <div className='detail-inTitle'>기관</div>
+              <div className='img-detail'>{data.skills?.organization}</div>
+            </div>
+          )}
         </SwiperSlide>
         <SwiperSlide>
+          <i className='bi bi-pencil h3'></i>
+          <div className='detail-title h4'>PURPOSE</div>
           <div className='detail-txt'>{data.skills?.detail}</div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='detail-txt'>
-            <div className='detail-txt-item'>
-              <div className='detail-title'>기간</div>
-              <div className='img-detail'>{data.date}</div>
-            </div>
-            <div className='detail-txt-item'>
-              <div className='detail-title'>기술</div>
-              <div className='img-detail'>{data.skills?.skill}</div>
-            </div>
-            {data.skills?.organization && (
-              <div className='detail-txt-item'>
-                <div className='detail-title'>기관</div>
-                <div className='img-detail'>{data.skills?.organization}</div>
-              </div>
-            )}
-          </div>
+          <i className='bi bi-gear h3'></i>
+          <div className='detail-title h4'>SKILL</div>
+          <div className='detail-txt'>{data.skills?.skill}</div>
         </SwiperSlide>
+        {data.skills?.roles?.map((role, index) => (
+          <SwiperSlide key={index}>
+            <i className='bi bi-braces-asterisk h3'></i>
+            <div className='detail-title h4'>The part that I developed</div>
+            <div className='detail-txt'>{role}</div>
+          </SwiperSlide>
+        ))}
         <SwiperSlide>
-          <div className='detail-txt role'>
-            <div className='img-detail'>{data.skills?.role1}</div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className='detail-txt role'>
-            <div className='img-detail'>{data.skills?.role2}</div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className='detail-txt'>
+          <i className='bi bi-play-btn h3'></i>
+          <button
+            className='detail-txt-item'
+            onClick={() => window.open(data.skills.github)}
+          >
+            Github 바로가기 ❯
+          </button>
+          {data?.skills?.video && (
             <button
               className='detail-txt-item'
-              onClick={() => window.open(data.skills.github)}
+              onClick={() => window.open(data?.skills?.video)}
             >
-              Github 바로가기 ❯
+              시연영상 바로가기 ❯
             </button>
-            {data?.skills?.video && (
-              <button
-                className='detail-txt-item'
-                onClick={() => window.open(data?.skills?.video)}
-              >
-                시연영상 바로가기 ❯
-              </button>
-            )}
-          </div>
+          )}
         </SwiperSlide>
       </Swiper>
     </div>

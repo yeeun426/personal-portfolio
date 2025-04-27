@@ -90,87 +90,37 @@ export const PortfolioStyled = styled.div`
     font-weight: 600;
   }
 
-  .desc-swiper img {
-    width: 100%;
-    border-radius: 28px;
-    margin-right: 18px;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .desc-swiper .swiper-slide {
     min-width: 260px;
     max-width: 420px;
-    aspect-ratio: 0.54;
-    max-height: 400px;
-  }
-
-  .portfolio-description .swiper-slide {
-    position: relative;
+    aspect-ratio: 1.2;
     border-radius: 28px;
     background: #fafafa;
     color: black;
-  }
-
-  .portfolio-description .swiper-slide .detail-txt {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 35px;
-    width: 95%;
-    word-break: keep-all;
+    padding: 2rem;
     text-align: left;
-
-    .detail-title {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
+    display: flex;
+    flex-direction: column;
   }
-
+  .desc-swiper .swiper-slide .detail-title {
+    margin-bottom: 10px;
+  }
+  .desc-swiper .swiper-slide h4 {
+    font-weight: bold;
+  }
+  .portfolio-description .swiper-slide .detail-txt {
+    overflow: auto;
+    text-align: left;
+  }
   .portfolio-description .swiper-slide .detail-txt.role {
-    font-size: 21px;
-    line-height: 1.58;
-    font-weight: 400;
-    background: #0000003d;
-    padding: 30px 0;
   }
-
   .desc-swiper .swiper-slide:nth-child(1) .detail-txt {
-    top: 15%;
-    width: 85%;
-    font-size: 25px;
-    color: black;
-    word-break: keep-all;
-    left: 46%;
   }
   .desc-swiper .swiper-slide:nth-child(2) .detail-txt {
-    width: 90%;
-    height: 90%;
-    display: flex;
-    align-items: flex-end;
-    font-size: 24px;
   }
   .desc-swiper .swiper-slide:nth-child(3) .detail-txt {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-
-    .img-detail {
-      font-weight: bold;
-    }
   }
   .desc-swiper .swiper-slide:nth-child(6) .detail-txt {
-    top: 18%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: black;
-    gap: 10px;
-
-    button {
-      font-size: 25px;
-    }
   }
 
   .desc-swiper,
