@@ -111,16 +111,26 @@ export const PortfolioStyled = styled.div`
   .portfolio-description .swiper-slide .detail-txt {
     overflow: auto;
     text-align: left;
+    font-size: 1.08em;
   }
-  .portfolio-description .swiper-slide .detail-txt.role {
+  .portfolio-description .swiper-slide .detail-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: auto;
+    width: 100%;
   }
-  .desc-swiper .swiper-slide:nth-child(1) .detail-txt {
+  .portfolio-description .swiper-slide .detail-txt-btn:hover {
+    background-color: #eaeaea;
   }
-  .desc-swiper .swiper-slide:nth-child(2) .detail-txt {
+  .portfolio-description .swiper-slide .detail-txt-btn {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 3px 3px 6px #c8c6c6;
+    padding: 1em;
   }
-  .desc-swiper .swiper-slide:nth-child(3) .detail-txt {
-  }
-  .desc-swiper .swiper-slide:nth-child(6) .detail-txt {
+  .portfolio-description .swiper-slide .detail-sub-txt {
+    padding: 10px 0;
   }
 
   .desc-swiper,

@@ -173,7 +173,7 @@ const PortFolioDesc = ({ data }) => {
         modules={[Navigation]}
         breakpoints={{
           // 1024px 이상
-          1024: {
+          1300: {
             slidesPerView: 3.5,
             spaceBetween: 20,
           },
@@ -182,12 +182,12 @@ const PortFolioDesc = ({ data }) => {
         <SwiperSlide>
           <i className='bi bi-file-earmark-text-fill h4'></i>
           <div className='detail-title h4'>{data.detail}</div>
-          <div className='detail-txt-item'>
+          <div className='detail-sub-txt'>
             <div className='detail-inTitle'>기간</div>
             <div className='img-detail'>{data.date}</div>
           </div>
           {data.skills?.organization && (
-            <div className='detail-txt-item'>
+            <div className='detail-sub-txt'>
               <div className='detail-inTitle'>기관</div>
               <div className='img-detail'>{data.skills?.organization}</div>
             </div>
@@ -212,20 +212,22 @@ const PortFolioDesc = ({ data }) => {
         ))}
         <SwiperSlide>
           <i className='bi bi-play-btn h3'></i>
-          <button
-            className='detail-txt-item'
-            onClick={() => window.open(data.skills.github)}
-          >
-            Github 바로가기 ❯
-          </button>
-          {data?.skills?.video && (
+          <div className='detail-btn'>
             <button
-              className='detail-txt-item'
-              onClick={() => window.open(data?.skills?.video)}
+              className='detail-txt-btn'
+              onClick={() => window.open(data.skills.github)}
             >
-              시연영상 바로가기 ❯
+              Github 바로가기 ❯
             </button>
-          )}
+            {data?.skills?.video && (
+              <button
+                className='detail-txt-btn'
+                onClick={() => window.open(data?.skills?.video)}
+              >
+                시연영상 바로가기 ❯
+              </button>
+            )}
+          </div>
         </SwiperSlide>
       </Swiper>
     </div>
