@@ -13,8 +13,8 @@ function App() {
     <div className='App'>
       <Routes>
         <Route path='/me' element={<Ureca />} />
-        <Route exact path='/*' element={<Intro />} />
-        <Route path='/main' element={<Main />} />
+        {/* <Route exact path='/*' element={<Intro />} /> */}
+        <Route path='/*' element={<Main />} />
         <Route path='/project' element={<Project />} />
         <Route path='/project/:projectId' element={<Portfolio />} />
         <Route path='/email' element={<Email />} />
