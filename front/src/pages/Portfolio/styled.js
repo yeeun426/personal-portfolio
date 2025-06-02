@@ -228,6 +228,8 @@ export const PortfolioStyled = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    word-break: keep-all;
+    text-align: left;
   }
   .pli-answer {
     background-color: #f9f9f9;
@@ -377,6 +379,9 @@ export const PortfolioStyled = styled.div`
     }
     .pli-answer {
       font-size: 16px;
+    }
+    .portfolio-learn-container {
+      width: 87.5vw;
     }
   }
   /* 모바일용 (767px 이하일 때) */

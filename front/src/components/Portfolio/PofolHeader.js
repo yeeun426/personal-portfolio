@@ -22,7 +22,7 @@ export default function PofolHeader() {
             icon: iconPath,
           };
         });
-        setList(info);
+        setList(info.reverse());
       })
       .catch((err) => {
         console.log(err);
