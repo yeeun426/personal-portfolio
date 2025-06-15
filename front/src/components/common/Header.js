@@ -21,7 +21,7 @@ export default function Header() {
       </Link>
       <div className='header-right'>
         <button onClick={() => navigate(`/main`)}>About</button>
-        <button onClick={() => window.open('https://yeeeon.tistory.com/')}>
+        <button onClick={() => window.open('https://yeeun426.github.io/')}>
           <div>Blog</div>
         </button>
         <button onClick={() => window.open('https://github.com/yeeun426')}>
