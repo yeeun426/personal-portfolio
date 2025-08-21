@@ -35,7 +35,7 @@ export const AboutStyled = styled.div`
   }
 
   .chat {
-    max-width: 550px;
+    max-width: 600px;
     border-radius: 40px;
     word-break: normal;
     white-space: pre-line;

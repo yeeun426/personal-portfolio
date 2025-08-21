@@ -48,7 +48,7 @@ function AboutMe() {
         </li>
         <img className='chat me' src='images/main/profile.webp' alt='yeeun' />
         <li className='chat me'>
-          꾸준하게 빈 틈을 채워나가는 "성실함"을 가지고 있습니다.
+          꾸준하게 빈 틈을 채워나가는 "성실함"과 "엉덩이 힘"을 가지고 있습니다.
         </li>
         <li className='chat me'>
           사용자들의 진짜 필요를 깊이 고민하고, <br />그 기대를 뛰어넘는 가치를
