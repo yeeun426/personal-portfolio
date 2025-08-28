@@ -393,5 +393,112 @@
         "answer": "GSAP를 처음 사용하다 보니, 스크롤 트리거와 타이밍 제어에서 예상치 못한 레이아웃 깨짐 현상이 발생했습니다. 다양한 예제를 참고하며 디버깅한 경험이 도움이 되었습니다.\n디자인적으로 좀 더 유니크하고 브랜딩된 느낌을 주고 싶었지만, 개발에 초점을 맞추느라 비주얼적 요소는 다소 부족했던 점이 아쉬웠습니다."
       }
     ]
+  },
+  {
+    "id": 10,
+    "date": "25.5.7 ~ 25.5.20",
+    "name": "Gitpulse",
+    "detail": "활동량, 커밋, 레포지토리별 기여도를 분석하여 팀의 개발 문화를 향상시키는 서비스",
+    "img": "images/portfolio/gitpulse/gitpulse.png",
+    "icon": "images/icon/gitpulse.png",
+    "youtube": "https://www.youtube.com/watch?v=uSRwbAfiUU4",
+    "team": true,
+    "skills": {
+      "skill": "REACT, JAVASCRIPT",
+      "organization": "유레카 SW 교육",
+      "detail": "본 프로젝트는 팀 개발자의 GitHub 활동 데이터를 수집하고 시각화하여 개발 습관과 협업 패턴을 한눈에 파악할 수 있도록 돕는 웹 애플리케이션 입니다. 개발자의 GitHub 활동을 시각화하여 협업 문화를 개선하는 도구로 사용하는데 목적이 있습니다.",
+      "github": "https://github.com/yeeun426/GitPulse",
+      "video": "https://www.youtube.com/watch?v=uSRwbAfiUU4",
+      "roles": [
+        "1 .Organization(조직) 페이지 퍼블리싱/기능 개발\n    - 커밋 허수 잡기\n    - 커밋 메세지 컨벤션 오류 잡기",
+        "2. PR Review 페이지 퍼블리싱/기능 개발\n    - GitHub처럼 라인별 리뷰 + 전체 PR 코멘트 기능 구현\n    - GitHub API와 실시간 연동\n    - 하나의 화면에서 리뷰 내용을 통합 관리",
+        "3. 개발자 테스트 페이지 퍼블리싱\n   - 흥미 유발을 위한 UI 퍼블리싱 개선\n\n**제가 구현한 기능들만 작성해두었습니다.**"
+      ]
+    },
+    "QnA": [
+      {
+        "id": "process",
+        "question": "프로젝트는 어떤 식으로 진행됐나요?",
+        "answer": "유레카 SW 교육과정에서 진행된 공공 API 활용 프로젝트로, 총 4명이 함께 진행했으며, 초반에는 두 명씩 나누어 GitHub OAuth 로그인을 구현하고, 이후 각자 담당 페이지를 맡아 개발했습니다."
+      },
+      {
+        "id": "learn",
+        "question": "이 프로젝트를 통해 배운점은 뭐가 있나요?",
+        "answer": "[🔔 커밋 메세지 허수 잡기]\n - 문제: 팀 내에서 커밋 메시지가 제각각 작성되어, 규칙 위반 여부를 자동으로 식별할 필요가 있었음 \n- 해결:\n 정규표현식과 문자열 전처리를 통해 커밋 메시지를 자동 필터링\n   -feat, fix, docs 등 접두어 사용 여부\n   -최소 글자 수(6자) 준수 여부\n   -Merge, Revert 등 자동 메시지는 제외\n- 결과: 팀의 커밋 메시지 일관성을 확보했고, 코드 리뷰 과정에서 가독성과 신뢰도를 높임\n\n[🔧 커밋 허수 잡기]\n - 일부 개발자가 의미 없는 작은 변경을 여러 번 나눠 커밋하여 실제 기여도와 상관없이 커밋 수가 과도하게 부풀려짐\n - 해결:\n   - GitHub API로 변경된 코드 라인 수와 커밋 수를 비교\n   - 수정 줄 수는 적으나 커밋 수만 많은 경우 → 허수 커밋으로 자동 분류\n- 결과: 허수 커밋을 걸러내어 팀 히스토리를 투명하고 명확하게 유지할 수 있었고, 의미 있는 기여 중심으로 협업 효율이 높아짐.\n\n [🔧 GitHub API 인증 문제 해결]\n - 문제: PR 코멘트 POST 요청 시 500 에러 발생 \n - 해결: GitHub 조직 설정 > OAuth App Policy에서 앱 접근 허용하고 OAuth App을 '권한 있는 앱'으로 승인 \n - 결과: 조직 내 GitHub API 접근이 정상화되었고, 안정적으로 리뷰 작성과 데이터 연동이 가능해짐"
+      },
+      {
+        "id": "disappointing",
+        "question": "이 프로젝트에서 아쉬운/보완하고 싶은 점은 무엇인가요?",
+        "answer": "제한된 기간으로 인해 완벽한 반응형까지는 진행하지 못한 점이 아쉬웠습니다. 특히, 모바일 환경에서의 사용자 경험을 더욱 개선하고 싶습니다."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "date": "25.6.9 ~ 25.6.27",
+    "name": "U+Pick",
+    "detail": "LG U+ 고객을 위한 AI 기반 챗봇, 지인 결합 할인 매칭, 위치 기반 멤버십 혜택 안내를 통합 제공하는 플랫폼",
+    "img": "images/portfolio/u+pick/u+pick.png",
+    "icon": "images/icon/upick.png",
+    "youtube": "https://www.youtube.com/watch?v=oT1HmlRkBm0",
+    "team": true,
+    "skills": {
+      "skill": "REACT, JAVASCRIPT, Sass",
+      "organization": "유레카 SW 교육",
+      "detail": "LG U+ 이용 고객의 통신 서비스 경험을 향상시키기 위해, 다음과 같은 기능을 통합 제공하는 플랫폼을 구축하고자 합니다.",
+      "github": "https://github.com/yeeun426/GitPulse",
+      "video": "https://www.youtube.com/watch?v=uSRwbAfiUU4",
+      "roles": [
+        "1 .결합 신청 페이지 구현\n    - TOSS 결제 PG사 연동",
+        "2.멤버십 혜택 지도 구현 (위치 기반 API 활용)\n    - 카카오맵 api 활용\n    - GitHub API와 실시간 연동\n    - 하나의 화면에서 리뷰 내용을 통합 관리",
+        "3. 챗봇 프롬프트 제작 (고객 응대 시나리오 설계)\n   - GPT-4.1-mini + Function Calling 기반 챗봇\n\n**제가 구현한 기능들만 작성해두었습니다.**"
+      ]
+    },
+    "QnA": [
+      {
+        "id": "process",
+        "question": "프로젝트는 어떤 식으로 진행됐나요?",
+        "answer": "프론트개발자 5명이서, 프론트 3명, 백엔드 2명으로 나눠 진행했고 프론트 작업이 먼저 끝나면 백엔드를 도와주는 방식이었습니다."
+      },
+      {
+        "id": "learn",
+        "question": "이 프로젝트를 통해 배운점은 뭐가 있나요?",
+        "answer": "[🔔 GPT-4.1-mini + Function Calling 기반 챗봇]\n - 문제: 사용자의 정보가 부족할 경우 정확한 결합 할인 안내가  어렵고, 가족/지인 결합 조건마다 할인 계산 방식이 달라 복잡함 \n- 해결:\n Function Calling을 활용해 조건 분기 처리:\n   -정보가 부족하면 → 간략히 결합 유형/조건만 안내\n   -가족 구성원 정보 충분하면 → 최대 할인율 계산 후 안내\n   -지인 결합 요청 시 → 유플픽 서비스 URL 연결\n- 결과: 고객이 자신의 상황에 맞는 결합 혜택을 즉시 확인할 수 있고, 팀 차원에서도 Function Calling 로직이 명확해져 코드 리뷰와 협업 효율이 높아짐\n\n[🔧 결합 절차 안내 & 신청 페이지]\n - 문제: 결합 조건이 복잡해 한 화면에서 안내 시 가독성이 낮고, 이탈 가능성이 높았음\n - 해결:\n   - 결합 유형(가족/지인)을 분리 안내  → 조건 먼저 이해 후 신청\n   - 절차는 텍스트 대신 아이콘·번호 플로우 활용\n   - 신청 폼은 원페이지 구성으로 단순화\n- 결과: 조건과 절차를 단계적으로 인식할 수 있어 부담 감소\n\n[🔧 멤버십 지도 CustomOverlay]\n - 문제: 카카오맵 기본 InfoWindow 디자인은 CSS 커스터마이징이 제한적 \n - 해결: kakao.maps.CustomOverlay를 활용해 infowindow는 브랜드 로고로 변경, HTML 구조와 SCSS로 카드 UI 구현 \n - 결과: UI/UX를 자유롭게 커스터마이징해 브랜드 일관성  있는 디자인 확보"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "date": "25.6.30 ~ 25.8.7",
+    "name": "POPCO",
+    "detail": "사용자가 자신만의 OTT 콘텐츠 취향을 발견하고, 개인화된 추천을 통해 새로운 콘텐츠 경험을 제공하는 서비스",
+    "img": "images/portfolio/popco/popco.png",
+    "icon": "images/icon/movie.png",
+    "youtube": "https://youtu.be/khPvwbfLF8E",
+    "team": true,
+    "skills": {
+      "skill": "React, TS, Tailwind, Zustand, GSAP",
+      "organization": "[LG 유플러스] 유레카 2기",
+      "detail": "왜 우리는 항상 OTT 앱을 켠 채 한참을 방황해야 할까?\nOTT 콘텐츠가 폭발적으로 증가하면서 선택의 어려움도 커졌습니다. 대부분의 플랫폼은 평점·인기 순위 위주의 단순한 추천만 제공해, 개인의 취향을 충분히 반영하지 못하는 한계가 있었습니다.\nPOPCO는 이러한 문제를 해결하기 위해 줄거리 중심 추천, 팝코리즘, 페르소나 기반 추천을 제공합니다.",
+      "github": "https://github.com/Eureka-final-popco/Popco-Front",
+      "video": "https://www.youtube.com/watch?v=uSRwbAfiUU4",
+      "roles": [
+        "1. 렌더링 페이지\n\n2. 메인 페이지",
+        "3. 실시간 이벤트/알림 페이지 구현\n    - SSE를 이용한 퀴즈 10분전 알림 전송\n    - WebSocket을 활용한 사용자 기반 실시간 퀴즈 이벤트\n    - 하나의 화면에서 리뷰 내용을 통합 관리",
+        "4. 전체 리스트/필터 페이지\n\n**제가 구현한 기능들만 작성해두었습니다.**"
+      ]
+    },
+    "QnA": [
+      {
+        "id": "process",
+        "question": "프로젝트는 어떤 식으로 진행됐나요?",
+        "answer": "프론트엔드 3명, 백엔드 4명으로 구성되어 기획 → 피그마 초안 → 퍼블리싱 → API 연동 → 버그 테스트 순서로 진행."
+      },
+      {
+        "id": "learn",
+        "question": "이 프로젝트를 통해 배운점은 뭐가 있나요?",
+        "answer": "[페이지 렌더링 속도 개선]\n- 대량 데이터 로딩으로 인해 페이지가 느리게 렌더링됨\n- 메인 페이지 lighthouse 점수 19점\n- Next.js로 전환하기엔 프로젝트 일정 부족\n\n→ React.lazy와 동적 import로 초기 로딩 최소화\n→ 스켈레톤 UI 적용해 사용자 경험 보호\n\n✅ 성능 점수 70점까지 올림\n✅ 사용자 입장에서는 빠르게 화면 구조를 확인\n\n\n[SSE - 퀴즈 이벤트 10분전 알림]\n- EventSource 기본 기능으로 Authorization 헤더 못 붙임 → 토큰 인증 불가\n- CORS/타임아웃 에러 자주 발생\n- 연결이 유지되지 않고 끊김\n\n→ event-source-polyfill로 헤더를 실을 수 있도록 수정\n→ withCredentials 옵션 추가\n→ 재연결 로직을 추가해서 끊기더라도 자동으로 다시 연결 시도\n\n✅ 더 이상 토큰 문제로 연결이 끊기지 않음\n✅ 이벤트 시작 10분전에 UI에 알림 버튼이 잘 반영됨\n\n\n[WebSocket - 실시간 퀴즈]\n- 타이머(카운트다운) 데이터가 가끔 0으로 튀는 문제 → 서버와 클라이언트 상태 동기화가 안 맞음\n- 퀴즈 단계 전환(대기 → 문제 → 탈락 → 최종)에서 이벤트를 놓쳐서 페이지 리렌더링이 늦게 반영\n\n→ 타이머는 서버에서 내려주는 시간을 기준으로 갱신, 이전 값과 동일하면 상태 업데이트를 막아 불필요한 리렌더 제거\n→ 퀴즈 시작/탈락/최종 신호를 type으로 구분해 UI 단계 전환을 확실하게 분기\n\n✅ 모든 유저가 동시에 접속해도 카운트다운이 동일하게 표시되고, 문제 시작 시 한 번에 전환\n✅ 실시간 퀴즈 이벤트 흐름이 끊김 없이 매끄럽게 구현"
+      }
+    ]
   }
 ]

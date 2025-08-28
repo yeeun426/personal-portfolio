@@ -22,10 +22,10 @@ export default function Project() {
   useEffect(() => {
     // location.state에 데이터가 있으면 세션 스토리지에 저장
     if (location.state?.project) {
-      sessionStorage.setItem(
-        'projectData',
-        JSON.stringify(location.state.project)
-      );
+      // sessionStorage.setItem(
+      //   'projectData',
+      //   JSON.stringify(location.state.project)
+      // );
       setProject(location.state.project);
       setFilteredProject(location.state.project);
     }
@@ -36,7 +36,7 @@ export default function Project() {
         .then((data) => {
           setProject(data);
           setFilteredProject(data);
-          sessionStorage.setItem('projectData', JSON.stringify(data));
+          // sessionStorage.setItem('projectData', JSON.stringify(data));
         });
     }
   }, [location.state, storedProject]);

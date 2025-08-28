@@ -345,5 +345,159 @@
       "img": "images/portfolio/portfolio/portfolio(6).webp",
       "desc": "portfolio"
     }
+  },
+  {
+    "id": 10,
+    "page1": {
+      "num": "1",
+      "img": "images/portfolio/gitpulse/gitpulse(1).png",
+      "desc": "gitpulse"
+    },
+    "page2": {
+      "num": "2",
+      "img": "images/portfolio/gitpulse/gitpulse(2).png",
+      "desc": "gitpulse"
+    },
+    "page3": {
+      "num": "3",
+      "img": "images/portfolio/gitpulse/gitpulse(3).png",
+      "desc": "gitpulse"
+    },
+    "page4": {
+      "num": "4",
+      "img": "images/portfolio/gitpulse/gitpulse(4).png",
+      "desc": "gitpulse"
+    },
+    "page5": {
+      "num": "5",
+      "img": "images/portfolio/gitpulse/gitpulse(5).png",
+      "desc": "gitpulse"
+    },
+    "page6": {
+      "num": "6",
+      "img": "images/portfolio/gitpulse/gitpulse(6).png",
+      "desc": "gitpulse"
+    },
+    "page7": {
+      "num": "7",
+      "img": "images/portfolio/gitpulse/gitpulse(7).png",
+      "desc": "gitpulse"
+    },
+    "page8": {
+      "num": "8",
+      "img": "images/portfolio/gitpulse/gitpulse(8).png",
+      "desc": "gitpulse"
+    }
+  },
+  {
+    "id": 11,
+    "page1": {
+      "num": "1",
+      "img": "images/portfolio/u+pick/u+pick(1).png",
+      "desc": "u+pick"
+    },
+    "page2": {
+      "num": "2",
+      "img": "images/portfolio/u+pick/u+pick(2).png",
+      "desc": "u+pick"
+    },
+    "page3": {
+      "num": "3",
+      "img": "images/portfolio/u+pick/u+pick(3).png",
+      "desc": "u+pick"
+    },
+    "page4": {
+      "num": "4",
+      "img": "images/portfolio/u+pick/u+pick(4).png",
+      "desc": "u+pick"
+    },
+    "page5": {
+      "num": "5",
+      "img": "images/portfolio/u+pick/u+pick(5).png",
+      "desc": "u+pick"
+    },
+    "page6": {
+      "num": "6",
+      "img": "images/portfolio/u+pick/u+pick(6).png",
+      "desc": "u+pick"
+    },
+    "page7": {
+      "num": "7",
+      "img": "images/portfolio/u+pick/u+pick(7).png",
+      "desc": "u+pick"
+    }
+  },
+  {
+    "id": 12,
+    "page1": {
+      "num": "1",
+      "img": "images/portfolio/popco/popco(1).png",
+      "desc": "popco"
+    },
+    "page2": {
+      "num": "2",
+      "img": "images/portfolio/popco/popco(2).png",
+      "desc": "popco"
+    },
+    "page3": {
+      "num": "3",
+      "img": "images/portfolio/popco/popco(3).png",
+      "desc": "popco"
+    },
+    "page4": {
+      "num": "4",
+      "img": "images/portfolio/popco/popco(4).png",
+      "desc": "popco"
+    },
+    "page5": {
+      "num": "5",
+      "img": "images/portfolio/popco/popco(5).png",
+      "desc": "popco"
+    },
+    "page6": {
+      "num": "6",
+      "img": "images/portfolio/popco/popco(6).png",
+      "desc": "popco"
+    },
+    "page7": {
+      "num": "7",
+      "img": "images/portfolio/popco/popco(7).png",
+      "desc": "popco"
+    },
+    "page8": {
+      "num": "8",
+      "img": "images/portfolio/popco/popco(8).png",
+      "desc": "popco"
+    },
+    "page9": {
+      "num": "9",
+      "img": "images/portfolio/popco/popco(9).png",
+      "desc": "popco"
+    },
+    "page10": {
+      "num": "10",
+      "img": "images/portfolio/popco/popco(10).png",
+      "desc": "popco"
+    },
+    "page11": {
+      "num": "11",
+      "img": "images/portfolio/popco/popco(11).png",
+      "desc": "popco"
+    },
+    "page12": {
+      "num": "12",
+      "img": "images/portfolio/popco/popco(12).png",
+      "desc": "popco"
+    },
+    "page13": {
+      "num": "13",
+      "img": "images/portfolio/popco/popco(13).png",
+      "desc": "popco"
+    },
+    "page14": {
+      "num": "14",
+      "img": "images/portfolio/popco/popco(14).png",
+      "desc": "popco"
+    }
   }
 ]
