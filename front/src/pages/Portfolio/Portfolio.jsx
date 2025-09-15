@@ -1,13 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
-
-import Header from '../../components/common/Header';
-import PjHeader from '../../components/Portfolio/PofolHeader';
-import Email from '../../components/Email/Email';
-import Footer from '../../components/common/Footer.js';
 
 import { PortfolioStyled, DropIcon } from './styled.js';
 import 'swiper/css';
@@ -15,26 +9,23 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-function Portfolio() {
-  const params = useParams();
+function Portfolio({ projectId }) {
   const [data, setData] = useState([]);
   const [otherProject, setOtherProject] = useState([]);
-  const [modal, setModal] = useState(false);
   const [QnAItems, setQnAItems] = useState([]);
-
   useEffect(() => {
     axios
       .get('/data/project.json')
       .then((res) => {
         let axis_data = res.data;
         let random_id = Math.floor(Math.random() * (axis_data.length - 1)) + 1;
-        while (random_id === Number(params.projectId)) {
+        while (random_id === Number(projectId)) {
           random_id = Math.floor(Math.random() * (axis_data.length - 1)) + 1;
         }
         axis_data.map((item) => {
-          if (Number(params.projectId) === item.id) {
+          if (Number(projectId) === item.id) {
             setData(item);
-            setQnAItems(item.QnA);
+            setQnAItems(item.QnA || []);
           }
           if (random_id === item.id) {
             setOtherProject(item);
@@ -44,22 +35,27 @@ function Portfolio() {
       .catch((err) => {
         console.log(err);
       });
-  }, [params.projectId]);
+  }, [projectId]);
 
   const [scrollPosition, setScrollPosition] = useState(0); // 스크롤 위치 저장
   const updateScroll = () => {
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+    const modalElement = document.querySelector('.ReactModal__Content');
+    if (modalElement) {
+      setScrollPosition(modalElement.scrollTop);
+    }
   };
   // 수직 스크롤 위치 - scrollY
   // 일부 브라우저(IE, 구형 Edge, 구형 Firefox, 구형 chrome)
 
   useEffect(() => {
-    // 스크롤 수치를 업데이트
-    window.addEventListener('scroll', updateScroll); // 스크롤할 때 updateScroll 호출
-    return () => {
-      window.removeEventListener('scroll', updateScroll); // 언마운트 시 제거 (메모리 누수 방지)
-    };
-  }, []);
+    const modalElement = document.querySelector('.ReactModal__Content');
+    if (modalElement) {
+      modalElement.addEventListener('scroll', updateScroll);
+      return () => {
+        modalElement.removeEventListener('scroll', updateScroll);
+      };
+    }
+  }, [data]);
 
   const scale =
     scrollPosition > 150 ? Math.max(1 - scrollPosition / 5000, 0.875) : 1;
@@ -77,8 +73,6 @@ function Portfolio() {
 
   return (
     <PortfolioStyled>
-      <Header />
-      <PjHeader />
       <div className='portfolio-begin'>
         <div className='portfolio-title'>
           <div className='title-name'>{data.name}</div>
@@ -113,9 +107,9 @@ function Portfolio() {
         </div>
       </div>
       <PortFolioDesc data={data} />
-      <PortfolioDetail data={data} params={params.projectId} />
+      <PortfolioDetail data={data} params={projectId} />
       <PortfolioQnA QnAItems={QnAItems} />
-      <div className='portfolio-other'>
+      {/* <div className='portfolio-other'>
         <div className='portfolio-sub-title'>또 다른,</div>
         <div className='other-project'>
           <div className='other-desc'>
@@ -137,7 +131,7 @@ function Portfolio() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className='portfolio-email'>
         <img src={process.env.PUBLIC_URL + '/images/me_more.JPG'} alt='more' />
         <div className='portfolio-email-txt'>
@@ -154,8 +148,6 @@ function Portfolio() {
           </div>
         </div>
       </div>
-      {modal && <Email $isOpen={modal} onClose={() => setModal(false)} />}
-      <Footer />
     </PortfolioStyled>
   );
 }
@@ -174,7 +166,7 @@ const PortFolioDesc = ({ data }) => {
         breakpoints={{
           // 1024px 이상
           1300: {
-            slidesPerView: 3.5,
+            slidesPerView: 2,
             spaceBetween: 20,
           },
         }}
@@ -301,7 +293,6 @@ const PortfolioQnA = ({ QnAItems }) => {
 
   const toggleDropdown = (id) => {
     setOpenItem(openItem === id ? null : id);
-    console.log(openItem, id);
   };
 
   return (
@@ -353,5 +344,3 @@ const PortfolioQnA = ({ QnAItems }) => {
 };
 
 export default Portfolio;
-
-// portfolio : (1. 주제 / 2. 의도/목적  3.프로젝트 설명  4.깃허브  5.관련 기술)

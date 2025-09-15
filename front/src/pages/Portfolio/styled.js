@@ -20,20 +20,16 @@ export const PortfolioStyled = styled.div`
     align-items: center;
     place-content: center;
     justify-content: space-between;
-    padding: 80px 0;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    width: 87.5vw;
-    max-width: 1680px;
+    padding: 70px 2.5rem;
   }
 
   .title-name {
-    font-size: 80px;
+    font-size: 65px;
   }
 
   .title-detail {
-    font-size: 28px;
-    max-width: 350px;
+    font-size: 25px;
+    max-width: 400px;
     text-align: left;
     word-break: keep-all;
   }
@@ -69,16 +65,15 @@ export const PortfolioStyled = styled.div`
     min-height: 800px;
   }
   .portfolio-description {
-    padding-top: 100px;
-    padding-bottom: 150px;
+    padding: 50px 0;
   }
 
   .portfolio-sub-title {
-    width: 87.5vw;
     max-width: 1680px;
     margin: auto;
-    padding-bottom: 70px;
-    font-size: 3.5rem;
+    padding: 0 2.5rem;
+    padding-bottom: 30px;
+    font-size: 3rem;
     font-weight: 600;
     text-align: left;
     display: flex;
@@ -86,14 +81,12 @@ export const PortfolioStyled = styled.div`
     align-items: flex-end;
   }
   .portfolio-detail .portfolio-sub-title > div {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 600;
   }
 
   .desc-swiper .swiper-slide {
-    min-width: 260px;
-    max-width: 420px;
-    aspect-ratio: 1.2;
+    aspect-ratio: 1.5;
     border-radius: 28px;
     background: #fafafa;
     color: black;
@@ -135,7 +128,7 @@ export const PortfolioStyled = styled.div`
 
   .desc-swiper,
   .detail-page {
-    padding: 0 calc(50vw - min(1680px, 87.5vw) / 2) 70px;
+    padding: 0 2.5rem 70px;
   }
 
   .desc-swiper .swiper-button-next,
@@ -162,7 +155,7 @@ export const PortfolioStyled = styled.div`
   .portfolio-detail,
   .portfolio-learn {
     background: #fafafa;
-    padding-top: 150px;
+    padding-top: 80px;
   }
 
   .portfolio-sub-title button {
@@ -199,8 +192,8 @@ export const PortfolioStyled = styled.div`
   .portfolio-learn-container {
     display: flex;
     flex-wrap: wrap;
+    padding: 0 2.5rem;
     padding-bottom: 100px;
-    width: 70vw;
     max-width: 1680px;
     margin: auto;
 
@@ -248,7 +241,6 @@ export const PortfolioStyled = styled.div`
   }
 
   .other-project {
-    width: 87.5vw;
     max-width: 1680px;
     background: #fafafa;
     border-radius: 28px;
@@ -256,9 +248,10 @@ export const PortfolioStyled = styled.div`
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    min-height: 600px;
+    min-height: 450px;
     margin: auto;
     flex-wrap: wrap;
+    margin: 0 2.5rem;
   }
   .other-project > *:first-child {
     flex: 1;
@@ -288,9 +281,9 @@ export const PortfolioStyled = styled.div`
   }
 
   .other-desc-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
-    padding: 24px 0;
+    padding: 12px 0;
   }
 
   .other-desc-txt {
@@ -303,20 +296,16 @@ export const PortfolioStyled = styled.div`
 
   .portfolio-email {
     position: relative;
-    margin-bottom: 100px;
+    margin: 100px 0;
   }
 
   .portfolio-email img {
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    width: 87.5vw;
     max-width: 1200px;
-    background: white;
-    border-radius: 28px;
-    display: grid;
-    min-height: 500px;
-    max-height: 600px;
+    max-height: 450px;
     object-fit: cover;
+    padding: 0 3rem;
+    border-radius: 28px;
+    width: 100%;
   }
 
   .portfolio-email-txt {
@@ -349,13 +338,14 @@ export const PortfolioStyled = styled.div`
   }
 
   .email-curios {
-    font-size: 3.5rem;
+    font-size: 3rem;
     word-break: keep-all;
     color: white;
+    line-height: 1.3;
   }
 
   .email-btn {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .email-btn > div {
@@ -379,9 +369,6 @@ export const PortfolioStyled = styled.div`
     }
     .pli-answer {
       font-size: 16px;
-    }
-    .portfolio-learn-container {
-      width: 87.5vw;
     }
   }
   /* 모바일용 (767px 이하일 때) */

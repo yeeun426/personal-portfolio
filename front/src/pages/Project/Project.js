@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { ProjectStyled } from './style';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ProjectModal from '../../components/Portfolio/ProjectModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,24 +20,34 @@ export default function Project() {
   const [filteredProject, setFilteredProject] = useState(project);
   const [selectedFilter, setSelectedFilter] = useState(null);
 
+  // 모달 상태 관리
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
+
+  // 다른 프로젝트 모달 열기 이벤트 리스너
   useEffect(() => {
-    // location.state에 데이터가 있으면 세션 스토리지에 저장
+    const handleOpenProjectModal = (event) => {
+      setSelectedProjectId(event.detail.projectId);
+    };
+
+    window.addEventListener('openProjectModal', handleOpenProjectModal);
+    return () => {
+      window.removeEventListener('openProjectModal', handleOpenProjectModal);
+    };
+  }, []);
+
+  useEffect(() => {
     if (location.state?.project) {
-      // sessionStorage.setItem(
-      //   'projectData',
-      //   JSON.stringify(location.state.project)
-      // );
       setProject(location.state.project);
       setFilteredProject(location.state.project);
     }
-    // 3. 데이터가 없으면 JSON 파일에서 불러오기
+    // 데이터가 없으면 JSON 파일에서 불러오기
     else if (!storedProject) {
       fetch('/data/project.json')
         .then((res) => res.json())
         .then((data) => {
           setProject(data);
           setFilteredProject(data);
-          // sessionStorage.setItem('projectData', JSON.stringify(data));
         });
     }
   }, [location.state, storedProject]);
@@ -73,6 +84,44 @@ export default function Project() {
     }
   };
 
+  // 모달 열기
+  const openModal = (projectId) => {
+    setSelectedProjectId(projectId);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden'; // 스크롤 방지
+  };
+
+  // 모달 닫기
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProjectId(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  const customStyles = {
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.75)',
+      zIndex: 9999,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    content: {
+      position: 'relative',
+      top: 'auto',
+      left: 'auto',
+      right: 'auto',
+      bottom: 'auto',
+      border: 'none',
+      borderRadius: '8px',
+      padding: '0',
+      width: '90vw',
+      height: '85vh',
+      maxWidth: '1200px',
+      backgroundColor: '#ffffff',
+    },
+  };
+
   return (
     <ProjectStyled>
       <div className='team-category'>
@@ -95,6 +144,7 @@ export default function Project() {
           Single
         </button>
       </div>
+
       <div className='project' ref={containerRef}>
         {filteredProject
           .slice()
@@ -107,14 +157,21 @@ export default function Project() {
                 <div className='project-detail'>{project.detail}</div>
               </div>
               <img src={project.img} alt={project.name} />
-              <Link to={`/project/${project.id}`}>
-                <button className='portfolio_btn'>
-                  프로젝트 자세히 살펴보기
-                </button>
-              </Link>
+              <button
+                className='portfolio_btn'
+                onClick={() => openModal(project.id)}
+              >
+                프로젝트 자세히 살펴보기
+              </button>
             </div>
           ))}
       </div>
+      <ProjectModal
+        isModalOpen={isModalOpen}
+        closeModal={closeModal}
+        customStyles={customStyles}
+        selectedProjectId={selectedProjectId}
+      />
     </ProjectStyled>
   );
 }

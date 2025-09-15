@@ -474,7 +474,7 @@
     "detail": "사용자가 자신만의 OTT 콘텐츠 취향을 발견하고, 개인화된 추천을 통해 새로운 콘텐츠 경험을 제공하는 서비스",
     "img": "images/portfolio/popco/popco.png",
     "icon": "images/icon/movie.png",
-    "youtube": "https://youtu.be/khPvwbfLF8E",
+    "youtube": "https://www.youtube.com/watch?v=khPvwbfLF8E",
     "team": true,
     "skills": {
       "skill": "React, TS, Tailwind, Zustand, GSAP",
