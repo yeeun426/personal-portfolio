@@ -55,7 +55,8 @@ export const PopupStyled = styled.div`
     }
   }
 
-  .popup-favorite button {
+  .popup-favorite button,
+  .popup-favorite a.link-btn {
     padding: 0;
     font-size: 16px;
     line-height: 2;

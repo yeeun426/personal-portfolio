@@ -3,33 +3,32 @@
 import { Tooltip } from 'react-tooltip';
 import { MdFeedback } from 'react-icons/md';
 import { FaCloudDownloadAlt } from 'react-icons/fa';
+import { LINKS, externalLinkProps } from '@/constants/links';
 import { FeedbackStyle } from './Feedback.styles';
 
 export default function Feedback() {
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/files/yeeun.pdf';
-    link.download = 'Ye-Eun_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <FeedbackStyle>
       <div className='feedback-item'>
-        <button className='my-resume' onClick={handleDownload}>
+        <a
+          className='my-resume link-btn'
+          href={LINKS.resume}
+          download='Ye-Eun_Resume.pdf'
+          aria-label='이력서 다운로드'
+        >
           <FaCloudDownloadAlt />
-        </button>
+        </a>
         <Tooltip anchorSelect='.my-resume' place='left' content='이력서 다운로드' />
       </div>
       <div className='feedback-item'>
-        <button
-          className='my-feedback'
-          onClick={() => window.open('https://forms.gle/iPCqwKgThEsvLpRc9')}
+        <a
+          className='my-feedback link-btn'
+          href={LINKS.feedbackForm}
+          aria-label='피드백 주기'
+          {...externalLinkProps}
         >
           <MdFeedback />
-        </button>
+        </a>
         <Tooltip anchorSelect='.my-feedback' place='left' content='피드백 주기' />
       </div>
     </FeedbackStyle>

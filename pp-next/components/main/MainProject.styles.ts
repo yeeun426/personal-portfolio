@@ -145,6 +145,7 @@ export const ProjectStyled = styled.div`
     font-weight: 400;
     transform: translate(-50%, -50%);
     transition: 0.5s all;
+    text-decoration: none; /* Link(a) 로 바뀌면서 bootstrap 링크 밑줄 제거 */
   }
 
   .project-content:hover .portfolio_btn {

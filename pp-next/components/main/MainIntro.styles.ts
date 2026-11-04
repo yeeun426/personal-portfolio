@@ -39,11 +39,13 @@ export const SideBarStyled = styled.div`
     gap: 30px;
     font-size: 30px;
   }
-  .aside-tab button {
+  .aside-tab button,
+  .aside-tab a {
     padding: 0;
     position: relative;
   }
-  .aside-tab button::before {
+  .aside-tab button::before,
+  .aside-tab a::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -53,7 +55,8 @@ export const SideBarStyled = styled.div`
     background-color: #cccccc;
     transition: 0.3s;
   }
-  .aside-tab button:hover::before {
+  .aside-tab button:hover::before,
+  .aside-tab a:hover::before {
     width: 90%;
   }
 
@@ -70,7 +73,7 @@ export const SideBarStyled = styled.div`
     position: fixed;
     top: 30px;
     left: 3rem;
-    font-family: 'Noto Sans KR';
+    font-family: var(--font-noto-sans-kr);
     font-size: 40px;
     gap: 10px;
 
@@ -118,7 +121,7 @@ export const SideBarStyled = styled.div`
 
     p {
       font-size: 1.25rem;
-      font-family: 'Noto Sans KR';
+      font-family: var(--font-noto-sans-kr);
       strong {
         font-size: 20px;
         font-weight: bold;

@@ -1,16 +1,29 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import { getProject, getProjectPageImages } from '@/constants/projects';
-import { toPublicPath, type Project, type ProjectQnA } from '@/types/project';
+import {
+  BsBracesAsterisk,
+  BsFileEarmarkTextFill,
+  BsGear,
+  BsPencil,
+  BsPlayBtn,
+} from 'react-icons/bs';
+import {
+  toPublicPath,
+  type Project,
+  type ProjectPageImage,
+  type ProjectQnA,
+} from '@/types/project';
+import { LINKS, externalLinkProps } from '@/constants/links';
 import { PortfolioStyled, DropIcon } from './Portfolio.styles';
 
 import 'swiper/css';
-import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// 기존 bootstrap-icons 폰트(.bi::before)와 같은 정렬
+const iconStyle = { verticalAlign: '-0.125em' } as const;
 
 const MAPLIX_ID = 3; // 세로로 긴 상세 이미지를 쓰는 프로젝트
 
@@ -19,33 +32,31 @@ function getYouTubeEmbedUrl(url: string) {
   return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
 }
 
-export default function Portfolio({ projectId }: { projectId: number }) {
-  const data = getProject(projectId);
-  const [scrollPosition, setScrollPosition] = useState(0);
+interface PortfolioProps {
+  project: Project;
+  images: ProjectPageImage[];
+}
 
-  // 모달 안에서는 모달 콘텐츠의 스크롤, 단독 페이지(/project/[id])에서는 window 스크롤 기준
+export default function Portfolio({ project: data, images }: PortfolioProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  // 스크롤에 따라 영상 영역을 살짝 축소.
+  // 모달 안에서는 모달 콘텐츠(.ReactModal__Content), 단독 페이지에서는 window 스크롤 기준
   useEffect(() => {
-    const modalElement = document.querySelector<HTMLElement>(
+    const modalElement = rootRef.current?.closest<HTMLElement>(
       '.ReactModal__Content'
     );
     const target: HTMLElement | Window = modalElement ?? window;
-    const update = () =>
-      setScrollPosition(modalElement ? modalElement.scrollTop : window.scrollY);
+    const update = () => {
+      const y = modalElement ? modalElement.scrollTop : window.scrollY;
+      // 값이 바뀔 때만 리렌더링되도록 계산된 scale 만 상태로 보관
+      setScale(y > 150 ? Math.max(1 - y / 5000, 0.875) : 1);
+    };
 
-    target.addEventListener('scroll', update);
+    target.addEventListener('scroll', update, { passive: true });
     return () => target.removeEventListener('scroll', update);
-  }, [projectId]);
-
-  if (!data) {
-    return (
-      <PortfolioStyled>
-        <div className='portfolio-title'>프로젝트를 찾을 수 없습니다.</div>
-      </PortfolioStyled>
-    );
-  }
-
-  const scale =
-    scrollPosition > 150 ? Math.max(1 - scrollPosition / 5000, 0.875) : 1;
+  }, []);
 
   const divStyle = {
     minHeight: '680px',
@@ -54,7 +65,7 @@ export default function Portfolio({ projectId }: { projectId: number }) {
   };
 
   return (
-    <PortfolioStyled>
+    <PortfolioStyled ref={rootRef}>
       <div className='portfolio-begin'>
         <div className='portfolio-title'>
           <div className='title-name'>{data.name}</div>
@@ -88,7 +99,7 @@ export default function Portfolio({ projectId }: { projectId: number }) {
         </div>
       </div>
       <PortfolioDesc data={data} />
-      <PortfolioDetail data={data} />
+      <PortfolioDetail data={data} images={images} />
       <PortfolioQnA QnAItems={data.QnA ?? []} />
       <div className='portfolio-email'>
         <img src='/images/me_more.JPG' alt='more' />
@@ -98,11 +109,13 @@ export default function Portfolio({ projectId }: { projectId: number }) {
           </div>
           <div className='email-btn'>
             <div>언제든지요!</div>
-            <button
-              onClick={() => window.open('https://forms.gle/iPCqwKgThEsvLpRc9')}
+            <a
+              className='link-btn'
+              href={LINKS.feedbackForm}
+              {...externalLinkProps}
             >
               📝<span> ➠ </span>📨
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -128,7 +141,9 @@ const PortfolioDesc = ({ data }: { data: Project }) => {
         }}
       >
         <SwiperSlide>
-          <i className='bi bi-file-earmark-text-fill h4'></i>
+          <i className='h4'>
+            <BsFileEarmarkTextFill style={iconStyle} />
+          </i>
           <div className='detail-title h4'>{data.detail}</div>
           <div className='detail-sub-txt'>
             <div className='detail-inTitle'>기간</div>
@@ -142,40 +157,50 @@ const PortfolioDesc = ({ data }: { data: Project }) => {
           )}
         </SwiperSlide>
         <SwiperSlide>
-          <i className='bi bi-pencil h3'></i>
+          <i className='h3'>
+            <BsPencil style={iconStyle} />
+          </i>
           <div className='detail-title h4'>PURPOSE</div>
           <div className='detail-txt'>{data.skills?.detail}</div>
         </SwiperSlide>
         <SwiperSlide>
-          <i className='bi bi-gear h3'></i>
+          <i className='h3'>
+            <BsGear style={iconStyle} />
+          </i>
           <div className='detail-title h4'>SKILL</div>
           <div className='detail-txt'>{data.skills?.skill}</div>
         </SwiperSlide>
         {data.skills?.roles?.map((role, index) => (
           <SwiperSlide key={index}>
-            <i className='bi bi-braces-asterisk h3'></i>
+            <i className='h3'>
+              <BsBracesAsterisk style={iconStyle} />
+            </i>
             <div className='detail-title h4'>The part that I developed</div>
             <div className='detail-txt'>{role}</div>
           </SwiperSlide>
         ))}
         <SwiperSlide>
-          <i className='bi bi-play-btn h3'></i>
+          <i className='h3'>
+            <BsPlayBtn style={iconStyle} />
+          </i>
           <div className='detail-btn'>
             {data.skills?.github && (
-              <button
-                className='detail-txt-btn'
-                onClick={() => window.open(data.skills?.github)}
+              <a
+                className='detail-txt-btn link-btn'
+                href={data.skills.github}
+                {...externalLinkProps}
               >
                 Github 바로가기 ❯
-              </button>
+              </a>
             )}
             {data.skills?.video && (
-              <button
-                className='detail-txt-btn'
-                onClick={() => window.open(data.skills?.video)}
+              <a
+                className='detail-txt-btn link-btn'
+                href={data.skills.video}
+                {...externalLinkProps}
               >
                 시연영상 바로가기 ❯
-              </button>
+              </a>
             )}
           </div>
         </SwiperSlide>
@@ -184,17 +209,26 @@ const PortfolioDesc = ({ data }: { data: Project }) => {
   );
 };
 
-const PortfolioDetail = ({ data }: { data: Project }) => {
-  const imageData = getProjectPageImages(data.id);
+const PortfolioDetail = ({
+  data,
+  images: imageData,
+}: {
+  data: Project;
+  images: ProjectPageImage[];
+}) => {
 
   return (
     <div className='portfolio-detail'>
       <div className='portfolio-sub-title'>
         <div>{data.name}, 자세히 살펴보기.</div>
         {data.skills?.github && (
-          <button onClick={() => window.open(data.skills?.github)}>
+          <a
+            className='link-btn'
+            href={data.skills.github}
+            {...externalLinkProps}
+          >
             Github 바로가기 ❯
-          </button>
+          </a>
         )}
       </div>
       <Swiper

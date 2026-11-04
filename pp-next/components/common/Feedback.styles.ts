@@ -19,9 +19,16 @@ export const FeedbackStyle = styled.div`
     box-sizing: border-box;
     background: white;
 
-    button {
+    button,
+    a {
       width: 100%;
       height: 100%;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 

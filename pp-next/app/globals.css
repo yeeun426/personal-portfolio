@@ -1,6 +1,4 @@
-/* 기존 React 버전 src/App.css 그대로 (원격 @import 만 파일 맨 위로 이동) */
-@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+/* 기존 React 버전 src/App.css 기반. 폰트는 app/fonts.ts(next/font) 에서 불러옴 */
 
 html,
 body,
@@ -126,26 +124,10 @@ table {
 }
 /* ------------- 브라우저 기본 css 제거 ------------- */
 
-@font-face {
-  font-family: 'S-CoreDream-3Light';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-    format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
 
 * {
   line-height: 1.6;
-  font-family: 'Pretendard-Regular', 'Noto Sans KR';
+  font-family: var(--font-pretendard), var(--font-noto-sans-kr);
   word-break: keep-all;
 }
 .App {
@@ -153,7 +135,7 @@ table {
 }
 input {
   outline: none;
-  font-family: 'Noto Sans KR';
+  font-family: var(--font-noto-sans-kr);
 }
 
 button {
@@ -181,4 +163,16 @@ a {
     --font-size-md: 2.5rem;
     --font-size-sm: 1.5rem;
   }
+}
+
+/* ------------- <button> 을 <a> 로 바꾼 곳에서 기존 버튼과 같은 모양 유지 ------------- */
+.link-btn,
+.link-btn:hover {
+  display: inline-block;
+  padding: 1px 6px;
+  color: black;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }

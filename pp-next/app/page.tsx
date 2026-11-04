@@ -5,6 +5,7 @@ import MainCareer from "@/components/main/MainCareer";
 import MainEducation from "@/components/main/MainEducation";
 import MainIntro from "@/components/main/MainIntro";
 import MainProject from "@/components/main/MainProject";
+import { getProjectSummaries } from "@/constants/projects";
 
 // section id 는 components/main/Sidebar.tsx 의 MAIN_SECTIONS 와 맞춰야 함
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
         <MainEducation />
       </section>
       <section id="project" style={{ backgroundColor: "#f5f5f7" }}>
-        <MainProject />
+        <MainProject projects={getProjectSummaries()} />
       </section>
       <Footer />
     </main>

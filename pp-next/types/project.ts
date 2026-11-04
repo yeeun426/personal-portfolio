@@ -25,6 +25,11 @@ export interface Project {
   QnA?: ProjectQnA[];
 }
 
+export type ProjectSummary = Pick<
+  Project,
+  'id' | 'date' | 'name' | 'detail' | 'img' | 'team'
+>;
+
 export interface ProjectPageImage {
   num: string;
   img: string;

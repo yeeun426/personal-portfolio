@@ -1,12 +1,8 @@
-"use client";
+import type { Metadata } from "next";
+import MeScreen from "@/components/popup/MeScreen";
 
-import Popup from "@/components/popup/Popup";
-import { UrecaStyled } from "@/components/popup/Popup.styles";
+export const metadata: Metadata = { title: "About Me" };
 
 export default function MePage() {
-  return (
-    <UrecaStyled>
-      <Popup />
-    </UrecaStyled>
-  );
+  return <MeScreen />;
 }

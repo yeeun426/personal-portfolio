@@ -1,9 +1,8 @@
-"use client";
+import type { Metadata } from "next";
+import EmailScreen from "@/components/email/EmailScreen";
 
-import { useRouter } from "next/navigation";
-import EmailForm from "@/components/email/EmailForm";
+export const metadata: Metadata = { title: "Contact" };
 
 export default function EmailPage() {
-  const router = useRouter();
-  return <EmailForm onClose={() => router.push("/")} />;
+  return <EmailScreen />;
 }

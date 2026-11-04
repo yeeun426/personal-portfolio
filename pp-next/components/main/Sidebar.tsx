@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
+import { LINKS, externalLinkProps } from '@/constants/links';
 
 /** 사이드바에서 이동할 메인 페이지 섹션 (app/page.tsx 의 section id 와 일치) */
 export const MAIN_SECTIONS = [
@@ -62,12 +63,12 @@ export default function Sidebar({ isOn, setIsOn }: SidebarProps) {
       className={`main-aside ${scrolled ? 'scrolled' : ''} ${isOn ? 'on' : ''}`}
     >
       <div className='aside-tab'>
-        <button onClick={() => window.open('https://github.com/yeeun426')}>
+        <a className='link-btn' href={LINKS.github} {...externalLinkProps}>
           Github
-        </button>
-        <button onClick={() => window.open('https://yeeun426.github.io/')}>
+        </a>
+        <a className='link-btn' href={LINKS.blog} {...externalLinkProps}>
           Blog
-        </button>
+        </a>
         <div className='fixed-tab'>
           {MAIN_SECTIONS.map(({ id, label }) => (
             <button

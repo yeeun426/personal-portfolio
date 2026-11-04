@@ -159,7 +159,8 @@ export const PortfolioStyled = styled.div`
     padding-top: 80px;
   }
 
-  .portfolio-sub-title button {
+  .portfolio-sub-title button,
+  .portfolio-sub-title a {
     color: rgb(0, 102, 204);
     font-size: 17px;
     font-weight: 400;
@@ -315,7 +316,8 @@ export const PortfolioStyled = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    button {
+    button,
+    a {
       margin-top: 40px;
       border: 1px solid rgb(255 255 255);
       padding: 8px 35px;
@@ -326,7 +328,8 @@ export const PortfolioStyled = styled.div`
       text-decoration: none;
     }
   }
-  .email-btn button:hover span {
+  .email-btn button:hover span,
+  .email-btn a:hover span {
     color: red;
     font-size: 22px;
   }

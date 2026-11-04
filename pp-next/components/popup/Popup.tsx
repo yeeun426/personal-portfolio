@@ -3,6 +3,7 @@
 // 기존 React 버전 components/Home/Popup.js 그대로 (react-bootstrap 사용)
 import { useState } from 'react';
 import { Image, Tab, Row, Col, Nav, Container } from 'react-bootstrap';
+import { LINKS, externalLinkProps } from '@/constants/links';
 import { PopupStyled } from './Popup.styles';
 
 export default function Popup() {
@@ -47,23 +48,19 @@ export default function Popup() {
                   </Col>
                 </Row>
                 <div className='popup-link'>
-                  <button
-                    onClick={() => window.open('https://github.com/yeeun426')}
-                  >
+                  <a className='link-btn' href={LINKS.github} {...externalLinkProps}>
                     ✅ github
-                  </button>
-                  <button
-                    onClick={() => window.open('https://yeeun426.github.io/')}
-                  >
+                  </a>
+                  <a className='link-btn' href={LINKS.blog} {...externalLinkProps}>
                     📂 blog
-                  </button>
-                  <button
-                    onClick={() =>
-                      window.open('https://www.instagram.com/thsudkcla7/')
-                    }
+                  </a>
+                  <a
+                    className='link-btn'
+                    href={LINKS.instagram}
+                    {...externalLinkProps}
                   >
                     🫠 instagram
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

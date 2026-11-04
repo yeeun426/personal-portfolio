@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
+import { useRouter } from 'next/navigation';
 import Modal from 'react-modal';
-import Portfolio from './Portfolio';
 
 const customStyles: Modal.Styles = {
   overlay: {
@@ -28,25 +28,26 @@ const customStyles: Modal.Styles = {
   },
 };
 
-interface ProjectModalProps {
-  isModalOpen: boolean;
-  closeModal: () => void;
-  selectedProjectId: number | null;
-}
+/** app/@modal/(.)project/[projectId] 에서 사용. 닫으면 이전 주소로 돌아감 */
+export default function ProjectModal({ children }: { children: ReactNode }) {
+  const router = useRouter();
 
-export default function ProjectModal({
-  isModalOpen,
-  closeModal,
-  selectedProjectId,
-}: ProjectModalProps) {
   useEffect(() => {
     // app/layout.tsx 의 #app-root (스크린리더용 aria-hidden 처리 대상)
     Modal.setAppElement('#app-root');
+
+    // 모달이 열려 있는 동안 배경 스크롤 방지
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, []);
+
+  const closeModal = () => router.back();
 
   return (
     <Modal
-      isOpen={isModalOpen}
+      isOpen
       onRequestClose={closeModal}
       style={customStyles}
       contentLabel='Portfolio Modal'
@@ -83,9 +84,7 @@ export default function ProjectModal({
           ×
         </button>
 
-        {selectedProjectId !== null && (
-          <Portfolio projectId={selectedProjectId} />
-        )}
+        {children}
       </div>
     </Modal>
   );

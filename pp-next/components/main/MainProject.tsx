@@ -1,23 +1,28 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { projects } from '@/constants/projects';
-import { toPublicPath } from '@/types/project';
-import ProjectModal from '@/components/portfolio/ProjectModal';
+import { toPublicPath, type ProjectSummary } from '@/types/project';
 import { ProjectStyled } from './MainProject.styles';
 
 gsap.registerPlugin(ScrollTrigger);
 
 type TeamFilter = boolean | null; // null: 전체, true: 팀, false: 개인
 
-export default function MainProject() {
+/**
+ * 프로젝트 목록.
+ * "자세히 살펴보기"는 /project/[id] 로 이동하고,
+ * 이 화면에서 이동하면 app/@modal 의 intercepting route 가 모달로 띄움.
+ */
+export default function MainProject({
+  projects,
+}: {
+  projects: ProjectSummary[];
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedFilter, setSelectedFilter] = useState<TeamFilter>(null);
-  const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
-    null
-  );
 
   const filteredProject =
     selectedFilter === null
@@ -44,18 +49,6 @@ export default function MainProject() {
 
     return () => ctx.revert();
   }, [selectedFilter]);
-
-  // 모달이 열려 있는 동안 배경 스크롤 방지
-  useEffect(() => {
-    if (selectedProjectId === null) return;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [selectedProjectId]);
-
-  const openModal = (projectId: number) => setSelectedProjectId(projectId);
-  const closeModal = () => setSelectedProjectId(null);
 
   return (
     <ProjectStyled>
@@ -92,20 +85,16 @@ export default function MainProject() {
                 <div className='project-detail'>{project.detail}</div>
               </div>
               <img src={toPublicPath(project.img)} alt={project.name} />
-              <button
+              <Link
                 className='portfolio_btn'
-                onClick={() => openModal(project.id)}
+                href={`/project/${project.id}`}
+                scroll={false}
               >
                 프로젝트 자세히 살펴보기
-              </button>
+              </Link>
             </div>
           ))}
       </div>
-      <ProjectModal
-        isModalOpen={selectedProjectId !== null}
-        closeModal={closeModal}
-        selectedProjectId={selectedProjectId}
-      />
     </ProjectStyled>
   );
 }
