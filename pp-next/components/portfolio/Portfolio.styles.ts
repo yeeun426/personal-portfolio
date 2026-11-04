@@ -308,6 +308,7 @@ export const PortfolioStyled = styled.div`
     padding: 0 3rem;
     border-radius: 28px;
     width: 100%;
+    height: auto; /* next/image width/height 속성 대신 원본 비율 유지 */
   }
 
   .portfolio-email-txt {

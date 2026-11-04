@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import {
@@ -102,7 +103,13 @@ export default function Portfolio({ project: data, images }: PortfolioProps) {
       <PortfolioDetail data={data} images={images} />
       <PortfolioQnA QnAItems={data.QnA ?? []} />
       <div className='portfolio-email'>
-        <img src='/images/me_more.JPG' alt='more' />
+        <Image
+          src='/images/me_more.JPG'
+          alt='more'
+          width={2048}
+          height={1373}
+          sizes='1200px'
+        />
         <div className='portfolio-email-txt'>
           <div className='email-curios'>
             프로젝트에 관해 궁금하신 점/피드백이 있나요?
@@ -249,11 +256,13 @@ const PortfolioDetail = ({
             key={page.num}
             style={{ display: 'flex', flexDirection: 'column' }}
           >
-            <img
+            <Image
               className='detail_filter'
               alt={page.desc}
               src={toPublicPath(page.img)}
-              loading='lazy'
+              width={1709}
+              height={944}
+              sizes='(max-width: 900px) 100vw, 600px'
             />
           </SwiperSlide>
         ))}

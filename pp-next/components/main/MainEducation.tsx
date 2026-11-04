@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 import { EduStyled } from './MainEducation.styles';
 
 export default function MainEducation() {
@@ -81,8 +82,10 @@ export default function MainEducation() {
           <div className='aboutme-item p-5 bg-color'>
             <div className='skills-item'>
               <div className='skill-title'>
-                <img
+                <Image
                   className='skill-img'
+                  width={512}
+                  height={512}
                   src='/images/icon/1st.png'
                   alt='Strong'
                 />
@@ -201,8 +204,10 @@ export default function MainEducation() {
           <div className='aboutme-item p-5'>
             <div className='skills-item'>
               <div className='skill-title'>
-                <img
+                <Image
                   className='skill-img'
+                  width={512}
+                  height={512}
                   src='/images/icon/2nd.png'
                   alt='Knowledgeable'
                 />

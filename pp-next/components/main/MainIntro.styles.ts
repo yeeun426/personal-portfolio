@@ -96,6 +96,7 @@ export const SideBarStyled = styled.div`
 
     img {
       width: 100px;
+      height: auto; /* next/image width/height 속성 대신 원본 비율 유지 */
     }
   }
 
@@ -113,6 +114,7 @@ export const SideBarStyled = styled.div`
 
     img {
       height: 70%;
+      width: auto; /* next/image width/height 속성 대신 원본 비율 유지 */
     }
 
     h2 {

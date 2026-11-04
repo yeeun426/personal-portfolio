@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Tooltip } from 'react-tooltip';
 import { IoMdMenu } from 'react-icons/io';
+import Image from 'next/image';
 import Sidebar, { MAIN_SECTIONS, scrollToSection } from './Sidebar';
 import { SideBarStyled } from './MainIntro.styles';
 
@@ -29,7 +30,14 @@ export default function MainIntro() {
           <br />
           사용자가 필요로 하는 것을 <strong>한발 먼저</strong> 고민하겠습니다.
         </p>
-        <img src='/images/main/leeyeeun.webp' alt='leeyeeun' />
+        <Image
+          src='/images/main/leeyeeun.webp'
+          alt='leeyeeun'
+          width={3728}
+          height={2924}
+          sizes='(max-width: 1023px) 100vw, 80vw'
+          preload
+        />
       </div>
       <button
         className='down-btn'

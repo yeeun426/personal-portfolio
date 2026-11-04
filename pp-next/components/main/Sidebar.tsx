@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
+import Image from 'next/image';
 import { LINKS, externalLinkProps } from '@/constants/links';
 
 /** 사이드바에서 이동할 메인 페이지 섹션 (app/page.tsx 의 section id 와 일치) */
@@ -82,7 +83,7 @@ export default function Sidebar({ isOn, setIsOn }: SidebarProps) {
         </div>
       </div>
       <div className='aside-info'>
-        <img src='/images/main/logo.webp' alt='LYE' />
+        <Image src='/images/main/logo.webp' alt='LYE' width={597} height={501} />
         <div>thsudkcla7@naver.com</div>
         <p>Last update:2025/03</p>
       </div>

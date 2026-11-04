@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 import { AboutStyled } from './MainAbout.styles';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -36,7 +37,7 @@ export default function MainAbout() {
     <AboutStyled ref={containerRef}>
       <ul>
         <li className='otherChat chat'>
-          <img src='/images/icon/profile.png' alt='프로필' />
+          <Image src='/images/icon/profile.png' alt='프로필' width={77} height={77} />
           <div>이예은에 대해서 소개해주세요! 👀</div>
         </li>
         <li className='chat me'>안녕하세요 !</li>
@@ -44,7 +45,14 @@ export default function MainAbout() {
         <li className='chat me'>
           타입스크립트와 썸(😘)타는 프론트엔드 개발자 이예은입니다.
         </li>
-        <img className='chat me' src='/images/main/profile.webp' alt='yeeun' />
+        <Image
+          className='chat me'
+          src='/images/main/profile.webp'
+          alt='yeeun'
+          width={1033}
+          height={1328}
+          sizes='250px'
+        />
         <li className='chat me'>
           꾸준하게 빈 틈을 채워나가는 &quot;성실함&quot;과 &quot;엉덩이 힘&quot;을
           가지고 있습니다.

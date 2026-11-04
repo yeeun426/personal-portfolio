@@ -2,6 +2,7 @@
 
 // 기존 React 버전 components/Home/Popup.js 그대로 (react-bootstrap 사용)
 import { useState } from 'react';
+import NextImage from 'next/image';
 import { Image, Tab, Row, Col, Nav, Container } from 'react-bootstrap';
 import { LINKS, externalLinkProps } from '@/constants/links';
 import { PopupStyled } from './Popup.styles';
@@ -66,7 +67,7 @@ export default function Popup() {
             </div>
             <div className='popup-right'>
               <div className='pr-top'>
-                <img src='/images/popupHeader.png' alt='header' />
+                <NextImage src='/images/popupHeader.png' alt='header' width={468} height={35} />
               </div>
               <Col>
                 <Tab.Content>

@@ -124,6 +124,7 @@ export const EduStyled = styled.div`
 
   .skill-img {
     width: 45px;
+    height: auto; /* next/image width/height 속성 대신 원본 비율 유지 */
   }
 
   .skills-item {

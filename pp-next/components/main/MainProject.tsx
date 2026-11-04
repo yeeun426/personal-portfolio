@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { toPublicPath, type ProjectSummary } from '@/types/project';
@@ -84,7 +85,13 @@ export default function MainProject({
                 <div className='project-name'>{project.name}</div>
                 <div className='project-detail'>{project.detail}</div>
               </div>
-              <img src={toPublicPath(project.img)} alt={project.name} />
+              <Image
+                src={toPublicPath(project.img)}
+                alt={project.name}
+                width={657}
+                height={512}
+                sizes='(max-width: 800px) 70vw, 600px'
+              />
               <Link
                 className='portfolio_btn'
                 href={`/project/${project.id}`}
