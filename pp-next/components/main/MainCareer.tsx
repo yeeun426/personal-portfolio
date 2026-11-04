@@ -2,9 +2,19 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { careers } from '@/constants/career';
-// Education 섹션 스타일 위에 경력 카드용 스타일을 덧씌움 (import 순서 유지)
-import eduStyles from './MainEducation.module.css';
-import styles from './MainCareer.module.css';
+import {
+  card,
+  cardGray,
+  cardGrayRight,
+  cardItem,
+  cardList,
+  cardListItem,
+  cardName,
+  cardSection,
+  cardSub,
+  cardTag,
+  cardWrapper,
+} from './cardStyles';
 
 /**
  * 경력 섹션 — 기존 React 버전 Education 카드와 같은 UI
@@ -33,8 +43,8 @@ export default function MainCareer() {
   }, []);
 
   return (
-    <div className={`${eduStyles.root} ${styles.root}`}>
-      <div className='aboutme-wrapper'>
+    <div className={cardSection}>
+      <div className={`${cardWrapper} min-h-auto pt-32 pb-0`}>
         {careers.map((career, index) => (
           <div
             key={career.company}
@@ -42,23 +52,29 @@ export default function MainCareer() {
               componentsRef.current[index] = el;
             }}
             data-index={index}
-            className={`aboutme-list career ${
-              centerIdx === index ? 'active' : ''
-            }`}
+            className={`aboutme-list career ${centerIdx === index ? 'active' : ''} ${card(
+              centerIdx === index
+            )}`}
           >
-            <div className='aboutme-title'>#Career</div>
-            <div className='aboutme-item p-5'>
-              <div className='edu-date'>
+            <div className={cardTag}>#Career</div>
+            <div className={cardItem}>
+              <div>
                 {career.periodIcon} {career.period}
               </div>
-              <h4 className='edu-name'>{career.company}</h4>
-              <div className='edu-sub'>{career.description}</div>
-              <div className='career-stack'>{career.techStack.join(' · ')}</div>
+              <h4 className={cardName}>{career.company}</h4>
+              <div className={cardSub}>{career.description}</div>
+              <div className='text-[16px] text-[#6e6e73]'>
+                {career.techStack.join(' · ')}
+              </div>
             </div>
-            <div className='aboutme-item p-5 bg-color'>
-              <ul className='edu-desc'>
+            <div
+              className={`${cardItem} ${cardGray} ${cardGrayRight} flex items-center`}
+            >
+              <ul className={cardList}>
                 {career.tasks.map((task) => (
-                  <li key={task}>{task}</li>
+                  <li key={task} className={cardListItem}>
+                    {task}
+                  </li>
                 ))}
               </ul>
             </div>

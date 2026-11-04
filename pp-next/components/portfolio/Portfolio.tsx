@@ -18,13 +18,28 @@ import {
   type ProjectQnA,
 } from '@/types/project';
 import { LINKS, externalLinkProps } from '@/constants/links';
-import styles from './Portfolio.module.css';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 // 기존 bootstrap-icons 폰트(.bi::before)와 같은 정렬
 const iconStyle = { verticalAlign: '-0.125em' } as const;
+
+// 섹션 제목 ("알면 알수록, ..." 등)
+const subTitle =
+  'm-auto flex max-w-[1680px] items-end justify-between px-10 pt-0 pb-[30px] text-left text-[3rem] font-semibold';
+// 제목 옆 "Github 바로가기" 링크
+const subTitleLink = 'link-btn text-[17px] font-normal text-[rgb(0,102,204)]';
+// 설명 슬라이드 안 텍스트/버튼
+const slideTitle = 'detail-title h4 mb-[10px]';
+const slideText = 'overflow-auto text-left text-[1.08em]';
+const slideButton =
+  'link-btn rounded-[30px] bg-white p-[1em] shadow-[3px_3px_6px_#c8c6c6] hover:bg-[#eaeaea]';
+const slideInfo = 'px-0 py-[10px]';
+// 영상 영역 (모바일에서는 최소 높이 해제)
+const videoBox =
+  'max-h-[1260px] min-h-[680px] max-w-[1920px] max-[768px]:min-h-auto!';
+const videoMedia = 'h-full w-full rounded-[18px] object-cover object-[center_top]';
 
 const MAPLIX_ID = 3; // 세로로 긴 상세 이미지를 쓰는 프로젝트
 
@@ -66,16 +81,23 @@ export default function Portfolio({ project: data, images }: PortfolioProps) {
   };
 
   return (
-    <div className={styles.root} ref={rootRef}>
-      <div className='portfolio-begin'>
-        <div className='portfolio-title'>
-          <div className='title-name'>{data.name}</div>
-          <div className='title-detail'>{data.detail}</div>
+    // .portfolio 는 app/styles/vendor.css 의 Swiper 덮어쓰기 기준 클래스
+    <div
+      className='portfolio overflow-hidden text-center font-semibold whitespace-pre-wrap'
+      ref={rootRef}
+    >
+      <div>
+        <div className='portfolio-title flex content-center items-center justify-between px-10 py-[70px]'>
+          <div className='text-[65px]'>{data.name}</div>
+          <div className='max-w-[400px] text-left text-[25px] break-keep'>
+            {data.detail}
+          </div>
         </div>
-        <div className='portfolio-video'>
+        <div>
           {data.youtube && (
-            <div style={divStyle}>
+            <div style={divStyle} className={videoBox}>
               <iframe
+                className={`${videoMedia} min-h-[800px]`}
                 src={getYouTubeEmbedUrl(data.youtube)}
                 title='YouTube video'
                 loading='lazy'
@@ -85,8 +107,9 @@ export default function Portfolio({ project: data, images }: PortfolioProps) {
             </div>
           )}
           {data.video && (
-            <div style={divStyle}>
+            <div style={divStyle} className={videoBox}>
               <video
+                className={videoMedia}
                 src={toPublicPath(data.video)}
                 preload='none'
                 controls
@@ -102,26 +125,27 @@ export default function Portfolio({ project: data, images }: PortfolioProps) {
       <PortfolioDesc data={data} />
       <PortfolioDetail data={data} images={images} />
       <PortfolioQnA QnAItems={data.QnA ?? []} />
-      <div className='portfolio-email'>
+      <div className='relative mx-0 my-[100px]'>
         <Image
           src='/images/me_more.JPG'
           alt='more'
           width={2048}
           height={1373}
           sizes='1200px'
+          className='h-auto max-h-[450px] w-full max-w-[1200px] rounded-[28px] object-cover px-12 py-0'
         />
-        <div className='portfolio-email-txt'>
-          <div className='email-curios'>
+        <div className='absolute top-1/2 left-1/2 [transform:translate(-50%,-50%)]'>
+          <div className='text-[3rem] leading-[1.3] break-keep text-white'>
             프로젝트에 관해 궁금하신 점/피드백이 있나요?
           </div>
-          <div className='email-btn'>
-            <div>언제든지요!</div>
+          <div className='mt-5'>
+            <div className='text-[30px] text-white'>언제든지요!</div>
             <a
-              className='link-btn'
+              className='link-btn group mt-10 rounded-[980px] bg-transparent px-[35px] py-2 text-[16px] text-white no-underline [border:1px_solid_rgb(255_255_255)]'
               href={LINKS.feedbackForm}
               {...externalLinkProps}
             >
-              📝<span> ➠ </span>📨
+              📝<span className='group-hover:text-[22px] group-hover:text-[red]'> ➠ </span>📨
             </a>
           </div>
         </div>
@@ -132,8 +156,8 @@ export default function Portfolio({ project: data, images }: PortfolioProps) {
 
 const PortfolioDesc = ({ data }: { data: Project }) => {
   return (
-    <div className='portfolio-description'>
-      <div className='portfolio-sub-title'>알면 알수록, {data.name}.</div>
+    <div className='px-0 py-[50px]'>
+      <div className={subTitle}>알면 알수록, {data.name}.</div>
       <Swiper
         className='desc-swiper'
         slidesPerView='auto'
@@ -151,13 +175,13 @@ const PortfolioDesc = ({ data }: { data: Project }) => {
           <i className='h4'>
             <BsFileEarmarkTextFill style={iconStyle} />
           </i>
-          <div className='detail-title h4'>{data.detail}</div>
-          <div className='detail-sub-txt'>
+          <div className={slideTitle}>{data.detail}</div>
+          <div className={slideInfo}>
             <div className='detail-inTitle'>기간</div>
             <div className='img-detail'>{data.date}</div>
           </div>
           {data.skills?.organization && (
-            <div className='detail-sub-txt'>
+            <div className={slideInfo}>
               <div className='detail-inTitle'>기관</div>
               <div className='img-detail'>{data.skills.organization}</div>
             </div>
@@ -167,33 +191,33 @@ const PortfolioDesc = ({ data }: { data: Project }) => {
           <i className='h3'>
             <BsPencil style={iconStyle} />
           </i>
-          <div className='detail-title h4'>PURPOSE</div>
-          <div className='detail-txt'>{data.skills?.detail}</div>
+          <div className={slideTitle}>PURPOSE</div>
+          <div className={slideText}>{data.skills?.detail}</div>
         </SwiperSlide>
         <SwiperSlide>
           <i className='h3'>
             <BsGear style={iconStyle} />
           </i>
-          <div className='detail-title h4'>SKILL</div>
-          <div className='detail-txt'>{data.skills?.skill}</div>
+          <div className={slideTitle}>SKILL</div>
+          <div className={slideText}>{data.skills?.skill}</div>
         </SwiperSlide>
         {data.skills?.roles?.map((role, index) => (
           <SwiperSlide key={index}>
             <i className='h3'>
               <BsBracesAsterisk style={iconStyle} />
             </i>
-            <div className='detail-title h4'>The part that I developed</div>
-            <div className='detail-txt'>{role}</div>
+            <div className={slideTitle}>The part that I developed</div>
+            <div className={slideText}>{role}</div>
           </SwiperSlide>
         ))}
         <SwiperSlide>
           <i className='h3'>
             <BsPlayBtn style={iconStyle} />
           </i>
-          <div className='detail-btn'>
+          <div className='m-auto flex w-full flex-col gap-5'>
             {data.skills?.github && (
               <a
-                className='detail-txt-btn link-btn'
+                className={slideButton}
                 href={data.skills.github}
                 {...externalLinkProps}
               >
@@ -202,7 +226,7 @@ const PortfolioDesc = ({ data }: { data: Project }) => {
             )}
             {data.skills?.video && (
               <a
-                className='detail-txt-btn link-btn'
+                className={slideButton}
                 href={data.skills.video}
                 {...externalLinkProps}
               >
@@ -225,12 +249,12 @@ const PortfolioDetail = ({
 }) => {
 
   return (
-    <div className='portfolio-detail'>
-      <div className='portfolio-sub-title'>
-        <div>{data.name}, 자세히 살펴보기.</div>
+    <div className='bg-[#fafafa] pt-20'>
+      <div className={subTitle}>
+        <div className='text-[3rem] font-semibold'>{data.name}, 자세히 살펴보기.</div>
         {data.skills?.github && (
           <a
-            className='link-btn'
+            className={subTitleLink}
             href={data.skills.github}
             {...externalLinkProps}
           >
@@ -257,7 +281,7 @@ const PortfolioDetail = ({
             style={{ display: 'flex', flexDirection: 'column' }}
           >
             <Image
-              className='detail_filter'
+              className='h-full w-full rounded-[15px] object-cover object-top'
               alt={page.desc}
               src={toPublicPath(page.img)}
               width={1709}
@@ -279,17 +303,17 @@ const PortfolioQnA = ({ QnAItems }: { QnAItems: ProjectQnA[] }) => {
   };
 
   return (
-    <div className='portfolio-learn'>
-      <div className='portfolio-learn-container'>
-        <div className='portfolio-learn-title'>
+    <div className='bg-[#fafafa] pt-20'>
+      <div className='m-auto flex max-w-[1680px] flex-wrap px-10 pt-0 pb-[100px] max-[768px]:flex-col'>
+        <div className='mx-0 mt-8 mb-12 flex-1 text-left text-[3rem] font-semibold'>
           자주 묻는 질문과 <br />
           답변
         </div>
-        <div className='portfolio-learn-contents'>
+        <div className='flex-1 text-left'>
           {QnAItems.map(({ id, question, answer }) => (
-            <div className='portfolio-learn-item' key={id}>
+            <div className='px-0 py-[10px] [border-bottom:1px_solid_#ccc]' key={id}>
               <button
-                className='pli-question'
+                className='pli-question flex h-[88px] w-full cursor-pointer items-center justify-between text-left text-[23px] break-keep'
                 onClick={() => toggleDropdown(id)}
               >
                 <div>{question}</div>
@@ -298,15 +322,15 @@ const PortfolioQnA = ({ QnAItems }: { QnAItems: ProjectQnA[] }) => {
                   viewBox='0 0 32 32'
                   aria-hidden='true'
                   role='presentation'
-                  className={`${styles.dropIcon} ${
-                    openItem === id ? styles.open : ''
+                  className={`block h-4 w-4 overflow-visible fill-none stroke-current stroke-[4] transition-transform duration-500 ease-[ease] ${
+                    openItem === id ? '[transform:rotate(180deg)]' : '[transform:rotate(0deg)]'
                   }`}
                 >
                   <path fill='none' d='M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12' />
                 </svg>
               </button>
               <div
-                className='pli-answer'
+                className='pli-answer rounded-[4px] bg-[#f9f9f9] text-[18px] [transition:height_0.3s_ease] max-[1024px]:text-[16px]'
                 style={{
                   maxHeight: openItem === id ? '500px' : '0px',
                   overflow: 'auto',

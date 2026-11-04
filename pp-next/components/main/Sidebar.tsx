@@ -16,6 +16,10 @@ export const scrollToSection = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 };
 
+// 탭 링크/버튼: 마우스를 올리면 아래 밑줄이 늘어남
+const tabItem =
+  "relative p-0 before:absolute before:bottom-0 before:h-[3px] before:w-0 before:[transform:translateX(0%)] before:bg-[#cccccc] before:transition-all before:duration-300 before:ease-[ease] before:content-[''] hover:before:w-[90%]";
+
 interface SidebarProps {
   isOn: boolean;
   setIsOn: Dispatch<SetStateAction<boolean>>;
@@ -59,22 +63,39 @@ export default function Sidebar({ isOn, setIsOn }: SidebarProps) {
     scrollToSection(id);
   };
 
+  // 태블릿/모바일: 화면 왼쪽 밖에 있다가 메뉴 버튼을 누르면(isOn) 들어옴
+  const asideClass = [
+    'main-aside z-[100] flex h-screen w-[20vw] max-w-[340px] flex-col justify-between px-12 py-16 bg-[#f1f1f191]',
+    'max-[1024px]:fixed max-[1024px]:top-0 max-[1024px]:items-center max-[1024px]:gap-8 max-[1024px]:transition-all max-[1024px]:duration-300 max-[1024px]:ease-[ease]',
+    isOn
+      ? 'on max-[1024px]:left-0 max-[1024px]:w-[30vw] max-[1024px]:min-w-[210px] max-[1024px]:px-4 max-[1024px]:py-8'
+      : 'max-[1024px]:left-[-100%] max-[1024px]:w-full',
+  ].join(' ');
+
+  // 스크롤 후(데스크톱) 섹션 탭은 왼쪽 위에 고정
+  const fixedTabClass = scrolled
+    ? 'fixed-tab fixed top-[30px] left-12 z-10 flex flex-col gap-[10px] text-[40px] [font-family:var(--font-noto-sans-kr)] [text-align-last:left]'
+    : 'fixed-tab z-10 flex flex-col gap-[30px] text-[30px] [text-align-last:left]';
+
   return (
-    <aside
-      className={`main-aside ${scrolled ? 'scrolled' : ''} ${isOn ? 'on' : ''}`}
-    >
-      <div className='aside-tab'>
-        <a className='link-btn' href={LINKS.github} {...externalLinkProps}>
+    <aside className={asideClass}>
+      <div className='flex flex-col gap-[30px] text-[30px] [text-align-last:left]'>
+        <a className={`link-btn ${tabItem}`} href={LINKS.github} {...externalLinkProps}>
           Github
         </a>
-        <a className='link-btn' href={LINKS.blog} {...externalLinkProps}>
+        <a className={`link-btn ${tabItem}`} href={LINKS.blog} {...externalLinkProps}>
           Blog
         </a>
-        <div className='fixed-tab'>
+        <div className={fixedTabClass}>
           {MAIN_SECTIONS.map(({ id, label }) => (
             <button
               key={id}
-              className={activeId === id ? 'active' : ''}
+              className={[
+                tabItem,
+                activeId === id ? 'active' : '',
+                scrolled ? 'font-bold' : '',
+                scrolled ? (activeId === id ? 'text-[#9778c9]' : 'text-[#cccccc]') : '',
+              ].join(' ')}
               onClick={() => onTabClick(id)}
             >
               {label}
@@ -82,8 +103,14 @@ export default function Sidebar({ isOn, setIsOn }: SidebarProps) {
           ))}
         </div>
       </div>
-      <div className='aside-info'>
-        <Image src='/images/main/logo.webp' alt='LYE' width={597} height={501} />
+      <div className='flex flex-col items-center gap-[5px] text-[18px]'>
+        <Image
+          src='/images/main/logo.webp'
+          alt='LYE'
+          width={597}
+          height={501}
+          className='h-auto w-[100px]'
+        />
         <div>thsudkcla7@naver.com</div>
         <p>Last update:2025/03</p>
       </div>

@@ -1,6 +1,6 @@
 /*! Bootstrap v4.6.2 (https://getbootstrap.com/) | MIT License
  * 이 사이트에서 실제로 쓰는 규칙만 추출한 파일 (원본 순서 유지).
- * 기존 React 버전과 같은 화면을 위해 사용. 새 스타일은 CSS Modules 로 작성할 것.
+ * 기존 React 버전과 같은 화면을 위해 사용. 새 스타일은 Tailwind 로 작성할 것.
  */
 :root {
   --blue: #007bff;

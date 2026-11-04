@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, type FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
-import styles from './EmailForm.module.css';
+
+// 입력칸: 아래쪽 밑줄만 표시
+const field =
+  'h-full w-[80%] [border-top:none] [border-right:none] [border-left:none] [border-bottom:1.5px_solid_#e5e5e5]';
+const row = 'flex items-center gap-[10px]';
+const label = 'w-[60px]';
+const actionButton = 'w-[45%] rounded-[5px] px-0 py-[7px] text-[15px]';
 
 export default function EmailForm({ onClose }: { onClose?: () => void }) {
   const form = useRef<HTMLFormElement>(null);
@@ -41,20 +47,30 @@ export default function EmailForm({ onClose }: { onClose?: () => void }) {
   }, []);
 
   return (
-    <div className={styles.root} onClick={onClose}>
-      <form ref={form} onSubmit={sendEmail} onClick={(e) => e.stopPropagation()}>
-        <div className='email-items'>
-          <label>이메일</label>
+    <div
+      className='fixed top-0 left-0 flex h-full w-full items-center justify-center bg-[rgba(0,0,0,0.5)]'
+      onClick={onClose}
+    >
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        onClick={(e) => e.stopPropagation()}
+        className='box-border flex h-[65%] w-[35rem] flex-col gap-[15px] rounded-[10px] bg-white p-[30px] text-left text-[16px] text-black'
+      >
+        <div className={row}>
+          <label className={label}>이메일</label>
           <input
+            className={field}
             type='email'
             name='user_email'
             placeholder='답변 받으실 이메일을 입력해주세요.'
             required
           />
         </div>
-        <div className='email-items'>
-          <label>제목</label>
+        <div className={row}>
+          <label className={label}>제목</label>
           <input
+            className={field}
             type='text'
             name='ask_title'
             placeholder='제목을 입력해주세요.(20자 이내)'
@@ -62,13 +78,22 @@ export default function EmailForm({ onClose }: { onClose?: () => void }) {
             required
           />
         </div>
-        <div className='email-items-contents'>
-          <label>내용</label>
-          <textarea name='message' placeholder='내용을 입력해주세요.' required />
+        <div className={`${row} h-[70%]`}>
+          <label className={label}>내용</label>
+          <textarea
+            className={field}
+            name='message'
+            placeholder='내용을 입력해주세요.'
+            required
+          />
         </div>
-        <div className='email-items-btn'>
-          <input type='submit' value='send' />
-          <button type='button' onClick={onClose}>
+        <div className='flex justify-center gap-[10px] pt-[10px]'>
+          <input type='submit' value='send' className={`${actionButton} border-none`} />
+          <button
+            type='button'
+            onClick={onClose}
+            className={`${actionButton} [border:1.5px_solid_#e5e5e5]`}
+          >
             close
           </button>
         </div>

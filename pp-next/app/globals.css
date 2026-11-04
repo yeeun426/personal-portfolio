@@ -1,178 +1,60 @@
-/* 기존 React 버전 src/App.css 기반. 폰트는 app/fonts.ts(next/font) 에서 불러옴 */
+/*
+ * 스타일 구성
+ * - base      : 기존 React 버전과 같은 전역 리셋 (bootstrap 4 → App.css → bootstrap 5 순서 유지)
+ * - components: 여러 곳에서 쓰는 공통 클래스
+ * - utilities : Tailwind (컴포넌트 스타일은 전부 Tailwind 클래스로 작성)
+ * Tailwind preflight 는 기존 리셋과 겹쳐 화면이 달라지므로 사용하지 않음.
+ */
+@layer theme, base, components, utilities;
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/* ------------- 브라우저 기본 css 제거 ------------- */
+@import "tailwindcss/theme.css" layer(theme);
+@import "./styles/bootstrap4.subset.css" layer(base);
+@import "./styles/app-base.css" layer(base);
+@import "./styles/bootstrap5.subset.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
 
+/* 외부 라이브러리(Swiper)가 만든 요소 덮어쓰기 — 라이브러리 CSS 보다 우선해야 해서 레이어 밖에 둠 */
+@import "./styles/vendor.css";
 
-* {
-  line-height: 1.6;
-  font-family: var(--font-pretendard), var(--font-noto-sans-kr);
-  word-break: keep-all;
-}
-.App {
-  text-align: center;
-}
-input {
-  outline: none;
-  font-family: var(--font-noto-sans-kr);
-}
+@theme {
+  /* 메인 첫 화면 아래 화살표 */
+  --animate-shake-vertical: shake-vertical 5s ease-in-out 3s infinite both;
 
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-family: 'AppleSDGothicNeoM00';
-}
-
-a {
-  color: black;
-}
-
-@media (min-width: 480px) {
-  :root {
-    --font-size-lg: 2.75rem;
-    --font-size-md: 2rem;
-    --font-size-sm: 1.25rem;
+  @keyframes shake-vertical {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      transform: translateY(-8px);
+    }
+    20%,
+    40%,
+    60% {
+      transform: translateY(8px);
+    }
+    80% {
+      transform: translateY(6.4px);
+    }
+    90% {
+      transform: translateY(-6.4px);
+    }
   }
 }
 
-@media (min-width: 1024px) {
-  :root {
-    --font-size-lg: 3.5rem;
-    --font-size-md: 2.5rem;
-    --font-size-sm: 1.5rem;
+@layer components {
+  /* <button> 을 <a> 로 바꾼 곳에서 기존 버튼과 같은 모양 유지 */
+  .link-btn,
+  .link-btn:hover {
+    display: inline-block;
+    padding: 1px 6px;
+    color: black;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
   }
-}
-
-/* ------------- <button> 을 <a> 로 바꾼 곳에서 기존 버튼과 같은 모양 유지 ------------- */
-.link-btn,
-.link-btn:hover {
-  display: inline-block;
-  padding: 1px 6px;
-  color: black;
-  font-weight: normal;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
 }

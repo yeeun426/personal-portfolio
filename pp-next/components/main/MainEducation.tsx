@@ -2,7 +2,27 @@
 
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import styles from './MainEducation.module.css';
+import {
+  card,
+  cardGray,
+  cardGrayLeft,
+  cardGrayRight,
+  cardItem,
+  cardList,
+  cardListItem,
+  cardName,
+  cardSection,
+  cardSub,
+  cardTag,
+  cardWrapper,
+} from './cardStyles';
+
+// 스킬 카드 (세로 배치)
+const skillItem = `${cardItem} relative flex flex-col gap-12`;
+const skillTitle = 'flex [align-items:anchor-center] gap-4 text-[21px] font-bold';
+const skillList =
+  'flex flex-wrap gap-5 text-[18px] max-[501px]:justify-center max-[501px]:p-0 max-[501px]:[&_svg]:w-[85px]';
+const skillDesc = 'absolute right-8 bottom-8';
 
 export default function MainEducation() {
   const componentsRef = useRef<(HTMLDivElement | null)[]>([]); // 여러 요소를 감지하기 위한 ref 배열
@@ -32,41 +52,41 @@ export default function MainEducation() {
   }, []);
 
   return (
-    <div className={styles.root}>
-      <div className='aboutme-wrapper'>
+    <div className={cardSection}>
+      <div className={`${cardWrapper} min-h-[calc(100vh-366px)] py-32`}>
         <div
           key={0}
           ref={(el) => {
             componentsRef.current[0] = el;
           }}
           data-index={0}
-          className={`aboutme-list education ${
-            centerIdx === 0 ? 'active' : ''
-          }`}
+          className={`aboutme-list education ${centerIdx === 0 ? 'active' : ''} ${card(
+            centerIdx === 0
+          )}`}
         >
-          <div className='aboutme-title'>#Education</div>
-          <div className='aboutme-item p-5'>
+          <div className={cardTag}>#Education</div>
+          <div className={cardItem}>
             <div className='edu-date'>2025.01 ~</div>
-            <h4 className='edu-name'>[LG유플러스]유레카 SW 교육</h4>
-            <div className='edu-sub'>2기 프론트엔드 수강</div>
-            <ul className='edu-desc'>
-              <li>
+            <h4 className={`edu-name ${cardName}`}>[LG유플러스]유레카 SW 교육</h4>
+            <div className={cardSub}>2기 프론트엔드 수강</div>
+            <ul className={cardList}>
+              <li className={cardListItem}>
                 JavaScript, React, Spring 기반 웹 애플리케이션 개발 역량 습득
               </li>
-              <li>알고리즘 문제 해결 및 데이터 구조 학습 (Java 활용)</li>
-              <li>협업 프로젝트 총 4건</li>
+              <li className={cardListItem}>알고리즘 문제 해결 및 데이터 구조 학습 (Java 활용)</li>
+              <li className={cardListItem}>협업 프로젝트 총 4건</li>
             </ul>
           </div>
-          <div className='aboutme-item p-5 bg-color'>
+          <div className={`${cardItem} ${cardGray} ${cardGrayRight}`}>
             <div className='edu-date'>2019.03 ~ 2024.02</div>
-            <h4 className='edu-name'>한국외국어대학교</h4>
-            <div className='edu-sub'>
+            <h4 className={`edu-name ${cardName}`}>한국외국어대학교</h4>
+            <div className={cardSub}>
               정보통신공학과 학사 졸업 (이중전공: 통계학)
             </div>
-            <ul className='edu-desc'>
-              <li>학점 3.7 / 4.5</li>
-              <li>운영체제 조교 활동 (과제 평가 및 학생 지도)</li>
-              <li>확률과 통계 조교 활동 (과제 평가 및 학생 지도)</li>
+            <ul className={cardList}>
+              <li className={cardListItem}>학점 3.7 / 4.5</li>
+              <li className={cardListItem}>운영체제 조교 활동 (과제 평가 및 학생 지도)</li>
+              <li className={cardListItem}>확률과 통계 조교 활동 (과제 평가 및 학생 지도)</li>
             </ul>
           </div>
         </div>
@@ -76,22 +96,24 @@ export default function MainEducation() {
             componentsRef.current[1] = el;
           }}
           data-index={1}
-          className={`aboutme-list skill ${centerIdx === 1 ? 'active' : ''}`}
+          className={`aboutme-list skill ${centerIdx === 1 ? 'active' : ''} ${card(
+            centerIdx === 1
+          )}`}
         >
-          <div className='aboutme-title'>#Skill</div>
-          <div className='aboutme-item p-5 bg-color'>
-            <div className='skills-item'>
-              <div className='skill-title'>
+          <div className={cardTag}>#Skill</div>
+          <div className={`${skillItem} ${cardGray} ${cardGrayLeft}`}>
+            <div className='skills-item flex flex-col gap-[10px]'>
+              <div className={skillTitle}>
                 <Image
-                  className='skill-img'
+                  className='h-auto w-[45px]'
                   width={512}
                   height={512}
                   src='/images/icon/1st.png'
                   alt='Strong'
                 />
-                <div className='skill-title'>Strong</div>
+                <div className={skillTitle}>Strong</div>
               </div>
-              <ul>
+              <ul className={skillList}>
                 <li>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -198,22 +220,22 @@ export default function MainEducation() {
                   </svg>
                 </li>
               </ul>
-              <div className='skill-desc'>JS, TS, HTML/CSS, REACT</div>
+              <div className={skillDesc}>JS, TS, HTML/CSS, REACT</div>
             </div>
           </div>
-          <div className='aboutme-item p-5'>
-            <div className='skills-item'>
-              <div className='skill-title'>
+          <div className={skillItem}>
+            <div className='skills-item flex flex-col gap-[10px]'>
+              <div className={skillTitle}>
                 <Image
-                  className='skill-img'
+                  className='h-auto w-[45px]'
                   width={512}
                   height={512}
                   src='/images/icon/2nd.png'
                   alt='Knowledgeable'
                 />
-                <div className='skill-title'>Knowledgeable</div>
+                <div className={skillTitle}>Knowledgeable</div>
               </div>
-              <ul>
+              <ul className={skillList}>
                 <li>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -303,7 +325,7 @@ export default function MainEducation() {
                   </svg>
                 </li>
               </ul>
-              <div className='skill-desc'>Redux, NextJS, Python, JAVA</div>
+              <div className={skillDesc}>Redux, NextJS, Python, JAVA</div>
             </div>
           </div>
         </div>

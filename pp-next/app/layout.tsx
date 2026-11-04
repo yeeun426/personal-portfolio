@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
 import { notoSansKr, pretendard } from "./fonts";
 
-// 기존 React 버전과 같은 CSS 적용 순서
-// 1) index.html 에서 CDN 으로 불러오던 bootstrap 4.6.2
-// 2) src/App.css
-// 3) src/index.js 에서 import 하던 bootstrap 5
-// bootstrap 은 실제로 쓰는 규칙만 추출한 파일을 사용 (app/styles/*.subset.css)
-import "./styles/bootstrap4.subset.css";
+// 전역 리셋 + Tailwind (구성은 globals.css 상단 주석 참고)
 import "./globals.css";
-import "./styles/bootstrap5.subset.css";
 
 // OG 이미지 등 절대 주소의 기준. 배포 환경 변수 SITE_URL (없으면 Netlify 가 넣어주는 URL) 사용
 const siteUrl = process.env.SITE_URL ?? process.env.URL;
