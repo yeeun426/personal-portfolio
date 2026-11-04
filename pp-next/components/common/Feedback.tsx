@@ -4,11 +4,11 @@ import { Tooltip } from 'react-tooltip';
 import { MdFeedback } from 'react-icons/md';
 import { FaCloudDownloadAlt } from 'react-icons/fa';
 import { LINKS, externalLinkProps } from '@/constants/links';
-import { FeedbackStyle } from './Feedback.styles';
+import styles from './Feedback.module.css';
 
 export default function Feedback() {
   return (
-    <FeedbackStyle>
+    <div className={styles.root}>
       <div className='feedback-item'>
         <a
           className='my-resume link-btn'
@@ -31,6 +31,6 @@ export default function Feedback() {
         </a>
         <Tooltip anchorSelect='.my-feedback' place='left' content='피드백 주기' />
       </div>
-    </FeedbackStyle>
+    </div>
   );
 }

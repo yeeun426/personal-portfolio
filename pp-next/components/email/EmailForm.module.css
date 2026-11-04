@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-
-export const EmailStyled = styled.div`
+/* styled-components(*.styles.ts) 에서 변환. 하위 클래스는 :global() 로 JSX className 그대로 사용 */
+.root {
 
   position: fixed;
   top: 0;
@@ -27,7 +26,7 @@ export const EmailStyled = styled.div`
     gap: 15px;
   }
 
-  .email-items-contents {
+  :global(.email-items-contents) {
     height: 70%;
 
     textarea {
@@ -38,8 +37,8 @@ export const EmailStyled = styled.div`
     }
   }
 
-  .email-items,
-  .email-items-contents {
+  :global(.email-items),
+  :global(.email-items-contents) {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -57,7 +56,7 @@ export const EmailStyled = styled.div`
     }
   }
 
-  .email-items-btn {
+  :global(.email-items-btn) {
     display: flex;
     gap: 10px;
     justify-content: center;
@@ -79,4 +78,4 @@ export const EmailStyled = styled.div`
       border-radius: 5px;
     }
   }
-`;
+}

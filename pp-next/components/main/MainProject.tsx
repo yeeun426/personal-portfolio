@@ -6,7 +6,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { toPublicPath, type ProjectSummary } from '@/types/project';
-import { ProjectStyled } from './MainProject.styles';
+import styles from './MainProject.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,7 +52,7 @@ export default function MainProject({
   }, [selectedFilter]);
 
   return (
-    <ProjectStyled>
+    <div className={styles.root}>
       <div className='team-category'>
         <button
           className={selectedFilter === null ? 'active' : ''}
@@ -102,6 +102,6 @@ export default function MainProject({
             </div>
           ))}
       </div>
-    </ProjectStyled>
+    </div>
   );
 }

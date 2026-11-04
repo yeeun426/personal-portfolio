@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import StyledComponentsRegistry from "@/lib/registry";
 import { notoSansKr, pretendard } from "./fonts";
 
 // 기존 React 버전과 같은 CSS 적용 순서
@@ -42,13 +41,11 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${pretendard.variable} ${notoSansKr.variable}`}>
       <body>
-        <StyledComponentsRegistry>
-          {/* 기존 #root > .App 구조. react-modal 이 aria-hidden 처리하는 영역 */}
-          <div id="app-root" className="App">
-            {children}
-          </div>
-          {modal}
-        </StyledComponentsRegistry>
+        {/* 기존 #root > .App 구조. react-modal 이 aria-hidden 처리하는 영역 */}
+        <div id="app-root" className="App">
+          {children}
+        </div>
+        {modal}
       </body>
     </html>
   );

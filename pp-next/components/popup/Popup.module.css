@@ -1,13 +1,12 @@
-import styled from 'styled-components';
-
-export const UrecaStyled = styled.div`
+/* styled-components(*.styles.ts) 에서 변환. 하위 클래스는 :global() 로 JSX className 그대로 사용 */
+.ureca {
   height: 100vh;
   background-image: url('/images/intro/macos.webp');
   background-size: cover;
   position: relative;
-`;
+}
 
-export const PopupStyled = styled.div`
+.root {
   z-index: 999;
   display: flex;
   justify-content: center;
@@ -17,11 +16,11 @@ export const PopupStyled = styled.div`
   transform: translate(-50%, -50%);
   transition: all 0.5s;
 
-  .container {
+  :global(.container) {
     display: flex;
   }
 
-  .popup-left {
+  :global(.popup-left) {
     border-radius: 10px 0 0 10px;
     background: #e9e9e9cf;
     padding: 20px;
@@ -31,7 +30,7 @@ export const PopupStyled = styled.div`
     line-height: 1.7;
   }
 
-  .pl-btn {
+  :global(.pl-btn) {
     display: flex;
     gap: 8px;
     margin-bottom: 20px;
@@ -44,43 +43,43 @@ export const PopupStyled = styled.div`
       box-sizing: border-box;
     }
 
-    .popup-close {
+    :global(.popup-close) {
       background-color: #ff4c3d;
     }
-    .popup-down {
+    :global(.popup-down) {
       background-color: #febc2e;
     }
-    .popup-enlarge {
+    :global(.popup-enlarge) {
       background-color: #2ac840;
     }
   }
 
-  .popup-favorite button,
-  .popup-favorite a.link-btn {
+  :global(.popup-favorite) button,
+  :global(.popup-favorite) a:global(.link-btn) {
     padding: 0;
     font-size: 16px;
     line-height: 2;
   }
 
-  .pf-title {
+  :global(.pf-title) {
     font-size: 12px;
     color: #8b8c8e;
     font-weight: bold;
   }
 
-  .popup-right {
+  :global(.popup-right) {
     width: 55vw;
     border-radius: 0px 10px 10px 0;
     background: white;
     height: 60vh;
 
-    .col {
+    :global(.col) {
       height: calc(100% - 50px);
       align-content: center;
     }
   }
 
-  .popup-link {
+  :global(.popup-link) {
     display: flex;
     flex-direction: column;
     gap: 9px;
@@ -89,7 +88,7 @@ export const PopupStyled = styled.div`
     margin-top: 10px;
   }
 
-  .pr-top {
+  :global(.pr-top) {
     height: 50px;
     display: flex;
     align-items: center;
@@ -100,7 +99,7 @@ export const PopupStyled = styled.div`
     border-top-right-radius: 10px;
   }
 
-  .pr-popup {
+  :global(.pr-popup) {
     background: white;
     border-radius: 50%;
     width: 30px;
@@ -115,8 +114,7 @@ export const PopupStyled = styled.div`
     }
   }
 
-  .popup-content {
-    // padding: 25px 30px;
+  :global(.popup-content) {
     display: flex;
     place-content: center;
     align-items: center;
@@ -129,7 +127,7 @@ export const PopupStyled = styled.div`
     }
   }
 
-  .popup-content.share {
+  :global(.popup-content):global(.share) {
     display: flex;
     width: 70%;
     justify-content: center;
@@ -143,30 +141,30 @@ export const PopupStyled = styled.div`
     flex-wrap: nowrap;
   }
 
-  .tab-content,
-  .tab-pane {
+  :global(.tab-content),
+  :global(.tab-pane) {
     height: 100%;
     align-content: center;
   }
 
-  .pcl-title {
+  :global(.pcl-title) {
     font-size: 3em;
     line-height: 1.3;
   }
 
-  .pcl-txt {
+  :global(.pcl-txt) {
     text-align: left;
     font-size: 19px;
   }
 
-  .pcl-btns {
+  :global(.pcl-btns) {
     margin-top: 30px;
     display: flex;
     align-self: center;
     gap: 35px;
   }
 
-  .pc-left {
+  :global(.pc-left) {
     display: flex;
     gap: 24px;
     flex-direction: column;
@@ -179,27 +177,27 @@ export const PopupStyled = styled.div`
       box-shadow: 2px 2px 4px #00000029;
     }
 
-    .pcl-btn-contact {
+    :global(.pcl-btn-contact) {
       border: 3px solid #d483d0;
       color: #d483d0;
     }
 
-    .pcl-btn-learn {
+    :global(.pcl-btn-learn) {
       background: #d483d0;
       color: white;
     }
   }
 
-  .pc-right {
+  :global(.pc-right) {
     max-width: 20rem;
     max-height: 100%;
   }
 
-  .plan img {
+  :global(.plan) img {
     width: 45%;
   }
 
-  .plan {
+  :global(.plan) {
     display: flex;
     align-items: anchor-center;
     gap: 15px;
@@ -208,29 +206,29 @@ export const PopupStyled = styled.div`
     font-size: 17px;
   }
 
-  .plan-text {
+  :global(.plan-text) {
     line-height: 1.75;
   }
 
-  .plan-text div:nth-child(1) {
+  :global(.plan-text) div:nth-child(1) {
     font-size: 18px;
     margin-bottom: 10px;
   }
 
   @media (max-width: 1300px) {
-    .pcl-title {
+    :global(.pcl-title) {
       font-size: 2em;
     }
-    .popup-content {
+    :global(.popup-content) {
       gap: 0px;
     }
   }
   @media (max-width: 850px) {
-    .pr-top {
+    :global(.pr-top) {
       display: none;
     }
-    .pc-right {
+    :global(.pc-right) {
       max-width: 10rem;
     }
   }
-`;
+}

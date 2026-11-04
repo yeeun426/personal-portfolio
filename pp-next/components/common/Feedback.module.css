@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-
-export const FeedbackStyle = styled.div`
+/* styled-components(*.styles.ts) 에서 변환. 하위 클래스는 :global() 로 JSX className 그대로 사용 */
+.root {
 
   position: fixed;
   right: 3.25rem;
@@ -10,7 +9,7 @@ export const FeedbackStyle = styled.div`
   gap: 0.95rem;
   z-index: 100;
 
-  .feedback-item {
+  :global(.feedback-item) {
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -32,12 +31,12 @@ export const FeedbackStyle = styled.div`
     }
   }
 
-  .feedback-item svg {
+  :global(.feedback-item) svg {
     width: 27px;
     height: 27px;
   }
 
-  .react-tooltip {
+  :global(.react-tooltip) {
     pointer-events: none;
   }
-`;
+}

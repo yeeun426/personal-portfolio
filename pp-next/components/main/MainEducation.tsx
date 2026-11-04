@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import { EduStyled } from './MainEducation.styles';
+import styles from './MainEducation.module.css';
 
 export default function MainEducation() {
   const componentsRef = useRef<(HTMLDivElement | null)[]>([]); // 여러 요소를 감지하기 위한 ref 배열
@@ -32,7 +32,7 @@ export default function MainEducation() {
   }, []);
 
   return (
-    <EduStyled>
+    <div className={styles.root}>
       <div className='aboutme-wrapper'>
         <div
           key={0}
@@ -308,6 +308,6 @@ export default function MainEducation() {
           </div>
         </div>
       </div>
-    </EduStyled>
+    </div>
   );
 }

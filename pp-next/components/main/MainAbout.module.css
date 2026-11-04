@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-
-export const AboutStyled = styled.div`
+/* styled-components(*.styles.ts) 에서 변환. 하위 클래스는 :global() 로 JSX className 그대로 사용 */
+.root {
 
   background: white;
 
@@ -11,7 +10,7 @@ export const AboutStyled = styled.div`
     gap: 20px;
   }
 
-  .otherChat {
+  :global(.otherChat) {
     display: flex;
     gap: 30px;
 
@@ -35,7 +34,7 @@ export const AboutStyled = styled.div`
     }
   }
 
-  .chat {
+  :global(.chat) {
     max-width: 600px;
     border-radius: 40px;
     word-break: normal;
@@ -47,12 +46,12 @@ export const AboutStyled = styled.div`
     text-align: left;
   }
 
-  .chat.me {
+  :global(.chat):global(.me) {
     background: #0078ff;
     align-self: flex-end;
   }
 
-  img.chat.me {
+  img:global(.chat):global(.me) {
     width: 250px;
     height: fit-content;
     object-fit: contain;
@@ -64,8 +63,8 @@ export const AboutStyled = styled.div`
       padding: 5% 10%;
     }
 
-    .otherChat {
+    :global(.otherChat) {
       padding: 0;
     }
   }
-`;
+}

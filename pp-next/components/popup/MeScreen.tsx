@@ -1,13 +1,11 @@
-'use client';
-
 import Popup from './Popup';
-import { UrecaStyled } from './Popup.styles';
+import styles from './Popup.module.css';
 
 /** /me 화면 (기존 React 버전 pages/Ureca/Ureca.js) */
 export default function MeScreen() {
   return (
-    <UrecaStyled>
+    <div className={styles.ureca}>
       <Popup />
-    </UrecaStyled>
+    </div>
   );
 }

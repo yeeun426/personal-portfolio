@@ -5,14 +5,14 @@ import { useState } from 'react';
 import NextImage from 'next/image';
 import { Image, Tab, Row, Col, Nav, Container } from 'react-bootstrap';
 import { LINKS, externalLinkProps } from '@/constants/links';
-import { PopupStyled } from './Popup.styles';
+import styles from './Popup.module.css';
 
 export default function Popup() {
   const [activeTab, setActiveTab] = useState('1');
 
   return (
     <div className='mainIntro-wrapper'>
-      <PopupStyled>
+      <div className={styles.root}>
         <Container>
           <Tab.Container
             id='left-tabs-example'
@@ -85,7 +85,7 @@ export default function Popup() {
             </div>
           </Tab.Container>
         </Container>
-      </PopupStyled>
+      </div>
     </div>
   );
 }

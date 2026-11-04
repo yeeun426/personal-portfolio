@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import { AboutStyled } from './MainAbout.styles';
+import styles from './MainAbout.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,7 +34,7 @@ export default function MainAbout() {
   }, []);
 
   return (
-    <AboutStyled ref={containerRef}>
+    <div className={styles.root} ref={containerRef}>
       <ul>
         <li className='otherChat chat'>
           <Image src='/images/icon/profile.png' alt='프로필' width={77} height={77} />
@@ -62,6 +62,6 @@ export default function MainAbout() {
           제공하는 개발자가 되겠습니다.🫡🫡
         </li>
       </ul>
-    </AboutStyled>
+    </div>
   );
 }

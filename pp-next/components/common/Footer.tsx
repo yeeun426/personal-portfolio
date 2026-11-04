@@ -1,11 +1,9 @@
-'use client';
-
 import Image from 'next/image';
-import { FooterStyled } from './Footer.styles';
+import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <FooterStyled className='Footer'>
+    <div className={`${styles.root} Footer`}>
       <div className='footer-my'>
         <div className='my-info'>
           <Image src='/images/icon/address.png' alt='주소' width={60} height={60} />
@@ -20,6 +18,6 @@ export default function Footer() {
           <div>thsudkcla7@naver.com</div>
         </div>
       </div>
-    </FooterStyled>
+    </div>
   );
 }

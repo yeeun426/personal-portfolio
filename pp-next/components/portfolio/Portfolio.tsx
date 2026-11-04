@@ -18,7 +18,7 @@ import {
   type ProjectQnA,
 } from '@/types/project';
 import { LINKS, externalLinkProps } from '@/constants/links';
-import { PortfolioStyled, DropIcon } from './Portfolio.styles';
+import styles from './Portfolio.module.css';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -66,7 +66,7 @@ export default function Portfolio({ project: data, images }: PortfolioProps) {
   };
 
   return (
-    <PortfolioStyled ref={rootRef}>
+    <div className={styles.root} ref={rootRef}>
       <div className='portfolio-begin'>
         <div className='portfolio-title'>
           <div className='title-name'>{data.name}</div>
@@ -126,7 +126,7 @@ export default function Portfolio({ project: data, images }: PortfolioProps) {
           </div>
         </div>
       </div>
-    </PortfolioStyled>
+    </div>
   );
 }
 
@@ -293,15 +293,17 @@ const PortfolioQnA = ({ QnAItems }: { QnAItems: ProjectQnA[] }) => {
                 onClick={() => toggleDropdown(id)}
               >
                 <div>{question}</div>
-                <DropIcon
+                <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 32 32'
                   aria-hidden='true'
                   role='presentation'
-                  $isOpen={openItem === id}
+                  className={`${styles.dropIcon} ${
+                    openItem === id ? styles.open : ''
+                  }`}
                 >
                   <path fill='none' d='M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12' />
-                </DropIcon>
+                </svg>
               </button>
               <div
                 className='pli-answer'

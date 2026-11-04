@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
-import { EmailStyled } from './EmailForm.styles';
+import styles from './EmailForm.module.css';
 
 export default function EmailForm({ onClose }: { onClose?: () => void }) {
   const form = useRef<HTMLFormElement>(null);
@@ -41,7 +41,7 @@ export default function EmailForm({ onClose }: { onClose?: () => void }) {
   }, []);
 
   return (
-    <EmailStyled onClick={onClose}>
+    <div className={styles.root} onClick={onClose}>
       <form ref={form} onSubmit={sendEmail} onClick={(e) => e.stopPropagation()}>
         <div className='email-items'>
           <label>이메일</label>
@@ -73,6 +73,6 @@ export default function EmailForm({ onClose }: { onClose?: () => void }) {
           </button>
         </div>
       </form>
-    </EmailStyled>
+    </div>
   );
 }

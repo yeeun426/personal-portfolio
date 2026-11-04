@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { careers } from '@/constants/career';
-import { CareerStyled } from './MainCareer.styles';
+// Education 섹션 스타일 위에 경력 카드용 스타일을 덧씌움 (import 순서 유지)
+import eduStyles from './MainEducation.module.css';
+import styles from './MainCareer.module.css';
 
 /**
  * 경력 섹션 — 기존 React 버전 Education 카드와 같은 UI
@@ -31,7 +33,7 @@ export default function MainCareer() {
   }, []);
 
   return (
-    <CareerStyled>
+    <div className={`${eduStyles.root} ${styles.root}`}>
       <div className='aboutme-wrapper'>
         {careers.map((career, index) => (
           <div
@@ -63,6 +65,6 @@ export default function MainCareer() {
           </div>
         ))}
       </div>
-    </CareerStyled>
+    </div>
   );
 }

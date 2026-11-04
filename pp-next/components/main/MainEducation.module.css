@@ -1,11 +1,10 @@
-import styled from 'styled-components';
-
-export const EduStyled = styled.div`
+/* styled-components(*.styles.ts) 에서 변환. 하위 클래스는 :global() 로 JSX className 그대로 사용 */
+.root {
 
   background-color: #f5f5f7;
   position: relative;
 
-  .aboutme-wrapper {
+  :global(.aboutme-wrapper) {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -19,7 +18,7 @@ export const EduStyled = styled.div`
     word-break: keep-all;
   }
 
-  .aboutme-list {
+  :global(.aboutme-list) {
     display: flex;
     align-items: center;
     place-content: center;
@@ -32,13 +31,13 @@ export const EduStyled = styled.div`
     filter: blur(3px);
   }
 
-  .aboutme-list.active {
+  :global(.aboutme-list):global(.active) {
     transform: scale(1.1);
     background: white;
     filter: none;
   }
 
-  .aboutme-title {
+  :global(.aboutme-title) {
     font-size: 15px;
     position: absolute;
     top: 3%;
@@ -49,25 +48,25 @@ export const EduStyled = styled.div`
     border-radius: 20px;
   }
 
-  .aboutme-item {
+  :global(.aboutme-item) {
     width: 50%;
     height: 100%;
     text-align: left;
   }
 
-  .education .bg-color {
+  :global(.education) :global(.bg-color) {
     border-radius: 0px 20px 20px 0px;
   }
 
-  .skill .bg-color {
+  :global(.skill) :global(.bg-color) {
     border-radius: 20px 0px 0px 20px;
   }
 
-  .bg-color {
+  :global(.bg-color) {
     background-color: #3737371a;
   }
 
-  .edu-name {
+  :global(.edu-name) {
     font-weight: bold;
     line-height: 140%;
   }
@@ -76,12 +75,12 @@ export const EduStyled = styled.div`
     font-size: max(calc(1rem + 1vw), 30px);
   }
 
-  .edu-sub {
+  :global(.edu-sub) {
     font-size: 20px;
     margin-bottom: 25px;
   }
 
-  .edu-desc {
+  :global(.edu-desc) {
     padding-left: 1rem;
     margin: 0;
     display: flex;
@@ -89,26 +88,26 @@ export const EduStyled = styled.div`
     gap: 10px;
   }
 
-  .edu-desc li {
+  :global(.edu-desc) li {
     font-size: 18px;
     list-style: disc;
   }
 
-  .portfolio-title {
+  :global(.portfolio-title) {
     font-size: 3.4em;
     font-weight: bold;
     text-align: left;
     font-family: sans-serif;
   }
 
-  .skill .aboutme-item {
+  :global(.skill) :global(.aboutme-item) {
     display: flex;
     flex-direction: column;
     gap: 3rem;
     position: relative;
   }
 
-  .skill-title {
+  :global(.skill-title) {
     display: flex;
     align-items: anchor-center;
     gap: 1rem;
@@ -116,18 +115,18 @@ export const EduStyled = styled.div`
     font-weight: bold;
   }
 
-  .skill-desc {
+  :global(.skill-desc) {
     position: absolute;
     right: 2rem;
     bottom: 2rem;
   }
 
-  .skill-img {
+  :global(.skill-img) {
     width: 45px;
     height: auto; /* next/image width/height 속성 대신 원본 비율 유지 */
   }
 
-  .skills-item {
+  :global(.skills-item) {
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -141,38 +140,38 @@ export const EduStyled = styled.div`
   }
 
   @media (max-width: 800px) {
-    .aboutme-wrapper {
+    :global(.aboutme-wrapper) {
       transform: none;
       position: static;
       gap: 100px;
     }
-    .aboutme-list {
+    :global(.aboutme-list) {
       flex-direction: column;
       height: auto;
       width: 70%;
       margin: auto;
     }
-    .aboutme-item {
+    :global(.aboutme-item) {
       width: 100%;
     }
-    .education .bg-color {
+    :global(.education) :global(.bg-color) {
       border-radius: 0px 0px 20px 20px;
     }
-    .skill .bg-color {
+    :global(.skill) :global(.bg-color) {
       border-radius: 20px 20px 0px 0px;
     }
   }
 
   @media (max-width: 500px) {
-    .aboutme-list {
+    :global(.aboutme-list) {
       width: 90%;
     }
-    .skills-item ul {
+    :global(.skills-item) ul {
       padding: 0;
       justify-content: center;
     }
-    .skills-item svg {
+    :global(.skills-item) svg {
       width: 85px;
     }
   }
-`;
+}

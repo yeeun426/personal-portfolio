@@ -5,14 +5,14 @@ import { Tooltip } from 'react-tooltip';
 import { IoMdMenu } from 'react-icons/io';
 import Image from 'next/image';
 import Sidebar, { MAIN_SECTIONS, scrollToSection } from './Sidebar';
-import { SideBarStyled } from './MainIntro.styles';
+import styles from './MainIntro.module.css';
 
 // 기존 React 버전 components/Main/MainIntro.js + MainYeEun.js
 export default function MainIntro() {
   const [isOn, setIsOn] = useState(false);
 
   return (
-    <SideBarStyled className='mainIntro-wrapper'>
+    <div className={`${styles.root} mainIntro-wrapper`}>
       <Sidebar isOn={isOn} setIsOn={setIsOn} />
       <div className='menu-item'>
         <button className='my-menu' onClick={() => setIsOn(!isOn)}>
@@ -57,6 +57,6 @@ export default function MainIntro() {
           />
         </svg>
       </button>
-    </SideBarStyled>
+    </div>
   );
 }
