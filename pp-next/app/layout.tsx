@@ -4,8 +4,10 @@ import { notoSansKr, pretendard } from "./fonts";
 // 전역 리셋 + Tailwind (구성은 globals.css 상단 주석 참고)
 import "./globals.css";
 
-// OG 이미지 등 절대 주소의 기준. 배포 환경 변수 SITE_URL (없으면 Netlify 가 넣어주는 URL) 사용
-const siteUrl = process.env.SITE_URL ?? process.env.URL;
+// OG 이미지 등 절대 주소의 기준.
+// Vercel 배포 시에는 설정하지 않아도 Next 가 프로덕션 주소를 자동으로 사용함.
+// 직접 연결한 도메인을 쓰고 싶을 때만 환경 변수 SITE_URL (예: https://leeyeeun.dev) 을 설정.
+const siteUrl = process.env.SITE_URL;
 
 const description = "프론트엔드 개발자 이예은의 포트폴리오입니다.";
 
