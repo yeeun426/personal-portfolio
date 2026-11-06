@@ -71,7 +71,7 @@ export default function MainEducation() {
           ))}
         </ul>
 
-        <h3 className='mt-28 mb-10 text-left text-[28px] font-black text-[#1d1d1f] max-[801px]:mt-20'>
+        <h3 className='mt-28 mb-10 text-left text-[28px] font-extrabold text-[#1d1d1f] max-[801px]:mt-20'>
           Skills
         </h3>
         <div className='flex flex-col gap-10'>

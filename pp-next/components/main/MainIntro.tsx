@@ -59,7 +59,7 @@ export default function MainIntro() {
 
       <div className='relative flex h-full w-[80vw] max-w-[calc(100%-340px)] flex-col items-center [justify-content:end] gap-[15px] break-keep max-[1024px]:m-auto max-[1024px]:h-screen max-[1024px]:w-full max-[1024px]:max-w-none max-[1024px]:px-8 max-[1024px]:pt-12 max-[1024px]:pb-0 max-[768px]:justify-center'>
         <h2 className='h1 text-black'>
-          프론트엔드 개발자 <strong className='font-black'>이예은</strong>입니다.
+          프론트엔드 개발자 <strong className='font-extrabold'>이예은</strong>입니다.
         </h2>
         <p className='text-[1.25rem] [font-family:var(--font-noto-sans-kr)]'>
           <strong className='text-[20px] font-bold'>꾸준하게</strong> 빈틈을{' '}

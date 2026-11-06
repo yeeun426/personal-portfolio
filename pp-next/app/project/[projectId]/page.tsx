@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Portfolio from "@/components/portfolio/Portfolio";
@@ -37,5 +38,18 @@ export default async function ProjectDetailPage({ params }: Params) {
   const project = getProject(id);
   if (!project) notFound();
 
-  return <Portfolio project={project} images={getProjectPageImages(id)} />;
+  // 새로고침/직접 접속으로 모달 없이 열렸을 때: 메인으로 돌아가는 링크
+  return (
+    <>
+      <div className="mx-auto box-border w-full max-w-[1000px] px-12 pt-8 text-left max-[801px]:px-6">
+        <Link
+          href="/#project"
+          className="text-[15px] text-[#86868b] no-underline hover:text-[#7c5cc4]"
+        >
+          ← 전체 프로젝트
+        </Link>
+      </div>
+      <Portfolio project={project} images={getProjectPageImages(id)} />
+    </>
+  );
 }

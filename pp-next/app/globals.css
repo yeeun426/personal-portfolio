@@ -13,12 +13,25 @@
 @import "./styles/bootstrap5.subset.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-/* 외부 라이브러리(Swiper)가 만든 요소 덮어쓰기 — 라이브러리 CSS 보다 우선해야 해서 레이어 밖에 둠 */
-@import "./styles/vendor.css";
-
 @theme {
   /* 메인 첫 화면 아래 화살표 */
   --animate-shake-vertical: shake-vertical 5s ease-in-out 3s infinite both;
+
+  /* 프로젝트 상세 모달 등장 */
+  --animate-fade-in: fade-in 0.25s ease-out both;
+  --animate-modal-in: modal-in 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px) scale(0.98);
+    }
+  }
 
   /* About 사진 주변 키워드가 둥둥 떠 있는 효과 */
   --animate-float: float 3.2s ease-in-out infinite;

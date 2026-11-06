@@ -25,7 +25,7 @@ export default function MainAbout() {
             <div className='text-[15px] font-bold tracking-[0.08em] text-[#9778c9] uppercase'>
               Frontend Developer
             </div>
-            <div className='mt-3 text-[length:max(calc(1rem+2.5vw),44px)] leading-[1.1] font-black text-[#1d1d1f]'>
+            <div className='mt-3 text-[length:max(calc(1rem+2.5vw),44px)] leading-[1.1] font-extrabold text-[#1d1d1f]'>
               이예은
             </div>
             <div className='mt-2 text-[18px] text-[#86868b]'>Lee Ye-eun</div>

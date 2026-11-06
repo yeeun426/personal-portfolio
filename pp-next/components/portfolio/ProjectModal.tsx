@@ -3,30 +3,7 @@
 import { useEffect, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import Modal from 'react-modal';
-
-const customStyles: Modal.Styles = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-    zIndex: 9999,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  content: {
-    position: 'relative',
-    top: 'auto',
-    left: 'auto',
-    right: 'auto',
-    bottom: 'auto',
-    border: 'none',
-    borderRadius: '8px',
-    padding: '0',
-    width: '90vw',
-    height: '85vh',
-    maxWidth: '1200px',
-    backgroundColor: '#ffffff',
-  },
-};
+import { BsXLg } from 'react-icons/bs';
 
 /** app/@modal/(.)project/[projectId] 에서 사용. 닫으면 이전 주소로 돌아감 */
 export default function ProjectModal({ children }: { children: ReactNode }) {
@@ -49,43 +26,21 @@ export default function ProjectModal({ children }: { children: ReactNode }) {
     <Modal
       isOpen
       onRequestClose={closeModal}
-      style={customStyles}
-      contentLabel='Portfolio Modal'
+      contentLabel='프로젝트 상세'
+      overlayClassName='fixed inset-0 z-[9999] flex items-center justify-center bg-black/45 backdrop-blur-sm animate-fade-in max-[801px]:items-end'
+      className='relative h-[88vh] w-[92vw] max-w-[1100px] overflow-y-auto overscroll-contain rounded-[24px] bg-white shadow-[0_30px_80px_rgba(0,0,0,0.25)] outline-none animate-modal-in max-[801px]:h-[92vh] max-[801px]:w-full max-[801px]:rounded-b-none'
     >
-      <div style={{ position: 'relative', height: '100%' }}>
+      {/* 스크롤해도 오른쪽 위에 붙어 있는 닫기 버튼 */}
+      <div className='pointer-events-none sticky top-0 z-10 flex h-0 justify-end'>
         <button
           onClick={closeModal}
           aria-label='닫기'
-          style={{
-            position: 'absolute',
-            top: '10px',
-            right: '10px',
-            zIndex: 10,
-            background: 'rgba(0, 0, 0, 0.5)',
-            color: 'white',
-            border: 'none',
-            borderRadius: '50%',
-            width: '32px',
-            height: '32px',
-            fontSize: '18px',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'background-color 0.2s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-          }}
+          className='pointer-events-auto mt-5 mr-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1d1d1f] shadow-[0_2px_12px_rgba(0,0,0,0.15)] backdrop-blur transition-colors duration-200 hover:bg-[#1d1d1f] hover:text-white'
         >
-          ×
+          <BsXLg className='h-4 w-4' />
         </button>
-
-        {children}
       </div>
+      {children}
     </Modal>
   );
 }

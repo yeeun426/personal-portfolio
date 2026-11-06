@@ -24,7 +24,7 @@ export default function MainCareer() {
                       </span>
                     )}
                   </div>
-                  <h3 className='mt-3 mb-2 text-[length:max(calc(1rem+1.5vw),34px)] leading-[1.2] font-black text-[#1d1d1f]'>
+                  <h3 className='mt-3 mb-2 text-[length:max(calc(1rem+1.5vw),34px)] leading-[1.2] font-extrabold text-[#1d1d1f]'>
                     {item.company}
                   </h3>
                   <div className='text-[20px] text-[#1d1d1f]'>{item.description}</div>

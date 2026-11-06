@@ -138,7 +138,7 @@ export default function MainProject({
 
       {cloneProjects.length > 0 && (
         <div className='mt-24 text-left'>
-          <h3 className='mb-2 text-[24px] font-black text-[#1d1d1f]'>Clone Coding</h3>
+          <h3 className='mb-2 text-[24px] font-extrabold text-[#1d1d1f]'>Clone Coding</h3>
           <p className='mb-8 text-[16px] text-[#86868b]'>
             기존 서비스를 따라 만들며 React 기초를 다진 연습 프로젝트예요.
           </p>
