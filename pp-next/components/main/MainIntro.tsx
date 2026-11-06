@@ -1,15 +1,49 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
 import { Tooltip } from 'react-tooltip';
 import { IoMdMenu } from 'react-icons/io';
 import Image from 'next/image';
 import Sidebar, { MAIN_SECTIONS, scrollToSection } from './Sidebar';
 
+/**
+ * 사진 주변에 떠오르는 키워드 (등장 순서 = 배열 순서)
+ * pos: 사진 영역 기준 위치. 얼굴과 LEEYEEUN 글씨를 피해서 배치
+ */
+const KEYWORDS: { text: string; pos: string; tone: keyof typeof TONE }[] = [
+  { text: '#성실함', pos: 'top-[10%] left-[14%]', tone: 'purple' },
+  { text: '#엉덩이_힘', pos: 'top-[4%] right-[16%]', tone: 'blue' },
+  { text: '#JavaScript와_연애🥰', pos: 'top-[30%] right-[0%]', tone: 'white' },
+  { text: '#TypeScript와_썸😘', pos: 'top-[34%] left-[0%]', tone: 'white' },
+  { text: '#사용자_중심', pos: 'bottom-[10%] right-[6%]', tone: 'purple' },
+  { text: '#빈틈_채우기', pos: 'bottom-[6%] left-[8%]', tone: 'blue' },
+];
+
+const TONE = {
+  purple: 'bg-[#a77fe8] text-white',
+  blue: 'bg-[#5a6fd8] text-white',
+  white: 'bg-white text-[#1d1d1f]',
+};
+
 // 기존 React 버전 components/Main/MainIntro.js + MainYeEun.js
 // 반응형 기준: max-[1024px] = 태블릿(1023px 이하), max-[768px] = 모바일(767px 이하)
 export default function MainIntro() {
   const [isOn, setIsOn] = useState(false);
+  const photoRef = useRef<HTMLDivElement>(null);
+
+  // 첫 화면이 뜨면 키워드가 하나씩 튕기듯 등장
+  useEffect(() => {
+    if (!photoRef.current) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '.intro-keyword',
+        { opacity: 0, scale: 0 },
+        { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(2.5)', stagger: 0.18, delay: 0.6 }
+      );
+    }, photoRef);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className="relative box-border flex h-screen bg-[image:linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)),url('/images/main/background.webp')] bg-cover bg-center bg-no-repeat max-[1024px]:block max-[1024px]:h-auto">
@@ -34,15 +68,33 @@ export default function MainIntro() {
           사용자가 필요로 하는 것을{' '}
           <strong className='text-[20px] font-bold'>한발 먼저</strong> 고민하겠습니다.
         </p>
-        <Image
-          src='/images/main/leeyeeun.webp'
-          alt='leeyeeun'
-          width={3728}
-          height={2924}
-          sizes='(max-width: 1023px) 100vw, 80vw'
-          preload
-          className='h-[70%] w-auto max-[768px]:h-[50%]'
-        />
+        <div
+          ref={photoRef}
+          className='relative h-[70%] max-w-full aspect-[3728/2924] max-[768px]:h-auto max-[768px]:w-full'
+        >
+          <Image
+            src='/images/main/leeyeeun.webp'
+            alt='leeyeeun'
+            width={3728}
+            height={2924}
+            sizes='(max-width: 1023px) 100vw, 80vw'
+            preload
+            className='h-full w-full'
+          />
+          <ul className='m-0 list-none p-0'>
+            {KEYWORDS.map(({ text, pos, tone }, i) => (
+              // 위치/등장은 li(gsap), 둥둥 떠 있는 효과는 span(css)
+              <li key={text} className={`intro-keyword absolute ${pos} opacity-0`}>
+                <span
+                  className={`animate-float inline-block rounded-[999px] px-5 py-[10px] text-[17px] font-bold whitespace-nowrap shadow-[0_6px_16px_rgba(0,0,0,0.12)] motion-reduce:animate-none max-[1024px]:px-4 max-[1024px]:py-2 max-[1024px]:text-[14px] max-[501px]:px-3 max-[501px]:py-[5px] max-[501px]:text-[11px] ${TONE[tone]}`}
+                  style={{ animationDelay: `${i * 0.4}s` }}
+                >
+                  {text}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <button onClick={() => scrollToSection(MAIN_SECTIONS[0].id)}>

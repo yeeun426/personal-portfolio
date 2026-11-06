@@ -8,6 +8,7 @@
     "icon": "images/icon/airbnb_icon.png",
     "video": "videos/airbnb.mp4",
     "team": false,
+    "clone": true,
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS, RECOIL",
       "organization": "라이징캠프",
@@ -149,6 +150,7 @@
     "icon": "images/wanted_icon.png",
     "video": "videos/wanted.mp4",
     "team": true,
+    "clone": true,
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS",
       "organization": "라이징캠프",

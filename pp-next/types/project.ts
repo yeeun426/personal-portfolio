@@ -14,6 +14,8 @@ export interface Project {
   video?: string;
   youtube?: string;
   team: boolean;
+  /** 클론코딩 프로젝트 (목록에서 따로 모아 보여줌) */
+  clone?: boolean;
   skills?: {
     skill?: string;
     organization?: string;
@@ -27,8 +29,11 @@ export interface Project {
 
 export type ProjectSummary = Pick<
   Project,
-  'id' | 'date' | 'name' | 'detail' | 'img' | 'team'
->;
+  'id' | 'date' | 'name' | 'detail' | 'img' | 'team' | 'clone'
+> & {
+  /** 사용 기술 (skills.skill 을 나눈 것) */
+  stack: string[];
+};
 
 export interface ProjectPageImage {
   num: string;

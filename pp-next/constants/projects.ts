@@ -11,19 +11,35 @@ import type {
 // 클라이언트 컴포넌트에서 import 하면 json 전체가 브라우저 번들에 포함됨.
 
 const projects = projectJson as Project[];
+
+// project.json 의 기술 이름 표기를 통일 (REACT → React 등)
+const STACK_NAMES: Record<string, string> = {
+  REACT: 'React',
+  JAVASCRIPT: 'JavaScript',
+  RECOIL: 'Recoil',
+  'SOCKET.IO': 'Socket.IO',
+  TS: 'TypeScript',
+};
+const formatStack = (name: string) => STACK_NAMES[name.toUpperCase()] ?? name;
 const pages = pageJson as ProjectPages[];
 
 export const getProjectIds = () => projects.map((p) => p.id);
 
 /** 프로젝트 목록 카드에 필요한 값만 */
 export const getProjectSummaries = (): ProjectSummary[] =>
-  projects.map(({ id, date, name, detail, img, team }) => ({
+  projects.map(({ id, date, name, detail, img, team, clone, skills }) => ({
     id,
     date,
     name,
     detail,
     img,
     team,
+    clone,
+    stack: (skills?.skill ?? '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map(formatStack),
   }));
 
 export const getProject = (id: number) => projects.find((p) => p.id === id);

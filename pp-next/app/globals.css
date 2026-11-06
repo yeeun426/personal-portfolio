@@ -20,6 +20,19 @@
   /* 메인 첫 화면 아래 화살표 */
   --animate-shake-vertical: shake-vertical 5s ease-in-out 3s infinite both;
 
+  /* About 사진 주변 키워드가 둥둥 떠 있는 효과 */
+  --animate-float: float 3.2s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
   @keyframes shake-vertical {
     0%,
     100% {

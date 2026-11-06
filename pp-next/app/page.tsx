@@ -1,6 +1,6 @@
-import Feedback from "@/components/common/Feedback";
 import Footer from "@/components/common/Footer";
 import MainAbout from "@/components/main/MainAbout";
+import MainActivity from "@/components/main/MainActivity";
 import MainCareer from "@/components/main/MainCareer";
 import MainEducation from "@/components/main/MainEducation";
 import MainIntro from "@/components/main/MainIntro";
@@ -11,13 +11,15 @@ import { getProjectSummaries } from "@/constants/projects";
 export default function Home() {
   return (
     <main style={{ overflowX: "hidden" }}>
-      <Feedback />
       <MainIntro />
       <section id="about">
         <MainAbout />
       </section>
       <section id="career">
         <MainCareer />
+      </section>
+      <section id="activity">
+        <MainActivity />
       </section>
       <section id="education">
         <MainEducation />

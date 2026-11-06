@@ -1,24 +1,35 @@
-'use client';
+"use client";
 
-import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
-import Image from 'next/image';
-import { LINKS, externalLinkProps } from '@/constants/links';
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
+import Image from "next/image";
+import { BsEnvelope, BsGithub, BsPencilSquare } from "react-icons/bs";
+import { LINKS, externalLinkProps } from "@/constants/links";
 
 /** 사이드바에서 이동할 메인 페이지 섹션 (app/page.tsx 의 section id 와 일치) */
 export const MAIN_SECTIONS = [
-  { id: 'about', label: 'About' },
-  { id: 'career', label: 'Career' },
-  { id: 'education', label: 'Education' },
-  { id: 'project', label: 'Project' },
+  { id: "about", label: "About" },
+  { id: "career", label: "Career" },
+  { id: "activity", label: "Activity" },
+  { id: "education", label: "Education" },
+  { id: "project", label: "Project" },
 ] as const;
 
+const EMAIL = "thsudkcla7@naver.com";
+
 export const scrollToSection = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 };
 
-// 탭 링크/버튼: 마우스를 올리면 아래 밑줄이 늘어남
-const tabItem =
-  "relative p-0 before:absolute before:bottom-0 before:h-[3px] before:w-0 before:[transform:translateX(0%)] before:bg-[#cccccc] before:transition-all before:duration-300 before:ease-[ease] before:content-[''] hover:before:w-[90%]";
+const SOCIALS = [
+  { label: "Github", href: LINKS.github, icon: BsGithub, external: true },
+  { label: "Blog", href: LINKS.blog, icon: BsPencilSquare, external: true },
+  {
+    label: "Email",
+    href: `mailto:${EMAIL}`,
+    icon: BsEnvelope,
+    external: false,
+  },
+];
 
 interface SidebarProps {
   isOn: boolean;
@@ -31,7 +42,7 @@ export default function Sidebar({ isOn, setIsOn }: SidebarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      // 첫 화면을 지나면 섹션 탭을 왼쪽 위에 고정 (데스크톱)
+      // 첫 화면을 지나면 섹션 탭을 왼쪽에 고정 (데스크톱)
       const triggerPosition = window.innerHeight - 100;
       if (window.scrollY > triggerPosition && window.innerWidth > 1024) {
         setScrolled(true);
@@ -54,8 +65,8 @@ export default function Sidebar({ isOn, setIsOn }: SidebarProps) {
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [setIsOn]);
 
   const onTabClick = (id: string) => {
@@ -63,57 +74,111 @@ export default function Sidebar({ isOn, setIsOn }: SidebarProps) {
     scrollToSection(id);
   };
 
-  // 태블릿/모바일: 화면 왼쪽 밖에 있다가 메뉴 버튼을 누르면(isOn) 들어옴
+  // 데스크톱: 첫 화면 왼쪽 패널 / 태블릿·모바일: 메뉴 버튼(isOn)을 누르면 왼쪽에서 들어오는 서랍
   const asideClass = [
-    'main-aside z-[100] flex h-screen w-[20vw] max-w-[340px] flex-col justify-between px-12 py-16 bg-[#f1f1f191]',
-    'max-[1024px]:fixed max-[1024px]:top-0 max-[1024px]:items-center max-[1024px]:gap-8 max-[1024px]:transition-all max-[1024px]:duration-300 max-[1024px]:ease-[ease]',
-    isOn
-      ? 'on max-[1024px]:left-0 max-[1024px]:w-[30vw] max-[1024px]:min-w-[210px] max-[1024px]:px-4 max-[1024px]:py-8'
-      : 'max-[1024px]:left-[-100%] max-[1024px]:w-full',
-  ].join(' ');
-
-  // 스크롤 후(데스크톱) 섹션 탭은 왼쪽 위에 고정
-  const fixedTabClass = scrolled
-    ? 'fixed-tab fixed top-[30px] left-12 z-10 flex flex-col gap-[10px] text-[40px] [font-family:var(--font-noto-sans-kr)] [text-align-last:left]'
-    : 'fixed-tab z-10 flex flex-col gap-[30px] text-[30px] [text-align-last:left]';
+    "main-aside z-[100] box-border flex h-screen w-[20vw] max-w-[340px] min-w-[240px] flex-col justify-between px-10 py-12 text-left",
+    "border-r border-white/70 bg-white/55 backdrop-blur-xl",
+    "max-[1024px]:fixed max-[1024px]:top-0 max-[1024px]:w-[280px] max-[1024px]:max-w-[80vw] max-[1024px]:bg-white/95 max-[1024px]:px-8 max-[1024px]:py-10 max-[1024px]:shadow-[8px_0_30px_rgba(0,0,0,0.12)] max-[1024px]:transition-[left] max-[1024px]:duration-300 max-[1024px]:ease-[ease]",
+    isOn ? "on max-[1024px]:left-0" : "max-[1024px]:left-[-110%]",
+  ].join(" ");
 
   return (
-    <aside className={asideClass}>
-      <div className='flex flex-col gap-[30px] text-[30px] [text-align-last:left]'>
-        <a className={`link-btn ${tabItem}`} href={LINKS.github} {...externalLinkProps}>
-          Github
-        </a>
-        <a className={`link-btn ${tabItem}`} href={LINKS.blog} {...externalLinkProps}>
-          Blog
-        </a>
-        <div className={fixedTabClass}>
-          {MAIN_SECTIONS.map(({ id, label }) => (
-            <button
-              key={id}
-              className={[
-                tabItem,
-                activeId === id ? 'active' : '',
-                scrolled ? 'font-bold' : '',
-                scrolled ? (activeId === id ? 'text-[#9778c9]' : 'text-[#cccccc]') : '',
-              ].join(' ')}
-              onClick={() => onTabClick(id)}
-            >
-              {label}
-            </button>
-          ))}
+    <>
+      <aside className={asideClass}>
+        <div className="flex flex-col gap-12">
+          <button
+            className="w-fit"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="맨 위로"
+          >
+            <Image
+              src="/images/main/logo.webp"
+              alt="LYE"
+              width={597}
+              height={501}
+              className="h-auto w-[72px]"
+            />
+          </button>
+
+          <nav aria-label="섹션 이동">
+            <ul className="m-0 flex list-none flex-col gap-2 p-0">
+              {MAIN_SECTIONS.map(({ id, label }, i) => (
+                <li key={id}>
+                  <button
+                    onClick={() => onTabClick(id)}
+                    className="group flex items-baseline gap-4 py-2 text-[24px] font-semibold text-[#1d1d1f] transition-transform duration-300 hover:translate-x-2"
+                  >
+                    <span className="w-6 text-[13px] font-bold text-[#9778c9] tabular-nums">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="transition-colors duration-300 group-hover:text-[#7c5cc4]">
+                      {label}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
-      </div>
-      <div className='flex flex-col items-center gap-[5px] text-[18px]'>
-        <Image
-          src='/images/main/logo.webp'
-          alt='LYE'
-          width={597}
-          height={501}
-          className='h-auto w-[100px]'
-        />
-        <div>thsudkcla7@naver.com</div>
-        <p>Last update:2025/03</p>
-      </div>
-    </aside>
+
+        <div className="flex flex-col gap-4">
+          <ul className="m-0 flex list-none gap-2 p-0">
+            {SOCIALS.map(({ label, href, icon: Icon, external }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  aria-label={label}
+                  title={label}
+                  {...(external ? externalLinkProps : {})}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#1d1d1f] shadow-[0_2px_8px_rgba(0,0,0,0.08)] transition-colors duration-200 hover:bg-[#1d1d1f] hover:text-white"
+                >
+                  <Icon className="h-[18px] w-[18px]" />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div>
+            <div className="text-[14px] text-[#424245]">{EMAIL}</div>
+            <div className="mt-1 text-[12px] text-[#86868b]">
+              Last update 2026.11
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      {/* 스크롤 후(데스크톱): 화면 왼쪽 가운데에 고정되는 섹션 인디케이터.
+        aside 의 backdrop-filter 가 fixed 기준을 바꾸므로 aside 밖에 둠 */}
+      {scrolled && (
+        <nav aria-label="섹션 이동">
+          <ul className="fixed top-1/2 left-8 z-10 m-0 flex -translate-y-1/2 list-none flex-col gap-1 rounded-[20px] bg-white/95 p-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
+            {MAIN_SECTIONS.map(({ id, label }) => {
+              const active = activeId === id;
+              return (
+                <li key={id}>
+                  <button
+                    onClick={() => onTabClick(id)}
+                    aria-current={active ? "true" : undefined}
+                    className={`group flex w-full items-center gap-3 rounded-[12px] px-3 py-2 text-[15px] font-semibold transition-colors duration-200 ${
+                      active
+                        ? "active bg-[#f3edfe] text-[#7c5cc4]"
+                        : "text-[#86868b] hover:text-[#1d1d1f]"
+                    }`}
+                  >
+                    <span
+                      className={`h-[3px] rounded-full transition-all duration-300 ${
+                        active
+                          ? "w-6 bg-[#9778c9]"
+                          : "w-3 bg-[#d2d2d7] group-hover:w-5 group-hover:bg-[#86868b]"
+                      }`}
+                    />
+                    {label}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      )}
+    </>
   );
 }
