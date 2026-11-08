@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { Tooltip } from 'react-tooltip';
-import { IoMdMenu } from 'react-icons/io';
+import { BsList, BsXLg } from 'react-icons/bs';
 import Image from 'next/image';
 import Sidebar, { MAIN_SECTIONS, scrollToSection } from './Sidebar';
 
@@ -50,12 +49,14 @@ export default function MainIntro() {
       <Sidebar isOn={isOn} setIsOn={setIsOn} />
 
       {/* 태블릿/모바일 메뉴 버튼 */}
-      <div className='box-border hidden h-[50px] w-[50px] rounded-[50%] bg-white p-[5px] shadow-[2px_2px_8px_#32323275] max-[1024px]:fixed max-[1024px]:top-[2.25rem] max-[1024px]:right-[3.25rem] max-[1024px]:z-[100] max-[1024px]:block'>
-        <button className='my-menu h-full w-full' onClick={() => setIsOn(!isOn)}>
-          <IoMdMenu className='h-[27px] w-[27px]' />
-        </button>
-        <Tooltip anchorSelect='.my-menu' place='left' content='menu' />
-      </div>
+      <button
+        className='my-menu fixed top-4 right-4 z-[101] hidden h-10 w-10 items-center justify-center rounded-full border border-black/5 bg-white/80 text-[#1d1d1f] shadow-[0_2px_10px_rgba(0,0,0,0.08)] backdrop-blur-md transition-colors duration-200 hover:bg-white max-[1024px]:flex'
+        onClick={() => setIsOn(!isOn)}
+        aria-label={isOn ? '메뉴 닫기' : '메뉴 열기'}
+        aria-expanded={isOn}
+      >
+        {isOn ? <BsXLg className='h-4 w-4' /> : <BsList className='h-5 w-5' />}
+      </button>
 
       <div className='relative flex h-full w-[80vw] max-w-[calc(100%-340px)] flex-col items-center [justify-content:end] gap-[15px] break-keep max-[1024px]:m-auto max-[1024px]:h-screen max-[1024px]:w-full max-[1024px]:max-w-none max-[1024px]:px-8 max-[1024px]:pt-12 max-[1024px]:pb-0 max-[768px]:justify-center'>
         <h2 className='h1 text-black'>

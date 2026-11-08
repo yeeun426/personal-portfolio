@@ -35,9 +35,9 @@ export default function ProjectModal({ children }: { children: ReactNode }) {
         <button
           onClick={closeModal}
           aria-label='닫기'
-          className='pointer-events-auto mt-5 mr-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1d1d1f] shadow-[0_2px_12px_rgba(0,0,0,0.15)] backdrop-blur transition-colors duration-200 hover:bg-[#1d1d1f] hover:text-white'
+          className='pointer-events-auto mt-4 mr-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#f5f5f7]/85 text-[#6e6e73] backdrop-blur-md transition-colors duration-200 hover:bg-[#e8e8ed] hover:text-[#1d1d1f] max-[801px]:mt-3 max-[801px]:mr-3 max-[801px]:h-8 max-[801px]:w-8'
         >
-          <BsXLg className='h-4 w-4' />
+          <BsXLg className='h-[13px] w-[13px]' />
         </button>
       </div>
       {children}
