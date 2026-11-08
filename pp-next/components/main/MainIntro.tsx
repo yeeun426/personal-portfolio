@@ -59,19 +59,17 @@ export default function MainIntro() {
       </button>
 
       <div className='relative flex h-full w-[80vw] max-w-[calc(100%-340px)] flex-col items-center [justify-content:end] gap-[15px] break-keep max-[1024px]:m-auto max-[1024px]:h-screen max-[1024px]:w-full max-[1024px]:max-w-none max-[1024px]:px-8 max-[1024px]:pt-12 max-[1024px]:pb-0 max-[768px]:justify-center'>
-        <h2 className='h1 text-black'>
-          프론트엔드 개발자 <strong className='font-extrabold'>이예은</strong>입니다.
+        <h2 className='m-0 text-[length:clamp(28px,2.6vw,40px)] leading-[1.3] font-semibold tracking-[-0.02em] text-[#1d1d1f]'>
+          프론트엔드 개발자 <span className='font-bold'>이예은</span>입니다.
         </h2>
-        <p className='text-[1.25rem] [font-family:var(--font-noto-sans-kr)]'>
-          <strong className='text-[20px] font-bold'>꾸준하게</strong> 빈틈을{' '}
-          <strong className='text-[20px] font-bold'>채워나가는</strong> 개발자입니다.
+        <p className='m-0 text-[length:clamp(16px,1.25vw,19px)] leading-[1.7] text-[#424245]'>
+          꾸준하게 빈틈을 채워나가는 개발자입니다.
           <br />
-          사용자가 필요로 하는 것을{' '}
-          <strong className='text-[20px] font-bold'>한발 먼저</strong> 고민하겠습니다.
+          사용자가 필요로 하는 것을 한발 먼저 고민하겠습니다.
         </p>
         <div
           ref={photoRef}
-          className='relative h-[70%] max-w-full aspect-[3728/2924] max-[768px]:h-auto max-[768px]:w-full'
+          className='relative mt-4 h-[62%] max-w-full aspect-[3728/2924] max-[768px]:h-auto max-[768px]:w-full'
         >
           <Image
             src='/images/main/leeyeeun.webp'
@@ -87,7 +85,7 @@ export default function MainIntro() {
               // 위치/등장은 li(gsap), 둥둥 떠 있는 효과는 span(css)
               <li key={text} className={`intro-keyword absolute ${pos} opacity-0`}>
                 <span
-                  className={`animate-float inline-block rounded-[999px] px-5 py-[10px] text-[17px] font-bold whitespace-nowrap shadow-[0_6px_16px_rgba(0,0,0,0.12)] motion-reduce:animate-none max-[1024px]:px-4 max-[1024px]:py-2 max-[1024px]:text-[14px] max-[501px]:px-3 max-[501px]:py-[5px] max-[501px]:text-[11px] ${TONE[tone]}`}
+                  className={`animate-float inline-block rounded-[999px] px-5 py-[10px] text-[16px] font-semibold whitespace-nowrap shadow-[0_6px_16px_rgba(0,0,0,0.12)] motion-reduce:animate-none max-[1024px]:px-4 max-[1024px]:py-2 max-[1024px]:text-[14px] max-[501px]:px-3 max-[501px]:py-[5px] max-[501px]:text-[11px] ${TONE[tone]}`}
                   style={{ animationDelay: `${i * 0.4}s` }}
                 >
                   {text}
