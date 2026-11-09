@@ -3,32 +3,32 @@
     "id": 1,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/airbnb/airbnb(1).png",
+      "img": "images/portfolio/airbnb/airbnb(1).webp",
       "desc": "airbnb"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/airbnb/airbnb(2).png",
+      "img": "images/portfolio/airbnb/airbnb(2).webp",
       "desc": "airbnb"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/airbnb/airbnb(3).png",
+      "img": "images/portfolio/airbnb/airbnb(3).webp",
       "desc": "airbnb"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/airbnb/airbnb(4).png",
+      "img": "images/portfolio/airbnb/airbnb(4).webp",
       "desc": "airbnb"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/airbnb/airbnb(5).png",
+      "img": "images/portfolio/airbnb/airbnb(5).webp",
       "desc": "airbnb"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/airbnb/airbnb(6).png",
+      "img": "images/portfolio/airbnb/airbnb(6).webp",
       "desc": "airbnb"
     }
   },
@@ -36,17 +36,17 @@
     "id": 2,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/myrecipes/myrecipes(1).png",
+      "img": "images/portfolio/myrecipes/myrecipes(1).webp",
       "desc": "myRecipes"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/myrecipes/myrecipes(2).png",
+      "img": "images/portfolio/myrecipes/myrecipes(2).webp",
       "desc": "myRecipes"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/myrecipes/myrecipes(3).png",
+      "img": "images/portfolio/myrecipes/myrecipes(3).webp",
       "desc": "myRecipes"
     }
   },
@@ -54,42 +54,42 @@
     "id": 3,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/maplix/maplix(1).png",
+      "img": "images/portfolio/maplix/maplix(1).webp",
       "desc": "MAPLIX"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/maplix/maplix(2).png",
+      "img": "images/portfolio/maplix/maplix(2).webp",
       "desc": "MAPLIX"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/maplix/maplix(3).png",
+      "img": "images/portfolio/maplix/maplix(3).webp",
       "desc": "MAPLIX"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/maplix/maplix(4).png",
+      "img": "images/portfolio/maplix/maplix(4).webp",
       "desc": "MAPLIX"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/maplix/maplix(5).png",
+      "img": "images/portfolio/maplix/maplix(5).webp",
       "desc": "MAPLIX"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/maplix/maplix(6).png",
+      "img": "images/portfolio/maplix/maplix(6).webp",
       "desc": "MAPLIX"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/maplix/maplix(7).png",
+      "img": "images/portfolio/maplix/maplix(7).webp",
       "desc": "MAPLIX"
     },
     "page8": {
       "num": "8",
-      "img": "images/portfolio/maplix/maplix(8).png",
+      "img": "images/portfolio/maplix/maplix(8).webp",
       "desc": "MAPLIX"
     }
   },
@@ -97,47 +97,47 @@
     "id": 4,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/wanted/wanted(1).jpg",
+      "img": "images/portfolio/wanted/wanted(1).webp",
       "desc": "WANTED"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/wanted/wanted(2).jpg",
+      "img": "images/portfolio/wanted/wanted(2).webp",
       "desc": "WANTED"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/wanted/wanted(3).jpg",
+      "img": "images/portfolio/wanted/wanted(3).webp",
       "desc": "WANTED"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/wanted/wanted(4).jpg",
+      "img": "images/portfolio/wanted/wanted(4).webp",
       "desc": "WANTED"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/wanted/wanted(5).jpg",
+      "img": "images/portfolio/wanted/wanted(5).webp",
       "desc": "WANTED"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/wanted/wanted(6).jpg",
+      "img": "images/portfolio/wanted/wanted(6).webp",
       "desc": "WANTED"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/wanted/wanted(7).jpg",
+      "img": "images/portfolio/wanted/wanted(7).webp",
       "desc": "WANTED"
     },
     "page8": {
       "num": "8",
-      "img": "images/portfolio/wanted/wanted(8).jpg",
+      "img": "images/portfolio/wanted/wanted(8).webp",
       "desc": "WANTED"
     },
     "page9": {
       "num": "9",
-      "img": "images/portfolio/wanted/wanted(9).jpg",
+      "img": "images/portfolio/wanted/wanted(9).webp",
       "desc": "WANTED"
     }
   },
@@ -145,42 +145,42 @@
     "id": 5,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/gnuvilage/gnuvilage(1).png",
+      "img": "images/portfolio/gnuvilage/gnuvilage(1).webp",
       "desc": "GNUVILAGE"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/gnuvilage/gnuvilage(2).png",
+      "img": "images/portfolio/gnuvilage/gnuvilage(2).webp",
       "desc": "GNUVILAGE"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/gnuvilage/gnuvilage(3).png",
+      "img": "images/portfolio/gnuvilage/gnuvilage(3).webp",
       "desc": "GNUVILAGE"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/gnuvilage/gnuvilage(4).png",
+      "img": "images/portfolio/gnuvilage/gnuvilage(4).webp",
       "desc": "GNUVILAGE"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/gnuvilage/gnuvilage(5).png",
+      "img": "images/portfolio/gnuvilage/gnuvilage(5).webp",
       "desc": "GNUVILAGE"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/gnuvilage/gnuvilage(6).png",
+      "img": "images/portfolio/gnuvilage/gnuvilage(6).webp",
       "desc": "GNUVILAGE"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/gnuvilage/gnuvilage(7).png",
+      "img": "images/portfolio/gnuvilage/gnuvilage(7).webp",
       "desc": "GNUVILAGE"
     },
     "page8": {
       "num": "8",
-      "img": "images/portfolio/gnuvilage/gnuvilage(8).png",
+      "img": "images/portfolio/gnuvilage/gnuvilage(8).webp",
       "desc": "GNUVILAGE"
     }
   },
@@ -188,37 +188,37 @@
     "id": 6,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/giver/giver(1).jpg",
+      "img": "images/portfolio/giver/giver(1).webp",
       "desc": "GIVER"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/giver/giver(2).jpg",
+      "img": "images/portfolio/giver/giver(2).webp",
       "desc": "GIVER"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/giver/giver(3).jpg",
+      "img": "images/portfolio/giver/giver(3).webp",
       "desc": "GIVER"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/giver/giver(4).jpg",
+      "img": "images/portfolio/giver/giver(4).webp",
       "desc": "GIVER"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/giver/giver(5).jpg",
+      "img": "images/portfolio/giver/giver(5).webp",
       "desc": "GIVER"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/giver/giver(6).jpg",
+      "img": "images/portfolio/giver/giver(6).webp",
       "desc": "GIVER"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/giver/giver(7).jpg",
+      "img": "images/portfolio/giver/giver(7).webp",
       "desc": "GIVER"
     }
   },
@@ -226,57 +226,57 @@
     "id": 7,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/ndgd/ndgd(1).png",
+      "img": "images/portfolio/ndgd/ndgd(1).webp",
       "desc": "NDGD"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/ndgd/ndgd(2).png",
+      "img": "images/portfolio/ndgd/ndgd(2).webp",
       "desc": "NDGD"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/ndgd/ndgd(3).png",
+      "img": "images/portfolio/ndgd/ndgd(3).webp",
       "desc": "NDGD"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/ndgd/ndgd(4).png",
+      "img": "images/portfolio/ndgd/ndgd(4).webp",
       "desc": "NDGD"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/ndgd/ndgd(5).png",
+      "img": "images/portfolio/ndgd/ndgd(5).webp",
       "desc": "NDGD"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/ndgd/ndgd(6).png",
+      "img": "images/portfolio/ndgd/ndgd(6).webp",
       "desc": "NDGD"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/ndgd/ndgd(7).png",
+      "img": "images/portfolio/ndgd/ndgd(7).webp",
       "desc": "NDGD"
     },
     "page8": {
       "num": "8",
-      "img": "images/portfolio/ndgd/ndgd(8).png",
+      "img": "images/portfolio/ndgd/ndgd(8).webp",
       "desc": "NDGD"
     },
     "page9": {
       "num": "9",
-      "img": "images/portfolio/ndgd/ndgd(9).png",
+      "img": "images/portfolio/ndgd/ndgd(9).webp",
       "desc": "NDGD"
     },
     "page10": {
       "num": "10",
-      "img": "images/portfolio/ndgd/ndgd(10).jpg",
+      "img": "images/portfolio/ndgd/ndgd(10).webp",
       "desc": "NDGD"
     },
     "page11": {
       "num": "11",
-      "img": "images/portfolio/ndgd/ndgd(11).jpg",
+      "img": "images/portfolio/ndgd/ndgd(11).webp",
       "desc": "NDGD"
     }
   },
@@ -350,42 +350,42 @@
     "id": 10,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/gitpulse/gitpulse(1).png",
+      "img": "images/portfolio/gitpulse/gitpulse(1).webp",
       "desc": "gitpulse"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/gitpulse/gitpulse(2).png",
+      "img": "images/portfolio/gitpulse/gitpulse(2).webp",
       "desc": "gitpulse"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/gitpulse/gitpulse(3).png",
+      "img": "images/portfolio/gitpulse/gitpulse(3).webp",
       "desc": "gitpulse"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/gitpulse/gitpulse(4).png",
+      "img": "images/portfolio/gitpulse/gitpulse(4).webp",
       "desc": "gitpulse"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/gitpulse/gitpulse(5).png",
+      "img": "images/portfolio/gitpulse/gitpulse(5).webp",
       "desc": "gitpulse"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/gitpulse/gitpulse(6).png",
+      "img": "images/portfolio/gitpulse/gitpulse(6).webp",
       "desc": "gitpulse"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/gitpulse/gitpulse(7).png",
+      "img": "images/portfolio/gitpulse/gitpulse(7).webp",
       "desc": "gitpulse"
     },
     "page8": {
       "num": "8",
-      "img": "images/portfolio/gitpulse/gitpulse(8).png",
+      "img": "images/portfolio/gitpulse/gitpulse(8).webp",
       "desc": "gitpulse"
     }
   },
@@ -393,37 +393,37 @@
     "id": 11,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/u+pick/u+pick(1).png",
+      "img": "images/portfolio/u+pick/u+pick(1).webp",
       "desc": "u+pick"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/u+pick/u+pick(2).png",
+      "img": "images/portfolio/u+pick/u+pick(2).webp",
       "desc": "u+pick"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/u+pick/u+pick(3).png",
+      "img": "images/portfolio/u+pick/u+pick(3).webp",
       "desc": "u+pick"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/u+pick/u+pick(4).png",
+      "img": "images/portfolio/u+pick/u+pick(4).webp",
       "desc": "u+pick"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/u+pick/u+pick(5).png",
+      "img": "images/portfolio/u+pick/u+pick(5).webp",
       "desc": "u+pick"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/u+pick/u+pick(6).png",
+      "img": "images/portfolio/u+pick/u+pick(6).webp",
       "desc": "u+pick"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/u+pick/u+pick(7).png",
+      "img": "images/portfolio/u+pick/u+pick(7).webp",
       "desc": "u+pick"
     }
   },
@@ -431,72 +431,72 @@
     "id": 12,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/popco/popco(1).png",
+      "img": "images/portfolio/popco/popco(1).webp",
       "desc": "popco"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/popco/popco(2).png",
+      "img": "images/portfolio/popco/popco(2).webp",
       "desc": "popco"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/popco/popco(3).png",
+      "img": "images/portfolio/popco/popco(3).webp",
       "desc": "popco"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/popco/popco(4).png",
+      "img": "images/portfolio/popco/popco(4).webp",
       "desc": "popco"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/popco/popco(5).png",
+      "img": "images/portfolio/popco/popco(5).webp",
       "desc": "popco"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/popco/popco(6).png",
+      "img": "images/portfolio/popco/popco(6).webp",
       "desc": "popco"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/popco/popco(7).png",
+      "img": "images/portfolio/popco/popco(7).webp",
       "desc": "popco"
     },
     "page8": {
       "num": "8",
-      "img": "images/portfolio/popco/popco(8).png",
+      "img": "images/portfolio/popco/popco(8).webp",
       "desc": "popco"
     },
     "page9": {
       "num": "9",
-      "img": "images/portfolio/popco/popco(9).png",
+      "img": "images/portfolio/popco/popco(9).webp",
       "desc": "popco"
     },
     "page10": {
       "num": "10",
-      "img": "images/portfolio/popco/popco(10).png",
+      "img": "images/portfolio/popco/popco(10).webp",
       "desc": "popco"
     },
     "page11": {
       "num": "11",
-      "img": "images/portfolio/popco/popco(11).png",
+      "img": "images/portfolio/popco/popco(11).webp",
       "desc": "popco"
     },
     "page12": {
       "num": "12",
-      "img": "images/portfolio/popco/popco(12).png",
+      "img": "images/portfolio/popco/popco(12).webp",
       "desc": "popco"
     },
     "page13": {
       "num": "13",
-      "img": "images/portfolio/popco/popco(13).png",
+      "img": "images/portfolio/popco/popco(13).webp",
       "desc": "popco"
     },
     "page14": {
       "num": "14",
-      "img": "images/portfolio/popco/popco(14).png",
+      "img": "images/portfolio/popco/popco(14).webp",
       "desc": "popco"
     }
   }
