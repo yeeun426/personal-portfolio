@@ -1,4 +1,5 @@
 import { activities } from '@/constants/activity';
+import DetailLink from './DetailLink';
 import SectionTitle from './SectionTitle';
 
 /** 활동 섹션 (사이드 프로젝트, 동아리, 봉사) — 세로 타임라인 */
@@ -25,13 +26,16 @@ export default function MainActivity() {
                   <span className='text-[#86868b]'> · {item.techStack.join(', ')}</span>
                 )}
               </div>
-              <ul className='m-0 mt-4 flex flex-col gap-2 pl-5'>
-                {item.tasks.map((task) => (
-                  <li key={task} className='list-disc text-[17px] leading-[1.6] text-[#424245]'>
-                    {task}
-                  </li>
-                ))}
-              </ul>
+              {item.tasks.length > 0 && (
+                <ul className='m-0 mt-4 flex flex-col gap-2 pl-5'>
+                  {item.tasks.map((task) => (
+                    <li key={task} className='list-disc text-[17px] leading-[1.6] text-[#424245]'>
+                      {task}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {item.projectId && <DetailLink projectId={item.projectId} className='mt-5' />}
             </li>
           ))}
         </ol>

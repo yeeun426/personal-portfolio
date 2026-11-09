@@ -11,6 +11,7 @@ import {
 } from '@/types/project';
 import { externalLinkProps } from '@/constants/links';
 import RichText from './RichText';
+import Troubleshooting from './Troubleshooting';
 
 const MAPLIX_ID = 3; // 세로로 긴 상세 이미지를 쓰는 프로젝트
 
@@ -133,7 +134,7 @@ export default function Portfolio({ project: data, images }: PortfolioProps) {
             {data.skills?.organization && (
               <InfoRow label='기관'>{data.skills.organization}</InfoRow>
             )}
-            <InfoRow label='형태'>{data.team ? '팀 프로젝트' : '개인 프로젝트'}</InfoRow>
+            <InfoRow label='형태'>{data.teamInfo ?? (data.team ? '팀 프로젝트' : '개인 프로젝트')}</InfoRow>
             {stack.length > 0 && (
               <InfoRow label='기술'>
                 <ul className='m-0 flex list-none flex-wrap gap-[6px] p-0'>
@@ -167,6 +168,10 @@ export default function Portfolio({ project: data, images }: PortfolioProps) {
             ))}
           </ul>
         </section>
+      )}
+
+      {!!data.troubleshooting?.length && (
+        <Troubleshooting items={data.troubleshooting} heading={heading} />
       )}
 
       {images.length > 0 && <Screens name={data.name} images={images} tall={data.id === MAPLIX_ID} />}
@@ -230,12 +235,20 @@ function Screens({
               className={`h-auto w-full rounded-[16px] border border-[#e5e5ea] object-cover object-top ${
                 tall ? 'aspect-[1709/1750]' : 'aspect-[1709/944]'
               }`}
-              alt={page.desc || `${name} 화면 ${page.num}`}
+              alt={page.title ?? (page.desc || `${name} 화면 ${page.num}`)}
               src={toPublicPath(page.img)}
               width={1709}
               height={tall ? 1750 : 944}
               sizes='(max-width: 800px) 85vw, 620px'
             />
+            {page.title && (
+              <div className='mt-3 px-1 text-left'>
+                <div className='text-[16px] font-semibold text-[#1d1d1f]'>{page.title}</div>
+                {page.desc && (
+                  <p className='m-0 mt-1 text-[14px] leading-[1.6] text-[#6e6e73]'>{page.desc}</p>
+                )}
+              </div>
+            )}
           </li>
         ))}
       </ul>

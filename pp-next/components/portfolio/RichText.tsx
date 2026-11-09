@@ -60,9 +60,22 @@ function TextBlock({ text }: { text: string }) {
     // 연속 빈 줄은 하나로
     .filter((l, i, arr) => l !== '' || (i > 0 && arr[i - 1] !== ''));
 
+  // "| a | b |" 줄이 이어지면 표로 묶음
+  const blocks: (string | string[][])[] = [];
+  for (const line of lines) {
+    if (line.startsWith('|')) {
+      const cells = line.replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+      if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue; // 구분선
+      const last = blocks[blocks.length - 1];
+      if (Array.isArray(last)) last.push(cells);
+      else blocks.push([cells]);
+    } else blocks.push(line);
+  }
+
   return (
     <>
-      {lines.map((line, i) => {
+      {blocks.map((line, i) => {
+        if (Array.isArray(line)) return <Table key={i} rows={line} />;
         if (line === '') return <div key={i} className='h-2' aria-hidden />;
         if (HEADING.test(line))
           return (
@@ -101,9 +114,51 @@ function TextBlock({ text }: { text: string }) {
   );
 }
 
-/** `code` 와 **굵게** 처리 */
+function Table({ rows }: { rows: string[][] }) {
+  const [head, ...body] = rows;
+  return (
+    <div className='my-2 overflow-x-auto rounded-[12px] border border-[#e5e5ea]'>
+      <table className='w-full border-collapse text-left text-[14px]'>
+        <thead className='bg-[#f5f5f7] text-[#6e6e73]'>
+          <tr>
+            {head.map((c, j) => (
+              <th key={j} className='px-4 py-[10px] font-semibold whitespace-nowrap'>
+                {inline(c)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {body.map((r, k) => (
+            <tr key={k} className='border-t border-[#e5e5ea]'>
+              {r.map((c, j) => (
+                <td key={j} className='px-4 py-[10px] align-top'>
+                  {inline(c)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+/** `code`, **굵게**, URL 링크 처리 */
 function inline(line: string): ReactNode {
-  return line.split(/(`[^`]+`|\*\*[^*]+\*\*)/g).map((token, i) => {
+  return line.split(/(`[^`]+`|\*\*[^*]+\*\*|https?:\/\/[^\s)]+)/g).map((token, i) => {
+    if (/^https?:\/\//.test(token))
+      return (
+        <a
+          key={i}
+          href={token}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='break-all text-[#7c5cc4] underline underline-offset-2 hover:text-[#1d1d1f]'
+        >
+          {token}
+        </a>
+      );
     if (token.startsWith('`') && token.endsWith('`') && token.length > 2)
       return (
         <code

@@ -1,4 +1,5 @@
 import { careers } from '@/constants/career';
+import DetailLink from './DetailLink';
 import SectionTitle from './SectionTitle';
 
 /** 경력 섹션 — 회사별 큰 블록 (왼쪽 회사 정보 / 오른쪽 번호 매긴 업무) */
@@ -40,6 +41,7 @@ export default function MainCareer() {
                       ))}
                     </div>
                   )}
+                  {item.projectId && <DetailLink projectId={item.projectId} className='mt-6' />}
                 </div>
                 <ol className='m-0 flex list-none flex-col gap-6 p-0 text-left'>
                   {item.tasks.map((task, i) => (

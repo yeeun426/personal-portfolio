@@ -82,48 +82,45 @@
   },
   {
     "id": 3,
-    "date": "22.6 ~ 22.9",
+    "date": "22.6.29 ~ 22.8.23",
     "name": "MAPLIX",
     "detail": "2022 관광데이터활용 공모전 우수상",
     "img": "images/maplix.webp",
     "icon": "images/maplix_icon.webp",
     "video": "videos/maplix.mp4",
     "team": true,
+    "teamInfo": "팀 프로젝트 · 3명 (데이터·백엔드·프론트엔드)",
     "skills": {
-      "skill": "REACT, JAVASCRIPT, HTML/CSS",
+      "skill": "React, JavaScript, Kakao Map API",
       "organization": "한국관광공사, 카카오",
-      "detail": "코로나 시대를 거치며 미디어 시청자가 증가함에 따라, 드라마, 영화, 예능 등의 촬영지를 찾는 방문객도 늘어났습니다. 이에 착안하여, 미디어 촬영지를 중심으로 정보를 제공하는 서비스를 목표로 하였습니다.",
+      "detail": "코로나 시대를 거치며 미디어 시청자가 증가함에 따라, 드라마, 영화, 예능 등의 촬영지를 찾는 방문객도 늘어났습니다. 이에 착안하여, 미디어 촬영지를 중심으로 정보를 제공하는 서비스를 목표로 하였습니다.\n\n- **촬영지 정보**: 드라마, 영화, 예능 등 다양한 콘텐츠의 촬영지를 제공합니다.\n- **여행 코스 만들기**: 촬영지를 기반으로 사용자가 직접 여행 일정을 설계할 수 있습니다.\n- **일정 기록**: 여행 경험을 저장하고 공유할 수 있습니다.",
       "data": "카카오맵API, 한국관광공사 두루누비 정보 서비스 API",
-      "github": "https://github.com/yeeun426/MAPLIX",
+      "github": "https://github.com/yeeun426/maplix",
       "video": "http://ec2-3-37-76-88.ap-northeast-2.compute.amazonaws.com/",
       "roles": [
-        "[메인 페이지]\n- 메인 페이지 퍼블리싱과 주요 기능을 담당했습니다.\n- API로 불러온 데이터를 버튼에 마우스를 올리면 보여주도록 구현했습니다.",
-        "[검색 페이지]\n- 선택한 검색 필터와 API 데이터의 카테고리를 비교해 결과를 보여줬습니다.\n- 카카오맵 API로 한국 지도를 보여줬습니다.\n- 장소 결과에 쓸 페이지네이션을 재사용 가능한 컴포넌트로 만들었습니다.",
-        "[추천 코스 페이지]\n- 한국관광공사 두루누비 정보 서비스 API로 지역별 추천 코스를 구현했습니다.\n- API를 불러오는 동안 스피너로 로딩 상태를 보여줬습니다.",
-        "[커뮤니티 페이지]\n- 게시물을 클릭하면 같은 ID의 상세 모달을 띄우고, 열려 있는 동안 바깥 클릭을 막았습니다.",
-        "[퍼블리싱]\n- 모든 페이지의 퍼블리싱을 혼자 진행했습니다."
+        "[메인·검색·추천 코스 페이지]\n- 여행 일정 추천 서비스의 핵심 UI인 메인, 검색, 추천 코스 페이지를 전담 개발했습니다.\n- 메인: 지역별 추천 코스, 추천 OTT 콘텐츠, 검색을 한 번에 볼 수 있게 했습니다.\n- 검색: OTT 콘텐츠나 장소를 검색하면 세부 정보를 확인할 수 있게 했습니다.\n- 추천 코스: 두루누비 API로 지역별 추천 코스를 제공했습니다.",
+        "[대용량 데이터 처리 UX]\n- 무한 로딩을 적용해 많은 데이터를 불러올 때의 사용 경험을 최적화했습니다.",
+        "[UI 상호작용]\n- 모달로 촬영지 정보를 직관적으로 보여줬습니다."
       ]
     },
-    "QnA": [
+    "troubleshooting": [
       {
-        "id": "unique",
-        "question": "공모전에서 수상할 수 있었던 차별점은 무엇인가요?",
-        "answer": "- **미디어 팬을 위한 맞춤 여행**: 미디어 촬영지를 중심으로, 팬들이 즐길 수 있는 차별화된 여행 경험을 제공합니다.\n- **나만의 여행 코스**: 사용자가 촬영지를 포함한 여행 코스를 직접 설계할 수 있습니다.\n- **여행 도장깨기**: 방문한 촬영지를 기록해 여행 일정을 추억으로 남길 수 있습니다.\n- **추천 여행 코스**: 공공 API를 활용해 촬영지를 포함한 맞춤형 추천 코스를 제공합니다."
-      },
-      {
-        "id": "process",
-        "question": "프로젝트는 어떻게 진행됐나요?",
-        "answer": "몇 차례 공모전 서류에서 떨어진 뒤, 서류를 통과할 매력적인 아이디어가 가장 중요하다는 것을 깨닫고 팀원들과 주제 선정에 많은 시간을 들였습니다. 코로나가 잠잠해지는 시기를 반영해 미디어 촬영지 중심의 여행 서비스로 주제를 정했고, 서류 심사를 통과했습니다.\n\n팀원 모두 제대로 된 웹 개발 경험이 없었지만, 저는 당시 라이징캠프에서 에어비앤비를 클론코딩하며 지도 API를 익히고 있었고 이를 바탕으로 프로젝트를 진행했습니다. 역할은 데이터 처리, 백엔드, 프론트엔드로 나눴고 저는 프론트엔드와 전체 퍼블리싱을 맡았습니다. 진행할수록 역할 구분 없이 어려운 문제를 함께 해결했고, 막바지에는 남은 기능을 노션에 정리해 역할을 나눠 빠르게 마무리했습니다."
-      },
-      {
-        "id": "learn",
-        "question": "이 프로젝트를 통해 무엇을 배웠나요?",
-        "answer": "[페이지네이션]\n- 문제: 여행지 데이터가 많아 한 번에 보여주면 정보를 찾기 어렵고 로딩이 느렸습니다.\n- 해결: 현재 페이지와 페이지 크기로 데이터를 잘라 보여주는 페이지네이션을 컴포넌트로 만들어 재사용했습니다.\n- 결과: 여행지 목록을 페이지별로 나눠 로딩 속도를 개선하고, 사용자가 정보를 더 쉽게 찾을 수 있게 했습니다.\n\n```jsx\nconst paginate = (data, currentPage, pageSize) => {\n  const startIndex = (currentPage - 1) * pageSize;\n  return data.slice(startIndex, startIndex + pageSize);\n};\n```\n\n[로딩 스피너]\n- 문제: 공공 API에서 추천 코스를 불러오는 동안 사용자가 기다려야 했습니다.\n- 해결: 데이터를 불러오는 동안 스피너를 보여주도록 구현했습니다.\n- 결과: 로딩 중에도 데이터를 불러오고 있음을 시각적으로 알려 사용자 경험을 해치지 않았습니다.\n\n[모달]\n- 문제: 촬영지 상세 정보를 페이지 이동 없이 확인할 수 있어야 했습니다.\n- 해결: 게시물을 클릭하면 해당 게시물의 상세 정보를 보여주는 모달을 만들고, 열려 있는 동안 바깥 클릭을 막았습니다.\n- 결과: 사용자가 흐름을 끊지 않고 중요한 정보를 확인할 수 있게 했습니다.\n\n```jsx\nconst Modal = ({ show, onClose, content }) => {\n  if (!show) return null;\n\n  return (\n    <div className=\"modal\">\n      <div className=\"modal-content\">{/* 내용 */}</div>\n    </div>\n  );\n};\n```\n\n[협업]\n- 문제: 팀원 모두 웹 개발 경험이 적어, 맡은 역할만으로는 해결하기 어려운 문제가 많았습니다.\n- 해결: 각자 맡은 역할을 하면서도 서로의 작업에 피드백을 주고받고, 어려운 문제는 함께 해결했습니다.\n- 결과: 지속적인 커뮤니케이션이 더 나은 결과물로 이어진다는 것을 배웠습니다."
-      },
-      {
-        "id": "disappointing",
-        "question": "어려웠던 점이나 아쉬웠던 점은 무엇인가요?",
-        "answer": "팀원 중 저만 퍼블리싱 경험이 있어 UI 작업을 전담하게 되었고, 해보고 싶었던 몇몇 기능은 다른 팀원에게 맡겨야 했습니다. 또 퍼블리싱을 마친 뒤 사용자 경험을 고려한 세부 조정이 부족해, PT 발표에서 UI/UX가 미흡하다는 평가를 받았습니다.\n\n이 경험으로 UI/UX의 중요성을 더 깊이 인식했고, 기능과 디자인의 균형을 맞추는 것이 중요하다는 것을 배웠습니다."
+        "feature": "적용 대상: Maplix 서비스 전체 페이지",
+        "featureDesc": "OTT 콘텐츠 조회/검색, 메인 페이지 등",
+        "actions": [
+          "전체 페이지의 초기 렌더링 속도 개선을 목표로 구조적 리팩터링 진행",
+          "React.lazy / useMemo / Lazy Loading 적용으로 초기 로딩 속도 개선",
+          "Skeleton UI 도입으로 로딩 중 시각적 안정성 강화"
+        ],
+        "image": {
+          "src": "images/portfolio/maplix/maplix-render-table.webp",
+          "label": "Table"
+        },
+        "title": "사용자 경험 향상을 위한 초기 렌더링 속도 개선",
+        "why": "**\"페이지 진입 시 초기 렌더링이 느려 사용자 이탈이 발생\"**\n- 첫 화면 진입 시 JS 번들 로딩 과도\n- 이미지 및 데이터 지연으로 FCP(First Contentful Paint) 지표 저하\n- Lighthouse Performance **68점** / LCP **3.8s** / TTI **4.2s**",
+        "how": "| 개선 항목 | 적용 기술 | 개선 내용 |\n| --- | --- | --- |\n| JS 번들 최소화 | `React.lazy`, `dynamic import()` | 페이지 단위 코드 스플리팅으로 초기 JS 로드 크기 축소 |\n| 렌더링 연산 최적화 | `useMemo()`, `useCallback()` | 반복 연산·함수 재생성 방지로 불필요한 리렌더링 최소화 |\n| 이미지 렌더링 개선 | Lazy Loading, Skeleton UI | 이미지 지연 로딩 시에도 구조 프레임 유지, 체감 속도 향상 |",
+        "diagram": "images/portfolio/maplix/maplix-lighthouse.webp",
+        "result": "- Lighthouse **68 → 80점** (▲12점)\n- `useMemo`를 통한 렌더링 효율화로 연산 부담 **25~40% 감소**\n- 이미지 Lazy Loading으로 FCP **3.8s → 1.2s** 개선"
       }
     ]
   },
@@ -216,6 +213,7 @@
     "icon": "images/giver_icon.webp",
     "video": "videos/giver.mp4",
     "team": true,
+    "teamInfo": "팀 프로젝트 · 해커톤 (2일)",
     "skills": {
       "skill": "REACT, JAVASCRIPT, HTML/CSS, SOCKET.IO",
       "organization": "GDSC - hufs summer hackerton",
@@ -240,14 +238,24 @@
         "answer": "GDSC HUFS 여름 해커톤에서 이틀 동안 팀으로 진행한 프로젝트입니다. 저는 프론트엔드를 맡아 퍼블리싱과 로그인/회원가입, 실시간 채팅 기능을 구현했습니다."
       },
       {
-        "id": "learn",
-        "question": "이 프로젝트를 통해 무엇을 배웠나요?",
-        "answer": "[Socket.IO 실시간 채팅]\n- 문제: 장애인과 비장애인이 자유롭게 소통할 실시간 채팅이 필요했고, 사용자의 위치 코드(`locationalCode`)로 그룹 채팅방을 만들어 입장·퇴장·메시지 수신 같은 이벤트를 처리해야 했습니다.\n- 해결: `Socket.IO`로 양방향 실시간 통신을 구현해 `locationalCode`에 따라 대화방을 자동으로 만들고 입장하게 했습니다. 처음 채팅 데이터는 `Axios`로 불러오고, 이후 메시지는 `socket.on`으로 받고 `socket.emit`으로 보냈습니다. 방 생성·입장·퇴장은 `new room`, `join room`, `leave room` 이벤트로 처리하고, 컴포넌트가 사라질 때 `socket.off`로 리스너를 정리했습니다.\n- 결과: 메시지가 실시간으로 오가는 양방향 채팅을 완성했고, 리스너를 정리해 메모리 누수를 막았습니다.\n\n[시간 관리]\n- 문제: 해커톤이라 제한된 시간 안에 결과물을 완성해야 했습니다.\n- 해결: 기능의 우선순위를 정하고 핵심 기능에 집중했습니다.\n- 결과: 일정 관리의 중요성을 실감했고, 선택과 집중으로 프로젝트를 마무리했습니다."
-      },
-      {
         "id": "disappointing",
         "question": "어려웠던 점이나 아쉬웠던 점은 무엇인가요?",
         "answer": "HTML/CSS에 어려움을 느낀 팀원이 ChatGPT로 UI 코드를 작성했는데, 기존 구조와 맞지 않아 Git 충돌이 났고 프로젝트 맥락과 어긋나는 부분도 많았습니다. 제가 코드를 하나하나 직접 고치느라 예상보다 많은 시간이 들었고, 결국 몇몇 UI를 시간 안에 완성하지 못하고 기능 구현에 집중해야 했던 점이 아쉽습니다."
+      }
+    ],
+    "troubleshooting": [
+      {
+        "feature": "실시간 채팅",
+        "featureDesc": "장애 학우와 도움을 주는 학생이 같은 위치 그룹에서 바로 대화할 수 있는 채팅",
+        "actions": [
+          "Socket.IO 기반 양방향 실시간 통신 구현",
+          "위치 코드(`locationalCode`) 기반 그룹 채팅방 자동 생성·입장",
+          "컴포넌트 언마운트 시 소켓 리스너 정리"
+        ],
+        "title": "Socket.IO : 위치 기반 그룹 채팅방과 실시간 메시지 처리",
+        "why": "- 장애인과 비장애인이 자유롭게 소통할 **실시간 채팅**이 필요했음\n- 사용자의 위치 코드(`locationalCode`)별로 그룹 채팅방을 만들고, 입장·퇴장·메시지 수신 같은 이벤트를 처리해야 했음",
+        "how": "[채팅방]\n- `locationalCode`에 따라 대화방을 자동으로 만들고 입장\n- 방 생성·입장·퇴장은 `new room`, `join room`, `leave room` 이벤트로 처리\n\n[메시지]\n- 처음 채팅 데이터는 `Axios`로 불러오고, 이후 메시지는 `socket.on`으로 받고 `socket.emit`으로 전송\n- 컴포넌트가 사라질 때 `socket.off`로 리스너 정리",
+        "result": "- 메시지가 실시간으로 오가는 **양방향 그룹 채팅** 완성\n- 리스너를 정리해 **중복 수신과 메모리 누수** 방지"
       }
     ]
   },
@@ -286,14 +294,84 @@
         "answer": "대학교 친구들의 제안으로 '고용노동 공공데이터 활용 공모전'에 참여했습니다. 일주일에 2~3번 회의를 하며 개발 상황을 공유하고, 이슈가 있는 부분은 함께 이야기하며 대안을 찾았습니다.\n\n저는 프론트엔드를 맡아 전체 퍼블리싱과 로그인, 산재 보상 절차, 보험금 모의 계산기, 수령 확률 계산기, 직업훈련 우수 기관, 산재 지정 의료기관, 커뮤니티 페이지 등 프론트엔드 전반을 개발했습니다."
       },
       {
-        "id": "learn",
-        "question": "이 프로젝트를 통해 무엇을 배웠나요?",
-        "answer": "[사용자 중심 UI/UX]\n- 문제: 산재 보상 정보를 찾는 사용자는 나이대가 높은 경우가 많은데, 기존 웹사이트는 글씨와 버튼의 가독성과 접근성이 떨어졌습니다.\n- 해결: 글씨 크기를 일반적인 16px보다 큰 18px로 키우고 버튼 간격을 넓혔습니다. 주요 메뉴는 메인에서 한눈에 보이게 배치하고, 정보 페이지에서는 최소한의 클릭으로 자료를 내려받거나 외부 사이트로 이동할 수 있게 설계했습니다.\n- 결과: 다양한 연령대의 접근성을 높였고, '이해하기 쉽고 사용하기 쉽다'는 피드백을 받았습니다.\n\n[스크롤 위치 초기화]\n- 문제: 페이지를 이동해도 이전 페이지의 스크롤 위치가 남아 있어 사용자가 혼란을 느꼈습니다.\n- 해결: React Router의 `useLocation`과 `useEffect`로 페이지가 바뀔 때마다 스크롤을 맨 위로 올렸습니다.\n- 결과: 새 페이지가 항상 처음부터 보여 자연스럽게 콘텐츠를 탐색할 수 있게 되었습니다.\n\n[카카오맵 InfoWindow]\n- 문제: 지도에서 마커를 눌러도 정보가 부족했고, 선택한 위치로 지도가 이동하지 않았습니다.\n- 해결: `InfoWindow`로 마커를 누르면 장소 이름, 설명, 링크를 보여주고, 검색하거나 클릭하면 해당 위치로 지도가 이동하게 했습니다.\n- 결과: 지도 기반 정보를 더 직관적으로 활용할 수 있게 되었습니다.\n\n[useParams 상세 페이지 라우팅]\n- 문제: 커뮤니티 게시글마다 고유한 ID로 상세 페이지를 보여줘야 했습니다.\n- 해결: React Router의 `useParams`로 URL에서 ID를 꺼내 해당 게시글 데이터를 렌더링했습니다.\n- 결과: URL 구조가 명확해져 특정 게시글에 쉽게 접근할 수 있게 되었습니다."
-      },
-      {
         "id": "disappointing",
         "question": "어려웠던 점이나 아쉬웠던 점은 무엇인가요?",
         "answer": "남는 일이 있냐는 팀원에게 산재 지정 병원 리스트의 공공 API 연결을 부탁드렸습니다. 퍼블리싱은 이미 마친 상태였지만, 그 팀원은 프론트엔드 경험이 없어 제출 직전까지 연결이 잘 되지 않았고 결국 제가 빠르게 처리했습니다.\n\n이전 프로젝트에서 공공 API를 다뤄 봐서 어렵지 않게 처리했지만, 시간이 촉박해 다른 페이지를 마무리하지 못할까 봐 조급했던 점이 아쉽습니다."
+      }
+    ],
+    "troubleshooting": [
+      {
+        "feature": "메인 · 정보 페이지",
+        "featureDesc": "산재 보상 절차, 지정 의료기관, 서류 다운로드 등 노동자에게 필요한 정보를 모아 보여주는 페이지",
+        "actions": [
+          "주요 기능을 메인에서 한눈에 보이도록 배치",
+          "정보 페이지에서 서류 다운로드·외부 이동 동선 단축",
+          "기본 글씨 크기와 버튼 간격 확대"
+        ],
+        "title": "나이대가 높은 사용자를 위한 가독성·접근성 개선",
+        "why": "- 산재 보상 정보를 찾는 사용자는 **나이대가 높은 경우가 많음**\n- 기존 웹사이트는 글씨와 버튼의 가독성이 떨어지고, 원하는 정보까지 가는 단계가 많았음",
+        "how": "- 글씨 크기를 일반적인 16px보다 큰 **18px**로 키우고 버튼 간격을 넓힘\n- 주요 메뉴는 메인에서 한눈에 보이게 배치\n- 정보 페이지에서는 **최소한의 클릭**으로 자료를 내려받거나 외부 사이트로 이동하도록 설계\n- 페이지를 이동할 때 이전 스크롤 위치가 남지 않도록 `useLocation` + `useEffect`로 스크롤을 맨 위로 초기화",
+        "result": "- 다양한 연령대의 접근성을 높임\n- 사용자에게 **'이해하기 쉽고 사용하기 쉽다'**는 피드백을 받음"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "date": "23.9 ~ 23.12",
+    "name": "테크랩스",
+    "detail": "기업 내 어드민 사이트 개발 및 유지보수",
+    "img": "images/portfolio/techlabs/techlabs.webp",
+    "team": true,
+    "teamInfo": "인턴 · AI 개발실 프론트엔드",
+    "hideFromList": true,
+    "skills": {
+      "skill": "React, TypeScript, Redux Toolkit, TanStack Query, Recharts, Jira",
+      "organization": "테크랩스 AI 개발실 (프론트엔드 인턴)",
+      "detail": "AI 개발실 프론트엔드 인턴으로 기업 내 어드민 사이트를 개발하고 유지보수했습니다.\n\n- **온보딩 과제**: 신규 직원이 빠르게 적응할 수 있도록 설계된 초기 과제를 수행했습니다.\n- **웹 페이지 리뉴얼**: 고객이 공감할 수 있는 신뢰 기반 추천 서비스를 위해 PERSONA 페이지 개편에 참여했습니다.\n- **카페24 데모 사이트**: B2B 세일즈용 큐봇(대화형 큐레이션 봇) 시연을 위한 데모 사이트를 개발했습니다.",
+      "roles": [
+        "[온보딩 과제]\n- Redux Toolkit으로 상태 관리 일관성을 확보했습니다.\n- Lodash debounce로 불필요한 연산을 줄였습니다.\n- Recharts로 API 데이터를 그래프로 시각화했습니다.\n- 반복 로직을 Custom Hook으로 분리했습니다.",
+        "[PERSONA 페이지 리뉴얼]\n- 프로젝트 구조를 전수 조사해 API 호출 경로를 문서화했습니다.\n- User ID 리스트를 한 번에 받아 캐싱하고, 클라이언트에서 랜덤으로 골라 렌더링하도록 로직을 바꿨습니다.\n- Persona API로 교체하며 기존 컴포넌트의 호출 방식을 전면 수정했습니다.",
+        "[카페24 데모 사이트]\n- B2B 세일즈용 큐봇 시연을 위한 데모 사이트를 개발했습니다."
+      ]
+    },
+    "troubleshooting": [
+      {
+        "feature": "온보딩 과제",
+        "featureDesc": "신규 직원이 빠르게 적응할 수 있도록 설계된 초기 과제 수행",
+        "actions": [
+          "Redux Toolkit으로 상태 관리 일관성 확보",
+          "Lodash debounce 적용으로 불필요한 연산 최적화",
+          "Recharts로 API 데이터 시각화",
+          "반복 로직은 Custom Hook으로 분리"
+        ],
+        "image": {
+          "src": "images/portfolio/techlabs/techlabs-onboarding.webp",
+          "label": "UI"
+        },
+        "title": "네이버 Open API CORS 이슈 해결 (Vite 프록시 / 프론트 전용)",
+        "why": "- 네이버 Open API는 브라우저에서 직접 호출하면 CORS 정책으로 요청이 차단됨\n- API Key를 클라이언트에 노출할 수 없어, 프론트에서 직접 호출 불가능\n- 온보딩 과제 범위가 프론트엔드 한정이라, 서버 없이 개발 환경에서만 안전하게 호출할 방법이 필요",
+        "how": "- Vite dev server proxy로 `/api` 요청을 `openapi.naver.com`으로 프록시\n- 프록시 레이어에서 네이버 API 키 헤더를 자동으로 넣어 클라이언트 노출 방지 (개발 환경 변수 사용)\n- 프론트 코드에서는 엔드포인트만 `/api/...`로 호출 → 구현 복잡도 최소화\n\n```ts\nserver: {\n  proxy: {\n    \"/api\": {\n      target: \"https://openapi.naver.com\",\n      changeOrigin: true,\n      rewrite: (path) => path.replace(/^\\/api/, \"\"),\n      configure: (proxy) => {\n        proxy.on(\"proxyReq\", (proxyReq) => {\n          // 네이버 API 헤더 추가\n          proxyReq.setHeader(\"X-Naver-Client-Id\", env.VITE_NAVER_CLIENT_ID || \"\");\n          proxyReq.setHeader(\"X-Naver-Client-Secret\", env.VITE_NAVER_CLIENT_SECRET || \"\");\n        });\n      },\n    },\n  },\n},\n```",
+        "diagram": "images/portfolio/techlabs/techlabs-proxy-flow.webp",
+        "result": "- 개발 환경에서 **CORS 에러 없이 즉시 호출** 가능\n- API 키를 코드·네트워크 탭에 **노출하지 않음**\n- Vite 프록시는 개발 서버에서만 동작 → 빌드 산출물(운영)에는 적용되지 않음"
+      },
+      {
+        "feature": "웹 페이지 리뉴얼",
+        "featureDesc": "고객이 공감할 수 있는 신뢰 기반 추천 서비스를 구현하기 위해 PERSONA 페이지 개편",
+        "actions": [
+          "프로젝트 구조를 전수 조사하며 API 호출 경로를 문서화",
+          "User ID 리스트를 한 번에 받아 캐싱",
+          "클라이언트에서 랜덤 선택/렌더링하는 방식으로 로직 변경",
+          "Persona API로 교체하며 기존 컴포넌트들의 호출 방식을 전면 수정"
+        ],
+        "image": {
+          "src": "images/portfolio/techlabs/techlabs-persona.webp",
+          "label": "UI"
+        },
+        "title": "TanStack Query와 Redux Toolkit을 결합한 서버/클라이언트 상태 관리 구조 개선",
+        "why": "- 기존 Redux 단일 구조에서는 서버 데이터와 클라이언트 상태가 섞여 관리됨\n- API 요청 실패 시 재시도 로직이 없어, 랜덤 User ID 조회 시 데이터 누락과 무한 로딩 문제가 발생",
+        "how": "- 서버 상태는 React Query로 옮겨 캐싱, 리트라이, staleTime·gcTime 설정을 통한 자동 동기화 구조 구축\n- 클라이언트 상태는 Redux Toolkit으로 유지해, 사용자 UI 필터·선택 정보만 관리하도록 역할 분리\n- Custom Hook(`useUserData`)으로 공통 API 로직을 추상화해 유지보수성 강화\n\n| 데이터 | 관리 방식 |\n| --- | --- |\n| 서버 데이터 | React Query |\n| UI 데이터 | Redux Toolkit |\n| 공통 API 로직 | Custom Hook으로 추상화 |",
+        "diagram": "images/portfolio/techlabs/techlabs-state-diagram.webp",
+        "result": "- 데이터 캐싱과 요청 실패 자동 복구로 데이터 안정성 향상 (**API 실패율 15% → 0%**)\n- **Redux 스토어 크기 30% 감소**, 코드 복잡도 개선\n- QA 기준 2주간 **사용자 불만 제보 0건** 달성"
       }
     ]
   },
@@ -381,6 +459,7 @@
     "icon": "images/icon/gitpulse.webp",
     "youtube": "https://www.youtube.com/watch?v=uSRwbAfiUU4",
     "team": true,
+    "teamInfo": "팀 프로젝트 · 4명",
     "skills": {
       "skill": "REACT, JAVASCRIPT",
       "organization": "유레카 SW 교육",
@@ -400,14 +479,36 @@
         "answer": "유레카 SW 교육과정에서 진행한 공공 API 활용 프로젝트로, 4명이 함께 진행했습니다. 초반에는 두 명씩 나눠 GitHub OAuth 로그인을 구현했고, 이후 각자 담당 페이지를 맡아 개발했습니다. 저는 Organization 페이지와 PR Review 페이지를 개발하고, 개발자 테스트 페이지를 퍼블리싱했습니다."
       },
       {
-        "id": "learn",
-        "question": "이 프로젝트를 통해 무엇을 배웠나요?",
-        "answer": "[커밋 메시지 컨벤션 검사]\n- 문제: 팀원마다 커밋 메시지를 제각각 작성해, 규칙을 어긴 메시지를 자동으로 찾아낼 필요가 있었습니다.\n- 해결: 정규표현식과 문자열 전처리로 feat, fix, docs 같은 접두어를 썼는지, 최소 6자 이상인지 검사하고, Merge·Revert 같은 자동 메시지는 제외했습니다.\n- 결과: 팀의 커밋 메시지 일관성을 확보하고, 코드 리뷰에서 가독성과 신뢰도를 높였습니다.\n\n[허수 커밋 걸러내기]\n- 문제: 의미 없는 작은 변경을 여러 번 나눠 커밋해, 실제 기여와 상관없이 커밋 수가 부풀려지는 경우가 있었습니다.\n- 해결: GitHub API로 변경된 코드 줄 수와 커밋 수를 비교해, 수정한 줄은 적은데 커밋만 많은 경우를 허수 커밋으로 자동 분류했습니다.\n- 결과: 팀 히스토리를 투명하게 유지하고, 의미 있는 기여 중심으로 협업할 수 있게 되었습니다.\n\n[GitHub API 인증 문제]\n- 문제: PR 코멘트를 POST로 보낼 때 500 에러가 발생했습니다.\n- 해결: GitHub 조직 설정의 OAuth App Policy에서 앱 접근을 허용하고, OAuth App을 승인된 앱으로 등록했습니다.\n- 결과: 조직 내 GitHub API 접근이 정상화되어 리뷰 작성과 데이터 연동이 안정적으로 동작했습니다."
-      },
-      {
         "id": "disappointing",
         "question": "어려웠던 점이나 아쉬웠던 점은 무엇인가요?",
         "answer": "제한된 기간 때문에 반응형까지 완벽하게 마무리하지 못한 점이 아쉽습니다. 특히 모바일 환경의 사용자 경험을 더 개선하고 싶습니다."
+      }
+    ],
+    "troubleshooting": [
+      {
+        "feature": "Organization 페이지",
+        "featureDesc": "팀원들의 GitHub 활동을 모아 커밋 습관과 기여도를 보여주는 페이지",
+        "actions": [
+          "GitHub API로 커밋별 변경 줄 수와 커밋 수 수집",
+          "정규표현식 기반 커밋 메시지 컨벤션 검사",
+          "허수 커밋·컨벤션 위반 커밋 자동 분류"
+        ],
+        "title": "커밋 수만으로는 보이지 않는 실제 기여도 걸러내기",
+        "why": "- 의미 없는 작은 변경을 여러 번 나눠 커밋해, 실제 기여와 상관없이 **커밋 수가 부풀려지는** 경우가 있었음\n- 팀원마다 커밋 메시지를 제각각 작성해, 규칙을 어긴 메시지를 사람이 일일이 찾아야 했음",
+        "how": "[허수 커밋 분류]\n- GitHub API로 **변경된 코드 줄 수와 커밋 수를 비교**\n- 수정한 줄은 적은데 커밋만 많은 경우를 허수 커밋으로 자동 분류\n\n[커밋 메시지 컨벤션 검사]\n- 정규표현식과 문자열 전처리로 `feat`, `fix`, `docs` 같은 접두어 사용 여부와 최소 6자 이상인지 검사\n- `Merge`, `Revert` 같은 자동 생성 메시지는 검사 대상에서 제외",
+        "result": "- 커밋 수가 아닌 **의미 있는 기여 중심**으로 팀 히스토리를 볼 수 있게 됨\n- 팀의 커밋 메시지 일관성을 확보해 코드 리뷰의 가독성과 신뢰도 향상"
+      },
+      {
+        "feature": "PR Review 페이지",
+        "featureDesc": "GitHub처럼 라인별 리뷰와 PR 전체 코멘트를 한 화면에서 관리하는 페이지",
+        "actions": [
+          "GitHub API 연동 라인별 리뷰·PR 코멘트 작성",
+          "리뷰 내용을 한 화면에서 조회·관리"
+        ],
+        "title": "GitHub API : PR 코멘트 작성 시 500 에러 해결",
+        "why": "- PR 코멘트를 `POST`로 보낼 때 **500 에러**가 발생\n- 조회 API는 정상 동작해 코드 문제인지 권한 문제인지 구분이 필요했음",
+        "how": "- 요청 코드가 아닌 **조직(Organization)의 앱 접근 정책**이 원인임을 확인\n- GitHub 조직 설정의 **OAuth App Policy**에서 앱 접근을 허용\n- 서비스의 OAuth App을 승인된 앱으로 등록",
+        "result": "- 조직 내 GitHub API 접근이 정상화되어 **리뷰 작성과 데이터 연동이 안정적으로 동작**\n- 외부 API 에러는 코드뿐 아니라 인증·권한 설정까지 함께 확인해야 한다는 점을 배움"
       }
     ]
   },
@@ -420,28 +521,37 @@
     "icon": "images/icon/upick.webp",
     "youtube": "https://www.youtube.com/watch?v=oT1HmlRkBm0",
     "team": true,
+    "teamInfo": "팀 프로젝트 · 프론트엔드 3명, 백엔드 2명",
     "skills": {
-      "skill": "REACT, JAVASCRIPT, Sass",
+      "skill": "React, JavaScript, Sass, GPT-4.1-mini",
       "organization": "유레카 SW 교육",
-      "detail": "LG U+ 이용 고객의 통신 서비스 경험을 향상시키기 위해, 다음과 같은 기능을 통합 제공하는 플랫폼을 구축하고자 합니다.",
-      "github": "https://github.com/yeeun426/GitPulse",
+      "detail": "LG U+ 이용 고객의 통신 서비스 경험을 높이기 위해, 다음 기능을 하나로 제공하는 플랫폼을 만들었습니다.\n\n- **LLM 기반 챗봇**: LG U+ 요금제를 쉽고 직관적으로 추천합니다.\n- **자연어 질의**: 복잡한 조건을 입력하지 않고 대화만으로 요금제를 확인할 수 있습니다.\n- **맞춤형 추천**: 가족·지인 결합 할인과 데이터·통화 패턴을 반영해 최적의 요금제를 제공합니다.",
+      "github": "https://github.com/yeeun426/Pick_Front",
       "video": "https://www.youtube.com/watch?v=uSRwbAfiUU4",
       "roles": [
-        "[결합 신청 페이지]\n- 결합 신청 페이지를 구현하고 토스 결제 PG를 연동했습니다.",
-        "[멤버십 혜택 지도]\n- 카카오맵 API로 위치 기반 멤버십 혜택 지도를 구현했습니다.",
-        "[챗봇 프롬프트]\n- 고객 응대 시나리오를 설계하고, GPT-4.1-mini와 Function Calling 기반 챗봇 프롬프트를 만들었습니다."
+        "[TOSS PG 결제 연동]\n- 결제를 위한 안전한 결제 흐름을 구축하고, 결합 신청·결제·결제 완료(영수증) 페이지를 만들었습니다.",
+        "[멤버십 혜택 지도]\n- 위치 기반으로 내 주변 멤버십 혜택 가맹점을 시각화했습니다.",
+        "[LLM 챗봇 프롬프트]\n- Function Calling으로 요금제 추천 응답을 개선했습니다."
       ]
     },
-    "QnA": [
+    "troubleshooting": [
       {
-        "id": "process",
-        "question": "프로젝트는 어떻게 진행됐나요?",
-        "answer": "프론트엔드 개발자 5명이 프론트엔드 3명, 백엔드 2명으로 나눠 진행했고, 프론트엔드 작업이 먼저 끝나면 백엔드를 돕는 방식이었습니다. 저는 결합 신청 페이지(토스 결제 연동), 멤버십 혜택 지도, 챗봇 프롬프트 설계를 맡았습니다."
-      },
-      {
-        "id": "learn",
-        "question": "이 프로젝트를 통해 무엇을 배웠나요?",
-        "answer": "[Function Calling 기반 결합 할인 챗봇]\n- 문제: 사용자 정보가 부족하면 정확한 결합 할인 안내가 어렵고, 가족·지인 결합 조건마다 할인 계산 방식이 달라 복잡했습니다.\n- 해결: GPT-4.1-mini의 Function Calling으로 조건을 나눴습니다. 정보가 부족하면 결합 유형과 조건만 간단히 안내하고, 가족 구성원 정보가 충분하면 최대 할인율을 계산해 안내하며, 지인 결합을 요청하면 유플픽 서비스 링크로 연결했습니다.\n- 결과: 고객이 자신의 상황에 맞는 결합 혜택을 바로 확인할 수 있게 되었고, 분기 로직이 명확해져 코드 리뷰와 협업도 수월해졌습니다.\n\n[결합 절차 안내·신청 페이지]\n- 문제: 결합 조건이 복잡해 한 화면에서 안내하면 읽기 어렵고 이탈할 가능성이 높았습니다.\n- 해결: 가족·지인 결합을 나눠 조건을 먼저 이해한 뒤 신청하도록 하고, 절차는 글 대신 아이콘과 번호 흐름으로 보여주며, 신청 폼은 한 페이지로 단순화했습니다.\n- 결과: 조건과 절차를 단계적으로 이해할 수 있어 신청 부담이 줄었습니다.\n\n[카카오맵 CustomOverlay]\n- 문제: 카카오맵 기본 InfoWindow는 CSS 커스터마이징이 제한적이었습니다.\n- 해결: `kakao.maps.CustomOverlay`로 정보 창을 브랜드 로고로 바꾸고, HTML 구조와 SCSS로 카드 UI를 만들었습니다.\n- 결과: UI를 자유롭게 꾸밀 수 있어 브랜드와 일관된 디자인을 확보했습니다."
+        "feature": "챗봇 페이지",
+        "featureDesc": "통신 서비스 관련 정보를 손쉽게 조회할 수 있도록 설계된 AI 상담 페이지. ① 결합 할인율 ② 이용 패턴 기반 요금제 추천 ③ 멤버십 등급 및 혜택 조회를 제공합니다.",
+        "actions": [
+          "Function Calling 기반 구조로 조건 분기 및 할인 계산 자동화",
+          "GPT-4.1-mini 모델 적용으로 응답 일관성 향상 및 속도 최적화",
+          "temperature 0.2 고정으로 할인 계산 변동 최소화"
+        ],
+        "image": {
+          "src": "images/portfolio/u+pick/u+pick(3).webp",
+          "label": "UI"
+        },
+        "title": "LLM : Function Calling 기반 챗봇 응답 안정화",
+        "why": "- 초기에는 일반 GPT-4 API를 사용했으나, 복잡한 결합 조건을 처리할 때 모델의 응답 일관성 저하\n- 특히 사용자 정보가 불완전하면, 모델이 불필요한 추가 질문을 반복하거나 잘못된 조건으로 할인 계산을 시도\n- 할인 구조가 복잡해 프롬프트만으로는 조건 제어가 어려움",
+        "how": "- Function Calling을 지원하는 GPT-4.1-mini로 전환 → 모델이 직접 조건을 분기하고 함수를 호출하도록 구조 변경\n- 사용자가 질문을 입력하면 GPT가 질문을 분석해 알맞은 함수를 호출: 요금제 추천 / 결합 할인율 계산 / 멤버십 등급 확인 및 혜택 조회\n- `temperature: 0.2`로 고정해 할인 계산 응답의 변동성 최소화\n- OpenAI Function Calling 기반 역질문으로 부족한 정보를 자동 보완",
+        "diagram": "images/portfolio/u+pick/upick-function-calling.webp",
+        "result": "- 4턴 내 응답 목표로 진행한 테스트 **32회 중 29회 성공**\n- Function Calling 기반 역질문 구조로 필요한 정보를 자동 수집해 대화 완결성 향상\n- 응답 시간 **32초 → 23초** (약 9초 단축)"
       }
     ]
   },
@@ -454,28 +564,116 @@
     "icon": "images/icon/movie.webp",
     "youtube": "https://www.youtube.com/watch?v=khPvwbfLF8E",
     "team": true,
+    "teamInfo": "팀 프로젝트 · 프론트엔드 3명, 백엔드 4명",
     "skills": {
-      "skill": "React, TS, Tailwind, Zustand, GSAP",
+      "skill": "React, TypeScript, Zustand, TanStack Query, Tailwind, WebSocket, SSE, Jira",
       "organization": "[LG 유플러스] 유레카 2기",
-      "detail": "왜 우리는 항상 OTT 앱을 켠 채 한참을 방황해야 할까?\nOTT 콘텐츠가 폭발적으로 증가하면서 선택의 어려움도 커졌습니다. 대부분의 플랫폼은 평점·인기 순위 위주의 단순한 추천만 제공해, 개인의 취향을 충분히 반영하지 못하는 한계가 있었습니다.\nPOPCO는 이러한 문제를 해결하기 위해 줄거리 중심 추천, 팝코리즘, 페르소나 기반 추천을 제공합니다.",
-      "github": "https://github.com/Eureka-final-popco/Popco-Front",
+      "detail": "왜 우리는 항상 OTT 앱을 켠 채 한참을 방황해야 할까?\nOTT 콘텐츠가 폭발적으로 증가하면서 선택의 어려움도 커졌습니다. 대부분의 플랫폼은 평점·인기 순위 위주의 단순한 추천만 제공해, 개인의 취향을 충분히 반영하지 못하는 한계가 있었습니다.\nPOPCO는 이러한 문제를 해결하기 위해 줄거리 중심 추천, 팝코리즘, 페르소나 기반 추천을 제공합니다.\n\n- **OTT 콘텐츠 취향 발견**: 사용자가 자신의 선호를 인식하고 기록할 수 있습니다.\n- **개인화 추천**: '취향 진단 시스템'을 기반으로 맞춤형 콘텐츠를 추천합니다.\n- **참여형 기능**: 실시간 퀴즈 이벤트와 컬렉션 기능으로 몰입도와 참여도를 높였습니다.",
+      "github": "https://github.com/yeeun426/Popco-Front",
       "video": "https://www.youtube.com/watch?v=uSRwbAfiUU4",
       "roles": [
-        "[메인 페이지]\n- 메인 페이지를 구현하고, React.lazy와 스켈레톤 UI로 렌더링 성능을 개선했습니다.",
-        "[실시간 이벤트·알림 페이지]\n- SSE로 퀴즈 시작 10분 전 알림을 보냈습니다.\n- WebSocket으로 사용자 기반 실시간 퀴즈 이벤트를 구현했습니다.",
-        "[전체 리스트/필터 페이지]\n- 전체 리스트와 필터 페이지를 구현했습니다."
+        "[메인·실시간 이벤트·전체 리스트 페이지]\n- 좋아요/싫어요가 실시간으로 반영되는 메인 페이지, 실시간 이벤트·알림, 전체 리스트 페이지를 구현했습니다.\n- 팝코의 정체성을 보여주는 랜딩 페이지와 정답/오답 결과 페이지를 만들었습니다.",
+        "[실시간 데이터]\n- WebSocket과 SSE로 실시간 데이터 반영과 퀴즈 이벤트를 개발했습니다.",
+        "[성능·UX]\n- 페이지 렌더링 속도를 높이고 UX를 최적화했습니다."
       ]
     },
-    "QnA": [
+    "troubleshooting": [
       {
-        "id": "process",
-        "question": "프로젝트는 어떻게 진행됐나요?",
-        "answer": "프론트엔드 3명, 백엔드 4명으로 구성해 기획, Figma 초안, 퍼블리싱, API 연동, 버그 테스트 순서로 진행했습니다. 저는 메인 페이지와 렌더링 성능 개선, 실시간 퀴즈 이벤트·알림 페이지, 전체 리스트/필터 페이지를 맡았습니다."
+        "feature": "실시간 퀴즈 이벤트 페이지",
+        "featureDesc": "참가자의 정답 여부와 통과 인원을 WebSocket으로 실시간 반영하는 퀴즈 이벤트 페이지",
+        "actions": [
+          "SockJS + STOMP 기반 WebSocket 연결 및 구독 로직 구현",
+          "서버에서 오는 이벤트에 따라 상태 실시간 업데이트",
+          "카운트다운 타이머를 상태 기반으로 렌더링하고, 이벤트 타입에 따라 UI 전환 애니메이션 적용"
+        ],
+        "image": {
+          "src": "images/portfolio/popco/popco-event.webp",
+          "label": "UI"
+        },
+        "title": "WebSocket : 실시간 퀴즈 이벤트 정답자 '시간 초과' 이동 버그 해결",
+        "why": "- 정답자는 10초 후 다음 문제로 이동해야 하지만, 서버가 늦게 계산한 timeout 이벤트가 브라우저에 먼저 도착함\n- 그 결과 정답자도 '시간 초과' 페이지로 이동하는 오류 발생 → 이벤트 순서가 뒤섞이는 **Race Condition**이 원인",
+        "how": "**\"어떤 이벤트가 먼저 오든, 상태를 기준으로 올바른 동작만 허용하자!\"**\n\n[상태 기반 가드 (State Guard)]\n- \"정답자 + timeout\" → 무시\n- \"미응답자 + timeout\" → timeout 페이지로 이동\n- \"오답자 + eliminated\" → 탈락\n- 현재 상태(`isCorrect`, `hasSubmitted`)에 따라 이벤트 처리 여부 결정\n\n[오래된 이벤트 무시]\n- 모든 메시지에 서버 시각(ts)을 붙이고, `msg.ts < lastTs`면 이미 처리한 과거 이벤트로 판단해 무시",
+        "diagram": "images/portfolio/popco/popco-ws-diagram.webp",
+        "result": "- Race Condition 제거 → 정답자, 오답자, 미응답자 모두 **정확한 시점에 정확히 이동**\n- 네트워크 지연 환경에서도 이벤트 순서가 뒤바뀌지 않음\n- 실시간 이벤트 로직 안정성 향상 및 사용자 경험 일관성 확보\n- 'UI 오류'로 보이던 문제를 **이벤트 레벨에서 근본적으로 해결**"
       },
       {
-        "id": "learn",
-        "question": "이 프로젝트를 통해 무엇을 배웠나요?",
-        "answer": "[페이지 렌더링 속도 개선]\n- 문제: 대량의 데이터를 불러오면서 페이지가 느리게 렌더링되었고, 메인 페이지의 Lighthouse 성능 점수가 19점이었습니다. Next.js로 전환하기에는 일정이 부족했습니다.\n- 해결: `React.lazy`와 동적 import로 초기 로딩을 최소화하고, 스켈레톤 UI를 적용했습니다.\n- 결과: 성능 점수를 70점까지 올렸고, 사용자는 화면 구조를 더 빠르게 확인할 수 있게 되었습니다.\n\n[SSE 퀴즈 10분 전 알림]\n- 문제: 기본 `EventSource`로는 Authorization 헤더를 붙일 수 없어 토큰 인증이 불가능했고, CORS·타임아웃 에러가 잦고 연결이 자주 끊겼습니다.\n- 해결: `event-source-polyfill`로 헤더를 실을 수 있게 하고 `withCredentials` 옵션을 추가했으며, 연결이 끊기면 자동으로 다시 연결하는 로직을 넣었습니다.\n- 결과: 토큰 문제로 연결이 끊기지 않게 되었고, 이벤트 시작 10분 전에 알림 버튼이 정상적으로 표시되었습니다.\n\n[WebSocket 실시간 퀴즈]\n- 문제: 서버와 클라이언트 상태가 어긋나 카운트다운이 가끔 0으로 튀었고, 퀴즈 단계(대기 → 문제 → 탈락 → 최종) 전환 이벤트를 놓쳐 화면 전환이 늦었습니다.\n- 해결: 타이머는 서버가 내려주는 시간을 기준으로 갱신하고, 이전 값과 같으면 상태를 업데이트하지 않아 불필요한 리렌더를 없앴습니다. 시작·탈락·최종 신호는 type으로 구분해 단계 전환을 확실히 분기했습니다.\n- 결과: 모든 사용자에게 같은 카운트다운이 보이고 문제 시작 시 한 번에 전환되어, 실시간 퀴즈가 끊김 없이 진행되었습니다."
+        "feature": "실시간 알림",
+        "featureDesc": "사용자에게 퀴즈 10분 전 알림 전송",
+        "actions": [
+          "EventSourcePolyfill 기반 실시간 알림 수신 로직 구현",
+          "useRef 기반 중복 방지 로직 개선으로 클로저 이슈 해결",
+          "조건 분기 최적화 (remainMin 활용)",
+          "알림 UI 렌더링 조건 명확화 및 깜빡임 제거"
+        ],
+        "image": {
+          "src": "images/portfolio/popco/popco-sse-flow.webp",
+          "label": "Flow"
+        },
+        "title": "SSE : 실시간 알림 SSE 트리거 조건 처리 오류 해결",
+        "why": "- 특정 시점에서 알림 버튼이 사라지거나 깜빡이는 현상이 발생\n- `setNotification()` 조건이 충족돼도 알림이 반영되지 않아 사용자 혼란 유발\n- 프론트엔드의 state 동기화, 조건 분기, 클로저 등이 얽혀 있어 정확한 트리거 조건 분석이 필요",
+        "how": "[원인]\n- `notification` 상태가 클로저에 갇혀 stale 값을 유지\n- `remainMin === 0` 이전에 알림이 조기 초기화되어 깜빡임 발생\n\n[해결]\n- `useRef`로 최근 알림 메시지 추적 → 중복 및 깜빡임 방지\n- `remainMin === 0`일 때만 명확히 `setNotification(null)` 처리\n\n```tsx\nconst lastMsgRef = useRef<string | null>(null);\n\nif (remainMin === 0) setNotification(null);\nelse if (remainMin <= 10 && message !== lastMsgRef.current) {\n  setNotification(message);\n  lastMsgRef.current = message;\n}\n```",
+        "result": "- `remainMin <= 10`일 때만 알림 버튼이 안정적으로 표시됨 → **깜빡임 현상 제거**\n- 클라이언트에서 타이밍·상태 문제 없이 신뢰성 있는 실시간 알림 처리 구현\n- 코드 안정성 향상 및 사용자 경험 개선"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "date": "25.7 ~ 26.8",
+    "name": "렛츠커리어",
+    "detail": "커리어 탐색, 서류 준비, 면접 준비까지 함께 하는 커리어 플랫폼",
+    "img": "images/portfolio/letscareer/letscareer.webp",
+    "team": true,
+    "teamInfo": "사이드 프로젝트 · 코어 멤버와 함께 운영",
+    "hideFromList": true,
+    "skills": {
+      "skill": "Next.js, TypeScript, Zustand, Jira",
+      "organization": "렛츠커리어 (사이드 프로젝트 참여)",
+      "detail": "커리어 탐색, 서류 준비, 면접 준비까지 함께 하는 커리어 플랫폼입니다.\n\n- **3,500명 이상의 사용자**가 이용하는 서비스입니다.\n- 빠른 제품 개발·운영 사이클로 서비스를 개선하고 확장했습니다.",
+      "github": "https://github.com/Let-s-intern/lets-intern-client",
+      "roles": [
+        "[챌린지 대시보드 리뉴얼]\n- 미션 진행 흐름과 콘텐츠 접근성을 개선하기 위해 PC·모바일 UI를 리뉴얼했습니다.\n- Zustand를 도입해 상태 관리를 최적화하고, 미션 제출 상태값을 개선했습니다.",
+        "[Next.js 마이그레이션]\n- React Router의 navigate/location 흐름을 Next.js App Router 구조로 다시 설계했습니다.\n- middleware 기반 인증 게이트로 보호 라우트를 공통화하고, 서버에서 일찍 리다이렉트하도록 했습니다.\n- 동적 세그먼트와 검색 쿼리를 URL 표준 스키마로 통일했습니다.",
+        "[운영]\n- 프로덕트 런칭 이후 발생한 긴급 이슈에 대응했습니다.\n- 운영팀과 협업해 백오피스 시스템을 개선했습니다."
+      ]
+    },
+    "troubleshooting": [
+      {
+        "feature": "Sprint 14 : 챌린지 대시보드 리뉴얼",
+        "featureDesc": "챌린지 대시보드를 개편해 미션 진행 흐름과 콘텐츠 접근성을 개선",
+        "actions": [
+          "UI 리뉴얼 (PC & Mobile)",
+          "Zustand 도입으로 상태 관리 최적화",
+          "미션 제출 상태값 개선"
+        ],
+        "image": {
+          "src": "images/portfolio/letscareer/letscareer-dashboard.webp",
+          "label": "UI"
+        },
+        "title": "Zustand : 캘린더 클릭 → 상세 연결 흐름을 전역 상태로 일원화",
+        "why": "- 선택된 미션 회차(th) 전달이 화면 간 깊게 전파되어 코드 가독성과 유지보수성이 저하\n- 일정 클릭 후 상세로 이어지는 사용자 흐름이 일관되지 않음",
+        "how": "- `useMissionStore`로 `selectedMissionId`, `selectedMissionTh`를 중앙집중 관리\n- 일정 클릭 시 schedules에서 해당 미션의 th를 계산해 `setSelectedMission` 호출\n- 캘린더 아이템은 store 구독으로 선택 상태를 하이라이트\n- 대시보드 초기 진입 시 첫 미션 자동 선택 (초기화 `useEffect`)",
+        "diagram": "images/portfolio/letscareer/letscareer-calendar-flow.webp",
+        "result": "- **Prop drilling 감소** → 코드 단순화 및 유지보수성 향상\n- 일정 클릭 → 상세 진입 흐름이 예측 가능해져 UX 개선\n- 전역 상태 기반으로 다른 섹션(제출/리포트/알림)과의 연동 확장성 확보"
+      },
+      {
+        "feature": "React Router → Next.js Router 마이그레이션",
+        "featureDesc": "Next.js(App Router) 마이그레이션 & 라우팅 안정화",
+        "actions": [
+          "React Router의 navigate/location 흐름을 Next.js app/ 디렉터리 구조로 재설계",
+          "middleware 기반 인증 게이트로 보호 라우트를 공통화하고, 서버에서 조기 리다이렉트",
+          "동적 세그먼트·검색 쿼리를 URL 표준 스키마로 통일"
+        ],
+        "image": {
+          "src": "images/portfolio/letscareer/letscareer-error.webp",
+          "label": "Error message"
+        },
+        "title": "로그인 리다이렉트 루프 원인과 해결",
+        "why": "- 핵심 원인은 Zustand persist의 hydration 지연\n- 스토어는 복원 전 기본값(`isLoggedIn: false`)을 먼저 노출 → 초기 렌더에서 false로 판단되어 리다이렉트\n- React Router에서는 드러나지 않던 타이밍 이슈가, Next.js(SSR → CSR 전환)에서 초기 렌더 타이밍이 분리되며 드러남",
+        "how": "- Zustand Store에 `initialized` 상태 추가 → `onRehydrateStorage` 콜백으로 hydration이 끝나면 true로 설정\n- AuthGuard에서 `initialized`를 확인한 뒤 redirect 수행\n- 렌더 보류 처리 → `initialized`가 false면 로딩 스피너를 보여주고, hydration이 끝난 뒤에만 보호 페이지 진입\n\n```tsx\nuseEffect(() => {\n  if (!isInitialized) return;\n\n  // login 페이지로 넘어간 이후 이 useEffect가 한 번 더 실행되는 경우가 있어서 방어 로직 추가\n  if (!isLoggedIn && pathname.startsWith('/mypage')) {\n    const newUrl = new URL(window.location.href);\n    const searchParams = new URLSearchParams();\n    searchParams.set('redirect', `${newUrl.pathname}?${newUrl.search}`);\n    router.push(`/login?${searchParams.toString()}`);\n  }\n}, [isLoggedIn, router, pathname, isInitialized]);\n```",
+        "diagram": "images/portfolio/letscareer/letscareer-redirect-diagram.webp",
+        "resultLabel": "LEARN",
+        "result": "- Zustand persist는 복원 전 기본값을 먼저 노출한다.\n- Next.js는 서버/클라이언트 렌더 타이밍 차이로 CSR보다 동기화 이슈가 쉽게 드러난다.\n- **hydration 전에는 인증·리다이렉트 금지**: 반드시 `initialized` 같은 경계 플래그로 가드를 분리할 것.",
+        "note": "더 자세한 내용은 블로그에서 확인할 수 있습니다. https://yeeun426.github.io/posts/nextjs01/"
       }
     ]
   }

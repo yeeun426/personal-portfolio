@@ -11,12 +11,10 @@ import Sidebar, { MAIN_SECTIONS, scrollToSection } from './Sidebar';
  * pos: 사진 영역 기준 위치. 얼굴과 LEEYEEUN 글씨를 피해서 배치
  */
 const KEYWORDS: { text: string; pos: string; tone: keyof typeof TONE }[] = [
-  { text: '#성실함', pos: 'top-[10%] left-[14%]', tone: 'purple' },
-  { text: '#엉덩이_힘', pos: 'top-[4%] right-[16%]', tone: 'blue' },
-  { text: '#JavaScript와_연애🥰', pos: 'top-[30%] right-[0%]', tone: 'white' },
-  { text: '#TypeScript와_썸😘', pos: 'top-[34%] left-[0%]', tone: 'white' },
-  { text: '#사용자_중심', pos: 'bottom-[10%] right-[6%]', tone: 'purple' },
-  { text: '#빈틈_채우기', pos: 'bottom-[6%] left-[8%]', tone: 'blue' },
+  { text: '#책임감', pos: 'top-[10%] left-[14%]', tone: 'purple' },
+  { text: '#사용자_중심_사고', pos: 'top-[8%] right-[8%]', tone: 'white' },
+  { text: '#행동_지향적', pos: 'bottom-[10%] right-[6%]', tone: 'blue' },
+  { text: '#효율_중시', pos: 'bottom-[6%] left-[10%]', tone: 'white' },
 ];
 
 const TONE = {
@@ -65,7 +63,7 @@ export default function MainIntro() {
         <p className='m-0 text-[length:clamp(16px,1.25vw,19px)] leading-[1.7] text-[#424245]'>
           꾸준하게 빈틈을 채워나가는 개발자입니다.
           <br />
-          사용자가 필요로 하는 것을 한발 먼저 고민하겠습니다.
+          사용자가 필요로 하는 것을 한 발 먼저 고민하겠습니다.
         </p>
         <div
           ref={photoRef}

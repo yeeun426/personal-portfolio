@@ -1,17 +1,21 @@
 import type { IconType } from 'react-icons';
 import {
-  SiCss,
-  SiHtml5,
   SiJavascript,
+  SiJira,
+  SiMysql,
   SiNextdotjs,
-  SiOpenjdk,
-  SiPython,
   SiReact,
-  SiRedux,
   SiTypescript,
 } from 'react-icons/si';
-import { educations } from '@/constants/education';
+import { certifications, educations } from '@/constants/education';
 import SectionTitle from './SectionTitle';
+
+/** Zustand 는 react-icons 에 로고가 없어 곰 이모지로 표시 */
+const ZustandIcon: IconType = ({ className }) => (
+  <span aria-hidden className={`${className ?? ''} inline-flex items-center justify-center text-[16px] leading-none`}>
+    🐻
+  </span>
+);
 
 interface Skill {
   name: string;
@@ -19,26 +23,25 @@ interface Skill {
   color: string;
 }
 
+// PDF 포트폴리오의 SKILL 목록 기준
 const SKILL_GROUPS: { title: string; desc: string; skills: Skill[] }[] = [
   {
-    title: 'Strong',
+    title: 'Frontend',
     desc: '실무와 프로젝트에서 주로 사용해요',
     skills: [
-      { name: 'JavaScript', icon: SiJavascript, color: '#f7df1e' },
       { name: 'TypeScript', icon: SiTypescript, color: '#3178c6' },
+      { name: 'JavaScript', icon: SiJavascript, color: '#f7df1e' },
       { name: 'React', icon: SiReact, color: '#61dafb' },
-      { name: 'HTML5', icon: SiHtml5, color: '#e34f26' },
-      { name: 'CSS', icon: SiCss, color: '#663399' },
+      { name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
+      { name: 'Zustand', icon: ZustandIcon, color: '#443e38' },
     ],
   },
   {
-    title: 'Knowledgeable',
-    desc: '사용해 본 경험이 있어요',
+    title: 'Tools',
+    desc: '협업과 데이터에 사용해요',
     skills: [
-      { name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
-      { name: 'Redux', icon: SiRedux, color: '#764abc' },
-      { name: 'Python', icon: SiPython, color: '#3776ab' },
-      { name: 'Java', icon: SiOpenjdk, color: '#e76f00' },
+      { name: 'MySQL', icon: SiMysql, color: '#4479a1' },
+      { name: 'Jira', icon: SiJira, color: '#0052cc' },
     ],
   },
 ];
@@ -71,7 +74,21 @@ export default function MainEducation() {
           ))}
         </ul>
 
-        <h3 className='mt-28 mb-10 text-left text-[28px] font-extrabold text-[#1d1d1f] max-[801px]:mt-20'>
+        <h3 className='mt-20 mb-6 text-left text-[28px] font-extrabold text-[#1d1d1f] max-[801px]:mt-16'>
+          Certifications
+        </h3>
+        <ul className='m-0 flex list-none flex-wrap gap-3 p-0'>
+          {certifications.map((name) => (
+            <li
+              key={name}
+              className='rounded-[999px] border border-[#e5e5ea] px-5 py-[10px] text-[16px] text-[#1d1d1f]'
+            >
+              {name}
+            </li>
+          ))}
+        </ul>
+
+        <h3 className='mt-20 mb-10 text-left text-[28px] font-extrabold text-[#1d1d1f] max-[801px]:mt-16'>
           Skills
         </h3>
         <div className='flex flex-col gap-10'>

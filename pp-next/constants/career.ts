@@ -9,6 +9,8 @@ export interface ExperienceItem {
   tasks: string[];
   /** 분류 태그 (#Club 등) */
   tag: string;
+  /** 상세 팝업으로 연결할 프로젝트 id (data/project.json) */
+  projectId?: number;
 }
 
 export const careers: ExperienceItem[] = [
@@ -23,13 +25,14 @@ export const careers: ExperienceItem[] = [
   {
     period: "2023.09 ~ 2023.12",
     company: "테크랩스",
-    description: "프론트엔드 인턴",
-    techStack: ["React", "JavaScript"],
+    description: "AI 개발실 · 프론트엔드 인턴",
+    techStack: ["React", "TypeScript", "Redux Toolkit"],
     tasks: [
       "온보딩 과제 프로젝트 : 신규 직원이 빠르게 적응할 수 있도록 설계된 초기 과제 수행",
       "웹 페이지 리뉴얼 : 고객이 공감할 수 있는 신뢰 기반 추천 서비스를 구현하기 위해 PERSONA 페이지 개편 참여",
       "카페24 데모 사이트 구축 : B2B 세일즈용 큐봇(대화형 큐레이션 봇) 시연을 위한 데모 사이트 개발",
     ],
     tag: "#Career",
+    projectId: 13,
   },
 ];

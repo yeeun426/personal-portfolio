@@ -55,40 +55,48 @@
     "page1": {
       "num": "1",
       "img": "images/portfolio/maplix/maplix(1).webp",
-      "desc": "MAPLIX"
+      "desc": "지역별 추천 코스, 추천 OTT 콘텐츠, 검색을 한 번에 볼 수 있는 페이지",
+      "title": "메인 페이지"
     },
     "page2": {
       "num": "2",
       "img": "images/portfolio/maplix/maplix(2).webp",
-      "desc": "MAPLIX"
+      "desc": "OTT 콘텐츠나 장소를 검색했을 때 세부 정보를 확인할 수 있는 페이지",
+      "title": "검색 페이지"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/maplix/maplix(3).webp",
-      "desc": "MAPLIX"
+      "img": "images/portfolio/maplix/maplix-course.webp",
+      "desc": "두루누비 API로 지역별 추천 코스를 제공하는 페이지",
+      "title": "추천 코스 페이지"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/maplix/maplix(4).webp",
+      "img": "images/portfolio/maplix/maplix(3).webp",
       "desc": "MAPLIX"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/maplix/maplix(5).webp",
+      "img": "images/portfolio/maplix/maplix(4).webp",
       "desc": "MAPLIX"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/maplix/maplix(6).webp",
+      "img": "images/portfolio/maplix/maplix(5).webp",
       "desc": "MAPLIX"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/maplix/maplix(7).webp",
+      "img": "images/portfolio/maplix/maplix(6).webp",
       "desc": "MAPLIX"
     },
     "page8": {
       "num": "8",
+      "img": "images/portfolio/maplix/maplix(7).webp",
+      "desc": "MAPLIX"
+    },
+    "page9": {
+      "num": "9",
       "img": "images/portfolio/maplix/maplix(8).webp",
       "desc": "MAPLIX"
     }
@@ -393,37 +401,57 @@
     "id": 11,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/u+pick/u+pick(1).webp",
-      "desc": "u+pick"
+      "img": "images/portfolio/u+pick/upick-apply.webp",
+      "desc": "결합 신청을 원하는 사용자가 계좌를 입력해 결합을 신청하는 페이지",
+      "title": "결합 신청 페이지"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/u+pick/u+pick(2).webp",
-      "desc": "u+pick"
+      "img": "images/portfolio/u+pick/u+pick(3).webp",
+      "desc": "통신 서비스 관련 정보를 손쉽게 조회할 수 있도록 설계된 AI 상담 페이지",
+      "title": "챗봇 페이지"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/u+pick/u+pick(3).webp",
-      "desc": "u+pick"
+      "img": "images/portfolio/u+pick/u+pick(7).webp",
+      "desc": "내 주변에서 혜택을 받을 수 있는 가맹점을 확인하는 지도 페이지",
+      "title": "멤버십 지도 페이지"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/u+pick/u+pick(4).webp",
-      "desc": "u+pick"
+      "img": "images/portfolio/u+pick/upick-toss.webp",
+      "desc": "TOSS PG를 연동해 결합원이 할인된 요금제를 결제하는 페이지",
+      "title": "TOSS 결제 페이지"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/u+pick/u+pick(5).webp",
-      "desc": "u+pick"
+      "img": "images/portfolio/u+pick/upick-paid.webp",
+      "desc": "결제가 완료되면 나오는 영수증 페이지",
+      "title": "결제 완료 페이지"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/u+pick/u+pick(6).webp",
+      "img": "images/portfolio/u+pick/u+pick(1).webp",
       "desc": "u+pick"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/u+pick/u+pick(7).webp",
+      "img": "images/portfolio/u+pick/u+pick(2).webp",
+      "desc": "u+pick"
+    },
+    "page8": {
+      "num": "8",
+      "img": "images/portfolio/u+pick/u+pick(4).webp",
+      "desc": "u+pick"
+    },
+    "page9": {
+      "num": "9",
+      "img": "images/portfolio/u+pick/u+pick(5).webp",
+      "desc": "u+pick"
+    },
+    "page10": {
+      "num": "10",
+      "img": "images/portfolio/u+pick/u+pick(6).webp",
       "desc": "u+pick"
     }
   },
@@ -431,73 +459,117 @@
     "id": 12,
     "page1": {
       "num": "1",
-      "img": "images/portfolio/popco/popco(1).webp",
-      "desc": "popco"
+      "img": "images/portfolio/popco/popco-landing.webp",
+      "desc": "팝코의 정체성을 보여주는 랜딩 페이지",
+      "title": "랜딩 페이지"
     },
     "page2": {
       "num": "2",
-      "img": "images/portfolio/popco/popco(2).webp",
-      "desc": "popco"
+      "img": "images/portfolio/popco/popco-main.webp",
+      "desc": "실시간 좋아요/싫어요 피드백과 사용자의 알고리즘을 한눈에 볼 수 있는 페이지",
+      "title": "메인 페이지"
     },
     "page3": {
       "num": "3",
-      "img": "images/portfolio/popco/popco(3).webp",
-      "desc": "popco"
+      "img": "images/portfolio/popco/popco(7).webp",
+      "desc": "전체 OTT 콘텐츠를 보여주며, 필터링과 검색으로 원하는 콘텐츠를 찾을 수 있는 페이지",
+      "title": "전체 리스트 페이지"
     },
     "page4": {
       "num": "4",
-      "img": "images/portfolio/popco/popco(4).webp",
-      "desc": "popco"
+      "img": "images/portfolio/popco/popco-event.webp",
+      "desc": "모두가 동시에 시작해 선착순으로 문제를 맞히는 퀴즈 이벤트로, 다음 단계에 올라가는 인원을 실시간으로 확인할 수 있는 페이지",
+      "title": "이벤트 페이지"
     },
     "page5": {
       "num": "5",
-      "img": "images/portfolio/popco/popco(5).webp",
-      "desc": "popco"
+      "img": "images/portfolio/popco/popco(14).webp",
+      "desc": "이벤트에서 틀렸거나 시간이 초과된 경우 이동하는 페이지",
+      "title": "정답/오답 결과 페이지"
     },
     "page6": {
       "num": "6",
-      "img": "images/portfolio/popco/popco(6).webp",
+      "img": "images/portfolio/popco/popco(1).webp",
       "desc": "popco"
     },
     "page7": {
       "num": "7",
-      "img": "images/portfolio/popco/popco(7).webp",
+      "img": "images/portfolio/popco/popco(2).webp",
       "desc": "popco"
     },
     "page8": {
       "num": "8",
-      "img": "images/portfolio/popco/popco(8).webp",
+      "img": "images/portfolio/popco/popco(3).webp",
       "desc": "popco"
     },
     "page9": {
       "num": "9",
-      "img": "images/portfolio/popco/popco(9).webp",
+      "img": "images/portfolio/popco/popco(4).webp",
       "desc": "popco"
     },
     "page10": {
       "num": "10",
-      "img": "images/portfolio/popco/popco(10).webp",
+      "img": "images/portfolio/popco/popco(5).webp",
       "desc": "popco"
     },
     "page11": {
       "num": "11",
-      "img": "images/portfolio/popco/popco(11).webp",
+      "img": "images/portfolio/popco/popco(6).webp",
       "desc": "popco"
     },
     "page12": {
       "num": "12",
-      "img": "images/portfolio/popco/popco(12).webp",
+      "img": "images/portfolio/popco/popco(8).webp",
       "desc": "popco"
     },
     "page13": {
       "num": "13",
-      "img": "images/portfolio/popco/popco(13).webp",
+      "img": "images/portfolio/popco/popco(9).webp",
       "desc": "popco"
     },
     "page14": {
       "num": "14",
-      "img": "images/portfolio/popco/popco(14).webp",
+      "img": "images/portfolio/popco/popco(10).webp",
       "desc": "popco"
+    },
+    "page15": {
+      "num": "15",
+      "img": "images/portfolio/popco/popco(11).webp",
+      "desc": "popco"
+    },
+    "page16": {
+      "num": "16",
+      "img": "images/portfolio/popco/popco(12).webp",
+      "desc": "popco"
+    },
+    "page17": {
+      "num": "17",
+      "img": "images/portfolio/popco/popco(13).webp",
+      "desc": "popco"
+    }
+  },
+  {
+    "id": 13,
+    "page1": {
+      "num": "1",
+      "img": "images/portfolio/techlabs/techlabs-onboarding.webp",
+      "desc": "Recharts로 API 데이터를 시각화한 화면",
+      "title": "온보딩 과제"
+    },
+    "page2": {
+      "num": "2",
+      "img": "images/portfolio/techlabs/techlabs-persona.webp",
+      "desc": "신뢰 기반 추천 서비스를 위한 PERSONA 페이지",
+      "title": "PERSONA 페이지 리뉴얼"
+    }
+  },
+  {
+    "id": 14,
+    "page1": {
+      "num": "1",
+      "img": "images/portfolio/letscareer/letscareer-dashboard.webp",
+      "desc": "미션 진행 흐름과 콘텐츠 접근성을 개선한 대시보드 (PC·모바일)",
+      "title": "챌린지 대시보드"
     }
   }
 ]

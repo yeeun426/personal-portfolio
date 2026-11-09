@@ -25,9 +25,9 @@ const pages = pageJson as ProjectPages[];
 
 export const getProjectIds = () => projects.map((p) => p.id);
 
-/** 프로젝트 목록 카드에 필요한 값만 */
+/** 프로젝트 목록 카드에 필요한 값만 (hideFromList 제외) */
 export const getProjectSummaries = (): ProjectSummary[] =>
-  projects.map(({ id, date, name, detail, img, team, clone, skills }) => ({
+  projects.filter((p) => !p.hideFromList).map(({ id, date, name, detail, img, team, clone, skills }) => ({
     id,
     date,
     name,
