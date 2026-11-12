@@ -100,14 +100,17 @@ function Card({ item, index }: { item: Item; index: number }) {
                   <RichText text={text} className='text-[15px] leading-[1.75] text-[#424245]' />
                 </div>
                 {i === 1 && item.diagram && (
-                  <Image
-                    src={toPublicPath(item.diagram)}
-                    alt={`${item.title} 다이어그램`}
-                    width={1709}
-                    height={944}
-                    sizes='(max-width: 800px) 90vw, 820px'
-                    className='h-auto w-full rounded-[12px] border border-[#e5e5ea]'
-                  />
+                  // 다이어그램은 원본 크기·비율 그대로 (작은 이미지를 늘리면 흐려짐), 세로가 긴 그림은 높이 제한
+                  <div className='flex justify-center rounded-[12px] border border-[#e5e5ea] bg-white p-4'>
+                    <Image
+                      src={toPublicPath(item.diagram)}
+                      alt={`${item.title} 다이어그램`}
+                      width={0}
+                      height={0}
+                      unoptimized
+                      className='h-auto max-h-[440px] w-auto max-w-full'
+                    />
+                  </div>
                 )}
               </div>
             </li>

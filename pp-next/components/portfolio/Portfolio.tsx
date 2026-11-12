@@ -232,8 +232,11 @@ function Screens({
             className={`shrink-0 snap-start ${tall ? 'w-[min(420px,80%)]' : 'w-[min(620px,85%)]'}`}
           >
             <Image
-              className={`h-auto w-full rounded-[16px] border border-[#e5e5ea] object-cover object-top ${
-                tall ? 'aspect-[1709/1750]' : 'aspect-[1709/944]'
+              // 가로 화면은 비율이 달라도 잘리지 않게 contain, 세로로 긴 스크롤 캡처(MAPLIX)는 위쪽 기준으로 잘라서 표시
+              className={`h-auto w-full rounded-[16px] border border-[#e5e5ea] ${
+                tall
+                  ? 'aspect-[1709/1750] object-cover object-top'
+                  : 'aspect-[1709/944] bg-[#f5f5f7] object-contain'
               }`}
               alt={page.title ?? (page.desc || `${name} 화면 ${page.num}`)}
               src={toPublicPath(page.img)}
