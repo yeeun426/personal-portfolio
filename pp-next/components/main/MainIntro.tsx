@@ -7,21 +7,37 @@ import Image from 'next/image';
 import Sidebar, { MAIN_SECTIONS, scrollToSection } from './Sidebar';
 
 /**
- * 사진 주변에 떠오르는 키워드 (등장 순서 = 배열 순서)
- * pos: 사진 영역 기준 위치. 얼굴과 LEEYEEUN 글씨를 피해서 배치
+ * 사진 양옆 키워드 — PDF 표지처럼 "# 키워드 ── •" 지시선이 사진을 가리킴 (등장 순서 = 배열 순서)
+ * top: 사진 영역 기준 세로 위치, bend: 위쪽 키워드는 선이 꺾여 내려가며 사진 쪽을 가리킴
  */
-const KEYWORDS: { text: string; pos: string; tone: keyof typeof TONE }[] = [
-  { text: '#책임감', pos: 'top-[10%] left-[14%]', tone: 'purple' },
-  { text: '#사용자_중심_사고', pos: 'top-[8%] right-[8%]', tone: 'white' },
-  { text: '#행동_지향적', pos: 'bottom-[10%] right-[6%]', tone: 'blue' },
-  { text: '#효율_중시', pos: 'bottom-[6%] left-[10%]', tone: 'white' },
+const KEYWORDS: { text: string; side: 'left' | 'right'; top: string; bend: boolean }[] = [
+  // 긴 키워드는 여유 공간이 있는 오른쪽 아래, 짧은 키워드는 사이드바에 가까운 왼쪽 아래
+  { text: '# 원인부터 파고들기', side: 'left', top: '6%', bend: true },
+  { text: '# 사용자 중심 사고', side: 'right', top: '6%', bend: true },
+  { text: '# 운영까지 책임', side: 'left', top: '30%', bend: false },
+  { text: '# 숫자로 증명하는 개선', side: 'right', top: '30%', bend: false },
 ];
 
-const TONE = {
-  purple: 'bg-[#a77fe8] text-white',
-  blue: 'bg-[#5a6fd8] text-white',
-  white: 'bg-white text-[#1d1d1f]',
-};
+/** 지시선 + 끝점. 오른쪽 키워드는 좌우 반전 */
+function Leader({ bend, flip }: { bend: boolean; flip: boolean }) {
+  return (
+    <svg
+      width='110'
+      height={bend ? 50 : 12}
+      viewBox={`0 0 110 ${bend ? 50 : 12}`}
+      fill='none'
+      aria-hidden
+      className={`shrink-0 overflow-visible max-[768px]:hidden ${flip ? '-scale-x-100' : ''}`}
+    >
+      <polyline
+        points={bend ? '0,6 66,6 102,42' : '0,6 102,6'}
+        stroke='#c7c7cc'
+        strokeWidth='1'
+      />
+      <circle cx={102} cy={bend ? 42 : 6} r='4' fill='#c7c7cc' />
+    </svg>
+  );
+}
 
 // 기존 React 버전 components/Main/MainIntro.js + MainYeEun.js
 // 반응형 기준: max-[1024px] = 태블릿(1023px 이하), max-[768px] = 모바일(767px 이하)
@@ -29,14 +45,14 @@ export default function MainIntro() {
   const [isOn, setIsOn] = useState(false);
   const photoRef = useRef<HTMLDivElement>(null);
 
-  // 첫 화면이 뜨면 키워드가 하나씩 튕기듯 등장
+  // 첫 화면이 뜨면 키워드가 하나씩 스르륵 등장
   useEffect(() => {
     if (!photoRef.current) return;
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.intro-keyword',
-        { opacity: 0, scale: 0 },
-        { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(2.5)', stagger: 0.18, delay: 0.6 }
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', stagger: 0.15, delay: 0.6 }
       );
     }, photoRef);
     return () => ctx.revert();
@@ -78,16 +94,22 @@ export default function MainIntro() {
             preload
             className='h-full w-full'
           />
-          <ul className='m-0 list-none p-0'>
-            {KEYWORDS.map(({ text, pos, tone }, i) => (
-              // 위치/등장은 li(gsap), 둥둥 떠 있는 효과는 span(css)
-              <li key={text} className={`intro-keyword absolute ${pos} opacity-0`}>
-                <span
-                  className={`animate-float inline-block rounded-[999px] px-5 py-[10px] text-[16px] font-semibold whitespace-nowrap shadow-[0_6px_16px_rgba(0,0,0,0.12)] motion-reduce:animate-none max-[1024px]:px-4 max-[1024px]:py-2 max-[1024px]:text-[14px] max-[501px]:px-3 max-[501px]:py-[5px] max-[501px]:text-[11px] ${TONE[tone]}`}
-                  style={{ animationDelay: `${i * 0.4}s` }}
-                >
+          {/* 모바일은 사진과 겹치지 않게 지시선 없이 사진 아래에 나열 */}
+          <ul className='m-0 list-none p-0 max-[768px]:mt-4 max-[768px]:flex max-[768px]:flex-wrap max-[768px]:justify-center max-[768px]:gap-x-2 max-[768px]:gap-y-2'>
+            {KEYWORDS.map(({ text, side, top, bend }) => (
+              // 지시선 끝점이 사진 가장자리(가로 34% / 66%)에 오도록 배치
+              <li
+                key={text}
+                className={`intro-keyword absolute flex items-start gap-2 opacity-0 max-[768px]:static ${
+                  side === 'left' ? 'right-[66%]' : 'left-[66%] flex-row-reverse'
+                }`}
+                style={{ top }}
+              >
+                {/* 보라색 배경 원 위에서도 읽히도록 반투명 흰 배경 */}
+                <span className='-mt-[7px] rounded-full bg-white/75 px-2.5 py-[3px] text-[length:clamp(13px,1.15vw,17px)] leading-[20px] font-semibold whitespace-nowrap text-[#7c5cc4] backdrop-blur-sm max-[768px]:mt-0'>
                   {text}
                 </span>
+                <Leader bend={bend} flip={side === 'right'} />
               </li>
             ))}
           </ul>
