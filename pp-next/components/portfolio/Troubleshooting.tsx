@@ -108,7 +108,7 @@ function Card({ item, index }: { item: Item; index: number }) {
                       width={0}
                       height={0}
                       unoptimized
-                      className='h-auto max-h-[440px] w-auto max-w-full'
+                      className='h-auto max-h-[600px] w-auto max-w-full'
                     />
                   </div>
                 )}
