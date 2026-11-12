@@ -41,7 +41,11 @@ export default function MainCareer() {
                       ))}
                     </div>
                   )}
-                  {item.projectId && <DetailLink projectId={item.projectId} className='mt-6' />}
+                  {item.careerSlug ? (
+                    <DetailLink href={`/career/${item.careerSlug}`} label='경력기술서 보기' className='mt-6' />
+                  ) : (
+                    item.projectId && <DetailLink projectId={item.projectId} className='mt-6' />
+                  )}
                 </div>
                 <ol className='m-0 flex list-none flex-col gap-6 p-0 text-left'>
                   {item.tasks.map((task, i) => (

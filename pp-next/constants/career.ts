@@ -11,6 +11,8 @@ export interface ExperienceItem {
   tag: string;
   /** 상세 팝업으로 연결할 프로젝트 id (data/project.json) */
   projectId?: number;
+  /** 경력기술서 팝업 slug (constants/careerDetail.ts) — 있으면 projectId 대신 이쪽으로 연결 */
+  careerSlug?: string;
 }
 
 export const careers: ExperienceItem[] = [
@@ -18,9 +20,14 @@ export const careers: ExperienceItem[] = [
     period: "2025.12 ~ 현재",
     company: "월급날",
     description: "프론트엔드 개발자",
-    techStack: ["React", "Next.js", "TypeScript"],
-    tasks: ["주요 업무내역 (업데이트중)"],
+    techStack: ["React", "TanStack Query", "Monorepo", "Java"],
+    tasks: [
+      "프론트엔드 전면 리뉴얼 : 3개 레포를 모노레포로 통합하고 레거시 코드 파일 419개를 도메인 단위 구조로 전부 이전",
+      "디자인 시스템 · 에러 처리 : 12일 만에 공용 컴포넌트 21개 구축(인라인 style -93%), 에러 경계 0건 → 3단 구조 도입",
+      "HTMS 세무 시스템 : 레거시 Java 시스템에서 근로소득 간이지급명세서 월별 전환 (실데이터 검증 오류 0건)",
+    ],
     tag: "#Career",
+    careerSlug: "payday",
   },
   {
     period: "2023.09 ~ 2023.12",

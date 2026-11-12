@@ -5,14 +5,23 @@ import { useRouter } from 'next/navigation';
 import Modal from 'react-modal';
 import { BsXLg } from 'react-icons/bs';
 
-/** app/@modal/(.)project/[projectId] 에서 사용. 닫으면 이전 주소로 돌아감 */
-export default function ProjectModal({ children }: { children: ReactNode }) {
+/** app/@modal/(.)project/[projectId], (.)career/[slug] 에서 사용. 닫으면 이전 주소로 돌아감 */
+export default function ProjectModal({
+  children,
+  label = '프로젝트 상세',
+}: {
+  children: ReactNode;
+  /** 스크린리더용 모달 이름 */
+  label?: string;
+}) {
   const router = useRouter();
 
-  useEffect(() => {
-    // app/layout.tsx 의 #app-root (스크린리더용 aria-hidden 처리 대상)
-    Modal.setAppElement('#app-root');
+  // app/layout.tsx 의 #app-root (스크린리더용 aria-hidden 처리 대상)
+  // useEffect 에서 setAppElement 하면 첫 렌더 뒤라 늦어서 react-modal 경고가 남 → 렌더 시점에 바로 넘김
+  const appElement =
+    typeof document === 'undefined' ? undefined : (document.getElementById('app-root') ?? undefined);
 
+  useEffect(() => {
     // 모달이 열려 있는 동안 배경 스크롤 방지
     document.body.style.overflow = 'hidden';
     return () => {
@@ -25,8 +34,9 @@ export default function ProjectModal({ children }: { children: ReactNode }) {
   return (
     <Modal
       isOpen
+      appElement={appElement}
       onRequestClose={closeModal}
-      contentLabel='프로젝트 상세'
+      contentLabel={label}
       overlayClassName='fixed inset-0 z-[9999] flex items-center justify-center bg-black/45 backdrop-blur-sm animate-fade-in max-[801px]:items-end'
       className='relative h-[88vh] w-[92vw] max-w-[1100px] overflow-y-auto overscroll-contain rounded-[24px] bg-white shadow-[0_30px_80px_rgba(0,0,0,0.25)] outline-none animate-modal-in max-[801px]:h-[92vh] max-[801px]:w-full max-[801px]:rounded-b-none'
     >
