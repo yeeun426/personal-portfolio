@@ -72,7 +72,7 @@ export default function MainIntro() {
         {isOn ? <BsXLg className='h-4 w-4' /> : <BsList className='h-5 w-5' />}
       </button>
 
-      <div className='relative flex h-full w-[80vw] max-w-[calc(100%-340px)] flex-col items-center [justify-content:end] gap-[15px] break-keep max-[1024px]:m-auto max-[1024px]:h-screen max-[1024px]:w-full max-[1024px]:max-w-none max-[1024px]:px-8 max-[1024px]:pt-12 max-[1024px]:pb-0 max-[768px]:justify-center'>
+      <div className='relative flex h-full w-[80vw] max-w-[calc(100%-340px)] flex-col items-center [justify-content:end] gap-[15px] break-keep max-[1024px]:m-auto max-[1024px]:h-[100svh] max-[1024px]:w-full max-[1024px]:max-w-none max-[1024px]:px-8 max-[1024px]:pt-12 max-[1024px]:pb-0 max-[768px]:justify-center max-[768px]:px-6 max-[768px]:pt-0 max-[768px]:pb-[6svh]'>
         <h2 className='m-0 text-[length:clamp(28px,2.6vw,40px)] leading-[1.3] font-semibold tracking-[-0.02em] text-[#1d1d1f]'>
           프론트엔드 개발자 <span className='font-bold'>이예은</span>입니다.
         </h2>
@@ -83,7 +83,7 @@ export default function MainIntro() {
         </p>
         <div
           ref={photoRef}
-          className='relative mt-4 h-[62%] max-w-full aspect-[3728/2924] max-[768px]:h-auto max-[768px]:w-full'
+          className='relative mt-4 h-[62%] max-w-full aspect-[3728/2924] max-[768px]:mt-2 max-[768px]:h-auto intro-photo max-[768px]:max-w-none max-[768px]:shrink-0'
         >
           <Image
             src='/images/main/leeyeeun.webp'
@@ -92,10 +92,10 @@ export default function MainIntro() {
             height={2924}
             sizes='(max-width: 1023px) 100vw, 80vw'
             preload
-            className='h-full w-full'
+            className='h-full w-full object-contain max-[768px]:h-auto'
           />
           {/* 모바일은 사진과 겹치지 않게 지시선 없이 사진 아래에 나열 */}
-          <ul className='m-0 list-none p-0 max-[768px]:mt-4 max-[768px]:flex max-[768px]:flex-wrap max-[768px]:justify-center max-[768px]:gap-x-2 max-[768px]:gap-y-2'>
+          <ul className='m-0 list-none p-0 max-[768px]:mx-auto max-[768px]:mt-4 max-[768px]:grid max-[768px]:w-fit max-[768px]:grid-cols-2 max-[768px]:justify-items-center max-[768px]:gap-x-2 max-[768px]:gap-y-2'>
             {KEYWORDS.map(({ text, side, top, bend }) => (
               // 지시선 끝점이 사진 가장자리(가로 34% / 66%)에 오도록 배치
               <li
@@ -114,16 +114,20 @@ export default function MainIntro() {
             ))}
           </ul>
         </div>
-      </div>
 
-      <button onClick={() => scrollToSection(MAIN_SECTIONS[0].id)}>
+        {/* 아래로 스크롤 안내 — 본문 열 가운데. 모바일은 키워드와 겹쳐서 숨김 */}
+        <button
+          onClick={() => scrollToSection(MAIN_SECTIONS[0].id)}
+          aria-label='소개로 이동'
+          className='absolute bottom-[5%] left-1/2 z-[10] -translate-x-1/2 max-[768px]:hidden'
+        >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
           viewBox='0 0 24 24'
           strokeWidth='1.5'
           stroke='currentColor'
-          className='animate-shake-vertical absolute bottom-[5%] left-1/2 z-[100] w-[50px] text-white'
+          className='animate-shake-vertical block w-[50px] text-white'
         >
           <path
             strokeLinecap='round'
@@ -131,7 +135,8 @@ export default function MainIntro() {
             d='m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5'
           />
         </svg>
-      </button>
+        </button>
+      </div>
     </div>
   );
 }

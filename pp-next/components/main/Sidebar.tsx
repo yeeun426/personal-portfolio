@@ -69,23 +69,44 @@ export default function Sidebar({ isOn, setIsOn }: SidebarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [setIsOn]);
 
+  // 모바일 서랍이 열려 있는 동안: 배경 스크롤 잠금 + ESC 로 닫기
+  useEffect(() => {
+    if (!isOn) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setIsOn(false);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [isOn, setIsOn]);
+
   const onTabClick = (id: string) => {
     setIsOn(false);
     scrollToSection(id);
   };
 
-  // 데스크톱: 첫 화면 왼쪽 패널 / 태블릿·모바일: 메뉴 버튼(isOn)을 누르면 왼쪽에서 들어오는 서랍
+  // 데스크톱: 첫 화면 왼쪽 패널 / 태블릿·모바일: 오른쪽 위 메뉴 버튼(isOn)을 누르면 오른쪽에서 들어오는 흰 서랍
   const asideClass = [
     "main-aside z-[100] box-border flex h-screen w-[20vw] max-w-[340px] min-w-[240px] flex-col justify-between px-10 py-12 text-left",
     "border-r border-white/70 bg-white/55 backdrop-blur-xl",
-    "max-[1024px]:fixed max-[1024px]:top-0 max-[1024px]:w-[280px] max-[1024px]:max-w-[80vw] max-[1024px]:bg-white/95 max-[1024px]:px-8 max-[1024px]:py-10 max-[1024px]:shadow-[8px_0_30px_rgba(0,0,0,0.12)] max-[1024px]:transition-[left] max-[1024px]:duration-300 max-[1024px]:ease-[ease]",
-    isOn ? "on max-[1024px]:left-0" : "max-[1024px]:left-[-110%]",
+    "max-[1024px]:fixed max-[1024px]:top-0 max-[1024px]:right-0 max-[1024px]:h-[100dvh] max-[1024px]:w-[300px] max-[1024px]:max-w-[86vw] max-[1024px]:min-w-0 max-[1024px]:border-r-0 max-[1024px]:bg-white max-[1024px]:backdrop-blur-none max-[1024px]:px-7 max-[1024px]:pt-6 max-[1024px]:pb-8 max-[1024px]:shadow-[-16px_0_40px_rgba(0,0,0,0.12)] max-[1024px]:transition-[translate,visibility] max-[1024px]:duration-300 max-[1024px]:ease-[cubic-bezier(0.2,0.8,0.2,1)]",
+    isOn ? "on max-[1024px]:translate-x-0" : "max-[1024px]:invisible max-[1024px]:translate-x-full",
   ].join(" ");
 
   return (
     <>
+      {/* 모바일 서랍 뒤 어두운 막 — 누르면 닫힘 */}
+      {isOn && (
+        <div
+          className="animate-fade-in fixed inset-0 z-[99] bg-black/35 min-[1025px]:hidden"
+          onClick={() => setIsOn(false)}
+          aria-hidden
+        />
+      )}
       <aside className={asideClass}>
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-12 max-[1024px]:gap-8">
           <button
             className="w-fit"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -96,17 +117,17 @@ export default function Sidebar({ isOn, setIsOn }: SidebarProps) {
               alt="LYE"
               width={597}
               height={501}
-              className="h-auto w-[72px]"
+              className="h-auto w-[72px] max-[1024px]:w-[52px]"
             />
           </button>
 
           <nav aria-label="섹션 이동">
-            <ul className="m-0 flex list-none flex-col gap-2 p-0">
+            <ul className="m-0 flex list-none flex-col gap-2 p-0 max-[1024px]:gap-0 max-[1024px]:border-t max-[1024px]:border-[#f0f0f3]">
               {MAIN_SECTIONS.map(({ id, label }, i) => (
                 <li key={id}>
                   <button
                     onClick={() => onTabClick(id)}
-                    className="group flex items-baseline gap-4 py-2 text-[24px] font-semibold text-[#1d1d1f] transition-transform duration-300 hover:translate-x-2"
+                    className="group flex items-baseline gap-4 py-2 text-[24px] font-semibold text-[#1d1d1f] transition-transform duration-300 hover:translate-x-2 max-[1024px]:w-full max-[1024px]:border-b max-[1024px]:border-[#f0f0f3] max-[1024px]:py-[18px] max-[1024px]:text-[20px] max-[1024px]:hover:translate-x-0 max-[1024px]:active:bg-[#faf8ff]"
                   >
                     <span className="w-6 text-[13px] font-bold text-[#9778c9] tabular-nums">
                       {String(i + 1).padStart(2, "0")}

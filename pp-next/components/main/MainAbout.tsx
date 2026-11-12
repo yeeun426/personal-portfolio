@@ -8,7 +8,7 @@ const EMAIL = 'thsudkcla7@naver.com';
 const INFO: { label: string; value: string; href?: string; external?: boolean }[] = [
   { label: '생년월일', value: '2000.04.26' },
   { label: '이메일', value: EMAIL, href: `mailto:${EMAIL}` },
-  { label: '학력', value: '한국외국어대학교 정보통신공학과' },
+  { label: '학력', value: '한국외국어대학교 정보통신공학과 · 통계학과 (이중전공)' },
   { label: 'GitHub', value: 'github.com/yeeun426', href: LINKS.github, external: true },
   { label: 'Blog', value: 'yeeun426.github.io', href: LINKS.blog, external: true },
 ];
